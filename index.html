@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Insulin + BG Quick Log</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #0b0f14;
+      color: #e7eefc;
+    }
+    header {
+      padding: 16px;
+      text-align: center;
+    }
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 16px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 800px) {
+      main { grid-template-columns: 1fr; }
+    }
+    .card {
+      background: #111826;
+      border-radius: 14px;
+      padding: 14px;
+    }
+    h2 {
+      margin: 0 0 10px;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: #9fb3ff;
+    }
+    label {
+      font-size: 12px;
+      color: #a9b6cf;
+    }
+    input, select, textarea, button {
+      width: 100%;
+      margin-top: 6px;
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      background: #0b1220;
+      color: #e7eefc;
+      font-size: 14px;
+    }
+    textarea { resize: vertical; }
+    button {
+      cursor: pointer;
+      background: #1e3a8a;
+      font-weight: 600;
+    }
+    button.secondary {
+      background: #18233a;
+    }
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .log-item {
+      border-bottom: 1px solid #22304a;
+      padding: 8px 0;
+      font-size: 13px;
+    }
+    .log-item small {
+      color: #9fb0d9;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Insulin + BG Quick Log</h1>
+  <p style="font-size:13px;color:#a9b6cf;">
+    Logs locally + syncs to Google Sheets
+  </p>
+</header>
+
+<main>
+
+  <!-- INPUT -->
+  <section class="card">
+    <h2>Log Entry</h2>
+
+    <label>Type</label>
+    <select id="type">
+      <option value="long_acting">Long-acting insulin</option>
+      <option value="short_carb">Short-acting (carbs)</option>
+      <option value="short_correction">Short-acting (correction)</option>
+      <option value="bg">Blood sugar (BG)</option>
+    </select>
+
+    <label>Amount</label>
+    <input id="amount" type="number" step="0.5" placeholder="Units or BG" />
+
+    <label>Context</label>
+    <input id="context" placeholder="meal, correction, workout" />
+
+    <label>Notes</label>
+    <textarea id="note" placeholder="Optional notes"></textarea>
+
+    <div class="row" style="margin-top:12px;">
+      <button id="saveBtn">Log Entry</button>
+      <button id="clearBtn" class="secondary">Clear</button>
+    </div>
+  </section>
+
+  <!-- LOG -->
+  <section class="card">
+    <h2>Recent Entries</h2>
+    <div id="log"></div>
+  </section>
+
+</main>
+
+<script>
+/* ================= CONFIG ================= */
+
+const SHEET_ENDPOINT =
+  "https://script.google.com/macros/s/AKfycbwr-hIKjKXwhxHu16g5-UDn15Y3roq5yyOdOAPQPPawM8FwWHCX7sNhbRVL7PX_g1L6Lw/exec";
+
+const STORAGE_KEY = "insulin_bg_log";
+
+/* ================= STORAGE ================= */
+
+function loadEntries() {
+  return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+}
+
+function saveEntries(entries) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(entries));
+}
+
+/* ================= ADD ENTRY ================= */
+
+function addEntry(entry) {
+  // 1️⃣ Save locally
+  const entries = loadEntries();
+  entries.unshift(entry);
+  saveEntries(entries);
+  render();
+
+  // 2️⃣ Send to Google Sheets
+  fetch(SHEET_ENDPOINT, {
+    method: "POST",
+    mode: "no-cors",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      timestamp: entry.ts,
+      type: entry.type,
+      amount: entry.amount,
+      unit: entry.unit,
+      context: entry.context,
+      note: entry.note
+    })
+  }).catch(err => console.error("Sheet sync failed", err));
+}
+
+/* ================= UI ================= */
+
+const typeEl = document.getElementById("type");
+const amountEl = document.getElementById("amount");
+const contextEl = document.getElementById("context");
+const noteEl = document.getElementById("note");
+const logEl = document.getElementById("log");
+
+document.getElementById("saveBtn").onclick = () => {
+  const amount = Number(amountEl.value);
+  if (!amount) return alert("Enter a value");
+
+  const entry = {
+    id: crypto.randomUUID(),
+    ts: Date.now(),
+    type: typeEl.value,
+    amount,
+    unit: typeEl.value === "bg" ? "mg/dL" : "U",
+    context: contextEl.value || "",
+    note: noteEl.value || ""
+  };
+
+  addEntry(entry);
+  amountEl.value = "";
+  contextEl.value = "";
+  noteEl.value = "";
+};
+
+document.getElementById("clearBtn").onclick = () => {
+  amountEl.value = "";
+  contextEl.value = "";
+  noteEl.value = "";
+};
+
+/* ================= RENDER ================= */
+
+function render() {
+  const entries = loadEntries();
+  logEl.innerHTML = "";
+
+  entries.slice(0, 20).forEach(e => {
+    const div = document.createElement("div");
+    div.className = "log-item";
+    div.innerHTML = `
+      <strong>${e.type}</strong> — ${e.amount} ${e.unit}<br>
+      <small>${new Date(e.ts).toLocaleString()}</small><br>
+      ${e.context ? `<small>Context: ${e.context}</small><br>` : ""}
+      ${e.note ? `<small>Note: ${e.note}</small>` : ""}
+    `;
+    logEl.appendChild(div);
+  });
+}
+
+render();
+</script>
+
+</body>
+</html>

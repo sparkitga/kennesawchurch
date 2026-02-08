@@ -1,0 +1,144 @@
+/* ==============================
+   Kennesaw Church Brand System
+   ============================== */
+
+   :root {
+    /* Brand colors */
+    --covenant-blue: #0b2a4a;
+    --renewal-green: #3a7c3f;
+    --sanctum-black: #111111;
+    --silver-gray: #d9d9d9;
+    --grace-white: #ffffff;
+  
+    /* Layout */
+    --max-width: 1200px;
+    --nav-height: 70px;
+  }
+  
+  /* Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Red Hat Text", sans-serif;
+    color: var(--sanctum-black);
+    background: var(--grace-white);
+    line-height: 1.6;
+  }
+  
+  /* Headings */
+  h1, h2, h3, h4 {
+    font-family: "Crimson Pro", serif;
+    font-weight: 600;
+  }
+  
+  /* Layout container */
+  .container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* ==============================
+     NAVBAR
+     ============================== */
+  
+  .navbar {
+    height: var(--nav-height);
+    background: var(--grace-white);
+    border-bottom: 1px solid var(--silver-gray);
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .logo img {
+    height: 40px;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 24px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: var(--sanctum-black);
+    font-weight: 500;
+  }
+  
+  .nav-links a:hover {
+    color: var(--renewal-green);
+  }
+  
+  .watch-btn {
+    background: var(--renewal-green);
+    color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  /* ==============================
+     HERO
+     ============================== */
+  
+  .hero {
+    background: var(--covenant-blue);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 48px;
+    margin-bottom: 16px;
+  }
+  
+  .hero p {
+    font-size: 18px;
+    opacity: 0.9;
+  }
+  
+  /* ==============================
+     SECTIONS
+     ============================== */
+  
+  .section {
+    padding: 60px 20px;
+  }
+  
+  .section-light {
+    background: var(--grace-white);
+  }
+  
+  .section-gray {
+    background: #f5f5f5;
+  }
+  
+  /* ==============================
+     FOOTER
+     ============================== */
+  
+  .footer {
+    background: var(--covenant-blue);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .footer img {
+    height: 50px;
+    margin-bottom: 16px;
+  }
+  

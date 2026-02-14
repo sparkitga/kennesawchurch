@@ -1,67 +1,102 @@
-<head>
+<!doctype html>
+<html lang="en">
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kennesaw Church</title>
-  
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&family=Red+Hat+Text:wght@400;500;600&display=swap" rel="stylesheet">
-  
+
+    <!-- Inter Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
-    <link rel="icon" type="image/png" href="assets/icons/favicon.png">
-  
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+    <link rel="icon" type="image/png" href="assets/icons/favicon.png" />
+
     <!-- Main stylesheet -->
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body>
 
-    <!-- NAVBAR -->
+  <body>
+    <!-- NAVBAR (links + copy kept) -->
     <header class="navbar">
       <div class="container nav-inner">
+        <!-- Left: Logo -->
         <div class="logo">
           <img src="assets/logos/logo-horizontal.svg" alt="Kennesaw Church" />
         </div>
-  
-        <nav class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="livestream.html">Live Stream</a>
-          <a href="ministries.html">Ministries</a>
-          <a href="worship.html">Worship</a>
-          <a href="events.html">Events</a>
-          <a href="preschool.html">Preschool</a>
-          <a href="contact.html">Contact</a>
-          <a href="give.html">Give</a>
-        </nav>
-  
-        <a class="watch-btn" href="livestream.html">Watch Live</a>
+
+        <!-- Center: Search -->
+        <form
+          class="nav-search"
+          role="search"
+          aria-label="Site search"
+          action="search.html"
+          method="GET"
+        >
+          <input
+            class="nav-search-input"
+            type="search"
+            name="q"
+            placeholder="Search ministries, events, sermons…"
+            autocomplete="off"
+          />
+          <button
+            class="nav-search-btn"
+            type="submit"
+            aria-label="Search"
+          >
+            Search
+          </button>
+        </form>
+
+        <!-- Right: Nav + CTA (unchanged) -->
+        <div class="nav-right">
+          <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="livestream.html">Live Stream</a>
+            <a href="ministries.html">Ministries</a>
+            <a href="worship.html">Worship</a>
+            <a href="events.html">Events</a>
+            <a href="preschool.html">Preschool</a>
+            <a href="contact.html">Contact</a>
+            <a href="give.html">Give</a>
+          </nav>
+
+          <a class="watch-btn" href="livestream.html">Watch Live</a>
+        </div>
       </div>
     </header>
-  
-    <!-- HERO -->
+
+    <!-- HERO (copy kept) -->
     <section class="hero">
       <div class="container">
         <h1>Welcome to Kennesaw Church</h1>
         <p>Join us Sundays at 9:00 AM and 11:00 AM</p>
       </div>
     </section>
-  
-    <!-- CONTENT -->
+
+    <!-- CONTENT (copy kept) -->
     <section class="section section-light">
       <div class="container">
         <h2>Find Your Place</h2>
         <p>
-          Whether you're visiting for the first time or looking for a church home,
-          we’re glad you’re here.
+          Whether you're visiting for the first time or looking for a church
+          home, we’re glad you’re here.
         </p>
       </div>
     </section>
-  
-    <!-- FOOTER -->
+
+    <!-- FOOTER (copy kept) -->
     <footer class="footer">
-      <img src="assets/logos/logo-horizontal-white.svg" alt="Kennesaw Church">
+      <img
+        src="assets/logos/logo-horizontal-white.svg"
+        alt="Kennesaw Church"
+      />
       <p>123 Main Street, Kennesaw, GA</p>
       <p>© Kennesaw Church</p>
     </footer>
-  
   </body>
-    
+</html>

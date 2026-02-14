@@ -1,144 +1,299 @@
 /* ==============================
-   Kennesaw Church Brand System
+   Kennesaw Church Design System
+   Modern, Minimal, Inter Font
    ============================== */
 
-   :root {
-    /* Brand colors */
-    --covenant-blue: #0b2a4a;
-    --renewal-green: #3a7c3f;
-    --sanctum-black: #111111;
-    --silver-gray: #d9d9d9;
-    --grace-white: #ffffff;
-  
-    /* Layout */
-    --max-width: 1200px;
-    --nav-height: 70px;
+:root {
+  /* Brand colors */
+  --covenant-blue: #0b2a4a;
+  --renewal-green: #3a7c3f;
+  --sanctum-black: #111111;
+  --silver-gray: #d9d9d9;
+  --grace-white: #ffffff;
+
+  /* Modern neutrals */
+  --ink: rgba(17, 17, 17, 0.92);
+  --muted: rgba(17, 17, 17, 0.62);
+  --border: rgba(17, 17, 17, 0.12);
+  --panel: rgba(255, 255, 255, 0.78);
+
+  /* Layout */
+  --max-width: 1200px;
+  --nav-height: 72px;
+  --radius: 14px;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* ==============================
+   Reset
+   ============================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--grace-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==============================
+   Typography
+   ============================== */
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0 0 12px;
+}
+
+p {
+  margin: 0 0 16px;
+  color: var(--muted);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ==============================
+   Layout
+   ============================== */
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ==============================
+   NAVBAR
+   ============================== */
+
+.navbar {
+  height: var(--nav-height);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Logo */
+.logo img {
+  height: 40px;
+  display: block;
+}
+
+/* Center search */
+.nav-search {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-search-input {
+  width: min(560px, 100%);
+  height: 44px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: white;
+  padding: 0 14px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.nav-search-input::placeholder {
+  color: rgba(17, 17, 17, 0.45);
+}
+
+.nav-search-input:focus {
+  border-color: rgba(58, 124, 63, 0.5);
+  box-shadow: 0 0 0 4px rgba(58, 124, 63, 0.1);
+}
+
+/* Search button */
+.nav-search-btn {
+  height: 44px;
+  margin-left: 10px;
+  padding: 0 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(17, 17, 17, 0.04);
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.nav-search-btn:hover {
+  background: rgba(17, 17, 17, 0.08);
+}
+
+/* Right side nav */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.nav-links a {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 10px;
+  border-radius: 10px;
+  color: rgba(17, 17, 17, 0.78);
+  transition: all 0.15s ease;
+}
+
+.nav-links a:hover {
+  background: rgba(17, 17, 17, 0.06);
+  color: var(--sanctum-black);
+}
+
+/* Watch button */
+.watch-btn {
+  background: var(--renewal-green);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 13px;
+  box-shadow: 0 8px 18px rgba(58, 124, 63, 0.2);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.watch-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(58, 124, 63, 0.25);
+}
+
+/* ==============================
+   HERO
+   ============================== */
+
+.hero {
+  background: var(--covenant-blue);
+  color: white;
+  padding: 90px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(34px, 5vw, 56px);
+  color: white;
+}
+
+.hero p {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ==============================
+   SECTIONS
+   ============================== */
+
+.section {
+  padding: 70px 20px;
+}
+
+.section-light {
+  background: var(--grace-white);
+}
+
+.section-gray {
+  background: #f5f5f5;
+}
+
+/* ==============================
+   FOOTER
+   ============================== */
+
+.footer {
+  background: var(--covenant-blue);
+  color: white;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.footer img {
+  height: 52px;
+  margin-bottom: 16px;
+}
+
+.footer p {
+  color: rgba(255, 255, 255, 0.82);
+  margin: 6px 0;
+}
+
+/* ==============================
+   RESPONSIVE
+   ============================== */
+
+@media (max-width: 1024px) {
+  .nav-links {
+    gap: 10px;
   }
-  
-  /* Reset */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: "Red Hat Text", sans-serif;
-    color: var(--sanctum-black);
-    background: var(--grace-white);
-    line-height: 1.6;
-  }
-  
-  /* Headings */
-  h1, h2, h3, h4 {
-    font-family: "Crimson Pro", serif;
-    font-weight: 600;
-  }
-  
-  /* Layout container */
-  .container {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  /* ==============================
-     NAVBAR
-     ============================== */
-  
-  .navbar {
-    height: var(--nav-height);
-    background: var(--grace-white);
-    border-bottom: 1px solid var(--silver-gray);
-    display: flex;
-    align-items: center;
-  }
-  
+}
+
+@media (max-width: 900px) {
   .nav-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding: 14px 0;
+  }
+
+  .nav-search {
+    order: 3;
+    width: 100%;
+    justify-content: stretch;
+  }
+
+  .nav-search-input {
     width: 100%;
   }
-  
-  .logo img {
-    height: 40px;
+
+  .nav-right {
+    width: 100%;
+    justify-content: space-between;
+    order: 2;
   }
-  
+
   .nav-links {
-    display: flex;
-    gap: 24px;
+    flex-wrap: wrap;
+    gap: 8px;
   }
-  
-  .nav-links a {
-    text-decoration: none;
-    color: var(--sanctum-black);
-    font-weight: 500;
-  }
-  
-  .nav-links a:hover {
-    color: var(--renewal-green);
-  }
-  
-  .watch-btn {
-    background: var(--renewal-green);
-    color: white;
-    padding: 10px 16px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-  }
-  
-  /* ==============================
-     HERO
-     ============================== */
-  
-  .hero {
-    background: var(--covenant-blue);
-    color: white;
-    padding: 80px 20px;
-    text-align: center;
-  }
-  
-  .hero h1 {
-    font-size: 48px;
-    margin-bottom: 16px;
-  }
-  
-  .hero p {
-    font-size: 18px;
-    opacity: 0.9;
-  }
-  
-  /* ==============================
-     SECTIONS
-     ============================== */
-  
-  .section {
-    padding: 60px 20px;
-  }
-  
-  .section-light {
-    background: var(--grace-white);
-  }
-  
-  .section-gray {
-    background: #f5f5f5;
-  }
-  
-  /* ==============================
-     FOOTER
-     ============================== */
-  
-  .footer {
-    background: var(--covenant-blue);
-    color: white;
-    padding: 40px 20px;
-    text-align: center;
-  }
-  
-  .footer img {
-    height: 50px;
-    margin-bottom: 16px;
-  }
-  
+}

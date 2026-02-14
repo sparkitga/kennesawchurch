@@ -3,7 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kenn. Church</title>
+
+    <!-- 1) Google Chrome tab title -->
+    <title>Kennesaw Church | Sundays 9:00 AM + 11:00 AM</title>
+
+    <!-- 2) Google Chrome “tab description” + SEO basics -->
+    <meta
+      name="description"
+      content="Welcome to Kennesaw Church in Kennesaw, GA. Join us Sundays at 9:00 AM and 11:00 AM. Visit us at 1801 Ben King Rd, Kennesaw, GA 30144 or call +1 (770) 428-1543."
+    />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#0b2a4a" />
+    <link rel="canonical" href="https://kennesawchurch.netlify.app/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Kennesaw Church" />
+    <meta property="og:title" content="Kennesaw Church | Sundays 9:00 AM + 11:00 AM" />
+    <meta
+      property="og:description"
+      content="Welcome to Kennesaw Church in Kennesaw, GA. Join us Sundays at 9:00 AM and 11:00 AM."
+    />
+    <meta property="og:url" content="https://kennesawchurch.netlify.app/" />
+    <!-- Optional: set once you add a real share image -->
+    <!-- <meta property="og:image" content="https://kennesawchurch.netlify.app/assets/images/og.jpg" /> -->
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Kennesaw Church | Sundays 9:00 AM + 11:00 AM" />
+    <meta
+      name="twitter:description"
+      content="Welcome to Kennesaw Church in Kennesaw, GA. Join us Sundays at 9:00 AM and 11:00 AM."
+    />
+    <!-- <meta name="twitter:image" content="https://kennesawchurch.netlify.app/assets/images/og.jpg" /> -->
 
     <!-- Inter Font -->
     <link
@@ -12,23 +44,175 @@
     />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="assets/icons/Favicon_GreenWhite_DarkBlueBG.svg" />
-    <link rel="icon" type="image/png" href="assets/icons/Favicon_GreenWhite_DarkBlueBG.png" />
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+    <link rel="icon" type="image/png" href="assets/icons/favicon.png" />
 
     <!-- Main stylesheet -->
     <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- LocalBusiness/Church structured data (SEO) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Church",
+        "name": "Kennesaw Church",
+        "url": "https://kennesawchurch.netlify.app/",
+        "telephone": "+17704281543",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1801 Ben King Rd",
+          "addressLocality": "Kennesaw",
+          "addressRegion": "GA",
+          "postalCode": "30144",
+          "addressCountry": "US"
+        }
+      }
+    </script>
+
+    <!-- Small, page-local styles for the new hero + tighter nav.
+         If you prefer, move these into css/styles.css later. -->
+    <style>
+      /* Tight nav pass (matches what you asked for) */
+      :root { --nav-height: 64px; }
+
+      .logo img { height: 30px; }
+
+      .nav-inner { gap: 14px; }
+
+      .nav-search-input {
+        width: min(420px, 100%);
+        height: 40px;
+        padding: 0 12px;
+      }
+
+      .nav-search-btn {
+        height: 40px;
+        width: 40px;
+        margin-left: 10px;
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .nav-search-icon { width: 18px; height: 18px; }
+
+      .nav-right { gap: 10px; }
+      .nav-links { gap: 10px; }
+      .nav-links a { padding: 8px 8px; }
+      .watch-btn { padding: 9px 14px; }
+
+      /* NEW: Disney-style hero image section */
+      .hero-visual {
+        position: relative;
+        min-height: 560px;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        color: #fff;
+        overflow: hidden;
+        background: #0b2a4a;
+      }
+
+      /* Put your attached church photo here:
+         Save it as: assets/images/hero-church.jpg */
+      .hero-visual::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url("assets/images/hero-church.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        transform: scale(1.02);
+        filter: saturate(1.05);
+      }
+
+      .hero-visual::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(800px 380px at 50% 35%, rgba(0,0,0,0.30), rgba(0,0,0,0.72));
+      }
+
+      .hero-visual-inner {
+        position: relative;
+        z-index: 1;
+        width: min(980px, 100%);
+        padding: 56px 20px;
+      }
+
+      .hero-logo {
+        width: min(340px, 70vw);
+        height: auto;
+        opacity: 0.98;
+        margin-bottom: 22px;
+      }
+
+      .hero-title {
+        font-size: clamp(34px, 5vw, 64px);
+        line-height: 1.05;
+        margin: 0 0 14px;
+        letter-spacing: -0.02em;
+      }
+
+      .hero-copy {
+        font-size: clamp(16px, 2vw, 18px);
+        color: rgba(255,255,255,0.86);
+        margin: 0 auto 26px;
+        max-width: 70ch;
+      }
+
+      .hero-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 44px;
+        padding: 0 18px;
+        border-radius: 999px;
+        background: #ffffff;
+        color: #111111;
+        font-weight: 800;
+        border: 1px solid rgba(255,255,255,0.2);
+        text-decoration: none;
+      }
+
+      .hero-cta:hover { filter: brightness(0.96); }
+
+      /* Quick contact strip under hero (address + phone) */
+      .contact-strip {
+        background: #0b2a4a;
+        color: rgba(255,255,255,0.86);
+        border-top: 1px solid rgba(255,255,255,0.14);
+        padding: 14px 0;
+        font-size: 14px;
+      }
+
+      .contact-strip .contact-row {
+        display: flex;
+        gap: 18px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .contact-strip a { color: rgba(255,255,255,0.92); text-decoration: none; font-weight: 700; }
+
+      @media (max-width: 900px) {
+        .hero-visual { min-height: 520px; }
+      }
+    </style>
   </head>
 
   <body>
-    <!-- NAVBAR (links + copy kept) -->
+    <!-- NAVBAR -->
     <header class="navbar">
       <div class="container nav-inner">
-        <!-- Left: Logo -->
+        <!-- Left: Logo (smaller) -->
         <div class="logo">
-          <img src="assets/logos/FullHori_GreenBlack_TranspBG.svg" alt="Kennesaw Church" />
+          <img src="assets/logos/logo-horizontal.svg" alt="Kennesaw Church" />
         </div>
 
-        <!-- Center: Search -->
+        <!-- Center: Search (icon button) -->
         <form
           class="nav-search"
           role="search"
@@ -40,21 +224,29 @@
             class="nav-search-input"
             type="search"
             name="q"
-            placeholder="Search ministries, events, sermons…"
+            placeholder="Search…"
             autocomplete="off"
           />
-          <button
-            class="nav-search-btn"
-            type="submit"
-            aria-label="Search"
-          >
-            Search
+          <button class="nav-search-btn" type="submit" aria-label="Search">
+            <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path
+                d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z"
+                stroke="currentColor"
+                stroke-width="2"
+              />
+              <path
+                d="M16.2 16.2 21 21"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
           </button>
         </form>
 
-        <!-- Right: Nav + CTA (unchanged) -->
+        <!-- Right: Nav + CTA -->
         <div class="nav-right">
-          <nav class="nav-links">
+          <nav class="nav-links" aria-label="Primary navigation">
             <a href="index.html">Home</a>
             <a href="livestream.html">Live Stream</a>
             <a href="ministries.html">Ministries</a>
@@ -70,103 +262,53 @@
       </div>
     </header>
 
-    <!-- HERO (copy kept) -->
-    <section class="hero">
-      <div class="container">
-        <h1>Welcome to Kennesaw Church</h1>
-        <p>Join us Sundays at 9:00 AM and 11:00 AM</p>
+    <!-- HERO IMAGE SECTION (Disney-style layout: logo + title + copy + one button) -->
+    <section class="hero-visual" aria-label="Welcome hero">
+      <div class="hero-visual-inner">
+        <img
+          class="hero-logo"
+          src="assets/logos/logo-horizontal-white.svg"
+          alt="Kennesaw Church"
+        />
+
+        <h1 class="hero-title">Welcome Home</h1>
+        <p class="hero-copy">
+          Join us Sundays at 9:00 AM and 11:00 AM. Come as you are, and find your place
+          in a community centered on Jesus, worship, and growing together.
+        </p>
+
+        <!-- One button -->
+        <a class="hero-cta" href="contact.html">Plan Your Visit</a>
       </div>
     </section>
 
-    <!-- CONTENT (copy kept) -->
+    <!-- Address + phone (requested) -->
+    <section class="contact-strip" aria-label="Church contact info">
+      <div class="container">
+        <div class="contact-row">
+          <span>1801 Ben King Rd, Kennesaw, GA 30144</span>
+          <span>•</span>
+          <a href="tel:+17704281543">+1 (770) 428-1543</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTENT (kept) -->
     <section class="section section-light">
       <div class="container">
         <h2>Find Your Place</h2>
         <p>
-          Whether you're visiting for the first time or looking for a church
-          home, we’re glad you’re here.
+          Whether you're visiting for the first time or looking for a church home, we’re glad you’re here.
         </p>
       </div>
     </section>
 
-    <!-- FOOTER (copy kept) -->
-<footer class="site-footer">
-  <div class="footer-inner container">
-    <!-- Column 1 -->
-    <div class="footer-col">
-      <h4 class="footer-title">Kennesaw Church</h4>
-      <a class="footer-link" href="events.html">Events</a>
-      <a class="footer-link" href="serve.html">Serve</a>
-      <a class="footer-link" href="give.html">Give</a>
-      <a class="footer-link" href="espanol.html">Español</a>
-      <a class="footer-link" href="profile.html">My Profile</a>
-      <a class="footer-link" href="contact.html">Contact Us</a>
-    </div>
-
-    <!-- Column 2 -->
-    <div class="footer-col">
-      <h4 class="footer-title">New Here</h4>
-      <a class="footer-link" href="about.html">Mission &amp; Vision</a>
-      <a class="footer-link" href="resources.html">Resources</a>
-      <a class="footer-link" href="staff.html">Staff, Elders, &amp; Deacons</a>
-      <a class="footer-link" href="jobs.html">Jobs &amp; Residencies</a>
-      <a class="footer-link" href="weddings.html">Weddings &amp; Funerals</a>
-    </div>
-
-    <!-- Column 3 -->
-    <div class="footer-col">
-      <h4 class="footer-title">Ministries</h4>
-      <a class="footer-link" href="care.html">Care</a>
-      <a class="footer-link" href="connections.html">Connections</a>
-      <a class="footer-link" href="kids.html">Kids</a>
-      <a class="footer-link" href="students.html">Students</a>
-      <a class="footer-link" href="young-adults.html">Young Adults</a>
-      <a class="footer-link" href="adults.html">Adults</a>
-      <a class="footer-link" href="local-missions.html">Local Missions</a>
-      <a class="footer-link" href="global-missions.html">Global Missions</a>
-      <a class="footer-link" href="church-planting.html">Church Planting</a>
-    </div>
-
-    <!-- Column 4 -->
-    <div class="footer-col footer-col-right">
-      <h4 class="footer-title">Join us</h4>
-      <a class="footer-link" href="visit.html">Join us in person</a>
-      <a class="footer-link" href="livestream.html">Join us online</a>
-      <a class="footer-link" href="newsletter.html">Subscribe</a>
-
-      <div class="footer-socials" aria-label="Social media">
-        <a class="footer-social" href="#" aria-label="Facebook">f</a>
-        <a class="footer-social" href="#" aria-label="Instagram">⌁</a>
-        <a class="footer-social" href="#" aria-label="YouTube">▶</a>
-      </div>
-
-      <div class="footer-meta">
-        <div>123 Main Street</div>
-        <div>Kennesaw, GA 30144</div>
-        <div class="footer-meta-spacer"></div>
-        <div>Phone: (770) 000-0000</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Bottom row -->
-  <div class="footer-bottom container">
-    <div class="footer-subscribe">
-      <div class="footer-subscribe-text">Subscribe to<br />The Kennesaw News</div>
-      <a class="footer-pill" href="newsletter.html">Sign up</a>
-    </div>
-
-    <div class="footer-copy">
-      Copyright © 2026 Kennesaw Church.<br />
-      All rights reserved.
-    </div>
-
-    <div class="footer-brand">
-      <img src="assets/logos/FullHori_GreenWhite_TranspBG.svg" alt="Kennesaw Church" />
-    </div>
-  </div>
-</footer>
-
+    <!-- FOOTER (simple, includes address + phone) -->
+    <footer class="footer">
+      <img src="assets/logos/logo-horizontal-white.svg" alt="Kennesaw Church" />
+      <p>1801 Ben King Rd, Kennesaw, GA 30144</p>
+      <p><a href="tel:+17704281543" style="color: rgba(255,255,255,0.9); font-weight:700;">+1 (770) 428-1543</a></p>
+      <p>© Kennesaw Church</p>
     </footer>
   </body>
 </html>

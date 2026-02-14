@@ -492,7 +492,7 @@ a {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("assets/images/hero-church.jpg");
+  background-image: url("../assets/images/hero-church.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -546,5 +546,30 @@ a {
   .hero-visual-inner {
     padding-bottom: 54px;
   }
+}
+
+.hero-visual::before,
+.hero-visual::after {
+  pointer-events: none;
+}
+
+.hero-visual-inner {
+  position: relative;
+  z-index: 2;
+}
+
+/* --- SAFE HERO PATCH --- */
+.hero-visual::before {
+  background-image: url("../assets/images/hero-church.jpg");
+}
+
+.hero-visual::before,
+.hero-visual::after {
+  pointer-events: none;
+}
+
+.hero-visual-inner {
+  position: relative;
+  z-index: 2;
 }
 

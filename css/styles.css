@@ -1130,3 +1130,6 @@ a {
   fill: currentColor;
 }
 
+.sermon-grid {
+  align-items: start;
+}

@@ -77,65 +77,60 @@
   <body>
     <!-- NAVBAR -->
     <header class="navbar">
-      <div class="container nav-inner">
-        <!-- Left: Logo (smaller) -->
-    <div class="logo">
+  <div class="container nav-wrap">
+    
+    <!-- Left: Logo -->
+    <div class="nav-logo">
       <a href="index.html" aria-label="Kennesaw Church Home">
         <img src="assets/logos/FullHori_GreenBlack_TranspBG.svg" alt="Kennesaw Church" />
       </a>
     </div>
 
-        
+    <!-- Center: Search + Nav links stacked -->
+    <div class="nav-center">
+      <!-- Search -->
+      <form
+        class="nav-search"
+        role="search"
+        aria-label="Site search"
+        action="search.html"
+        method="GET"
+      >
+        <input
+          class="nav-search-input"
+          type="search"
+          name="q"
+          placeholder="Search…"
+          autocomplete="off"
+        />
+      </form>
 
-        <!-- Center: Search (icon button) -->
-        <form
-          class="nav-search"
-          role="search"
-          aria-label="Site search"
-          action="search.html"
-          method="GET"
-        >
-          <input
-            class="nav-search-input"
-            type="search"
-            name="q"
-            placeholder="Search…"
-            autocomplete="off"
-          />
-          <button class="nav-search-btn" type="submit" aria-label="Search">
-            <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path
-                d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z"
-                stroke="currentColor"
-                stroke-width="2"
-              />
-              <path
-                d="M16.2 16.2 21 21"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-              />
-            </svg>
-          </button>
-        </form>
+      <!-- Nav links (under search) -->
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="livestream.html">Live Stream</a>
+        <a href="ministries.html">Ministries</a>
+        <a href="worship.html">Worship</a>
+        <a href="events.html">Events</a>
+        <a href="preschool.html">Preschool</a>
+        <a href="contact.html">Contact</a>
+        <a href="give.html">Give</a>
+      </nav>
+    </div>
 
-        <!-- Right: Nav + CTA -->
-        <div class="nav-right">
-          <nav class="nav-links" aria-label="Primary navigation">
-            <a href="index.html">Home</a>
-            <a href="livestream.html">Live Stream</a>
-            <a href="ministries.html">Ministries</a>
-            <a href="worship.html">Worship</a>
-            <a href="events.html">Events</a>
-            <a href="preschool.html">Preschool</a>
-            <a href="contact.html">Contact</a>
-            <a href="give.html">Give</a>
-          </nav>
+    <!-- Right: Live button + socials -->
+    <div class="nav-right">
+      <a class="watch-btn" href="livestream.html">Live Stream</a>
 
-          <a class="watch-btn" href="livestream.html">Watch Live</a>
-        </div>
+      <div class="nav-socials">
+        <a class="nav-social" href="#" aria-label="Facebook">f</a>
+        <a class="nav-social" href="#" aria-label="Instagram">⌁</a>
+        <a class="nav-social" href="#" aria-label="YouTube">▶</a>
       </div>
-    </header>
+    </div>
+
+  </div>
+</header>
 
     <!-- HERO IMAGE SECTION -->
 <section class="hero-visual" aria-label="Welcome hero">

@@ -993,3 +993,29 @@ a {
     padding: 12px;
   }
 }
+
+.nav-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: rgba(17,17,17,0.78);
+  transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.nav-social:hover {
+  transform: translateY(-1px);
+  background: rgba(17,17,17,0.04);
+  color: rgba(17,17,17,0.92);
+}
+
+.nav-social-icon {
+  width: 18px;
+  height: 18px;
+  fill: currentColor; /* key: makes SVG match text color */
+}
+

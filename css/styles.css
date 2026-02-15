@@ -669,3 +669,141 @@ a {
   }
 }
 
+/* ==============================
+   SERMON SECTION
+   ============================== */
+
+.sermon-section {
+  background: #f5f6f7;
+  padding: 70px 0;
+}
+
+.sermon-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 60px;
+}
+
+.sermon-heading {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: var(--covenant-blue);
+}
+
+/* Video */
+.sermon-video {
+  border-radius: 18px;
+  overflow: hidden;
+  background: #000;
+  margin-bottom: 18px;
+}
+
+.sermon-video iframe {
+  width: 100%;
+  height: 420px;
+  display: block;
+}
+
+/* Text */
+.sermon-title {
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+.sermon-meta {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--renewal-green);
+  margin-bottom: 10px;
+}
+
+.sermon-meta span + span::before {
+  content: " | ";
+  color: var(--muted);
+}
+
+.sermon-desc {
+  font-size: 15px;
+  max-width: 70ch;
+}
+
+/* Side resources */
+.sermon-side {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.resource-card {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid var(--border);
+}
+
+.resource-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  color: white;
+  font-size: 18px;
+}
+
+.resource-icon.dark {
+  background: #111;
+}
+
+.resource-icon.gradient {
+  background: linear-gradient(135deg, #1f8cff, #7b5cff);
+}
+
+.resource-icon.blue {
+  background: #1f6fa8;
+}
+
+.resource-title {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.resource-text {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.resource-btn {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--covenant-blue);
+  color: var(--covenant-blue);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.resource-btn:hover {
+  background: var(--covenant-blue);
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .sermon-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .sermon-video iframe {
+    height: 260px;
+  }
+}
+

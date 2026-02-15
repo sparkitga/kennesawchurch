@@ -807,3 +807,11 @@ a {
   }
 }
 
+.logo a,
+.hero-visual a,
+.footer-brand a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+

@@ -1019,3 +1019,15 @@ a {
   fill: currentColor; /* key: makes SVG match text color */
 }
 
+.footer-social-icon {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.nav-social-icon {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+

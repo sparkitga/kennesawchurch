@@ -854,3 +854,17 @@ a {
   font-weight: 600;
   opacity: 0.9;
 }
+
+.footer-subscribe-link {
+  font-size: 14px;
+  font-weight: 800;
+  color: rgba(255,255,255,0.92);
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.footer-subscribe-link:hover {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}

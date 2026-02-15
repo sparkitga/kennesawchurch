@@ -71,136 +71,7 @@
 
     <!-- Small, page-local styles for the new hero + tighter nav.
          If you prefer, move these into css/styles.css later. -->
-    <style>
-      /* Tight nav pass (matches what you asked for) */
-      :root { --nav-height: 64px; }
-
-      .logo img { height: 30px; }
-
-      .nav-inner { gap: 14px; }
-
-      .nav-search-input {
-        width: min(420px, 100%);
-        height: 40px;
-        padding: 0 12px;
-      }
-
-      .nav-search-btn {
-        height: 40px;
-        width: 40px;
-        margin-left: 10px;
-        padding: 0;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .nav-search-icon { width: 18px; height: 18px; }
-
-      .nav-right { gap: 10px; }
-      .nav-links { gap: 10px; }
-      .nav-links a { padding: 8px 8px; }
-      .watch-btn { padding: 9px 14px; }
-
-      /* NEW: Disney-style hero image section */
-      .hero-visual {
-        position: relative;
-        min-height: 560px;
-        display: grid;
-        place-items: center;
-        text-align: center;
-        color: #fff;
-        overflow: hidden;
-        background: #0b2a4a;
-      }
-
-      /* Put your attached church photo here:
-         Save it as: assets/images/hero-church.jpg */
-      .hero-visual::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-image: url("assets/images/hero-church.jpg");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        transform: scale(1.02);
-        filter: saturate(1.05);
-      }
-
-      .hero-visual::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: radial-gradient(800px 380px at 50% 35%, rgba(0,0,0,0.30), rgba(0,0,0,0.72));
-      }
-
-      .hero-visual-inner {
-        position: relative;
-        z-index: 1;
-        width: min(980px, 100%);
-        padding: 56px 20px;
-      }
-
-      .hero-logo {
-        width: min(340px, 70vw);
-        height: auto;
-        opacity: 0.98;
-        margin-bottom: 22px;
-      }
-
-      .hero-title {
-        font-size: clamp(34px, 5vw, 64px);
-        line-height: 1.05;
-        margin: 0 0 14px;
-        letter-spacing: -0.02em;
-      }
-
-      .hero-copy {
-        font-size: clamp(16px, 2vw, 18px);
-        color: rgba(255,255,255,0.86);
-        margin: 0 auto 26px;
-        max-width: 70ch;
-      }
-
-      .hero-cta {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        height: 44px;
-        padding: 0 18px;
-        border-radius: 999px;
-        background: #ffffff;
-        color: #111111;
-        font-weight: 800;
-        border: 1px solid rgba(255,255,255,0.2);
-        text-decoration: none;
-      }
-
-      .hero-cta:hover { filter: brightness(0.96); }
-
-      /* Quick contact strip under hero (address + phone) */
-      .contact-strip {
-        background: #0b2a4a;
-        color: rgba(255,255,255,0.86);
-        border-top: 1px solid rgba(255,255,255,0.14);
-        padding: 14px 0;
-        font-size: 14px;
-      }
-
-      .contact-strip .contact-row {
-        display: flex;
-        gap: 18px;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-
-      .contact-strip a { color: rgba(255,255,255,0.92); text-decoration: none; font-weight: 700; }
-
-      @media (max-width: 900px) {
-        .hero-visual { min-height: 520px; }
-      }
-    </style>
+    
   </head>
 
   <body>
@@ -278,14 +149,10 @@
       />
     </a>
 
-    <h1 class="hero-title">
-      Big Enough to Serve You. Small Enough to Know You.
-    </h1>
+<p class="hero-copy hero-copy-primary">
+  Join us Sundays at 9:00 AM and 11:00 AM
+</p>
 
-    <p class="hero-copy">
-      Join us Sundays at 9:00 AM and 11:00 AM. Come as you are, and find your place
-      in a community centered on Jesus, worship, and growing together.
-    </p>
 
     <a class="hero-cta" href="contact.html">Live Stream</a>
 

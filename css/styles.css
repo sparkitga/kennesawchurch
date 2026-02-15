@@ -878,3 +878,118 @@ a {
   text-decoration: underline;
   text-underline-offset: 4px;
 }
+
+/* ==============================
+   HAMBURGER + MOBILE MENU
+   ============================== */
+
+.nav-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: #fff;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-toggle-lines {
+  width: 18px;
+  height: 2px;
+  background: rgba(17,17,17,0.8);
+  position: relative;
+  display: inline-block;
+}
+
+.nav-toggle-lines::before,
+.nav-toggle-lines::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 18px;
+  height: 2px;
+  background: rgba(17,17,17,0.8);
+}
+
+.nav-toggle-lines::before { top: -6px; }
+.nav-toggle-lines::after { top: 6px; }
+
+/* Dropdown panel */
+.nav-panel {
+  grid-column: 1 / -1;
+  margin-top: 10px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+.nav-links-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nav-links-mobile a {
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  color: rgba(17,17,17,0.85);
+}
+
+.nav-links-mobile a:hover {
+  background: rgba(17,17,17,0.06);
+}
+
+.nav-panel-actions {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* ==============================
+   BREAKPOINT: TABLET + MOBILE
+   ============================== */
+
+@media (max-width: 1000px) {
+  /* Hide desktop nav + right items */
+  .nav-links-desktop,
+  .nav-right-desktop {
+    display: none !important;
+  }
+
+  /* Show hamburger */
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  /* Make header layout breathe */
+  .nav-wrap {
+    grid-template-columns: auto 1fr auto;
+    gap: 14px;
+    align-items: center;
+  }
+
+  .nav-center {
+    gap: 10px;
+  }
+
+  .nav-search-input {
+    max-width: none;
+  }
+}
+
+/* Optional: slightly tighter on small phones */
+@media (max-width: 640px) {
+  .nav-panel {
+    padding: 12px;
+  }
+}

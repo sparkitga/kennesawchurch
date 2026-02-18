@@ -1,6 +1,7 @@
 /* ==============================
    Kennesaw Church Design System
    Modern, Minimal, Inter Font
+   (Updated: cleaner resources, no icons, higher alignment)
    ============================== */
 
 :root {
@@ -84,7 +85,7 @@ a {
 .navbar {
   background: #fff;
   border-bottom: 1px solid var(--border);
-  padding: 18px 0; /* increased from tight default */
+  padding: 18px 0;
 }
 
 /* Main nav grid */
@@ -92,7 +93,7 @@ a {
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: 32px; /* more breathing room */
+  gap: 32px;
 }
 
 /* Logo */
@@ -104,24 +105,24 @@ a {
 .nav-center {
   display: flex;
   flex-direction: column;
-  gap: 14px; /* space between search and nav */
+  gap: 14px;
 }
 
 /* Search bar */
 .nav-search-input {
   width: 100%;
   max-width: 560px;
-  height: 46px;              /* taller for comfort */
+  height: 46px;
   border-radius: 999px;
   border: 1px solid var(--border);
-  padding: 0 18px;           /* more inner padding */
+  padding: 0 18px;
   font-size: 15px;
 }
 
 /* Nav links row */
 .nav-links {
   display: flex;
-  gap: 22px;                 /* more spacing */
+  gap: 22px;
   flex-wrap: wrap;
 }
 
@@ -210,7 +211,6 @@ a {
   }
 }
 
-
 /* ==============================
    HERO
    ============================== */
@@ -246,66 +246,6 @@ a {
 
 .section-gray {
   background: #f5f5f5;
-}
-
-/* ==============================
-   FOOTER
-   ============================== */
-
-.footer {
-  background: var(--covenant-blue);
-  color: white;
-  padding: 50px 20px;
-  text-align: center;
-}
-
-.footer img {
-  height: 52px;
-  margin-bottom: 16px;
-}
-
-.footer p {
-  color: rgba(255, 255, 255, 0.82);
-  margin: 6px 0;
-}
-
-/* ==============================
-   RESPONSIVE
-   ============================== */
-
-@media (max-width: 1024px) {
-  .nav-links {
-    gap: 10px;
-  }
-}
-
-@media (max-width: 900px) {
-  .nav-inner {
-    flex-wrap: wrap;
-    gap: 14px;
-    padding: 14px 0;
-  }
-
-  .nav-search {
-    order: 3;
-    width: 100%;
-    justify-content: stretch;
-  }
-
-  .nav-search-input {
-    width: 100%;
-  }
-
-  .nav-right {
-    width: 100%;
-    justify-content: space-between;
-    order: 2;
-  }
-
-  .nav-links {
-    flex-wrap: wrap;
-    gap: 8px;
-  }
 }
 
 /* ==============================
@@ -399,32 +339,6 @@ a {
   gap: 18px;
 }
 
-.footer-subscribe-text {
-  font-size: 14px;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.9);
-  line-height: 1.2;
-}
-
-.footer-pill {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 40px;
-  padding: 0 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  color: #fff;
-  font-weight: 700;
-  font-size: 14px;
-  transition: background 0.15s ease, border-color 0.15s ease;
-}
-
-.footer-pill:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.38);
-}
-
 .footer-copy {
   text-align: center;
   font-size: 13px;
@@ -443,7 +357,7 @@ a {
   opacity: 0.95;
 }
 
-/* Responsive */
+/* Responsive footer */
 @media (max-width: 980px) {
   .footer-inner {
     grid-template-columns: 1fr 1fr;
@@ -479,18 +393,16 @@ a {
     align-items: flex-start;
   }
 }
+
 /* ==============================
    HERO VISUAL TUNING
-   - move content down
-   - darken overlay for readability
    ============================== */
-
 
 .hero-visual {
   position: relative;
   min-height: 620px;
   display: flex;
-  align-items: flex-end;      /* pushes content toward bottom */
+  align-items: flex-end;
   justify-content: center;
   text-align: center;
   color: #fff;
@@ -498,7 +410,6 @@ a {
   background: #0b2a4a;
 }
 
-/* Background image (already good) */
 .hero-visual::before {
   content: "";
   position: absolute;
@@ -508,10 +419,9 @@ a {
   background-position: center;
   background-repeat: no-repeat;
   transform: scale(1.02);
-  filter: saturate(1.05);
+  filter: saturate(1.02);
 }
 
-/* Slightly darker, more elegant overlay */
 .hero-visual::after {
   content: "";
   position: absolute;
@@ -519,43 +429,38 @@ a {
   background:
     linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0.15) 0%,
-      rgba(0, 0, 0, 0.35) 45%,
-      rgba(0, 0, 0, 0.75) 100%
+      rgba(0, 0, 0, 0.12) 0%,
+      rgba(0, 0, 0, 0.32) 45%,
+      rgba(0, 0, 0, 0.72) 100%
     );
 }
 
-/* Move content lower with breathing room */
 .hero-visual-inner {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   width: min(920px, 100%);
-  padding: 0 20px 60px;  /* bottom spacing controls vertical position */
+  padding: 0 20px 60px;
 }
 
-
-/* Subtle logo */
 .hero-logo {
   width: min(280px, 60vw);
   margin-bottom: 14px;
-  opacity: 0.9;
-}
-
-/* Softer headline */
-.hero-title {
-  font-size: clamp(30px, 4.5vw, 52px);
-  margin-bottom: 10px;
   opacity: 0.92;
+  filter: drop-shadow(0 8px 20px rgba(0,0,0,0.55));
 }
 
-/* Softer body copy */
 .hero-copy {
   font-size: clamp(15px, 2vw, 17px);
   color: rgba(255, 255, 255, 0.82);
   margin-bottom: 18px;
 }
 
-/* More understated CTA */
+.hero-copy-primary {
+  font-size: clamp(18px, 2.4vw, 22px);
+  font-weight: 600;
+  opacity: 0.9;
+}
+
 .hero-cta {
   height: 40px;
   padding: 0 16px;
@@ -563,63 +468,21 @@ a {
   font-weight: 700;
   background: rgba(255, 255, 255, 0.9);
   color: #111;
+  border-radius: 999px;
 }
 
-/* Mobile tuning */
 @media (max-width: 900px) {
-  .hero-visual {
-    min-height: 540px;
-  }
-
-  .hero-visual-inner {
-    padding-bottom: 48px;
-  }
-}
-
-
-.hero-title,
-.hero-logo {
-  filter: drop-shadow(0 8px 20px rgba(0,0,0,0.55));
-}
-
-/* Mobile */
-@media (max-width: 900px) {
-  .hero-visual {
-    min-height: 560px;
-  }
-  .hero-visual-inner {
-    padding-bottom: 54px;
-  }
+  .hero-visual { min-height: 560px; }
+  .hero-visual-inner { padding-bottom: 54px; }
 }
 
 .hero-visual::before,
 .hero-visual::after {
   pointer-events: none;
-}
-
-.hero-visual-inner {
-  position: relative;
-  z-index: 2;
-}
-
-/* --- SAFE HERO PATCH --- */
-.hero-visual::before {
-  background-image: url("../assets/images/hero-church.jpg");
-}
-
-.hero-visual::before,
-.hero-visual::after {
-  pointer-events: none;
-}
-
-.hero-visual-inner {
-  position: relative;
-  z-index: 2;
 }
 
 /* ==============================
    Image Collage + Quote Section
-   (Village style)
    ============================== */
 
 .mission-split {
@@ -634,7 +497,6 @@ a {
   align-items: center;
 }
 
-/* Collage */
 .mission-collage {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -649,13 +511,6 @@ a {
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
 }
 
-/* Make it feel like the screenshot (varied shapes) */
-.mc-1 { border-radius: 22px; }
-.mc-2 { border-radius: 22px; }
-.mc-3 { border-radius: 22px; }
-.mc-4 { border-radius: 22px; }
-
-/* Quote block */
 .mission-quote {
   text-align: left;
   padding: 18px 0;
@@ -677,7 +532,7 @@ a {
 
 .mq-text {
   margin: 0;
-  font-family: Georgia, "Times New Roman", serif; /* matches the screenshot vibe */
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(20px, 2.2vw, 28px);
   line-height: 1.35;
   color: rgba(17, 17, 17, 0.9);
@@ -691,26 +546,16 @@ a {
   color: rgba(17, 17, 17, 0.85);
 }
 
-/* Responsive */
 @media (max-width: 980px) {
   .mission-inner {
     grid-template-columns: 1fr;
     gap: 34px;
   }
-
-  .mission-quote {
-    text-align: left;
-  }
 }
 
 @media (max-width: 560px) {
-  .mission-collage {
-    gap: 12px;
-  }
-
-  .mc-img {
-    border-radius: 14px;
-  }
+  .mission-collage { gap: 12px; }
+  .mc-img { border-radius: 14px; }
 }
 
 /* ==============================
@@ -726,6 +571,7 @@ a {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 60px;
+  align-items: start; /* keep both columns top-aligned */
 }
 
 .sermon-heading {
@@ -748,65 +594,52 @@ a {
   display: block;
 }
 
-/* Text */
-.sermon-title {
-  font-size: 24px;
-  margin-bottom: 6px;
-}
-
-.sermon-meta {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--renewal-green);
-  margin-bottom: 10px;
-}
-
-.sermon-meta span + span::before {
-  content: " | ";
-  color: var(--muted);
-}
-
-.sermon-desc {
-  font-size: 15px;
-  max-width: 70ch;
-}
-
 /* Side resources */
 .sermon-side {
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 14px;
+  margin-top: -18px;   /* raises the resources stack */
+  position: sticky;
+  top: 18px;
+}
+
+@media (max-width: 900px) {
+  .sermon-side {
+    margin-top: 0;
+    position: static;
+  }
 }
 
 /* ==============================
-   RESOURCES: minimal, aligned cards
+   RESOURCES: minimal, no icons
    ============================== */
 
-.sermon-side-head {
-  margin-bottom: 14px;
-}
+.sermon-side-head { margin-bottom: 6px; }
 
+/* Hide icons + remove badge "sales" feel */
+.resource-icon { display: none !important; }
+.resource-badge { display: none !important; }
+
+/* Cards */
 .resource-grid {
   display: grid;
   gap: 12px;
 }
 
-/* Card base (works for .resource-card OR .resource-card.promo) */
 .resource-card,
 .resource-card.promo {
   position: relative;
-  display: grid;
-  grid-template-columns: 44px 1fr;
-  gap: 12px;
-  padding: 14px;
-  border-radius: 16px;
+  display: block;
+  padding: 14px 14px 13px;
+  border-radius: 14px;
   border: 1px solid rgba(17, 17, 17, 0.10);
-  background: rgba(255, 255, 255, 0.85);
-  box-shadow: 0 10px 26px rgba(0,0,0,0.05);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.05);
   transition: transform 0.14s ease, box-shadow 0.14s ease, border-color 0.14s ease;
 }
 
-/* Remove all glow layers */
+/* Remove any gradient/glow layers from older promo styles */
 .resource-card::before,
 .resource-card.promo::before {
   content: none !important;
@@ -815,45 +648,15 @@ a {
 .resource-card:hover,
 .resource-card.promo:hover {
   transform: translateY(-1px);
-  box-shadow: 0 14px 34px rgba(0,0,0,0.07);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.07);
   border-color: rgba(11, 42, 74, 0.18);
 }
 
-/* Badge: subtle pill */
-.resource-badge {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  padding: 5px 9px;
-  font-size: 11px;
-  font-weight: 700;
-  border-radius: 999px;
-  background: rgba(11, 42, 74, 0.06);
-  border: 1px solid rgba(11, 42, 74, 0.10);
-  color: rgba(11, 42, 74, 0.85);
-}
-
-/* Icon: quiet, consistent */
-.resource-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  display: grid;
-  place-items: center;
-  font-size: 20px;
-  color: rgba(11, 42, 74, 0.92);
-  background: rgba(11, 42, 74, 0.06);
-  border: 1px solid rgba(11, 42, 74, 0.10);
-}
-
-.resource-content {
-  position: relative;
-}
-
+/* Content */
 .resource-title {
   font-weight: 800;
   font-size: 15px;
-  margin: 0 0 4px;
+  margin: 0 0 6px;
   color: rgba(17, 17, 17, 0.92);
   line-height: 1.2;
 }
@@ -882,47 +685,6 @@ a {
   transform: translateY(-0.5px);
 }
 
-/* Remove theme variations if you kept promo classes */
-.promo-kids,
-.promo-events,
-.promo-serve {
-  background: rgba(255,255,255,0.85);
-}
-
-.promo-kids .resource-icon,
-.promo-events .resource-icon,
-.promo-serve .resource-icon {
-  background: rgba(11, 42, 74, 0.06);
-  border: 1px solid rgba(11, 42, 74, 0.10);
-  color: rgba(11, 42, 74, 0.92);
-}
-
-/* Responsive: 2-up on medium, 1-up on phone */
-@media (max-width: 900px) {
-  .resource-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-}
-
-@media (max-width: 560px) {
-  .resource-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-.sermon-side {
-  position: sticky;
-  top: 18px;
-}
-@media (max-width: 900px) {
-  .sermon-side { position: static; }
-}
-
-
-
-
 /* Responsive */
 @media (max-width: 900px) {
   .sermon-grid {
@@ -933,34 +695,17 @@ a {
   .sermon-video iframe {
     height: 260px;
   }
+
+  /* On stacked layout, show resources 2-up */
+  .resource-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
-.logo a,
-.hero-visual a,
-.footer-brand a {
-  display: inline-flex;
-  align-items: center;
-  text-decoration: none;
-}
-
-.hero-copy-primary {
-  font-size: clamp(18px, 2.4vw, 22px);
-  font-weight: 600;
-  opacity: 0.9;
-}
-
-.footer-subscribe-link {
-  font-size: 14px;
-  font-weight: 800;
-  color: rgba(255,255,255,0.92);
-  line-height: 1.2;
-  text-decoration: none;
-}
-
-.footer-subscribe-link:hover {
-  color: #fff;
-  text-decoration: underline;
-  text-underline-offset: 4px;
+@media (max-width: 560px) {
+  .resource-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ==============================
@@ -1000,7 +745,6 @@ a {
 .nav-toggle-lines::before { top: -6px; }
 .nav-toggle-lines::after { top: 6px; }
 
-/* Dropdown panel */
 .nav-panel {
   grid-column: 1 / -1;
   margin-top: 10px;
@@ -1039,23 +783,17 @@ a {
   flex-wrap: wrap;
 }
 
-/* ==============================
-   BREAKPOINT: TABLET + MOBILE
-   ============================== */
-
+/* Tablet + mobile breakpoint */
 @media (max-width: 1000px) {
-  /* Hide desktop nav + right items */
   .nav-links-desktop,
   .nav-right-desktop {
     display: none !important;
   }
 
-  /* Show hamburger */
   .nav-toggle {
     display: inline-flex;
   }
 
-  /* Make header layout breathe */
   .nav-wrap {
     grid-template-columns: auto 1fr auto;
     gap: 14px;
@@ -1071,13 +809,13 @@ a {
   }
 }
 
-/* Optional: slightly tighter on small phones */
 @media (max-width: 640px) {
   .nav-panel {
     padding: 12px;
   }
 }
 
+/* Social icons - consistent fill */
 .nav-social {
   display: inline-flex;
   align-items: center;
@@ -1097,33 +835,9 @@ a {
   color: rgba(17,17,17,0.92);
 }
 
-.nav-social-icon {
-  width: 18px;
-  height: 18px;
-  fill: currentColor; /* key: makes SVG match text color */
-}
-
+.nav-social-icon,
 .footer-social-icon {
   width: 18px;
   height: 18px;
   fill: currentColor;
-}
-
-.nav-social-icon {
-  width: 18px;
-  height: 18px;
-  fill: currentColor;
-}
-
-.sermon-grid {
-  align-items: start;
-}
-
-.sermon-grid { 
-  align-items: start; 
-}
-
-/* Nudge the Resources column up */
-.sermon-side {
-  margin-top: -18px; /* adjust: -10 to -28 depending on taste */
 }

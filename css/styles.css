@@ -779,162 +779,138 @@ a {
 }
 
 /* ==============================
-   RESOURCES: colorful "sales" cards
+   RESOURCES: minimal, aligned cards
    ============================== */
 
 .sermon-side-head {
   margin-bottom: 14px;
 }
 
-.sermon-side-sub {
-  margin: 6px 0 0;
-  color: rgba(17, 17, 17, 0.62);
-  font-size: 14px;
-}
-
 .resource-grid {
   display: grid;
-  gap: 14px;
+  gap: 12px;
 }
 
-/* Card base */
+/* Card base (works for .resource-card OR .resource-card.promo) */
+.resource-card,
 .resource-card.promo {
   position: relative;
   display: grid;
-  grid-template-columns: 52px 1fr;
-  gap: 14px;
-  padding: 16px;
-  border-radius: 18px;
+  grid-template-columns: 44px 1fr;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 16px;
   border: 1px solid rgba(17, 17, 17, 0.10);
-  background: #fff;
-  overflow: hidden;
-  box-shadow: 0 10px 26px rgba(0,0,0,0.06);
-  transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.05);
+  transition: transform 0.14s ease, box-shadow 0.14s ease, border-color 0.14s ease;
 }
 
+/* Remove all glow layers */
+.resource-card::before,
+.resource-card.promo::before {
+  content: none !important;
+}
+
+.resource-card:hover,
 .resource-card.promo:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 16px 40px rgba(0,0,0,0.10);
+  transform: translateY(-1px);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.07);
   border-color: rgba(11, 42, 74, 0.18);
 }
 
-/* Soft gradient glow layer */
-.resource-card.promo::before {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  opacity: 0.22;
-  filter: blur(0px);
-  pointer-events: none;
-}
-
-/* Badge */
+/* Badge: subtle pill */
 .resource-badge {
   position: absolute;
   top: 12px;
   right: 12px;
-  padding: 6px 10px;
-  font-size: 12px;
-  font-weight: 800;
+  padding: 5px 9px;
+  font-size: 11px;
+  font-weight: 700;
   border-radius: 999px;
-  background: rgba(255,255,255,0.72);
-  border: 1px solid rgba(255,255,255,0.55);
-  backdrop-filter: blur(10px);
+  background: rgba(11, 42, 74, 0.06);
+  border: 1px solid rgba(11, 42, 74, 0.10);
+  color: rgba(11, 42, 74, 0.85);
 }
 
-/* Icon */
+/* Icon: quiet, consistent */
 .resource-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: 14px;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
   display: grid;
   place-items: center;
-  font-size: 22px;
-  font-weight: 900;
-  color: #fff;
-  position: relative;
-  z-index: 1;
+  font-size: 20px;
+  color: rgba(11, 42, 74, 0.92);
+  background: rgba(11, 42, 74, 0.06);
+  border: 1px solid rgba(11, 42, 74, 0.10);
 }
 
 .resource-content {
   position: relative;
-  z-index: 1;
 }
 
 .resource-title {
   font-weight: 800;
-  font-size: 16px;
-  margin-bottom: 6px;
+  font-size: 15px;
+  margin: 0 0 4px;
   color: rgba(17, 17, 17, 0.92);
+  line-height: 1.2;
 }
 
 .resource-text {
-  font-size: 14px;
-  color: rgba(17, 17, 17, 0.64);
-  margin-bottom: 10px;
+  font-size: 13.5px;
+  color: rgba(17, 17, 17, 0.62);
+  margin: 0 0 10px;
   line-height: 1.35;
-  max-width: 46ch;
 }
 
 .resource-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-size: 13px;
   font-weight: 800;
   color: rgba(11, 42, 74, 0.92);
 }
 
-/* Theme variations */
-.promo-kids::before {
-  background: radial-gradient(420px 220px at 20% 15%, rgba(0, 209, 255, 0.55), transparent 60%),
-              radial-gradient(420px 220px at 80% 85%, rgba(58, 124, 63, 0.40), transparent 55%);
-}
-.promo-kids .resource-icon {
-  background: linear-gradient(135deg, #00D1FF, #2B59FF);
-}
-
-.promo-events::before {
-  background: radial-gradient(420px 220px at 20% 15%, rgba(255, 170, 64, 0.55), transparent 60%),
-              radial-gradient(420px 220px at 80% 85%, rgba(255, 80, 160, 0.40), transparent 55%);
-}
-.promo-events .resource-icon {
-  background: linear-gradient(135deg, #FFAA40, #FF2E79);
+.resource-cta::after {
+  content: "›";
+  font-size: 16px;
+  line-height: 1;
+  opacity: 0.75;
+  transform: translateY(-0.5px);
 }
 
-.promo-serve::before {
-  background: radial-gradient(420px 220px at 20% 15%, rgba(90, 200, 250, 0.55), transparent 60%),
-              radial-gradient(420px 220px at 80% 85%, rgba(11, 42, 74, 0.35), transparent 55%);
+/* Remove theme variations if you kept promo classes */
+.promo-kids,
+.promo-events,
+.promo-serve {
+  background: rgba(255,255,255,0.85);
 }
+
+.promo-kids .resource-icon,
+.promo-events .resource-icon,
 .promo-serve .resource-icon {
-  background: linear-gradient(135deg, #5AC8FA, #0B2A4A);
+  background: rgba(11, 42, 74, 0.06);
+  border: 1px solid rgba(11, 42, 74, 0.10);
+  color: rgba(11, 42, 74, 0.92);
 }
 
-/* Responsive upgrades */
+/* Responsive: 2-up on medium, 1-up on phone */
 @media (max-width: 900px) {
-  /* When the whole sermon section stacks, make resources 2-up */
   .resource-grid {
     grid-template-columns: 1fr 1fr;
     gap: 12px;
   }
-
-  .resource-card.promo {
-    grid-template-columns: 52px 1fr;
-    padding: 14px;
-  }
 }
 
 @media (max-width: 560px) {
-  /* Phones: back to single column, bigger tap targets */
   .resource-grid {
     grid-template-columns: 1fr;
   }
-
-  .resource-card.promo {
-    padding: 16px;
-  }
-
-  .resource-title {
-    font-size: 15px;
-  }
 }
+
 
 
 

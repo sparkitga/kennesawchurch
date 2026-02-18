@@ -912,6 +912,15 @@ a {
 }
 
 
+.sermon-side {
+  position: sticky;
+  top: 18px;
+}
+@media (max-width: 900px) {
+  .sermon-side { position: static; }
+}
+
+
 
 
 /* Responsive */

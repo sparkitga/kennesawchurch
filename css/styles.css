@@ -1118,3 +1118,12 @@ a {
 .sermon-grid {
   align-items: start;
 }
+
+.sermon-grid { 
+  align-items: start; 
+}
+
+/* Nudge the Resources column up */
+.sermon-side {
+  margin-top: -18px; /* adjust: -10 to -28 depending on taste */
+}

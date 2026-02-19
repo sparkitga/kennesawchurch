@@ -102,7 +102,21 @@
       <!-- Desktop nav links (hidden on tablet/mobile via CSS below) -->
       <nav class="nav-links nav-links-desktop" aria-label="Primary navigation">
         <a href="index.html">Home</a>
-        <a href="ministries.html">Ministries</a>
+        <div class="nav-item nav-dropdown">
+          <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
+            Ministries
+            <span class="nav-caret" aria-hidden="true">▾</span>
+          </button>
+
+  <div class="nav-dropdown-menu" role="menu" aria-label="Ministries submenu">
+    <a role="menuitem" href="ministries.html">All Ministries</a>
+    <a role="menuitem" href="/youth/">Youth Ministry</a>
+    <a role="menuitem" href="preschool.html">Kids & Preschool</a>
+    <a role="menuitem" href="groups.html">Small Groups</a>
+    <a role="menuitem" href="care.html">Care & Serve</a>
+  </div>
+</div>
+
         <a href="worship.html">Worship</a>
         <a href="events.html">Events</a>
         <a href="preschool.html">Preschool</a>

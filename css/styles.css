@@ -275,6 +275,75 @@ a {
   }
 }
 
+/* ===== Desktop Dropdown ===== */
+.nav-item { position: relative; }
+
+.nav-link,
+.nav-links a {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
+.nav-dropdown-toggle{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.nav-caret{
+  font-size: 12px;
+  transform: translateY(-1px);
+  opacity: 0.8;
+}
+
+/* menu */
+.nav-dropdown-menu{
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 220px;
+  padding: 10px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: #fff;
+  box-shadow: var(--shadow);
+  display: none;
+  z-index: 50;
+}
+
+/* menu items */
+.nav-dropdown-menu a{
+  display: block;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 14px;
+  color: rgba(17,17,17,0.88);
+}
+
+.nav-dropdown-menu a:hover{
+  background: rgba(17,17,17,0.06);
+}
+
+/* show on hover (desktop) */
+@media (min-width: 1001px){
+  .nav-dropdown:hover .nav-dropdown-menu{
+    display: block;
+  }
+}
+
+/* show on click (when aria-expanded=true) */
+.nav-dropdown.is-open .nav-dropdown-menu{
+  display: block;
+}
+
 
 /* ==============================
    HERO

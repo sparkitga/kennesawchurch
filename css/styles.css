@@ -1061,3 +1061,76 @@ a {
   display: block;
   box-shadow: 0 18px 45px rgba(0,0,0,0.10);
 }
+
+/* ==============================
+   MINISTRIES SHOWCASE
+   ============================== */
+
+.ministries-showcase {
+  padding: 80px 0;
+  background: #f7f8f9;
+  text-align: center;
+}
+
+.ministries-heading {
+  font-size: 30px;
+  margin-bottom: 40px;
+  color: var(--covenant-blue);
+}
+
+.ministries-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 900px;
+  margin: 0 auto 40px;
+}
+
+.ministry-card {
+  background: #fff;
+  border-radius: 22px;
+  padding: 40px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.ministry-card img {
+  max-width: 140px;
+  max-height: 70px;
+  object-fit: contain;
+}
+
+.ministry-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.10);
+}
+
+.ministries-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 999px;
+  border: 2px solid var(--covenant-blue);
+  font-weight: 700;
+  font-size: 14px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.ministries-btn:hover {
+  background: var(--covenant-blue);
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .ministries-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .ministries-grid {
+    grid-template-columns: 1fr;
+  }
+}

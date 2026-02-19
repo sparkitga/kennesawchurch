@@ -674,6 +674,143 @@ a {
 }
 
 /* ==============================
+   JOIN US IN PERSON (Pepsi-style)
+   ============================== */
+
+.join-section {
+  background: #fff;
+  padding: 74px 0 78px;
+}
+
+.join-inner {
+  text-align: center;
+  max-width: 980px;
+}
+
+/* Big headline */
+.join-title {
+  margin: 0 0 10px;
+  font-size: clamp(40px, 6vw, 72px);
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  color: rgba(17, 17, 17, 0.92);
+}
+
+/* Subhead */
+.join-subtitle {
+  margin: 0 auto 22px;
+  max-width: 62ch;
+  font-size: 18px;
+  color: rgba(17, 17, 17, 0.62);
+}
+
+/* Pills */
+.join-pills {
+  display: inline-flex;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 999px;
+  background: rgba(17, 17, 17, 0.05);
+  border: 1px solid rgba(17, 17, 17, 0.10);
+  margin: 6px 0 34px;
+}
+
+.join-pill {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 14px;
+  color: rgba(17, 17, 17, 0.70);
+  cursor: pointer;
+  transition: transform 0.14s ease, background 0.14s ease, color 0.14s ease;
+}
+
+.join-pill:hover {
+  transform: translateY(-1px);
+  background: rgba(17, 17, 17, 0.06);
+  color: rgba(17, 17, 17, 0.88);
+}
+
+.join-pill.is-active {
+  background: rgba(58, 124, 63, 0.20); /* renewal green tint */
+  color: rgba(17, 17, 17, 0.92);
+  border: 1px solid rgba(58, 124, 63, 0.28);
+}
+
+/* Visual placeholder */
+.join-visual {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 26px;
+}
+
+.join-visual-placeholder {
+  width: min(520px, 86vw);
+  aspect-ratio: 4 / 3;
+  border-radius: 28px;
+  border: 1px dashed rgba(17, 17, 17, 0.22);
+  background: rgba(17, 17, 17, 0.03);
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  color: rgba(17, 17, 17, 0.55);
+}
+
+/* CTAs */
+.join-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.join-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(17, 17, 17, 0.16);
+  background: #fff;
+  font-weight: 800;
+  font-size: 14px;
+  color: rgba(17, 17, 17, 0.86);
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+}
+
+.join-btn:hover {
+  transform: translateY(-1px);
+  background: rgba(17, 17, 17, 0.03);
+  border-color: rgba(11, 42, 74, 0.22);
+}
+
+.join-btn.primary {
+  background: var(--covenant-blue);
+  border-color: var(--covenant-blue);
+  color: #fff;
+}
+
+.join-btn.primary:hover {
+  background: rgba(11, 42, 74, 0.92);
+}
+
+/* Mobile */
+@media (max-width: 560px) {
+  .join-subtitle {
+    font-size: 16px;
+  }
+  .join-pills {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+/* ==============================
    RESOURCES: minimal, no icons
    ============================== */
 

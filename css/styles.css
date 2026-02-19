@@ -212,6 +212,68 @@ a {
 }
 
 /* ==============================
+   DESKTOP NAV ALIGNMENT FIX
+   - nav links sit directly under search (same width + left edge)
+   - Live Stream becomes a button
+   ============================== */
+
+/* Desktop only */
+@media (min-width: 1001px) {
+  /* Make center column behave like a left-aligned stack */
+  .nav-center {
+    align-items: flex-start; /* key: stops centering */
+  }
+
+  /* Ensure the search row is a consistent width */
+  .nav-search {
+    width: 100%;
+    max-width: 560px; /* match your input max */
+  }
+
+  .nav-search-input {
+    width: 100%;
+    max-width: 560px;
+  }
+
+  /* Make the nav row match the search width and sit under it */
+  .nav-links-desktop {
+    width: 100%;
+    max-width: 560px;
+    justify-content: space-between; /* clean spacing across the row */
+    gap: 18px; /* fallback spacing if it wraps */
+    margin-top: -2px; /* tiny tighten (optional) */
+  }
+
+  /* If it wraps on smaller desktops, keep it tidy */
+  .nav-links-desktop a {
+    padding: 6px 0;
+    white-space: nowrap;
+  }
+
+  /* LIVE STREAM: turn into a pill button */
+  .watch-btn.nav-right-desktop {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 38px;
+    padding: 0 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(17, 17, 17, 0.18);
+    background: rgba(255, 255, 255, 1);
+    font-weight: 700;
+    line-height: 1;
+    transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+  }
+
+  .watch-btn.nav-right-desktop:hover {
+    transform: translateY(-1px);
+    background: rgba(17, 17, 17, 0.03);
+    border-color: rgba(11, 42, 74, 0.22);
+  }
+}
+
+
+/* ==============================
    HERO
    ============================== */
 

@@ -217,23 +217,26 @@ a {
    - Live Stream becomes a button
    ============================== */
 
-/* Desktop only */
 @media (min-width: 1001px) {
-  /* Make center column behave like a left-aligned stack */
-  .nav-center {
-    align-items: flex-start; /* key: stops centering */
+  .nav-center{
+    align-items: center;
+    text-align: center;
   }
 
-  /* Ensure the search row is a consistent width */
-  .nav-search {
-    width: 100%;
-    max-width: 560px; /* match your input max */
-  }
-
-  .nav-search-input {
+  .nav-search{
     width: 100%;
     max-width: 560px;
+    margin: 0 auto;
   }
+
+  .nav-links-desktop{
+    width: 100%;
+    max-width: 560px;
+    justify-content: center;
+    gap: 22px;
+    margin: 0 auto;
+  }
+}
 
   /* Make the nav row match the search width and sit under it */
   .nav-links-desktop {

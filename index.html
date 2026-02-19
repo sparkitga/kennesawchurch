@@ -11,6 +11,60 @@
   gtag('config', 'G-N794D9J3RW');
 </script>
 
+<script>
+  (function () {
+    const dropdowns = document.querySelectorAll(".nav-dropdown");
+    if (!dropdowns.length) return;
+
+    dropdowns.forEach((dd) => {
+      const btn = dd.querySelector(".nav-dropdown-toggle");
+      const menu = dd.querySelector(".nav-dropdown-menu");
+      if (!btn || !menu) return;
+
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        const isOpen = dd.classList.contains("is-open");
+        // close all
+        dropdowns.forEach((x) => {
+          x.classList.remove("is-open");
+          const b = x.querySelector(".nav-dropdown-toggle");
+          if (b) b.setAttribute("aria-expanded", "false");
+        });
+
+        // open current if it was closed
+        if (!isOpen) {
+          dd.classList.add("is-open");
+          btn.setAttribute("aria-expanded", "true");
+        }
+      });
+    });
+
+    // click outside closes
+    document.addEventListener("click", (e) => {
+      const inside = e.target.closest(".nav-dropdown");
+      if (inside) return;
+
+      dropdowns.forEach((dd) => {
+        dd.classList.remove("is-open");
+        const btn = dd.querySelector(".nav-dropdown-toggle");
+        if (btn) btn.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    // escape closes
+    document.addEventListener("keydown", (e) => {
+      if (e.key !== "Escape") return;
+      dropdowns.forEach((dd) => {
+        dd.classList.remove("is-open");
+        const btn = dd.querySelector(".nav-dropdown-toggle");
+        if (btn) btn.setAttribute("aria-expanded", "false");
+      });
+    });
+  })();
+</script>
+
+
 
     <!-- 1) Google Chrome tab title -->
     <title>Church: 9A & 11A</title>

@@ -1040,3 +1040,11 @@ a {
   height: 18px;
   fill: currentColor;
 }
+
+.join-image{
+  width: min(520px, 86vw);
+  height: auto;
+  border-radius: 28px;
+  display: block;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.10);
+}

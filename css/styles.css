@@ -1401,3 +1401,77 @@ a {
   .nav-search-input { height: 48px; }
   .join-title { font-size: 40px; }
 }
+
+/* ==============================
+   MOBILE NAV ONLY: Bigger navbar + buttons
+   (place at VERY bottom of styles.css)
+   ============================== */
+
+@media (max-width: 640px) {
+  /* NAVBAR overall height/spacing */
+  .navbar {
+    padding: 20px 0;              /* was 16px */
+    border-bottom-width: 2px;     /* thicker border only on mobile */
+  }
+
+  /* Logo bigger */
+  .nav-logo img {
+    height: 44px;                 /* was 38px */
+  }
+
+  /* Search bigger */
+  .nav-search-input {
+    height: 54px;                 /* was 44px */
+    font-size: 16px;              /* was 14px */
+    border-width: 2px;
+    padding: 0 20px;
+  }
+
+  /* Hamburger bigger */
+  .nav-toggle {
+    width: 50px;                  /* was 44px */
+    height: 50px;
+    border-width: 2px;
+    border-radius: 14px;
+  }
+
+  .nav-toggle-lines,
+  .nav-toggle-lines::before,
+  .nav-toggle-lines::after {
+    width: 20px;                  /* was 18px */
+    height: 2px;
+  }
+  .nav-toggle-lines::before { top: -7px; }
+  .nav-toggle-lines::after  { top:  7px; }
+
+  /* Mobile menu panel border thicker */
+  .nav-panel {
+    border-width: 2px;
+  }
+
+  /* Mobile menu links bigger (optional but usually needed) */
+  .nav-links-mobile a {
+    font-size: 16px;
+    padding: 14px 14px;           /* bigger tap target */
+  }
+
+  /* NAV buttons bigger (these affect nav + panel buttons) */
+  .watch-btn {
+    height: 48px;
+    font-size: 15.5px;
+    padding: 0 18px;
+    border-width: 2px;
+  }
+
+  /* Social buttons in nav bigger */
+  .nav-social {
+    width: 42px;
+    height: 42px;
+    border-width: 2px;
+  }
+
+  .nav-social-icon {
+    width: 20px;                  /* was 18px */
+    height: 20px;
+  }
+}

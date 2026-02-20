@@ -1548,3 +1548,137 @@ a {
 @media (max-width: 1200px) and (min-width: 1001px) {
   .nav-dropdown-menu { min-width: 220px; }
 }
+
+/* ==============================
+   NAVBAR: Mobile size + desktop-like feel
+   (place at VERY bottom of styles.css)
+   ============================== */
+
+@media (max-width: 640px) {
+  /* Bigger overall bar */
+  .navbar {
+    padding: 20px 0;
+    border-bottom-width: 2px;
+  }
+
+  /* Bigger logo */
+  .nav-logo img {
+    height: 46px;
+  }
+
+  /* Bigger search */
+  .nav-search-input {
+    height: 54px;
+    font-size: 16px;
+    padding: 0 20px;
+    border-width: 2px;
+  }
+
+  /* Bigger hamburger */
+  .nav-toggle {
+    width: 52px;
+    height: 52px;
+    border-width: 2px;
+    border-radius: 14px;
+  }
+
+  .nav-toggle-lines,
+  .nav-toggle-lines::before,
+  .nav-toggle-lines::after {
+    width: 22px;
+    height: 2px;
+  }
+  .nav-toggle-lines::before { top: -7px; }
+  .nav-toggle-lines::after  { top:  7px; }
+
+  /* Panel */
+  .nav-panel {
+    border-width: 2px;
+    border-radius: 18px;
+    padding: 14px;
+  }
+
+  /* Bigger taps */
+  .nav-links-mobile a {
+    font-size: 16px;
+    padding: 14px 14px;
+    border-radius: 14px;
+  }
+
+  .watch-btn {
+    height: 48px;
+    font-size: 15.5px;
+    padding: 0 18px;
+    border-width: 2px;
+  }
+
+  .nav-social {
+    width: 44px;
+    height: 44px;
+    border-width: 2px;
+  }
+
+  .nav-social-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* ==============================
+   Mobile Ministries accordion
+   ============================== */
+
+.nav-mobile-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nav-mobile-accordion {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 14px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(17, 17, 17, 0.02);
+  font-weight: 800;
+  font-size: 16px;
+  color: rgba(17,17,17,0.90);
+  cursor: pointer;
+}
+
+.nav-mobile-accordion:hover {
+  background: rgba(17, 17, 17, 0.05);
+}
+
+.nav-mobile-accordion .nav-caret {
+  transition: transform 0.18s ease;
+}
+
+.nav-mobile-accordion[aria-expanded="true"] .nav-caret {
+  transform: rotate(180deg);
+}
+
+.nav-mobile-submenu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 8px 6px;
+  border-left: 2px solid rgba(11, 42, 74, 0.18);
+  margin-left: 8px;
+}
+
+.nav-mobile-submenu a {
+  padding: 12px 12px;
+  border-radius: 12px;
+  font-weight: 700;
+  color: rgba(17,17,17,0.82);
+}
+
+.nav-mobile-submenu a:hover {
+  background: rgba(11, 42, 74, 0.06);
+  color: rgba(11, 42, 74, 0.92);
+}

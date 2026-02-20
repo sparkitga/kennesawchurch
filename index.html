@@ -116,7 +116,17 @@
               </div>
             </div>
 
-            <a href="#">Worship</a>
+            <div class="nav-item nav-dropdown">
+              <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
+                Worship <span class="nav-caret" aria-hidden="true">▾</span>
+              </button>
+
+              <div class="nav-dropdown-menu" role="menu" aria-label="Worship submenu">
+                <a role="menuitem" href="#">Online</a>
+                <a role="menuitem" href="#">In Person</a>
+                <a role="menuitem" href="#">Kennesaw Kids</a>
+              </div>
+            </div>
             <a href="#">Events</a>
             <a href="#">Preschool</a>
             <a href="#">Contact</a>
@@ -219,7 +229,22 @@
               </div>
             </div>
 
-            <a href="#">Worship</a>
+            <div class="nav-mobile-item">
+              <button
+                class="nav-mobile-accordion"
+                type="button"
+                aria-expanded="false"
+                aria-controls="mobileWorship"
+              >
+                Worship <span class="nav-caret" aria-hidden="true">▾</span>
+              </button>
+
+              <div class="nav-mobile-submenu" id="mobileWorship" hidden>
+                <a href="#">Online</a>
+                <a href="#">In Person</a>
+                <a href="#">Kennesaw Kids</a>
+              </div>
+            </div>
             <a href="#">Events</a>
             <a href="#">Preschool</a>
             <a href="#">Contact</a>
@@ -601,22 +626,16 @@
         const toggle = document.querySelector(".nav-toggle");
         const panel = document.getElementById("mobileMenu");
 
-        if (toggle && panel) {
-          toggle.addEventListener("click", () => {
-            const isOpen = toggle.getAttribute("aria-expanded") === "true";
-            toggle.setAttribute("aria-expanded", String(!isOpen));
-            panel.hidden = isOpen;
-
-            // When opening the menu, collapse the mobile ministries submenu by default
-            if (!isOpen) {
-              const mobBtn = document.querySelector(".nav-mobile-accordion");
-              const mobMenu = document.getElementById("mobileMinistries");
-              if (mobBtn && mobMenu) {
-                mobBtn.setAttribute("aria-expanded", "false");
-                mobMenu.hidden = true;
-              }
-            }
+// When opening the menu, collapse ALL mobile accordions by default
+        if (!isOpen) {
+          const mobAccordions = document.querySelectorAll(".nav-mobile-accordion");
+          mobAccordions.forEach((btn) => {
+            const id = btn.getAttribute("aria-controls");
+            const menu = id ? document.getElementById(id) : null;
+            btn.setAttribute("aria-expanded", "false");
+            if (menu) menu.hidden = true;
           });
+}
 
           // Close panel when clicking a normal link (not the accordion)
           panel.addEventListener("click", (e) => {
@@ -631,17 +650,20 @@
           });
         }
 
-        // Mobile Ministries accordion
-        const mobBtn = document.querySelector(".nav-mobile-accordion");
-        const mobMenu = document.getElementById("mobileMinistries");
+        // Mobile accordions (Ministries, Worship, etc.)
+        const accordions = document.querySelectorAll(".nav-mobile-accordion");
 
-        if (mobBtn && mobMenu) {
-          mobBtn.addEventListener("click", () => {
-            const isOpen = mobBtn.getAttribute("aria-expanded") === "true";
-            mobBtn.setAttribute("aria-expanded", String(!isOpen));
-            mobMenu.hidden = isOpen;
+        accordions.forEach((btn) => {
+          const id = btn.getAttribute("aria-controls");
+          const menu = id ? document.getElementById(id) : null;
+          if (!menu) return;
+
+          btn.addEventListener("click", () => {
+            const isOpen = btn.getAttribute("aria-expanded") === "true";
+            btn.setAttribute("aria-expanded", String(!isOpen));
+            menu.hidden = isOpen;
           });
-        }
+        });
       });
     </script>
   </body>

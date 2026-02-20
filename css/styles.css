@@ -1682,3 +1682,84 @@ a {
   background: rgba(11, 42, 74, 0.06);
   color: rgba(11, 42, 74, 0.92);
 }
+
+/* ==============================
+   DROPDOWNS (Minimal + Easy Access)
+   - Click to open (JS adds .is-open)
+   - Also opens on keyboard focus (focus-within)
+   - "Hover bridge" prevents menu from closing while moving cursor
+   ============================== */
+
+.nav-item { position: relative; }
+
+.nav-dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(17,17,17,0.90);
+  cursor: pointer;
+}
+
+.nav-caret {
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+/* Menu: anchored left, closer, smaller */
+.nav-dropdown-menu{
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  transform: none;
+  min-width: 200px;
+  padding: 8px;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid rgba(17,17,17,0.12);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+  display: none;
+  z-index: 80;
+}
+
+/* "Hover bridge" area so cursor can travel into the menu */
+.nav-dropdown-menu::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -10px;
+  height: 10px;
+}
+
+/* Menu items: tighter + minimal */
+.nav-dropdown-menu a{
+  display: block;
+  padding: 9px 10px;
+  border-radius: 12px;
+  font-weight: 650;
+  font-size: 14px;
+  color: rgba(17,17,17,0.88);
+  line-height: 1.15;
+}
+
+.nav-dropdown-menu a:hover,
+.nav-dropdown-menu a:focus-visible{
+  background: rgba(17,17,17,0.06);
+  outline: none;
+}
+
+/* Show when clicked open OR keyboard focus is inside */
+.nav-dropdown.is-open .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu{
+  display: block;
+}
+
+/* Optional: keep menu open if the dropdown is hovered (but not required) */
+@media (min-width: 1001px){
+  .nav-dropdown:hover .nav-dropdown-menu{
+    display: block;
+  }
+}

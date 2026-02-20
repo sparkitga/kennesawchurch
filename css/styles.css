@@ -2,8 +2,7 @@
    ==============================
    Kennesaw Church Design System
    Modern, Minimal, Inter Font
-   Desktop navbar aligned to screenshot:
-   Logo LEFT, Search centered, Nav links UNDER search, Worship+Social RIGHT
+   FULL CSS + Desktop dropdown stability fix
    ============================== */
 
 :root {
@@ -91,22 +90,24 @@ button {
 }
 
 /* ==============================
-   NAVBAR (matches desktop screenshot)
+   NAVBAR (desktop matches screenshot)
    ============================== */
 .navbar {
   background: #fff;
   border-bottom: 1px solid var(--border);
   padding: 18px 0;
+  position: relative;
+  z-index: 500; /* keeps dropdowns above hero */
 }
 
 .nav-wrap {
   display: grid;
   grid-template-columns: auto 1fr auto; /* Logo | Center | Right */
-  align-items: start;                  /* keeps links under search cleanly */
+  align-items: start;
   gap: 28px;
 }
 
-/* grid anchors */
+/* Logo */
 .nav-logo {
   grid-column: 1;
   justify-self: start;
@@ -118,26 +119,16 @@ button {
   width: auto;
 }
 
+/* Center stack (search + links under it) */
 .nav-center {
   grid-column: 2;
   justify-self: center;
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center; /* centers search + links */
+  align-items: center;
   gap: 14px;
   min-width: 0;
-}
-
-.nav-right {
-  grid-column: 3;
-  justify-self: end;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 12px;
-  min-width: 0;
-  padding-top: 2px; /* aligns visually with search row */
 }
 
 /* Search */
@@ -145,7 +136,7 @@ button {
   width: 100%;
   display: flex;
   justify-content: center;
-  position: relative; /* anchors results dropdown */
+  position: relative; /* anchors results */
 }
 
 .nav-search-input {
@@ -165,7 +156,7 @@ button {
   box-shadow: 0 0 0 3px rgba(11, 42, 74, 0.08);
 }
 
-/* Search results dropdown (minimal, clean) */
+/* Search results dropdown (minimal) */
 .nav-search-results {
   position: absolute;
   top: calc(100% + 8px);
@@ -185,7 +176,7 @@ button {
   display: none !important;
 }
 
-.nav-search-results a {
+.nav-search-results a.nav-search-result {
   display: block;
   padding: 10px 12px;
   border-radius: 12px;
@@ -194,11 +185,30 @@ button {
   color: rgba(17, 17, 17, 0.86);
 }
 
-.nav-search-results a:hover,
-.nav-search-results a:focus-visible {
+.nav-search-results a.nav-search-result:hover,
+.nav-search-results a.nav-search-result:focus-visible,
+.nav-search-results a.nav-search-result.is-active {
   background: rgba(11, 42, 74, 0.06);
   color: rgba(11, 42, 74, 0.92);
   outline: none;
+}
+
+.nav-search-result-title {
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.nav-search-result-desc {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(17, 17, 17, 0.62);
+}
+
+.nav-search-result mark {
+  background: rgba(11, 42, 74, 0.12);
+  color: inherit;
+  padding: 0 2px;
+  border-radius: 4px;
 }
 
 /* Desktop nav links row */
@@ -225,7 +235,19 @@ button {
   color: rgba(11, 42, 74, 0.92);
 }
 
-/* Right side button */
+/* Right side */
+.nav-right {
+  grid-column: 3;
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  min-width: 0;
+  padding-top: 2px;
+}
+
+/* Live button */
 .watch-btn {
   display: inline-flex;
   align-items: center;
@@ -409,7 +431,12 @@ button {
   color: rgba(11, 42, 74, 0.92);
 }
 
-/* Desktop dropdowns */
+/* ==============================
+   DESKTOP DROPDOWNS (LESS GLITCHY FIX)
+   - Click-to-open only (no hover open)
+   - Smaller gap
+   - "Hover bridge" avoids pointer leaving dropdown area
+   ============================== */
 .nav-item { position: relative; }
 
 .nav-link,
@@ -439,6 +466,7 @@ button {
 
 .nav-dropdown-menu {
   position: absolute;
+  top: calc(100% + 6px); /* smaller gap = easier click */
   left: 50%;
   transform: translateX(-50%);
   min-width: 240px;
@@ -448,11 +476,8 @@ button {
   border: 1px solid rgba(255, 255, 255, 0.10);
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
   display: none;
-  z-index: 120;
-}
-
-.nav-dropdown-menu {
-  top: calc(100% + 6px); /* smaller gap = easier to reach */
+  z-index: 1200; /* above everything */
+  pointer-events: auto;
 }
 
 .nav-dropdown-menu a {
@@ -466,39 +491,40 @@ button {
   text-align: center;
 }
 
-/* Hover bridge: keeps the pointer inside the dropdown zone while moving from button -> menu */
-@media (min-width: 1001px) {
-  .nav-dropdown::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 100%;
-    width: 260px;     /* roughly dropdown width */
-    height: 10px;     /* bridge height */
-    background: transparent;
-  }
-}
-
 .nav-dropdown-menu a:hover,
 .nav-dropdown-menu a:focus-visible {
   background: rgba(255, 255, 255, 0.10);
   outline: none;
 }
 
+/* Show only when clicked open OR keyboard focus is inside */
 .nav-dropdown.is-open .nav-dropdown-menu,
 .nav-dropdown:focus-within .nav-dropdown-menu {
   display: block;
 }
 
-/* Desktop: click-to-open only (prevents hover flicker) */
+/* Desktop: disable hover-open to prevent flicker with click JS */
 @media (min-width: 1001px) {
   .nav-dropdown:hover .nav-dropdown-menu {
     display: none;
   }
+
+  /* Hover bridge: prevents "tiny gap" mouseout issues */
+  .nav-dropdown::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100%;
+    width: 260px;
+    height: 10px;
+    background: transparent;
+  }
 }
 
-/* Tablet/Mobile breakpoint */
+/* ==============================
+   Tablet/Mobile breakpoint
+   ============================== */
 @media (max-width: 1000px) {
   .nav-links-desktop,
   .nav-right-desktop {
@@ -827,7 +853,7 @@ button {
   }
 }
 
-/* Resources */
+/* Resources (minimal) */
 .sermon-side-head {
   margin-bottom: 6px;
 }
@@ -1324,3 +1350,26 @@ button {
   .nav-search-input { height: 48px; }
   .join-title { font-size: 40px; }
 }
+
+/* ==============================
+   OPTIONAL: Home page only image scaling
+   (Only activates if <body class="home-page">)
+   Makes all images except hero smaller on index.html
+   ============================== */
+.home-page img {
+  max-width: 88%;
+  height: auto;
+}
+
+.home-page .hero-visual img {
+  max-width: none;
+}
+
+.home-page .nav-logo img,
+.home-page .footer-brand img {
+  max-width: none;
+}
+
+.home-page .ministry-card img { max-width: 75%; }
+.home-page .join-image { max-width: 80%; }
+.home-page .mc-img { max-width: 92%; }

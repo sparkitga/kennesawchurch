@@ -1763,3 +1763,12 @@ a {
     display: block;
   }
 }
+
+@media (max-width: 1000px) {
+  .nav-center {
+    width: 100%;
+  }
+  .nav-panel {
+    width: 100%;
+  }
+}

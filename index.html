@@ -82,17 +82,22 @@
           </a>
         </div>
 
-        <!-- Center (Search + Desktop links) -->
-        <div class="nav-center">
-          <form class="nav-search" role="search" aria-label="Site search" action="#" method="GET">
-            <input
-              class="nav-search-input"
-              type="search"
-              name="q"
-              placeholder="Search…"
-              autocomplete="off"
-            />
-          </form>
+<form class="nav-search" role="search" aria-label="Site search" action="#" method="GET" id="siteSearchForm">
+  <input
+    class="nav-search-input"
+    type="search"
+    name="q"
+    id="siteSearchInput"
+    placeholder="Search…"
+    autocomplete="off"
+    aria-expanded="false"
+    aria-controls="siteSearchResults"
+    aria-autocomplete="list"
+  />
+
+  <!-- Results dropdown (minimal) -->
+  <div class="nav-search-results" id="siteSearchResults" role="listbox" aria-label="Search results" hidden></div>
+</form>
 
           <!-- Desktop nav links -->
           <nav class="nav-links nav-links-desktop" aria-label="Primary navigation">
@@ -686,5 +691,16 @@
     });
   });
 </script>
+
+<script src="js/site-search.js" defer></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    /* your existing navbar JS... */
+  });
+</script>
+
+<script src="js/site-search.js" defer></script>
+</body>
+</html>
   </body>
 </html>

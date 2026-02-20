@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Home",
+    "url": "/index.html",
+    "description": "Welcome to Kennesaw Church. Join us Sundays at 9:00 AM and 11:00 AM.",
+    "keywords": ["kennesaw", "church", "worship", "services", "sunday"]
+  },
+  {
+    "title": "Worship Online",
+    "url": "/worship-online.html",
+    "description": "Watch online services and recent messages.",
+    "keywords": ["online", "stream", "sermons", "watch"]
+  },
+  {
+    "title": "Events",
+    "url": "/events.html",
+    "description": "See what’s coming up in the life of our church.",
+    "keywords": ["events", "calendar", "upcoming"]
+  },
+  {
+    "title": "Contact",
+    "url": "/contact.html",
+    "description": "Contact Kennesaw Church. Address, phone, and directions.",
+    "keywords": ["contact", "phone", "address", "directions"]
+  }
+]

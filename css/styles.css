@@ -1,1375 +1,604 @@
-/* FILE: css/styles.css
-   ==============================
-   Kennesaw Church Design System
-   Modern, Minimal, Inter Font
-   FULL CSS + Desktop dropdown stability fix
-   ============================== */
-
-:root {
-  /* Brand colors */
-  --covenant-blue: #0b2a4a;
-  --renewal-green: #3a7c3f;
-  --sanctum-black: #111111;
-  --silver-gray: #d9d9d9;
-  --grace-white: #ffffff;
-
-  /* Modern neutrals */
-  --ink: rgba(17, 17, 17, 0.92);
-  --muted: rgba(17, 17, 17, 0.62);
-  --border: rgba(17, 17, 17, 0.12);
-  --panel: rgba(255, 255, 255, 0.78);
-
-  /* Layout */
-  --max-width: 1200px;
-  --nav-height: 72px;
-  --radius: 14px;
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-}
-
-/* ==============================
-   Reset
-   ============================== */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  height: 100%;
-}
-
-body {
-  margin: 0;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Helvetica, Arial, sans-serif;
-  color: var(--ink);
-  background: var(--grace-white);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-h1,
-h2,
-h3,
-h4 {
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  margin: 0 0 12px;
-}
-
-p {
-  margin: 0 0 16px;
-  color: var(--muted);
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button {
-  font-family: inherit;
-}
-
-/* ==============================
-   Layout
-   ============================== */
-.container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* ==============================
-   NAVBAR (desktop matches screenshot)
-   ============================== */
-.navbar {
-  background: #fff;
-  border-bottom: 1px solid var(--border);
-  padding: 18px 0;
-  position: relative;
-  z-index: 500; /* keeps dropdowns above hero */
-}
-
-.nav-wrap {
-  display: grid;
-  grid-template-columns: auto 1fr auto; /* Logo | Center | Right */
-  align-items: start;
-  gap: 28px;
-}
-
-/* Logo */
-.nav-logo {
-  grid-column: 1;
-  justify-self: start;
-  display: flex;
-  align-items: center;
-}
-.nav-logo img {
-  height: 38px;
-  width: auto;
-}
-
-/* Center stack (search + links under it) */
-.nav-center {
-  grid-column: 2;
-  justify-self: center;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
-  min-width: 0;
-}
-
-/* Search */
-.nav-search {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  position: relative; /* anchors results */
-}
-
-.nav-search-input {
-  width: 100%;
-  max-width: 520px;
-  height: 44px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  padding: 0 18px;
-  font-size: 14.5px;
-  outline: none;
-  background: #fff;
-}
-
-.nav-search-input:focus {
-  border-color: rgba(11, 42, 74, 0.28);
-  box-shadow: 0 0 0 3px rgba(11, 42, 74, 0.08);
-}
-
-/* Search results dropdown (minimal) */
-.nav-search-results {
-  position: absolute;
-  top: calc(100% + 8px);
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 520px;
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  background: #fff;
-  box-shadow: var(--shadow);
-  padding: 6px;
-  z-index: 999;
-}
-
-.nav-search-results[hidden] {
-  display: none !important;
-}
-
-.nav-search-results a.nav-search-result {
-  display: block;
-  padding: 10px 12px;
-  border-radius: 12px;
-  font-size: 14px;
-  font-weight: 600;
-  color: rgba(17, 17, 17, 0.86);
-}
-
-.nav-search-results a.nav-search-result:hover,
-.nav-search-results a.nav-search-result:focus-visible,
-.nav-search-results a.nav-search-result.is-active {
-  background: rgba(11, 42, 74, 0.06);
-  color: rgba(11, 42, 74, 0.92);
-  outline: none;
-}
-
-.nav-search-result-title {
-  font-weight: 700;
-  margin-bottom: 3px;
-}
-
-.nav-search-result-desc {
-  font-size: 13px;
-  font-weight: 600;
-  color: rgba(17, 17, 17, 0.62);
-}
-
-.nav-search-result mark {
-  background: rgba(11, 42, 74, 0.12);
-  color: inherit;
-  padding: 0 2px;
-  border-radius: 4px;
-}
-
-/* Desktop nav links row */
-.nav-links {
-  display: flex;
-  gap: 22px;
-  flex-wrap: wrap;
-}
-
-.nav-links-desktop {
-  width: 100%;
-  justify-content: center;
-}
-
-.nav-links a {
-  font-size: 14px;
-  font-weight: 500;
-  padding: 8px 0;
-  white-space: nowrap;
-  color: rgba(17, 17, 17, 0.86);
-}
-
-.nav-links a:hover {
-  color: rgba(11, 42, 74, 0.92);
-}
-
-/* Right side */
-.nav-right {
-  grid-column: 3;
-  justify-self: end;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 12px;
-  min-width: 0;
-  padding-top: 2px;
-}
-
-/* Live button */
-.watch-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 38px;
-  padding: 0 14px;
-  font-size: 14px;
-  font-weight: 600;
-  border-radius: 999px;
-  border: 1px solid rgba(17, 17, 17, 0.18);
-  background: #fff;
-  line-height: 1;
-  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
-  white-space: nowrap;
-}
-
-.watch-btn:hover {
-  transform: translateY(-1px);
-  background: rgba(17, 17, 17, 0.03);
-  border-color: rgba(11, 42, 74, 0.22);
-}
-
-/* Social icons */
-.nav-socials {
-  display: flex;
-  gap: 10px;
-}
-
-.nav-social {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: #fff;
-  color: rgba(17, 17, 17, 0.78);
-  transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
-}
-
-.nav-social:hover {
-  transform: translateY(-1px);
-  background: rgba(17, 17, 17, 0.04);
-  color: rgba(17, 17, 17, 0.92);
-}
-
-.nav-social-icon,
-.footer-social-icon {
-  width: 18px;
-  height: 18px;
-  fill: currentColor;
-}
-
-/* Hamburger button (hidden on desktop) */
-.nav-toggle {
-  display: none;
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  background: #fff;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-}
-
-.nav-toggle-lines {
-  width: 18px;
-  height: 2px;
-  background: rgba(17, 17, 17, 0.8);
-  position: relative;
-  display: inline-block;
-}
-
-.nav-toggle-lines::before,
-.nav-toggle-lines::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 18px;
-  height: 2px;
-  background: rgba(17, 17, 17, 0.8);
-}
-
-.nav-toggle-lines::before { top: -6px; }
-.nav-toggle-lines::after { top: 6px; }
-
-/* Mobile panel */
-.nav-panel {
-  grid-column: 1 / -1;
-  margin-top: 10px;
-  padding: 14px 16px;
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  background: #fff;
-  box-shadow: var(--shadow);
-}
-
-.nav-links-mobile {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.nav-links-mobile a {
-  padding: 10px 12px;
-  border-radius: 12px;
-  font-weight: 600;
-  color: rgba(17, 17, 17, 0.85);
-}
-
-.nav-links-mobile a:hover {
-  background: rgba(17, 17, 17, 0.06);
-}
-
-.nav-panel-actions {
-  margin-top: 14px;
-  padding-top: 14px;
-  border-top: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-
-/* Mobile accordions */
-.nav-mobile-item {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.nav-mobile-accordion {
-  width: 100%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  padding: 14px 14px;
-  border-radius: 14px;
-  border: 1px solid var(--border);
-  background: rgba(17, 17, 17, 0.02);
-  font-weight: 800;
-  font-size: 16px;
-  color: rgba(17, 17, 17, 0.9);
-  cursor: pointer;
-}
-
-.nav-mobile-accordion:hover {
-  background: rgba(17, 17, 17, 0.05);
-}
-
-.nav-mobile-accordion .nav-caret {
-  transition: transform 0.18s ease;
-}
-
-.nav-mobile-accordion[aria-expanded="true"] .nav-caret {
-  transform: rotate(180deg);
-}
-
-.nav-mobile-submenu {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 10px 8px 6px;
-  border-left: 2px solid rgba(11, 42, 74, 0.18);
-  margin-left: 8px;
-}
-
-.nav-mobile-submenu a {
-  padding: 12px 12px;
-  border-radius: 12px;
-  font-weight: 700;
-  color: rgba(17, 17, 17, 0.82);
-}
-
-.nav-mobile-submenu a:hover {
-  background: rgba(11, 42, 74, 0.06);
-  color: rgba(11, 42, 74, 0.92);
-}
-
-/* ==============================
-   DESKTOP DROPDOWNS (LESS GLITCHY FIX)
-   - Click-to-open only (no hover open)
-   - Smaller gap
-   - "Hover bridge" avoids pointer leaving dropdown area
-   ============================== */
-.nav-item { position: relative; }
-
-.nav-link,
-.nav-links a {
-  background: none;
-  border: 0;
-  cursor: pointer;
-  font: inherit;
-  color: inherit;
-}
-
-.nav-dropdown-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 0;
-  font-size: 14px;
-  font-weight: 500;
-  color: rgba(17, 17, 17, 0.86);
-}
-
-.nav-caret {
-  font-size: 11px;
-  opacity: 0.65;
-  transform: translateY(-1px);
-}
-
-.nav-dropdown-menu {
-  position: absolute;
-  top: calc(100% + 6px); /* smaller gap = easier click */
-  left: 50%;
-  transform: translateX(-50%);
-  min-width: 240px;
-  padding: 10px;
-  border-radius: 14px;
-  background: var(--covenant-blue);
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
-  display: none;
-  z-index: 1200; /* above everything */
-  pointer-events: auto;
-}
-
-.nav-dropdown-menu a {
-  display: block;
-  padding: 10px 12px;
-  border-radius: 12px;
-  font-weight: 650;
-  font-size: 13.5px;
-  color: rgba(255, 255, 255, 0.92);
-  line-height: 1.15;
-  text-align: center;
-}
-
-.nav-dropdown-menu a:hover,
-.nav-dropdown-menu a:focus-visible {
-  background: rgba(255, 255, 255, 0.10);
-  outline: none;
-}
-
-/* Show only when clicked open OR keyboard focus is inside */
-.nav-dropdown.is-open .nav-dropdown-menu,
-.nav-dropdown:focus-within .nav-dropdown-menu {
-  display: block;
-}
-
-/* Desktop: disable hover-open to prevent flicker with click JS */
-@media (min-width: 1001px) {
-  .nav-dropdown:hover .nav-dropdown-menu {
-    display: none;
-  }
-
-  /* Hover bridge: prevents "tiny gap" mouseout issues */
-  .nav-dropdown::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 100%;
-    width: 260px;
-    height: 10px;
-    background: transparent;
-  }
-}
-
-/* ==============================
-   Tablet/Mobile breakpoint
-   ============================== */
-@media (max-width: 1000px) {
-  .nav-links-desktop,
-  .nav-right-desktop {
-    display: none !important;
-  }
-
-  .nav-toggle {
-    display: inline-flex;
-  }
-
-  .nav-wrap {
-    grid-template-columns: auto 1fr auto;
-    gap: 14px;
-    align-items: center;
-  }
-
-  .nav-center {
-    grid-column: 1 / -1;
-    width: 100%;
-    align-items: stretch;
-    text-align: left;
-    gap: 10px;
-  }
-
-  .nav-search {
-    justify-content: stretch;
-  }
-
-  .nav-search-input {
-    max-width: none;
-  }
-
-  .nav-search-results {
-    left: 0;
-    transform: none;
-    max-width: none;
-  }
-
-  .nav-panel {
-    grid-column: 1 / -1;
-    width: 100%;
-  }
-}
-
-/* Mobile fine-tuning */
-@media (max-width: 640px) {
-  .navbar {
-    padding: 20px 0;
-    border-bottom-width: 2px;
-  }
-
-  .nav-logo img {
-    height: 46px;
-  }
-
-  .nav-search-input {
-    height: 54px;
-    font-size: 16px;
-    padding: 0 20px;
-    border-width: 2px;
-  }
-
-  .nav-toggle {
-    width: 52px;
-    height: 52px;
-    border-width: 2px;
-    border-radius: 14px;
-  }
-
-  .nav-toggle-lines,
-  .nav-toggle-lines::before,
-  .nav-toggle-lines::after {
-    width: 22px;
-  }
-  .nav-toggle-lines::before { top: -7px; }
-  .nav-toggle-lines::after { top: 7px; }
-
-  .nav-panel {
-    border-width: 2px;
-    border-radius: 18px;
-    padding: 14px;
-  }
-
-  .nav-links-mobile a {
-    font-size: 16px;
-    padding: 14px 14px;
-    border-radius: 14px;
-  }
-
-  .watch-btn {
-    height: 48px;
-    font-size: 15.5px;
-    padding: 0 18px;
-    border-width: 2px;
-  }
-
-  .nav-social {
-    width: 44px;
-    height: 44px;
-    border-width: 2px;
-  }
-
-  .nav-social-icon {
-    width: 20px;
-    height: 20px;
-  }
-}
-
-/* ==============================
-   HERO VISUAL
-   ============================== */
-.hero-visual {
-  position: relative;
-  min-height: 620px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  text-align: center;
-  color: #fff;
-  overflow: hidden;
-  background: #0b2a4a;
-}
-
-.hero-visual::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("/assets/images/hero-church.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  transform: scale(1.02);
-  filter: saturate(1.02);
-}
-
-.hero-visual::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.12) 0%,
-    rgba(0, 0, 0, 0.32) 45%,
-    rgba(0, 0, 0, 0.72) 100%
-  );
-}
-
-.hero-visual::before,
-.hero-visual::after {
-  pointer-events: none;
-}
-
-.hero-visual-inner {
-  position: relative;
-  z-index: 2;
-  width: min(920px, 100%);
-  padding: 0 20px 60px;
-}
-
-.hero-logo {
-  width: min(280px, 60vw);
-  margin: 0 auto 14px;
-  opacity: 0.92;
-  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.55));
-}
-
-.hero-copy {
-  font-size: clamp(15px, 2vw, 17px);
-  color: rgba(255, 255, 255, 0.82);
-  margin-bottom: 18px;
-}
-
-.hero-copy-primary {
-  font-size: clamp(18px, 2.4vw, 22px);
-  font-weight: 600;
-  opacity: 0.9;
-}
-
-.hero-cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 40px;
-  padding: 0 16px;
-  font-size: 14px;
-  font-weight: 700;
-  background: rgba(255, 255, 255, 0.9);
-  color: #111;
-  border-radius: 999px;
-}
-
-@media (max-width: 900px) {
-  .hero-visual { min-height: 560px; }
-  .hero-visual-inner { padding-bottom: 54px; }
-}
-
-/* ==============================
-   JOIN US IN PERSON
-   ============================== */
-.join-section {
-  background: #fff;
-  padding: 74px 0 78px;
-}
-
-.join-inner {
-  text-align: center;
-  max-width: 980px;
-}
-
-.join-title {
-  margin: 0 0 10px;
-  font-size: clamp(40px, 6vw, 72px);
-  letter-spacing: -0.03em;
-  line-height: 0.95;
-  color: rgba(17, 17, 17, 0.92);
-}
-
-.join-subtitle {
-  margin: 0 auto 22px;
-  max-width: 62ch;
-  font-size: 18px;
-  color: rgba(17, 17, 17, 0.62);
-}
-
-.join-visual {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 26px;
-}
-
-.join-image {
-  width: min(520px, 86vw);
-  border-radius: 28px;
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.10);
-}
-
-.join-actions {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.join-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 42px;
-  padding: 0 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(17, 17, 17, 0.16);
-  background: #fff;
-  font-weight: 800;
-  font-size: 14px;
-  color: rgba(17, 17, 17, 0.86);
-  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
-}
-
-.join-btn:hover {
-  transform: translateY(-1px);
-  background: rgba(17, 17, 17, 0.03);
-  border-color: rgba(11, 42, 74, 0.22);
-}
-
-.join-btn.primary {
-  background: var(--covenant-blue);
-  border-color: var(--covenant-blue);
-  color: #fff;
-}
-
-.join-btn.primary:hover {
-  background: rgba(11, 42, 74, 0.92);
-}
-
-@media (max-width: 560px) {
-  .join-subtitle { font-size: 16px; }
-}
-
-/* ==============================
-   SERMON SECTION + RESOURCES
-   ============================== */
-.sermon-section {
-  background: #f5f6f7;
-  padding: 70px 0;
-}
-
-.sermon-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 60px;
-  align-items: start;
-}
-
-.sermon-heading {
-  font-size: 28px;
-  margin-bottom: 20px;
-  color: var(--covenant-blue);
-}
-
-.sermon-video {
-  border-radius: 18px;
-  overflow: hidden;
-  background: #000;
-  margin-bottom: 18px;
-}
-
-.sermon-video iframe {
-  width: 100%;
-  height: 420px;
-  display: block;
-}
-
-.sermon-side {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin-top: -18px;
-  position: sticky;
-  top: 18px;
-}
-
-@media (max-width: 900px) {
-  .sermon-side {
-    margin-top: 0;
-    position: static;
-  }
-}
-
-/* Resources (minimal) */
-.sermon-side-head {
-  margin-bottom: 6px;
-}
-
-.resource-icon { display: none !important; }
-.resource-badge { display: none !important; }
-
-.resource-grid {
-  display: grid;
-  gap: 12px;
-}
-
-.resource-card,
-.resource-card.promo {
-  position: relative;
-  display: block;
-  padding: 14px 14px 13px;
-  border-radius: 14px;
-  border: 1px solid rgba(17, 17, 17, 0.10);
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.05);
-  transition: transform 0.14s ease, box-shadow 0.14s ease, border-color 0.14s ease;
-}
-
-.resource-card::before,
-.resource-card.promo::before {
-  content: none !important;
-}
-
-.resource-card:hover,
-.resource-card.promo:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.07);
-  border-color: rgba(11, 42, 74, 0.18);
-}
-
-.resource-title {
-  font-weight: 800;
-  font-size: 15px;
-  margin: 0 0 6px;
-  color: rgba(17, 17, 17, 0.92);
-  line-height: 1.2;
-}
-
-.resource-text {
-  font-size: 13.5px;
-  color: rgba(17, 17, 17, 0.62);
-  margin: 0 0 10px;
-  line-height: 1.35;
-}
-
-.resource-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 13px;
-  font-weight: 800;
-  color: rgba(11, 42, 74, 0.92);
-}
-
-.resource-cta::after {
-  content: "›";
-  font-size: 16px;
-  line-height: 1;
-  opacity: 0.75;
-  transform: translateY(-0.5px);
-}
-
-@media (max-width: 900px) {
-  .sermon-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  .sermon-video iframe { height: 260px; }
-  .resource-grid { grid-template-columns: 1fr 1fr; }
-}
-
-@media (max-width: 560px) {
-  .resource-grid { grid-template-columns: 1fr; }
-}
-
-/* ==============================
-   MISSION COLLAGE + QUOTE
-   ============================== */
-.mission-split {
-  padding: 70px 0;
-  background: #fff;
-}
-
-.mission-inner {
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 56px;
-  align-items: center;
-}
-
-.mission-collage {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-}
-
-.mc-img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 18px;
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
-}
-
-.mission-quote {
-  text-align: left;
-  padding: 18px 0;
-}
-
-.mq-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 999px;
-  border: 2px solid rgba(11, 42, 74, 0.25);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  font-size: 22px;
-  color: var(--covenant-blue);
-  margin-bottom: 18px;
-}
-
-.mq-text {
-  margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(20px, 2.2vw, 28px);
-  line-height: 1.35;
-  color: rgba(17, 17, 17, 0.9);
-  font-weight: 600;
-}
-
-.mq-ref {
-  margin-top: 18px;
-  font-size: 18px;
-  font-weight: 700;
-  color: rgba(17, 17, 17, 0.85);
-}
-
-@media (max-width: 980px) {
-  .mission-inner {
-    grid-template-columns: 1fr;
-    gap: 34px;
-  }
-}
-
-@media (max-width: 560px) {
-  .mission-collage { gap: 12px; }
-  .mc-img { border-radius: 14px; }
-}
-
-/* ==============================
-   MINISTRIES SHOWCASE
-   ============================== */
-.ministries-showcase {
-  padding: 80px 0;
-  background: #f7f8f9;
-  text-align: center;
-}
-
-.ministries-heading {
-  font-size: 30px;
-  margin-bottom: 40px;
-  color: var(--covenant-blue);
-}
-
-.ministries-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-  max-width: 900px;
-  margin: 0 auto 40px;
-}
-
-.ministry-card {
-  background: #fff;
-  border-radius: 22px;
-  padding: 32px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
-}
-
-.ministry-card img {
-  max-width: 190px;
-  max-height: 100px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  transition: transform 0.18s ease;
-}
-
-.ministry-card:hover img { transform: scale(1.04); }
-
-.ministries-btn {
-  display: inline-block;
-  padding: 12px 28px;
-  border-radius: 999px;
-  border: 2px solid var(--covenant-blue);
-  font-weight: 700;
-  font-size: 14px;
-  transition: background 0.15s ease, color 0.15s ease;
-}
-
-.ministries-btn:hover {
-  background: var(--covenant-blue);
-  color: #fff;
-}
-
-@media (max-width: 900px) {
-  .ministries-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 560px) {
-  .ministries-grid { grid-template-columns: 1fr; }
-}
-
-/* ==============================
-   INTERIOR PAGE HERO (Site Standard)
-   ============================== */
-.page-hero {
-  padding: 42px 0 54px;
-  background: #f7f8f9;
-  text-align: center;
-}
-
-.page-hero-tabs {
-  display: inline-flex;
-  gap: 18px;
-  padding: 14px 22px;
-  border-radius: 999px;
-  background: rgba(17, 17, 17, 0.60);
-  margin: 0 auto 26px;
-}
-
-.page-hero-tab {
-  color: rgba(255, 255, 255, 0.92);
-  font-weight: 700;
-  font-size: 14px;
-  padding: 8px 10px;
-  border-radius: 999px;
-  opacity: 0.92;
-}
-
-.page-hero-tab:hover { opacity: 1; }
-.page-hero-tab.is-active { background: rgba(255, 255, 255, 0.12); }
-
-.page-hero-media {
-  max-width: 760px;
-  margin: 0 auto 22px;
-}
-
-.page-hero-media img {
-  width: 100%;
-  height: auto;
-}
-
-.page-hero-title {
-  font-size: clamp(34px, 4.4vw, 54px);
-  letter-spacing: -0.02em;
-  margin: 0 0 10px;
-  color: rgba(17, 17, 17, 0.92);
-}
-
-.page-hero-intro {
-  max-width: 72ch;
-  margin: 0 auto 22px;
-  color: rgba(17, 17, 17, 0.62);
-  font-size: 15.5px;
-  line-height: 1.6;
-}
-
-.page-hero-actions {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.page-hero-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 42px;
-  padding: 0 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(17, 17, 17, 0.16);
-  background: #fff;
-  font-weight: 800;
-  font-size: 14px;
-  color: rgba(17, 17, 17, 0.86);
-  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
-}
-
-.page-hero-btn:hover {
-  transform: translateY(-1px);
-  background: rgba(17, 17, 17, 0.03);
-  border-color: rgba(11, 42, 74, 0.22);
-}
-
-.page-hero-btn.primary {
-  background: var(--covenant-blue);
-  border-color: var(--covenant-blue);
-  color: #fff;
-}
-
-.page-hero-btn.primary:hover { background: rgba(11, 42, 74, 0.92); }
-
-@media (max-width: 640px) {
-  .page-hero-tabs {
-    gap: 10px;
-    padding: 12px 14px;
-  }
-  .page-hero-tab {
-    font-size: 13px;
-    padding: 7px 8px;
-  }
-}
-
-/* ==============================
-   FOOTER
-   ============================== */
-.site-footer {
-  background: #000;
-  color: rgba(255, 255, 255, 0.9);
-  padding: 70px 0 40px;
-}
-
-.footer-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1.2fr;
-  gap: 60px;
-}
-
-.footer-title {
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  margin-bottom: 18px;
-  color: #fff;
-}
-
-.footer-link {
-  display: block;
-  padding: 7px 0;
-  font-size: 14px;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.82);
-  transition: color 0.15s ease;
-}
-
-.footer-link:hover { color: #fff; }
-
-.footer-col-right .footer-title { margin-bottom: 14px; }
-
-.footer-socials {
-  display: flex;
-  gap: 14px;
-  margin: 18px 0 22px;
-}
-
-.footer-social {
-  width: 38px;
-  height: 38px;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  border-radius: 999px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-weight: 800;
-  transition: transform 0.15s ease, border-color 0.15s ease;
-}
-
-.footer-social:hover {
-  transform: translateY(-1px);
-  border-color: rgba(255, 255, 255, 0.4);
-}
-
-.footer-meta {
-  font-size: 14px;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.78);
-}
-
-.footer-meta-spacer { height: 14px; }
-
-.footer-bottom {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  align-items: end;
-  gap: 24px;
-  margin-top: 70px;
-  padding-top: 28px;
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
-}
-
-.footer-subscribe {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-}
-
-.footer-copy {
-  text-align: center;
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.62);
-  line-height: 1.45;
-}
-
-.footer-brand {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.footer-brand img {
-  height: 34px;
-  width: auto;
-  opacity: 0.95;
-}
-
-@media (max-width: 980px) {
-  .footer-inner {
-    grid-template-columns: 1fr 1fr;
-    gap: 34px;
-  }
-
-  .footer-bottom {
-    grid-template-columns: 1fr;
-    text-align: left;
-    align-items: start;
-  }
-
-  .footer-copy { text-align: left; }
-  .footer-brand { justify-content: flex-start; }
-}
-
-@media (max-width: 560px) {
-  .site-footer { padding: 54px 0 34px; }
-
-  .footer-inner { grid-template-columns: 1fr; }
-
-  .footer-subscribe {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
-/* ==============================
-   MOBILE READABILITY BOOST
-   ============================== */
-@media (max-width: 640px) {
-  body { font-size: 16.5px; }
-
-  p {
-    font-size: 16px;
-    line-height: 1.75;
-  }
-
-  /* Thicker borders across key UI */
-  .navbar { border-bottom-width: 2px; }
-  .nav-toggle,
-  .nav-social,
-  .nav-panel,
-  .nav-search-input,
-  .watch-btn,
-  .join-btn,
-  .hero-cta,
-  .page-hero-btn,
-  .resource-card,
-  .resource-card.promo {
-    border-width: 2px;
-  }
-
-  .sermon-heading { font-size: 24px; }
-
-  .footer-link {
-    font-size: 15px;
-    padding: 9px 0;
-  }
-
-  .footer-meta { font-size: 15px; }
-}
-
-@media (max-width: 390px) {
-  .nav-search-input { height: 48px; }
-  .join-title { font-size: 40px; }
-}
-
-/* ==============================
-   OPTIONAL: Home page only image scaling
-   (Only activates if <body class="home-page">)
-   Makes all images except hero smaller on index.html
-   ============================== */
-.home-page img {
-  max-width: 88%;
-  height: auto;
-}
-
-.home-page .hero-visual img {
-  max-width: none;
-}
-
-.home-page .nav-logo img,
-.home-page .footer-brand img {
-  max-width: none;
-}
-
-.home-page .ministry-card img { max-width: 75%; }
-.home-page .join-image { max-width: 80%; }
-.home-page .mc-img { max-width: 92%; }
+<!-- FILE: index.html -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N794D9J3RW"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-N794D9J3RW');
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Church: 9A & 11A</title>
+
+    <meta
+      name="description"
+      content="Welcome to Kennesaw Church in Kennesaw, GA. Join us Sundays at 9:00 AM and 11:00 AM. Visit us at 1801 Ben King Rd, Kennesaw, GA 30144 or call +1 (770) 428-1543."
+    />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#0b2a4a" />
+    <link rel="canonical" href="https://kennesawchurch.netlify.app/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Kennesaw Church" />
+    <meta property="og:title" content="Kennesaw Church" />
+    <meta property="og:description" content="Join us Online or Sundays at 9:00 AM and 11:00 AM." />
+    <meta property="og:url" content="https://kennesawchurch.netlify.app/" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Kennesaw Church | Sundays 9:00 AM + 11:00 AM" />
+    <meta
+      name="twitter:description"
+      content="Welcome to Kennesaw Church in Kennesaw, GA. Join us Sundays at 9:00 AM and 11:00 AM."
+    />
+
+    <!-- Inter Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="assets/icons/Favicon_GreenWhite_DarkBlueBG.svg" />
+    <link rel="icon" type="image/png" href="assets/icons/Favicon_GreenWhite_DarkBlueBG.png" />
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Church",
+        "name": "Kennesaw Church",
+        "url": "https://kennesawchurch.netlify.app/",
+        "telephone": "+17704281543",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1801 Ben King Rd",
+          "addressLocality": "Kennesaw",
+          "addressRegion": "GA",
+          "postalCode": "30144",
+          "addressCountry": "US"
+        }
+      }
+    </script>
+  </head>
+
+  <!-- NOTE: home-page class enables "shrink all images except hero" CSS -->
+  <body class="home-page">
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="container nav-wrap">
+        <!-- Left: Logo -->
+        <div class="nav-logo">
+          <a href="index.html" aria-label="Kennesaw Church Home">
+            <img src="assets/logos/FullHori_GreenBlack_TranspBG.svg" alt="Kennesaw Church" />
+          </a>
+        </div>
+
+        <!-- Center: Search (row 1) + Nav links (row 2) -->
+        <div class="nav-center">
+          <form
+            class="nav-search"
+            role="search"
+            aria-label="Site search"
+            action="#"
+            method="GET"
+            id="siteSearchForm"
+          >
+            <input
+              class="nav-search-input"
+              type="search"
+              name="q"
+              id="siteSearchInput"
+              placeholder="Search…"
+              autocomplete="off"
+              aria-expanded="false"
+              aria-controls="siteSearchResults"
+              aria-autocomplete="list"
+            />
+
+            <!-- Results dropdown (minimal) -->
+            <div
+              class="nav-search-results"
+              id="siteSearchResults"
+              role="listbox"
+              aria-label="Search results"
+              hidden
+            ></div>
+          </form>
+
+          <!-- Desktop nav links UNDER search -->
+          <nav class="nav-links nav-links-desktop" aria-label="Primary navigation">
+            <a href="index.html">Home</a>
+
+            <div class="nav-item nav-dropdown">
+              <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
+                Ministries <span class="nav-caret" aria-hidden="true">▾</span>
+              </button>
+
+              <div class="nav-dropdown-menu" role="menu" aria-label="Ministries submenu">
+                <a role="menuitem" href="#">Nursery</a>
+                <a role="menuitem" href="#">Children</a>
+                <a role="menuitem" href="#">Youth</a>
+                <a role="menuitem" href="#">Young Adult</a>
+                <a role="menuitem" href="#">Adults</a>
+                <a role="menuitem" href="#">Adult Sunday School</a>
+                <a role="menuitem" href="#">Music</a>
+                <a role="menuitem" href="#">Foster Care</a>
+                <a role="menuitem" href="#">Weekend Blessings</a>
+              </div>
+            </div>
+
+            <div class="nav-item nav-dropdown">
+              <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
+                Worship <span class="nav-caret" aria-hidden="true">▾</span>
+              </button>
+
+              <div class="nav-dropdown-menu" role="menu" aria-label="Worship submenu">
+                <a role="menuitem" href="#">Online</a>
+                <a role="menuitem" href="#">In Person</a>
+                <a role="menuitem" href="#">Kennesaw Kids</a>
+              </div>
+            </div>
+
+            <a href="#">Events</a>
+            <a href="#">Preschool</a>
+            <a href="#">Contact</a>
+            <a href="#">Give</a>
+          </nav>
+        </div>
+
+        <!-- Right: Worship Online + Socials + Hamburger -->
+        <div class="nav-right">
+          <a class="watch-btn nav-right-desktop" href="#">Worship Online</a>
+
+          <div class="nav-socials nav-right-desktop" aria-label="Social links">
+            <!-- Facebook -->
+            <a
+              class="nav-social"
+              href="https://facebook.com/kennesawmc"
+              target="_blank"
+              rel="noopener"
+              aria-label="Facebook"
+            >
+              <svg class="nav-social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.6-1.6h1.7V4.8c-.3 0-1.4-.1-2.7-.1-2.7 0-4.5 1.6-4.5 4.6V11H7v3h2.6v8h3.9z"
+                />
+              </svg>
+            </a>
+
+            <!-- Instagram -->
+            <a
+              class="nav-social"
+              href="https://instagram.com/kennesawchurch"
+              target="_blank"
+              rel="noopener"
+              aria-label="Instagram"
+            >
+              <svg class="nav-social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3z"
+                />
+                <path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" />
+                <path d="M17.5 6.3a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z" />
+              </svg>
+            </a>
+
+            <!-- YouTube -->
+            <a
+              class="nav-social"
+              href="https://youtube.com/@KennesawChurch"
+              target="_blank"
+              rel="noopener"
+              aria-label="YouTube"
+            >
+              <svg class="nav-social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M23.5 6.2s-.2-1.7-.7-2.4c-.7-.9-1.5-.9-1.9-1C18.3 2.5 12 2.5 12 2.5h0s-6.3 0-8.9.3c-.4.1-1.2.1-1.9 1C.7 4.5.5 6.2.5 6.2S.2 8.2.2 10.2v1.6c0 2 .3 4 .3 4s.2 1.7.7 2.4c.7.9 1.7.9 2.1 1 1.5.1 6.7.3 8.7.3s6.3 0 8.9-.3c.4-.1 1.2-.1 1.9-1 .5-.7.7-2.4.7-2.4s.3-2 .3-4v-1.6c0-2-.3-4-.3-4zM9.8 14.8V7.9l6.2 3.5-6.2 3.4z"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Hamburger -->
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+          >
+            <span class="nav-toggle-lines" aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <!-- Mobile/Tablet panel -->
+        <div class="nav-panel" id="mobileMenu" hidden>
+          <nav class="nav-links nav-links-mobile" aria-label="Mobile navigation">
+            <a href="index.html">Home</a>
+            <a href="#">Worship Online</a>
+
+            <!-- Mobile Ministries accordion -->
+            <div class="nav-mobile-item">
+              <button
+                class="nav-mobile-accordion"
+                type="button"
+                aria-expanded="false"
+                aria-controls="mobileMinistries"
+              >
+                Ministries <span class="nav-caret" aria-hidden="true">▾</span>
+              </button>
+
+              <div class="nav-mobile-submenu" id="mobileMinistries" hidden>
+                <a href="#">Nursery</a>
+                <a href="#">Children</a>
+                <a href="#">Youth</a>
+                <a href="#">Young Adult</a>
+                <a href="#">Adults</a>
+                <a href="#">Adult Sunday School</a>
+                <a href="#">Music</a>
+                <a href="#">Foster Care</a>
+                <a href="#">Weekend Blessings</a>
+              </div>
+            </div>
+
+            <!-- Mobile Worship accordion -->
+            <div class="nav-mobile-item">
+              <button
+                class="nav-mobile-accordion"
+                type="button"
+                aria-expanded="false"
+                aria-controls="mobileWorship"
+              >
+                Worship <span class="nav-caret" aria-hidden="true">▾</span>
+              </button>
+
+              <div class="nav-mobile-submenu" id="mobileWorship" hidden>
+                <a href="#">Online</a>
+                <a href="#">In Person</a>
+                <a href="#">Kennesaw Kids</a>
+              </div>
+            </div>
+
+            <a href="#">Events</a>
+            <a href="#">Preschool</a>
+            <a href="#">Contact</a>
+            <a href="#">Give</a>
+          </nav>
+
+          <div class="nav-panel-actions">
+            <a class="watch-btn" href="#">Worship Online</a>
+
+            <div class="nav-socials" aria-label="Social links">
+              <!-- Facebook -->
+              <a
+                class="nav-social"
+                href="https://facebook.com/kennesawmc"
+                target="_blank"
+                rel="noopener"
+                aria-label="Facebook"
+              >
+                <svg class="nav-social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.6-1.6h1.7V4.8c-.3 0-1.4-.1-2.7-.1-2.7 0-4.5 1.6-4.5 4.6V11H7v3h2.6v8h3.9z"
+                  />
+                </svg>
+              </a>
+
+              <!-- Instagram -->
+              <a
+                class="nav-social"
+                href="https://instagram.com/kennesawchurch"
+                target="_blank"
+                rel="noopener"
+                aria-label="Instagram"
+              >
+                <svg class="nav-social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3z"
+                  />
+                  <path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" />
+                  <path d="M17.5 6.3a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z" />
+                </svg>
+              </a>
+
+              <!-- YouTube -->
+              <a
+                class="nav-social"
+                href="https://youtube.com/@KennesawChurch"
+                target="_blank"
+                rel="noopener"
+                aria-label="YouTube"
+              >
+                <svg class="nav-social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M23.5 6.2s-.2-1.7-.7-2.4c-.7-.9-1.5-.9-1.9-1C18.3 2.5 12 2.5 12 2.5h0s-6.3 0-8.9.3c-.4.1-1.2.1-1.9 1C.7 4.5.5 6.2.5 6.2S.2 8.2.2 10.2v1.6c0 2 .3 4 .3 4s.2 1.7.7 2.4c.7.9 1.7.9 2.1 1 1.5.1 6.7.3 8.7.3s6.3 0 8.9-.3c.4-.1 1.2-.1 1.9-1 .5-.7.7-2.4.7-2.4s.3-2 .3-4v-1.6c0-2-.3-4-.3-4zM9.8 14.8V7.9l6.2 3.5-6.2 3.4z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO IMAGE SECTION -->
+    <section class="hero-visual" aria-label="Welcome hero">
+      <div class="hero-visual-inner">
+        <a href="index.html" aria-label="Kennesaw Church Home">
+          <img
+            class="hero-logo"
+            src="assets/logos/FullHori_GreenWhite_TranspBG.svg"
+            alt="Kennesaw Church"
+          />
+        </a>
+
+        <p class="hero-copy hero-copy-primary">
+          Small Enough to Know You. Big Enough to Serve You.
+        </p>
+
+        <a class="hero-cta" href="#">Watch Online</a>
+      </div>
+    </section>
+
+    <!-- JOIN US IN PERSON -->
+    <section class="join-section" aria-label="Join us in person">
+      <div class="container join-inner">
+        <h2 class="join-title">JOIN US IN PERSON</h2>
+        <p class="join-subtitle">
+          Sunday mornings at 9:00 AM and 11:00 AM. We welcome all to our traditional or modern services.
+          Childrens' church, worship, and preaching are available at both services.
+        </p>
+
+        <div class="join-visual">
+          <img class="join-image" src="assets/images/your-image.jpg" alt="Kennesaw Church exterior" />
+        </div>
+
+        <div class="join-actions">
+          <a class="join-btn primary" href="#">Kennesaw Kids &amp; Children's Church</a>
+          <a
+            class="join-btn"
+            href="https://maps.google.com/?q=1801+Ben+King+Rd,+Kennesaw,+GA+30144"
+            target="_blank"
+            rel="noopener"
+          >
+            Directions to the Building
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- LATEST SERMON + RESOURCES -->
+    <section class="sermon-section">
+      <div class="container sermon-grid">
+        <div class="sermon-main">
+          <h2 class="sermon-heading">Streams, Sermons, and Church Messages</h2>
+
+          <div class="sermon-video">
+            <iframe
+              src="https://www.youtube.com/embed/F0np1brtlZ4"
+              title="Latest Sermon"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+
+        <aside class="sermon-side" aria-label="Resources">
+          <div class="sermon-side-head">
+            <h2 class="sermon-heading">Resources</h2>
+          </div>
+
+          <div class="resource-grid">
+            <a class="resource-card promo promo-kids" href="#">
+              <div class="resource-badge">Families</div>
+              <div class="resource-content">
+                <div class="resource-title">Kids &amp; Preschool</div>
+                <div class="resource-text">Sundays, midweek, and support for parents.</div>
+                <div class="resource-cta">Learn more →</div>
+              </div>
+            </a>
+
+            <a class="resource-card promo promo-events" href="#">
+              <div class="resource-badge">This Week</div>
+              <div class="resource-content">
+                <div class="resource-title">Events</div>
+                <div class="resource-text">See what’s coming up in the life of our church.</div>
+                <div class="resource-cta">Learn more →</div>
+              </div>
+            </a>
+
+            <a class="resource-card promo promo-serve" href="#">
+              <div class="resource-badge">Get Involved</div>
+              <div class="resource-content">
+                <div class="resource-title">Ministries &amp; Serving</div>
+                <div class="resource-text">Find your place to serve locally and globally.</div>
+                <div class="resource-cta">Learn more →</div>
+              </div>
+            </a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- IMAGE + QUOTE SECTION -->
+    <section class="mission-split" aria-label="Mission scripture">
+      <div class="container mission-inner">
+        <div class="mission-collage" aria-hidden="true">
+          <img class="mc-img mc-1" src="assets/images/collage-1.jpg" alt="" />
+          <img class="mc-img mc-2" src="assets/images/collage-2.jpg" alt="" />
+          <img class="mc-img mc-3" src="assets/images/collage-3.jpg" alt="" />
+          <img class="mc-img mc-4" src="assets/images/collage-4.jpg" alt="" />
+        </div>
+
+        <div class="mission-quote">
+          <div class="mq-icon" aria-hidden="true">“</div>
+
+          <blockquote class="mq-text">
+            Go, therefore, and make disciples of all nations, baptizing them in the name of the Father and of the
+            Son and of the Holy Spirit, teaching them to observe everything I have commanded you.
+          </blockquote>
+
+          <div class="mq-ref">Matthew 28:19-20</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MINISTRIES GRID -->
+    <section class="ministries-showcase" aria-label="Largest ministries">
+      <div class="container ministries-inner">
+        <h2 class="ministries-heading">Explore Our Ministries</h2>
+
+        <div class="ministries-grid">
+          <a href="#" class="ministry-card">
+            <img src="assets/logos/preschool.svg" alt="Preschool" />
+          </a>
+
+          <a href="#" class="ministry-card">
+            <img src="assets/logos/young-adults.svg" alt="Young Adults" />
+          </a>
+
+          <a href="#" class="ministry-card">
+            <img src="assets/logos/youth.svg" alt="Youth Ministry" />
+          </a>
+
+          <a href="#" class="ministry-card">
+            <img src="assets/logos/small groups.svg" alt="Small Groups" />
+          </a>
+
+          <a href="#" class="ministry-card">
+            <img src="assets/logos/weekend-blessings-logo.svg" alt="Weekend Blessings" />
+          </a>
+
+          <a href="#" class="ministry-card">
+            <img src="assets/logos/serve.svg" alt="Ministries" />
+          </a>
+        </div>
+
+        <div class="ministries-cta">
+          <a href="#" class="ministries-btn">View All Ministries</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-inner container">
+        <div class="footer-col">
+          <h4 class="footer-title">Kennesaw Church</h4>
+          <a class="footer-link" href="#">Worship Online</a>
+          <a class="footer-link" href="#">Join Us In Person</a>
+          <a class="footer-link" href="#">Serve</a>
+          <a class="footer-link" href="#">Give</a>
+          <a class="footer-link" href="#">Events</a>
+          <a class="footer-link" href="#">Contact Us</a>
+          <a class="footer-link" href="#">Privacy Policy</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">New Here</h4>
+          <a class="footer-link" href="#">What to Expect on Sunday</a>
+          <a class="footer-link" href="#">Mission &amp; Vision</a>
+          <a class="footer-link" href="#">About Us</a>
+          <a class="footer-link" href="#">Pastors &amp; Staff</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Ministries</h4>
+          <a class="footer-link" href="#">Kennesaw Kids</a>
+          <a class="footer-link" href="#">Preschool</a>
+          <a class="footer-link" href="#">Youth Ministry</a>
+          <a class="footer-link" href="#">Young Adults</a>
+          <a class="footer-link" href="#">Weekend Blessings</a>
+          <a class="footer-link" href="#">Small Groups</a>
+          <a class="footer-link" href="#">Mission Trips</a>
+        </div>
+
+        <div class="footer-col footer-col-right">
+          <h4 class="footer-title">Join us</h4>
+          <a class="footer-link" href="#">Join Us In Person</a>
+          <a class="footer-link" href="#">Worship Online</a>
+
+          <div class="footer-socials">
+            <a
+              class="footer-social"
+              href="https://www.facebook.com/kennesawmc"
+              target="_blank"
+              rel="noopener"
+              aria-label="Facebook"
+            >
+              <svg class="footer-social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M13.5 9H16V6h-2.5C11.6 6 10 7.6 10 9.5V12H8v3h2v7h3v-7h2.3l.7-3H13v-2.2c0-.5.3-.8.8-.8z"/>
+              </svg>
+            </a>
+
+            <a
+              class="footer-social"
+              href="https://www.instagram.com/kennesawchurch/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Instagram"
+            >
+              <svg class="footer-social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3.2A4.8 4.8 0 1 0 12 17a4.8 4.8 0 0 0 0-9.6zm0 2A2.8 2.8 0 1 1 12 15a2.8 2.8 0 0 1 0-5.6zm4.5-2.9a1.1 1.1 0 1 0 0-2.2 1.1 1.1 0 0 0 0 2.2z"/>
+              </svg>
+            </a>
+
+            <a
+              class="footer-social"
+              href="https://www.youtube.com/@KennesawChurch"
+              target="_blank"
+              rel="noopener"
+              aria-label="YouTube"
+            >
+              <svg class="footer-social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M23.5 6.2s-.2-1.7-.7-2.4c-.7-.9-1.5-.9-1.9-1C18.3 2.5 12 2.5 12 2.5h0s-6.3 0-8.9.3c-.4.1-1.2.1-1.9 1C.7 4.5.5 6.2.5 6.2S.2 8.2.2 10.2v1.6c0 2 .3 4 .3 4s.2 1.7.7 2.4c.7.9 1.7.9 2.1 1 1.5.1 6.7.3 8.7.3s6.3 0 8.9-.3c.4-.1 1.2-.1 1.9-1 .5-.7.7-2.4.7-2.4s.3-2 .3-4v-1.6c0-2-.3-4-.3-4zM9.8 14.8V7.9l6.2 3.5-6.2 3.4z"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="footer-meta">
+            <div>1801 Ben King Rd</div>
+            <div>Kennesaw, GA 30144</div>
+            <div class="footer-meta-spacer"></div>
+            <div>Phone: (770) 428-1543</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom container">
+        <div class="footer-subscribe">
+          <a class="footer-subscribe-link" href="#">
+            Subscribe to<br />Our Email Newsletter
+          </a>
+        </div>
+
+        <div class="footer-copy">
+          Copyright © 2026 Kennesaw Church.<br />
+          All rights reserved.
+        </div>
+
+        <div class="footer-brand">
+          <a href="index.html" aria-label="Kennesaw Church Home">
+            <img src="assets/logos/FullHori_GreenWhite_TranspBG.svg" alt="Kennesaw Church" />
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts (ONLY once each — prevents glitchy behavior) -->
+    <script src="js/nav.js" defer></script>
+    <script src="js/site-search.js" defer></script>
+  </body>
+</html>

@@ -1475,3 +1475,76 @@ a {
     height: 20px;
   }
 }
+
+/* ==============================
+   CLEAN BRAND-BLUE DROPDOWNS
+   ============================== */
+
+.nav-item { position: relative; }
+
+.nav-dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(17,17,17,0.90);
+}
+
+.nav-caret {
+  font-size: 12px;
+  transform: translateY(-1px);
+  opacity: 0.75;
+}
+
+/* Menu panel */
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 240px;
+  padding: 10px;
+  border-radius: 16px;
+  background: var(--covenant-blue);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(255,255,255,0.14);
+  display: none;
+  z-index: 80;
+}
+
+/* Links */
+.nav-dropdown-menu a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 14px;
+  color: rgba(255,255,255,0.92);
+  line-height: 1.2;
+}
+
+/* Hover/focus states */
+.nav-dropdown-menu a:hover,
+.nav-dropdown-menu a:focus-visible {
+  background: rgba(255,255,255,0.10);
+  outline: none;
+}
+
+/* Show on hover (desktop) */
+@media (min-width: 1001px) {
+  .nav-dropdown:hover .nav-dropdown-menu {
+    display: block;
+  }
+}
+
+/* Show on click (your JS toggles .is-open) */
+.nav-dropdown.is-open .nav-dropdown-menu {
+  display: block;
+}
+
+/* Slightly tighter spacing on smaller desktops */
+@media (max-width: 1200px) and (min-width: 1001px) {
+  .nav-dropdown-menu { min-width: 220px; }
+}

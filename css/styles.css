@@ -1,7 +1,9 @@
-/* ==============================
+/* FILE: css/styles.css
+   ==============================
    Kennesaw Church Design System
    Modern, Minimal, Inter Font
-   (Restored + Desktop navbar fixed to match screenshot)
+   Desktop navbar aligned to screenshot:
+   Logo LEFT, Search centered, Nav links UNDER search, Worship+Social RIGHT
    ============================== */
 
 :root {
@@ -34,6 +36,11 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -42,10 +49,13 @@ body {
   background: var(--grace-white);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 img {
   max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 h1,
@@ -67,6 +77,10 @@ a {
   text-decoration: none;
 }
 
+button {
+  font-family: inherit;
+}
+
 /* ==============================
    Layout
    ============================== */
@@ -77,7 +91,7 @@ a {
 }
 
 /* ==============================
-   NAVBAR (fixed to match desktop screenshot)
+   NAVBAR (matches desktop screenshot)
    ============================== */
 .navbar {
   background: #fff;
@@ -88,31 +102,42 @@ a {
 .nav-wrap {
   display: grid;
   grid-template-columns: auto 1fr auto; /* Logo | Center | Right */
-  align-items: start;                  /* key: keeps row-2 centered cleanly */
+  align-items: start;                  /* keeps links under search cleanly */
   gap: 28px;
 }
 
-/* Force proper grid placement (prevents the "right side jumps left" bug) */
-.nav-logo { grid-column: 1; }
-.nav-center { grid-column: 2; }
-.nav-right { grid-column: 3; }
-
-/* Logo */
+/* grid anchors */
 .nav-logo {
+  grid-column: 1;
+  justify-self: start;
   display: flex;
   align-items: center;
 }
 .nav-logo img {
   height: 38px;
+  width: auto;
 }
 
-/* Center stack (search + desktop links) */
 .nav-center {
+  grid-column: 2;
+  justify-self: center;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;   /* center row 1 search + row 2 links */
+  align-items: center; /* centers search + links */
   gap: 14px;
-  min-width: 0;          /* prevents grid overflow oddities */
+  min-width: 0;
+}
+
+.nav-right {
+  grid-column: 3;
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  min-width: 0;
+  padding-top: 2px; /* aligns visually with search row */
 }
 
 /* Search */
@@ -120,11 +145,12 @@ a {
   width: 100%;
   display: flex;
   justify-content: center;
+  position: relative; /* anchors results dropdown */
 }
 
 .nav-search-input {
   width: 100%;
-  max-width: 520px; /* matches your screenshot proportions */
+  max-width: 520px;
   height: 44px;
   border-radius: 999px;
   border: 1px solid var(--border);
@@ -137,6 +163,42 @@ a {
 .nav-search-input:focus {
   border-color: rgba(11, 42, 74, 0.28);
   box-shadow: 0 0 0 3px rgba(11, 42, 74, 0.08);
+}
+
+/* Search results dropdown (minimal, clean) */
+.nav-search-results {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 520px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: var(--shadow);
+  padding: 6px;
+  z-index: 999;
+}
+
+.nav-search-results[hidden] {
+  display: none !important;
+}
+
+.nav-search-results a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(17, 17, 17, 0.86);
+}
+
+.nav-search-results a:hover,
+.nav-search-results a:focus-visible {
+  background: rgba(11, 42, 74, 0.06);
+  color: rgba(11, 42, 74, 0.92);
+  outline: none;
 }
 
 /* Desktop nav links row */
@@ -153,7 +215,7 @@ a {
 
 .nav-links a {
   font-size: 14px;
-  font-weight: 500; /* lighter like your screenshot */
+  font-weight: 500;
   padding: 8px 0;
   white-space: nowrap;
   color: rgba(17, 17, 17, 0.86);
@@ -163,17 +225,7 @@ a {
   color: rgba(11, 42, 74, 0.92);
 }
 
-/* Right side */
-.nav-right {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 12px;
-  min-width: 0;
-  padding-top: 2px; /* aligns with search row visually */
-}
-
-/* Live button */
+/* Right side button */
 .watch-btn {
   display: inline-flex;
   align-items: center;
@@ -189,6 +241,7 @@ a {
   transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
   white-space: nowrap;
 }
+
 .watch-btn:hover {
   transform: translateY(-1px);
   background: rgba(17, 17, 17, 0.03);
@@ -200,6 +253,7 @@ a {
   display: flex;
   gap: 10px;
 }
+
 .nav-social {
   display: inline-flex;
   align-items: center;
@@ -212,11 +266,13 @@ a {
   color: rgba(17, 17, 17, 0.78);
   transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
 }
+
 .nav-social:hover {
   transform: translateY(-1px);
   background: rgba(17, 17, 17, 0.04);
   color: rgba(17, 17, 17, 0.92);
 }
+
 .nav-social-icon,
 .footer-social-icon {
   width: 18px;
@@ -236,6 +292,7 @@ a {
   align-items: center;
   justify-content: center;
 }
+
 .nav-toggle-lines {
   width: 18px;
   height: 2px;
@@ -243,6 +300,7 @@ a {
   position: relative;
   display: inline-block;
 }
+
 .nav-toggle-lines::before,
 .nav-toggle-lines::after {
   content: "";
@@ -252,6 +310,7 @@ a {
   height: 2px;
   background: rgba(17, 17, 17, 0.8);
 }
+
 .nav-toggle-lines::before { top: -6px; }
 .nav-toggle-lines::after { top: 6px; }
 
@@ -271,12 +330,14 @@ a {
   flex-direction: column;
   gap: 10px;
 }
+
 .nav-links-mobile a {
   padding: 10px 12px;
   border-radius: 12px;
   font-weight: 600;
   color: rgba(17, 17, 17, 0.85);
 }
+
 .nav-links-mobile a:hover {
   background: rgba(17, 17, 17, 0.06);
 }
@@ -314,12 +375,15 @@ a {
   color: rgba(17, 17, 17, 0.9);
   cursor: pointer;
 }
+
 .nav-mobile-accordion:hover {
   background: rgba(17, 17, 17, 0.05);
 }
+
 .nav-mobile-accordion .nav-caret {
   transition: transform 0.18s ease;
 }
+
 .nav-mobile-accordion[aria-expanded="true"] .nav-caret {
   transform: rotate(180deg);
 }
@@ -332,19 +396,22 @@ a {
   border-left: 2px solid rgba(11, 42, 74, 0.18);
   margin-left: 8px;
 }
+
 .nav-mobile-submenu a {
   padding: 12px 12px;
   border-radius: 12px;
   font-weight: 700;
   color: rgba(17, 17, 17, 0.82);
 }
+
 .nav-mobile-submenu a:hover {
   background: rgba(11, 42, 74, 0.06);
   color: rgba(11, 42, 74, 0.92);
 }
 
-/* Desktop dropdowns (minimal dark-blue like your screenshot) */
+/* Desktop dropdowns */
 .nav-item { position: relative; }
+
 .nav-link,
 .nav-links a {
   background: none;
@@ -402,13 +469,11 @@ a {
   outline: none;
 }
 
-/* Show when clicked open OR keyboard focus is inside */
 .nav-dropdown.is-open .nav-dropdown-menu,
 .nav-dropdown:focus-within .nav-dropdown-menu {
   display: block;
 }
 
-/* Optional hover on desktop */
 @media (min-width: 1001px) {
   .nav-dropdown:hover .nav-dropdown-menu {
     display: block;
@@ -445,6 +510,12 @@ a {
   }
 
   .nav-search-input {
+    max-width: none;
+  }
+
+  .nav-search-results {
+    left: 0;
+    transform: none;
     max-width: none;
   }
 
@@ -532,6 +603,7 @@ a {
   overflow: hidden;
   background: #0b2a4a;
 }
+
 .hero-visual::before {
   content: "";
   position: absolute;
@@ -543,6 +615,7 @@ a {
   transform: scale(1.02);
   filter: saturate(1.02);
 }
+
 .hero-visual::after {
   content: "";
   position: absolute;
@@ -554,32 +627,38 @@ a {
     rgba(0, 0, 0, 0.72) 100%
   );
 }
+
 .hero-visual::before,
 .hero-visual::after {
   pointer-events: none;
 }
+
 .hero-visual-inner {
   position: relative;
   z-index: 2;
   width: min(920px, 100%);
   padding: 0 20px 60px;
 }
+
 .hero-logo {
   width: min(280px, 60vw);
-  margin-bottom: 14px;
+  margin: 0 auto 14px;
   opacity: 0.92;
   filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.55));
 }
+
 .hero-copy {
   font-size: clamp(15px, 2vw, 17px);
   color: rgba(255, 255, 255, 0.82);
   margin-bottom: 18px;
 }
+
 .hero-copy-primary {
   font-size: clamp(18px, 2.4vw, 22px);
   font-weight: 600;
   opacity: 0.9;
 }
+
 .hero-cta {
   display: inline-flex;
   align-items: center;
@@ -592,6 +671,7 @@ a {
   color: #111;
   border-radius: 999px;
 }
+
 @media (max-width: 900px) {
   .hero-visual { min-height: 560px; }
   .hero-visual-inner { padding-bottom: 54px; }
@@ -604,10 +684,12 @@ a {
   background: #fff;
   padding: 74px 0 78px;
 }
+
 .join-inner {
   text-align: center;
   max-width: 980px;
 }
+
 .join-title {
   margin: 0 0 10px;
   font-size: clamp(40px, 6vw, 72px);
@@ -615,30 +697,33 @@ a {
   line-height: 0.95;
   color: rgba(17, 17, 17, 0.92);
 }
+
 .join-subtitle {
   margin: 0 auto 22px;
   max-width: 62ch;
   font-size: 18px;
   color: rgba(17, 17, 17, 0.62);
 }
+
 .join-visual {
   display: flex;
   justify-content: center;
   margin-bottom: 26px;
 }
+
 .join-image {
   width: min(520px, 86vw);
-  height: auto;
   border-radius: 28px;
-  display: block;
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.10);
 }
+
 .join-actions {
   display: flex;
   justify-content: center;
   gap: 12px;
   flex-wrap: wrap;
 }
+
 .join-btn {
   display: inline-flex;
   align-items: center;
@@ -653,19 +738,23 @@ a {
   color: rgba(17, 17, 17, 0.86);
   transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
 }
+
 .join-btn:hover {
   transform: translateY(-1px);
   background: rgba(17, 17, 17, 0.03);
   border-color: rgba(11, 42, 74, 0.22);
 }
+
 .join-btn.primary {
   background: var(--covenant-blue);
   border-color: var(--covenant-blue);
   color: #fff;
 }
+
 .join-btn.primary:hover {
   background: rgba(11, 42, 74, 0.92);
 }
+
 @media (max-width: 560px) {
   .join-subtitle { font-size: 16px; }
 }
@@ -677,28 +766,33 @@ a {
   background: #f5f6f7;
   padding: 70px 0;
 }
+
 .sermon-grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 60px;
   align-items: start;
 }
+
 .sermon-heading {
   font-size: 28px;
   margin-bottom: 20px;
   color: var(--covenant-blue);
 }
+
 .sermon-video {
   border-radius: 18px;
   overflow: hidden;
   background: #000;
   margin-bottom: 18px;
 }
+
 .sermon-video iframe {
   width: 100%;
   height: 420px;
   display: block;
 }
+
 .sermon-side {
   display: flex;
   flex-direction: column;
@@ -707,6 +801,7 @@ a {
   position: sticky;
   top: 18px;
 }
+
 @media (max-width: 900px) {
   .sermon-side {
     margin-top: 0;
@@ -714,16 +809,19 @@ a {
   }
 }
 
-/* Resources (minimal, no badges/icons) */
+/* Resources */
 .sermon-side-head {
   margin-bottom: 6px;
 }
+
 .resource-icon { display: none !important; }
 .resource-badge { display: none !important; }
+
 .resource-grid {
   display: grid;
   gap: 12px;
 }
+
 .resource-card,
 .resource-card.promo {
   position: relative;
@@ -735,16 +833,19 @@ a {
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.05);
   transition: transform 0.14s ease, box-shadow 0.14s ease, border-color 0.14s ease;
 }
+
 .resource-card::before,
 .resource-card.promo::before {
   content: none !important;
 }
+
 .resource-card:hover,
 .resource-card.promo:hover {
   transform: translateY(-1px);
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.07);
   border-color: rgba(11, 42, 74, 0.18);
 }
+
 .resource-title {
   font-weight: 800;
   font-size: 15px;
@@ -752,12 +853,14 @@ a {
   color: rgba(17, 17, 17, 0.92);
   line-height: 1.2;
 }
+
 .resource-text {
   font-size: 13.5px;
   color: rgba(17, 17, 17, 0.62);
   margin: 0 0 10px;
   line-height: 1.35;
 }
+
 .resource-cta {
   display: inline-flex;
   align-items: center;
@@ -766,6 +869,7 @@ a {
   font-weight: 800;
   color: rgba(11, 42, 74, 0.92);
 }
+
 .resource-cta::after {
   content: "›";
   font-size: 16px;
@@ -782,6 +886,7 @@ a {
   .sermon-video iframe { height: 260px; }
   .resource-grid { grid-template-columns: 1fr 1fr; }
 }
+
 @media (max-width: 560px) {
   .resource-grid { grid-template-columns: 1fr; }
 }
@@ -793,17 +898,20 @@ a {
   padding: 70px 0;
   background: #fff;
 }
+
 .mission-inner {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
   gap: 56px;
   align-items: center;
 }
+
 .mission-collage {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 18px;
 }
+
 .mc-img {
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -811,10 +919,12 @@ a {
   border-radius: 18px;
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
 }
+
 .mission-quote {
   text-align: left;
   padding: 18px 0;
 }
+
 .mq-icon {
   width: 44px;
   height: 44px;
@@ -828,6 +938,7 @@ a {
   color: var(--covenant-blue);
   margin-bottom: 18px;
 }
+
 .mq-text {
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
@@ -836,18 +947,21 @@ a {
   color: rgba(17, 17, 17, 0.9);
   font-weight: 600;
 }
+
 .mq-ref {
   margin-top: 18px;
   font-size: 18px;
   font-weight: 700;
   color: rgba(17, 17, 17, 0.85);
 }
+
 @media (max-width: 980px) {
   .mission-inner {
     grid-template-columns: 1fr;
     gap: 34px;
   }
 }
+
 @media (max-width: 560px) {
   .mission-collage { gap: 12px; }
   .mc-img { border-radius: 14px; }
@@ -861,11 +975,13 @@ a {
   background: #f7f8f9;
   text-align: center;
 }
+
 .ministries-heading {
   font-size: 30px;
   margin-bottom: 40px;
   color: var(--covenant-blue);
 }
+
 .ministries-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -873,6 +989,7 @@ a {
   max-width: 900px;
   margin: 0 auto 40px;
 }
+
 .ministry-card {
   background: #fff;
   border-radius: 22px;
@@ -883,6 +1000,7 @@ a {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
   transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
+
 .ministry-card img {
   max-width: 190px;
   max-height: 100px;
@@ -891,7 +1009,9 @@ a {
   object-fit: contain;
   transition: transform 0.18s ease;
 }
+
 .ministry-card:hover img { transform: scale(1.04); }
+
 .ministries-btn {
   display: inline-block;
   padding: 12px 28px;
@@ -901,13 +1021,16 @@ a {
   font-size: 14px;
   transition: background 0.15s ease, color 0.15s ease;
 }
+
 .ministries-btn:hover {
   background: var(--covenant-blue);
   color: #fff;
 }
+
 @media (max-width: 900px) {
   .ministries-grid { grid-template-columns: repeat(2, 1fr); }
 }
+
 @media (max-width: 560px) {
   .ministries-grid { grid-template-columns: 1fr; }
 }
@@ -920,6 +1043,7 @@ a {
   background: #f7f8f9;
   text-align: center;
 }
+
 .page-hero-tabs {
   display: inline-flex;
   gap: 18px;
@@ -928,6 +1052,7 @@ a {
   background: rgba(17, 17, 17, 0.60);
   margin: 0 auto 26px;
 }
+
 .page-hero-tab {
   color: rgba(255, 255, 255, 0.92);
   font-weight: 700;
@@ -936,23 +1061,27 @@ a {
   border-radius: 999px;
   opacity: 0.92;
 }
+
 .page-hero-tab:hover { opacity: 1; }
 .page-hero-tab.is-active { background: rgba(255, 255, 255, 0.12); }
+
 .page-hero-media {
   max-width: 760px;
   margin: 0 auto 22px;
 }
+
 .page-hero-media img {
   width: 100%;
   height: auto;
-  display: block;
 }
+
 .page-hero-title {
   font-size: clamp(34px, 4.4vw, 54px);
   letter-spacing: -0.02em;
   margin: 0 0 10px;
   color: rgba(17, 17, 17, 0.92);
 }
+
 .page-hero-intro {
   max-width: 72ch;
   margin: 0 auto 22px;
@@ -960,12 +1089,14 @@ a {
   font-size: 15.5px;
   line-height: 1.6;
 }
+
 .page-hero-actions {
   display: flex;
   justify-content: center;
   gap: 12px;
   flex-wrap: wrap;
 }
+
 .page-hero-btn {
   display: inline-flex;
   align-items: center;
@@ -980,17 +1111,21 @@ a {
   color: rgba(17, 17, 17, 0.86);
   transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
 }
+
 .page-hero-btn:hover {
   transform: translateY(-1px);
   background: rgba(17, 17, 17, 0.03);
   border-color: rgba(11, 42, 74, 0.22);
 }
+
 .page-hero-btn.primary {
   background: var(--covenant-blue);
   border-color: var(--covenant-blue);
   color: #fff;
 }
+
 .page-hero-btn.primary:hover { background: rgba(11, 42, 74, 0.92); }
+
 @media (max-width: 640px) {
   .page-hero-tabs {
     gap: 10px;
@@ -1003,18 +1138,20 @@ a {
 }
 
 /* ==============================
-   FOOTER (Village Church style)
+   FOOTER
    ============================== */
 .site-footer {
   background: #000;
   color: rgba(255, 255, 255, 0.9);
   padding: 70px 0 40px;
 }
+
 .footer-inner {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1.2fr;
   gap: 60px;
 }
+
 .footer-title {
   font-size: 14px;
   font-weight: 700;
@@ -1022,6 +1159,7 @@ a {
   margin-bottom: 18px;
   color: #fff;
 }
+
 .footer-link {
   display: block;
   padding: 7px 0;
@@ -1030,13 +1168,17 @@ a {
   color: rgba(255, 255, 255, 0.82);
   transition: color 0.15s ease;
 }
+
 .footer-link:hover { color: #fff; }
+
 .footer-col-right .footer-title { margin-bottom: 14px; }
+
 .footer-socials {
   display: flex;
   gap: 14px;
   margin: 18px 0 22px;
 }
+
 .footer-social {
   width: 38px;
   height: 38px;
@@ -1049,16 +1191,20 @@ a {
   font-weight: 800;
   transition: transform 0.15s ease, border-color 0.15s ease;
 }
+
 .footer-social:hover {
   transform: translateY(-1px);
   border-color: rgba(255, 255, 255, 0.4);
 }
+
 .footer-meta {
   font-size: 14px;
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.78);
 }
+
 .footer-meta-spacer { height: 14px; }
+
 .footer-bottom {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -1068,42 +1214,52 @@ a {
   padding-top: 28px;
   border-top: 1px solid rgba(255, 255, 255, 0.14);
 }
+
 .footer-subscribe {
   display: flex;
   align-items: center;
   gap: 18px;
 }
+
 .footer-copy {
   text-align: center;
   font-size: 13px;
   color: rgba(255, 255, 255, 0.62);
   line-height: 1.45;
 }
+
 .footer-brand {
   display: flex;
   justify-content: flex-end;
 }
+
 .footer-brand img {
   height: 34px;
   width: auto;
   opacity: 0.95;
 }
+
 @media (max-width: 980px) {
   .footer-inner {
     grid-template-columns: 1fr 1fr;
     gap: 34px;
   }
+
   .footer-bottom {
     grid-template-columns: 1fr;
     text-align: left;
     align-items: start;
   }
+
   .footer-copy { text-align: left; }
   .footer-brand { justify-content: flex-start; }
 }
+
 @media (max-width: 560px) {
   .site-footer { padding: 54px 0 34px; }
+
   .footer-inner { grid-template-columns: 1fr; }
+
   .footer-subscribe {
     flex-direction: column;
     align-items: flex-start;
@@ -1115,6 +1271,7 @@ a {
    ============================== */
 @media (max-width: 640px) {
   body { font-size: 16.5px; }
+
   p {
     font-size: 16px;
     line-height: 1.75;
@@ -1136,10 +1293,12 @@ a {
   }
 
   .sermon-heading { font-size: 24px; }
+
   .footer-link {
     font-size: 15px;
     padding: 9px 0;
   }
+
   .footer-meta { font-size: 15px; }
 }
 

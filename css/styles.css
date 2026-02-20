@@ -1,21 +1,33 @@
-/* ======================================================
-   KENNESAW CHURCH DESIGN SYSTEM
-   Clean • Modern • Screenshot-aligned
-   ====================================================== */
+/* ==============================
+   Kennesaw Church Design System
+   Modern, Minimal, Inter Font
+   (Restored + Desktop navbar fixed to match screenshot)
+   ============================== */
 
 :root {
+  /* Brand colors */
   --covenant-blue: #0b2a4a;
   --renewal-green: #3a7c3f;
+  --sanctum-black: #111111;
+  --silver-gray: #d9d9d9;
+  --grace-white: #ffffff;
+
+  /* Modern neutrals */
   --ink: rgba(17, 17, 17, 0.92);
   --muted: rgba(17, 17, 17, 0.62);
   --border: rgba(17, 17, 17, 0.12);
-  --shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+  --panel: rgba(255, 255, 255, 0.78);
+
+  /* Layout */
+  --max-width: 1200px;
+  --nav-height: 72px;
+  --radius: 14px;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-/* ======================================================
-   RESET
-   ====================================================== */
-
+/* ==============================
+   Reset
+   ============================== */
 *,
 *::before,
 *::after {
@@ -27,33 +39,46 @@ body {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Helvetica, Arial, sans-serif;
   color: var(--ink);
-  background: #fff;
+  background: var(--grace-white);
   line-height: 1.6;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
+  -webkit-font-smoothing: antialiased;
 }
 
 img {
   max-width: 100%;
 }
 
-/* ======================================================
-   LAYOUT
-   ====================================================== */
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0 0 12px;
+}
 
+p {
+  margin: 0 0 16px;
+  color: var(--muted);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ==============================
+   Layout
+   ============================== */
 .container {
-  max-width: 1200px;
+  max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* ======================================================
-   NAVBAR
-   ====================================================== */
-
+/* ==============================
+   NAVBAR (fixed to match desktop screenshot)
+   ============================== */
 .navbar {
   background: #fff;
   border-bottom: 1px solid var(--border);
@@ -62,160 +87,440 @@ img {
 
 .nav-wrap {
   display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
+  grid-template-columns: auto 1fr auto; /* Logo | Center | Right */
+  align-items: start;                  /* key: keeps row-2 centered cleanly */
   gap: 28px;
 }
 
-/* Logo */
+/* Force proper grid placement (prevents the "right side jumps left" bug) */
+.nav-logo { grid-column: 1; }
+.nav-center { grid-column: 2; }
+.nav-right { grid-column: 3; }
 
+/* Logo */
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
 .nav-logo img {
-  height: 40px;
+  height: 38px;
 }
 
-/* Center column */
-
+/* Center stack (search + desktop links) */
 .nav-center {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 10px;
+  align-items: center;   /* center row 1 search + row 2 links */
+  gap: 14px;
+  min-width: 0;          /* prevents grid overflow oddities */
 }
 
 /* Search */
-
 .nav-search {
-  position: relative;
   width: 100%;
-  max-width: 640px;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
 
 .nav-search-input {
   width: 100%;
-  height: 42px;
+  max-width: 520px; /* matches your screenshot proportions */
+  height: 44px;
   border-radius: 999px;
-  border: 1px solid rgba(17, 17, 17, 0.10);
-  background: rgba(17, 17, 17, 0.02);
+  border: 1px solid var(--border);
   padding: 0 18px;
-  font-size: 14px;
+  font-size: 14.5px;
   outline: none;
-  transition: all 0.2s ease;
+  background: #fff;
 }
 
 .nav-search-input:focus {
-  background: #fff;
-  border-color: rgba(11, 42, 74, 0.22);
+  border-color: rgba(11, 42, 74, 0.28);
   box-shadow: 0 0 0 3px rgba(11, 42, 74, 0.08);
 }
 
-/* Desktop links */
-
+/* Desktop nav links row */
 .nav-links {
   display: flex;
-  gap: 24px;
+  gap: 22px;
   flex-wrap: wrap;
 }
 
 .nav-links-desktop {
-  justify-content: center;
-  max-width: 640px;
   width: 100%;
+  justify-content: center;
 }
 
-.nav-links a,
-.nav-dropdown-toggle {
+.nav-links a {
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 500; /* lighter like your screenshot */
+  padding: 8px 0;
+  white-space: nowrap;
+  color: rgba(17, 17, 17, 0.86);
+}
+
+.nav-links a:hover {
+  color: rgba(11, 42, 74, 0.92);
+}
+
+/* Right side */
+.nav-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  min-width: 0;
+  padding-top: 2px; /* aligns with search row visually */
+}
+
+/* Live button */
+.watch-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  padding: 0 14px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 999px;
+  border: 1px solid rgba(17, 17, 17, 0.18);
+  background: #fff;
+  line-height: 1;
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+  white-space: nowrap;
+}
+.watch-btn:hover {
+  transform: translateY(-1px);
+  background: rgba(17, 17, 17, 0.03);
+  border-color: rgba(11, 42, 74, 0.22);
+}
+
+/* Social icons */
+.nav-socials {
+  display: flex;
+  gap: 10px;
+}
+.nav-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: rgba(17, 17, 17, 0.78);
+  transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+.nav-social:hover {
+  transform: translateY(-1px);
+  background: rgba(17, 17, 17, 0.04);
+  color: rgba(17, 17, 17, 0.92);
+}
+.nav-social-icon,
+.footer-social-icon {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+/* Hamburger button (hidden on desktop) */
+.nav-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: #fff;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+.nav-toggle-lines {
+  width: 18px;
+  height: 2px;
+  background: rgba(17, 17, 17, 0.8);
+  position: relative;
+  display: inline-block;
+}
+.nav-toggle-lines::before,
+.nav-toggle-lines::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 18px;
+  height: 2px;
+  background: rgba(17, 17, 17, 0.8);
+}
+.nav-toggle-lines::before { top: -6px; }
+.nav-toggle-lines::after { top: 6px; }
+
+/* Mobile panel */
+.nav-panel {
+  grid-column: 1 / -1;
+  margin-top: 10px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+.nav-links-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.nav-links-mobile a {
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-weight: 600;
   color: rgba(17, 17, 17, 0.85);
-  background: none;
-  border: none;
+}
+.nav-links-mobile a:hover {
+  background: rgba(17, 17, 17, 0.06);
+}
+
+.nav-panel-actions {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* Mobile accordions */
+.nav-mobile-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nav-mobile-accordion {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 14px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(17, 17, 17, 0.02);
+  font-weight: 800;
+  font-size: 16px;
+  color: rgba(17, 17, 17, 0.9);
   cursor: pointer;
 }
+.nav-mobile-accordion:hover {
+  background: rgba(17, 17, 17, 0.05);
+}
+.nav-mobile-accordion .nav-caret {
+  transition: transform 0.18s ease;
+}
+.nav-mobile-accordion[aria-expanded="true"] .nav-caret {
+  transform: rotate(180deg);
+}
 
-/* Dropdown */
+.nav-mobile-submenu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 8px 6px;
+  border-left: 2px solid rgba(11, 42, 74, 0.18);
+  margin-left: 8px;
+}
+.nav-mobile-submenu a {
+  padding: 12px 12px;
+  border-radius: 12px;
+  font-weight: 700;
+  color: rgba(17, 17, 17, 0.82);
+}
+.nav-mobile-submenu a:hover {
+  background: rgba(11, 42, 74, 0.06);
+  color: rgba(11, 42, 74, 0.92);
+}
 
-.nav-item {
-  position: relative;
+/* Desktop dropdowns (minimal dark-blue like your screenshot) */
+.nav-item { position: relative; }
+.nav-link,
+.nav-links a {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
+.nav-dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(17, 17, 17, 0.86);
 }
 
 .nav-caret {
   font-size: 11px;
   opacity: 0.65;
-  margin-left: 6px;
+  transform: translateY(-1px);
 }
-
-/* Dark minimal dropdown */
 
 .nav-dropdown-menu {
   position: absolute;
-  top: calc(100% + 8px);
-  left: 0;
-  min-width: 220px;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 240px;
   padding: 10px;
   border-radius: 14px;
   background: var(--covenant-blue);
   border: 1px solid rgba(255, 255, 255, 0.10);
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
   display: none;
-  z-index: 100;
-}
-
-.nav-dropdown.is-open .nav-dropdown-menu {
-  display: block;
+  z-index: 120;
 }
 
 .nav-dropdown-menu a {
   display: block;
   padding: 10px 12px;
-  text-align: center;
   border-radius: 12px;
+  font-weight: 650;
   font-size: 13.5px;
-  font-weight: 600;
   color: rgba(255, 255, 255, 0.92);
+  line-height: 1.15;
+  text-align: center;
 }
 
-.nav-dropdown-menu a:hover {
+.nav-dropdown-menu a:hover,
+.nav-dropdown-menu a:focus-visible {
   background: rgba(255, 255, 255, 0.10);
+  outline: none;
 }
 
-/* Right side */
-
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+/* Show when clicked open OR keyboard focus is inside */
+.nav-dropdown.is-open .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+  display: block;
 }
 
-.watch-btn {
-  height: 38px;
-  padding: 0 16px;
-  border-radius: 999px;
-  border: 1px solid rgba(17, 17, 17, 0.12);
-  background: #fff;
-  font-size: 14px;
-  font-weight: 600;
+/* Optional hover on desktop */
+@media (min-width: 1001px) {
+  .nav-dropdown:hover .nav-dropdown-menu {
+    display: block;
+  }
 }
 
-.nav-socials {
-  display: flex;
-  gap: 10px;
+/* Tablet/Mobile breakpoint */
+@media (max-width: 1000px) {
+  .nav-links-desktop,
+  .nav-right-desktop {
+    display: none !important;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .nav-wrap {
+    grid-template-columns: auto 1fr auto;
+    gap: 14px;
+    align-items: center;
+  }
+
+  .nav-center {
+    grid-column: 1 / -1;
+    width: 100%;
+    align-items: stretch;
+    text-align: left;
+    gap: 10px;
+  }
+
+  .nav-search {
+    justify-content: stretch;
+  }
+
+  .nav-search-input {
+    max-width: none;
+  }
+
+  .nav-panel {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
 }
 
-.nav-social {
-  width: 36px;
-  height: 36px;
-  border-radius: 999px;
-  border: 1px solid rgba(17, 17, 17, 0.12);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+/* Mobile fine-tuning */
+@media (max-width: 640px) {
+  .navbar {
+    padding: 20px 0;
+    border-bottom-width: 2px;
+  }
+
+  .nav-logo img {
+    height: 46px;
+  }
+
+  .nav-search-input {
+    height: 54px;
+    font-size: 16px;
+    padding: 0 20px;
+    border-width: 2px;
+  }
+
+  .nav-toggle {
+    width: 52px;
+    height: 52px;
+    border-width: 2px;
+    border-radius: 14px;
+  }
+
+  .nav-toggle-lines,
+  .nav-toggle-lines::before,
+  .nav-toggle-lines::after {
+    width: 22px;
+  }
+  .nav-toggle-lines::before { top: -7px; }
+  .nav-toggle-lines::after { top: 7px; }
+
+  .nav-panel {
+    border-width: 2px;
+    border-radius: 18px;
+    padding: 14px;
+  }
+
+  .nav-links-mobile a {
+    font-size: 16px;
+    padding: 14px 14px;
+    border-radius: 14px;
+  }
+
+  .watch-btn {
+    height: 48px;
+    font-size: 15.5px;
+    padding: 0 18px;
+    border-width: 2px;
+  }
+
+  .nav-social {
+    width: 44px;
+    height: 44px;
+    border-width: 2px;
+  }
+
+  .nav-social-icon {
+    width: 20px;
+    height: 20px;
+  }
 }
 
-/* ======================================================
-   HERO
-   ====================================================== */
-
+/* ==============================
+   HERO VISUAL
+   ============================== */
 .hero-visual {
   position: relative;
   min-height: 620px;
@@ -225,87 +530,620 @@ img {
   text-align: center;
   color: #fff;
   overflow: hidden;
-  background: var(--covenant-blue);
+  background: #0b2a4a;
 }
-
 .hero-visual::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: url("/assets/images/hero-church.jpg") center/cover no-repeat;
+  background-image: url("/assets/images/hero-church.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1.02);
   filter: saturate(1.02);
 }
-
 .hero-visual::after {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.12),
-    rgba(0, 0, 0, 0.72)
+    rgba(0, 0, 0, 0.12) 0%,
+    rgba(0, 0, 0, 0.32) 45%,
+    rgba(0, 0, 0, 0.72) 100%
   );
 }
-
+.hero-visual::before,
+.hero-visual::after {
+  pointer-events: none;
+}
 .hero-visual-inner {
   position: relative;
   z-index: 2;
+  width: min(920px, 100%);
   padding: 0 20px 60px;
 }
-
 .hero-logo {
-  width: 260px;
+  width: min(280px, 60vw);
   margin-bottom: 14px;
+  opacity: 0.92;
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.55));
 }
-
+.hero-copy {
+  font-size: clamp(15px, 2vw, 17px);
+  color: rgba(255, 255, 255, 0.82);
+  margin-bottom: 18px;
+}
 .hero-copy-primary {
-  font-size: 20px;
-  font-weight: 500;
+  font-size: clamp(18px, 2.4vw, 22px);
+  font-weight: 600;
   opacity: 0.9;
 }
-
 .hero-cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   height: 40px;
+  padding: 0 16px;
+  font-size: 14px;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.9);
+  color: #111;
+  border-radius: 999px;
+}
+@media (max-width: 900px) {
+  .hero-visual { min-height: 560px; }
+  .hero-visual-inner { padding-bottom: 54px; }
+}
+
+/* ==============================
+   JOIN US IN PERSON
+   ============================== */
+.join-section {
+  background: #fff;
+  padding: 74px 0 78px;
+}
+.join-inner {
+  text-align: center;
+  max-width: 980px;
+}
+.join-title {
+  margin: 0 0 10px;
+  font-size: clamp(40px, 6vw, 72px);
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  color: rgba(17, 17, 17, 0.92);
+}
+.join-subtitle {
+  margin: 0 auto 22px;
+  max-width: 62ch;
+  font-size: 18px;
+  color: rgba(17, 17, 17, 0.62);
+}
+.join-visual {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 26px;
+}
+.join-image {
+  width: min(520px, 86vw);
+  height: auto;
+  border-radius: 28px;
+  display: block;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.10);
+}
+.join-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.join-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
   padding: 0 18px;
   border-radius: 999px;
+  border: 1px solid rgba(17, 17, 17, 0.16);
   background: #fff;
-  color: #111;
+  font-weight: 800;
+  font-size: 14px;
+  color: rgba(17, 17, 17, 0.86);
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+}
+.join-btn:hover {
+  transform: translateY(-1px);
+  background: rgba(17, 17, 17, 0.03);
+  border-color: rgba(11, 42, 74, 0.22);
+}
+.join-btn.primary {
+  background: var(--covenant-blue);
+  border-color: var(--covenant-blue);
+  color: #fff;
+}
+.join-btn.primary:hover {
+  background: rgba(11, 42, 74, 0.92);
+}
+@media (max-width: 560px) {
+  .join-subtitle { font-size: 16px; }
+}
+
+/* ==============================
+   SERMON SECTION + RESOURCES
+   ============================== */
+.sermon-section {
+  background: #f5f6f7;
+  padding: 70px 0;
+}
+.sermon-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+.sermon-heading {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: var(--covenant-blue);
+}
+.sermon-video {
+  border-radius: 18px;
+  overflow: hidden;
+  background: #000;
+  margin-bottom: 18px;
+}
+.sermon-video iframe {
+  width: 100%;
+  height: 420px;
+  display: block;
+}
+.sermon-side {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: -18px;
+  position: sticky;
+  top: 18px;
+}
+@media (max-width: 900px) {
+  .sermon-side {
+    margin-top: 0;
+    position: static;
+  }
+}
+
+/* Resources (minimal, no badges/icons) */
+.sermon-side-head {
+  margin-bottom: 6px;
+}
+.resource-icon { display: none !important; }
+.resource-badge { display: none !important; }
+.resource-grid {
+  display: grid;
+  gap: 12px;
+}
+.resource-card,
+.resource-card.promo {
+  position: relative;
+  display: block;
+  padding: 14px 14px 13px;
+  border-radius: 14px;
+  border: 1px solid rgba(17, 17, 17, 0.10);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.05);
+  transition: transform 0.14s ease, box-shadow 0.14s ease, border-color 0.14s ease;
+}
+.resource-card::before,
+.resource-card.promo::before {
+  content: none !important;
+}
+.resource-card:hover,
+.resource-card.promo:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.07);
+  border-color: rgba(11, 42, 74, 0.18);
+}
+.resource-title {
+  font-weight: 800;
+  font-size: 15px;
+  margin: 0 0 6px;
+  color: rgba(17, 17, 17, 0.92);
+  line-height: 1.2;
+}
+.resource-text {
+  font-size: 13.5px;
+  color: rgba(17, 17, 17, 0.62);
+  margin: 0 0 10px;
+  line-height: 1.35;
+}
+.resource-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 800;
+  color: rgba(11, 42, 74, 0.92);
+}
+.resource-cta::after {
+  content: "›";
+  font-size: 16px;
+  line-height: 1;
+  opacity: 0.75;
+  transform: translateY(-0.5px);
+}
+
+@media (max-width: 900px) {
+  .sermon-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .sermon-video iframe { height: 260px; }
+  .resource-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+  .resource-grid { grid-template-columns: 1fr; }
+}
+
+/* ==============================
+   MISSION COLLAGE + QUOTE
+   ============================== */
+.mission-split {
+  padding: 70px 0;
+  background: #fff;
+}
+.mission-inner {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 56px;
+  align-items: center;
+}
+.mission-collage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.mc-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+}
+.mission-quote {
+  text-align: left;
+  padding: 18px 0;
+}
+.mq-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 2px solid rgba(11, 42, 74, 0.25);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 22px;
+  color: var(--covenant-blue);
+  margin-bottom: 18px;
+}
+.mq-text {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(20px, 2.2vw, 28px);
+  line-height: 1.35;
+  color: rgba(17, 17, 17, 0.9);
   font-weight: 600;
 }
-
-/* ======================================================
-   MOBILE
-   ====================================================== */
-
-@media (max-width: 1000px) {
-
-  .nav-links-desktop,
-  .nav-right-desktop {
-    display: none !important;
+.mq-ref {
+  margin-top: 18px;
+  font-size: 18px;
+  font-weight: 700;
+  color: rgba(17, 17, 17, 0.85);
+}
+@media (max-width: 980px) {
+  .mission-inner {
+    grid-template-columns: 1fr;
+    gap: 34px;
   }
-
-  .nav-center {
-    align-items: stretch;
-  }
-
-  .nav-search {
-    max-width: none;
-  }
-
+}
+@media (max-width: 560px) {
+  .mission-collage { gap: 12px; }
+  .mc-img { border-radius: 14px; }
 }
 
+/* ==============================
+   MINISTRIES SHOWCASE
+   ============================== */
+.ministries-showcase {
+  padding: 80px 0;
+  background: #f7f8f9;
+  text-align: center;
+}
+.ministries-heading {
+  font-size: 30px;
+  margin-bottom: 40px;
+  color: var(--covenant-blue);
+}
+.ministries-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 900px;
+  margin: 0 auto 40px;
+}
+.ministry-card {
+  background: #fff;
+  border-radius: 22px;
+  padding: 32px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.ministry-card img {
+  max-width: 190px;
+  max-height: 100px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.18s ease;
+}
+.ministry-card:hover img { transform: scale(1.04); }
+.ministries-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 999px;
+  border: 2px solid var(--covenant-blue);
+  font-weight: 700;
+  font-size: 14px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.ministries-btn:hover {
+  background: var(--covenant-blue);
+  color: #fff;
+}
+@media (max-width: 900px) {
+  .ministries-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .ministries-grid { grid-template-columns: 1fr; }
+}
+
+/* ==============================
+   INTERIOR PAGE HERO (Site Standard)
+   ============================== */
+.page-hero {
+  padding: 42px 0 54px;
+  background: #f7f8f9;
+  text-align: center;
+}
+.page-hero-tabs {
+  display: inline-flex;
+  gap: 18px;
+  padding: 14px 22px;
+  border-radius: 999px;
+  background: rgba(17, 17, 17, 0.60);
+  margin: 0 auto 26px;
+}
+.page-hero-tab {
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  opacity: 0.92;
+}
+.page-hero-tab:hover { opacity: 1; }
+.page-hero-tab.is-active { background: rgba(255, 255, 255, 0.12); }
+.page-hero-media {
+  max-width: 760px;
+  margin: 0 auto 22px;
+}
+.page-hero-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.page-hero-title {
+  font-size: clamp(34px, 4.4vw, 54px);
+  letter-spacing: -0.02em;
+  margin: 0 0 10px;
+  color: rgba(17, 17, 17, 0.92);
+}
+.page-hero-intro {
+  max-width: 72ch;
+  margin: 0 auto 22px;
+  color: rgba(17, 17, 17, 0.62);
+  font-size: 15.5px;
+  line-height: 1.6;
+}
+.page-hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.page-hero-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(17, 17, 17, 0.16);
+  background: #fff;
+  font-weight: 800;
+  font-size: 14px;
+  color: rgba(17, 17, 17, 0.86);
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+}
+.page-hero-btn:hover {
+  transform: translateY(-1px);
+  background: rgba(17, 17, 17, 0.03);
+  border-color: rgba(11, 42, 74, 0.22);
+}
+.page-hero-btn.primary {
+  background: var(--covenant-blue);
+  border-color: var(--covenant-blue);
+  color: #fff;
+}
+.page-hero-btn.primary:hover { background: rgba(11, 42, 74, 0.92); }
 @media (max-width: 640px) {
-
-  .navbar {
-    padding: 20px 0;
+  .page-hero-tabs {
+    gap: 10px;
+    padding: 12px 14px;
   }
+  .page-hero-tab {
+    font-size: 13px;
+    padding: 7px 8px;
+  }
+}
 
-  .nav-search-input {
-    height: 50px;
+/* ==============================
+   FOOTER (Village Church style)
+   ============================== */
+.site-footer {
+  background: #000;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 70px 0 40px;
+}
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1.2fr;
+  gap: 60px;
+}
+.footer-title {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-bottom: 18px;
+  color: #fff;
+}
+.footer-link {
+  display: block;
+  padding: 7px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.82);
+  transition: color 0.15s ease;
+}
+.footer-link:hover { color: #fff; }
+.footer-col-right .footer-title { margin-bottom: 14px; }
+.footer-socials {
+  display: flex;
+  gap: 14px;
+  margin: 18px 0 22px;
+}
+.footer-social {
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 800;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.footer-social:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+.footer-meta {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.78);
+}
+.footer-meta-spacer { height: 14px; }
+.footer-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: end;
+  gap: 24px;
+  margin-top: 70px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+.footer-subscribe {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.footer-copy {
+  text-align: center;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.62);
+  line-height: 1.45;
+}
+.footer-brand {
+  display: flex;
+  justify-content: flex-end;
+}
+.footer-brand img {
+  height: 34px;
+  width: auto;
+  opacity: 0.95;
+}
+@media (max-width: 980px) {
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 34px;
+  }
+  .footer-bottom {
+    grid-template-columns: 1fr;
+    text-align: left;
+    align-items: start;
+  }
+  .footer-copy { text-align: left; }
+  .footer-brand { justify-content: flex-start; }
+}
+@media (max-width: 560px) {
+  .site-footer { padding: 54px 0 34px; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .footer-subscribe {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ==============================
+   MOBILE READABILITY BOOST
+   ============================== */
+@media (max-width: 640px) {
+  body { font-size: 16.5px; }
+  p {
     font-size: 16px;
+    line-height: 1.75;
   }
 
+  /* Thicker borders across key UI */
+  .navbar { border-bottom-width: 2px; }
+  .nav-toggle,
+  .nav-social,
+  .nav-panel,
+  .nav-search-input,
+  .watch-btn,
+  .join-btn,
+  .hero-cta,
+  .page-hero-btn,
+  .resource-card,
+  .resource-card.promo {
+    border-width: 2px;
+  }
+
+  .sermon-heading { font-size: 24px; }
+  .footer-link {
+    font-size: 15px;
+    padding: 9px 0;
+  }
+  .footer-meta { font-size: 15px; }
+}
+
+@media (max-width: 390px) {
+  .nav-search-input { height: 48px; }
+  .join-title { font-size: 40px; }
 }

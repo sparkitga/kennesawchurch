@@ -101,10 +101,17 @@ function openResults(inputEl, resultsEl) {
   inputEl.setAttribute("aria-expanded", "true");
 }
 
-function closeResults(inputEl, resultsEl) {
-  resultsEl.hidden = true;
-  inputEl.setAttribute("aria-expanded", "false");
-}
+document.addEventListener("click", (e) => {
+  // If click is inside ANY dropdown (button or menu), do nothing
+  if (e.target.closest(".nav-dropdown")) return;
+
+  // Otherwise close all
+  dropdowns.forEach((dd) => {
+    dd.classList.remove("is-open");
+    const btn = dd.querySelector(".nav-dropdown-toggle");
+    if (btn) btn.setAttribute("aria-expanded", "false");
+  });
+});
 
 function moveFocus(resultsEl, direction) {
   const items = Array.from(resultsEl.querySelectorAll('a.nav-search-result[role="option"]'));

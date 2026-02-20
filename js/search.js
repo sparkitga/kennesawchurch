@@ -10,7 +10,7 @@ datasource db {
 model User {
   id        String   @id @default(cuid())
   email     String   @unique
-  name      String?
+  name      String
   password  String   // hashed; use bcrypt in production
   role      String   // "admin" | "client"
   clientId  String?

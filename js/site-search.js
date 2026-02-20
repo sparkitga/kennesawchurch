@@ -1,131 +1,11 @@
-/* ==============================
-   Simple client-side search
-   JSON index + scoring
-   ============================== */
-
-const INDEX_URL = "/search-index.json";
-const MAX_RESULTS = 8;
-const MIN_QUERY_LEN = 2;
-
-let cachedIndex = null;
-
-function normalize(str = "") {
-  return str
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .trim();
-}
-
-function escapeHtml(str = "") {
-  return str
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;");
-}
-
-function highlight(text, q) {
-  const safe = escapeHtml(text);
-  if (!q) return safe;
-  const escapedQ = q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  return safe.replace(new RegExp(`(${escapedQ})`, "ig"), "<mark>$1</mark>");
-}
-
-async function loadIndex() {
-  if (cachedIndex) return cachedIndex;
-  const res = await fetch(INDEX_URL, { cache: "force-cache" });
-  if (!res.ok) throw new Error(`Search index failed: ${res.status}`);
-  cachedIndex = await res.json();
-  return cachedIndex;
-}
-
-function scoreItem(item, q) {
-  const title = normalize(item.title);
-  const desc = normalize(item.description);
-  const keywords = Array.isArray(item.keywords) ? item.keywords.map(normalize).join(" ") : "";
-
-  let score = 0;
-
-  // Strong matches
-  if (title === q) score += 100;
-  if (title.startsWith(q)) score += 60;
-  if (title.includes(q)) score += 45;
-
-  // Medium matches
-  if (keywords.includes(q)) score += 30;
-  if (desc.includes(q)) score += 18;
-
-  // Token-based bonus (handles multi-word queries)
-  const tokens = q.split(/\s+/).filter(Boolean);
-  for (const t of tokens) {
-    if (t.length < 2) continue;
-    if (title.includes(t)) score += 12;
-    if (keywords.includes(t)) score += 8;
-    if (desc.includes(t)) score += 5;
-  }
-
-  return score;
-}
-
-function renderResults(container, query, results) {
-  if (!results.length) {
-    container.innerHTML = `
-      <div class="nav-search-result" tabindex="-1" aria-disabled="true">
-        <div class="nav-search-result-title">No results</div>
-        <p class="nav-search-result-desc">Try a different keyword.</p>
-      </div>
-    `;
-    return;
-  }
-
-  const q = normalize(query);
-
-  container.innerHTML = results
-    .map((r, i) => {
-      const title = r.title || "Untitled";
-      const desc = r.description || "";
-      return `
-        <a class="nav-search-result" role="option" data-index="${i}" href="${r.url}">
-          <div class="nav-search-result-title">${highlight(title, q)}</div>
-          <p class="nav-search-result-desc">${highlight(desc, q)}</p>
-        </a>
-      `;
-    })
-    .join("");
-}
-
-function openResults(inputEl, resultsEl) {
-  resultsEl.hidden = false;
-  inputEl.setAttribute("aria-expanded", "true");
-}
-
-document.addEventListener("click", (e) => {
-  // If click is inside ANY dropdown (button or menu), do nothing
-  if (e.target.closest(".nav-dropdown")) return;
-
-  // Otherwise close all
-  dropdowns.forEach((dd) => {
-    dd.classList.remove("is-open");
-    const btn = dd.querySelector(".nav-dropdown-toggle");
-    if (btn) btn.setAttribute("aria-expanded", "false");
-  });
-});
-
-function moveFocus(resultsEl, direction) {
-  const items = Array.from(resultsEl.querySelectorAll('a.nav-search-result[role="option"]'));
-  if (!items.length) return;
-
-  const active = document.activeElement;
-  const currentIndex = items.indexOf(active);
-  const nextIndex =
-    currentIndex === -1
-      ? 0
-      : (currentIndex + direction + items.length) % items.length;
-
-  items[nextIndex].focus();
-}
+/* FILE: js/site-search.js
+   Purpose:
+   - Client-side search using a JSON index (search-index.json)
+   - Dropdown results under the search input
+   - Keyboard navigation (↑ ↓ Enter Escape)
+   Notes:
+   - Does NOT close nav dropdowns (nav.js handles those)
+*/
 
 document.addEventListener("DOMContentLoaded", async () => {
   const form = document.getElementById("siteSearchForm");
@@ -134,81 +14,239 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   if (!form || !input || !resultsEl) return;
 
-  // Prevent page jump on enter
-  form.addEventListener("submit", (e) => e.preventDefault());
+  let indexData = [];
 
-  let index = [];
-  try {
-    index = await loadIndex();
-  } catch (err) {
-    // Fail quietly (keeps navbar clean if index missing)
-    console.warn(err);
-    return;
+  // Try root first, then fallback (in case you move it under /data)
+  async function loadIndex() {
+    const candidates = ["/search-index.json", "/data/search-index.json"];
+    for (const url of candidates) {
+      try {
+        const res = await fetch(url, { cache: "no-cache" });
+        if (!res.ok) continue;
+        const json = await res.json();
+        if (Array.isArray(json)) return json;
+        if (json && Array.isArray(json.items)) return json.items;
+      } catch (err) {
+        // try next candidate
+      }
+    }
+    return [];
   }
 
-  const runSearch = (raw) => {
-    const q = normalize(raw);
-    if (q.length < MIN_QUERY_LEN) {
-      closeResults(input, resultsEl);
-      resultsEl.innerHTML = "";
+  indexData = await loadIndex();
+
+  /* -------------------------
+     Helpers
+  ------------------------- */
+  function normalize(str) {
+    return (str || "").toLowerCase().trim();
+  }
+
+  function escapeHtml(str) {
+    return (str || "")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
+
+  function highlight(text, query) {
+    const t = text || "";
+    const q = query.trim();
+    if (!q) return escapeHtml(t);
+
+    // Basic safe highlight (case-insensitive)
+    const re = new RegExp(`(${q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})`, "ig");
+    return escapeHtml(t).replace(re, "<mark>$1</mark>");
+  }
+
+  function scoreItem(item, q) {
+    // Simple scoring: title matches > description matches > url matches
+    const title = normalize(item.title);
+    const desc = normalize(item.description);
+    const url = normalize(item.url);
+
+    let score = 0;
+    if (title.includes(q)) score += 5;
+    if (desc.includes(q)) score += 2;
+    if (url.includes(q)) score += 1;
+
+    // boost exact starts-with
+    if (title.startsWith(q)) score += 2;
+
+    return score;
+  }
+
+  function search(q) {
+    const query = normalize(q);
+    if (!query || query.length < 2) return [];
+
+    const results = indexData
+      .map((item) => ({
+        ...item,
+        _score: scoreItem(item, query),
+      }))
+      .filter((item) => item._score > 0)
+      .sort((a, b) => b._score - a._score)
+      .slice(0, 8);
+
+    return results;
+  }
+
+  function openResults() {
+    resultsEl.hidden = false;
+    input.setAttribute("aria-expanded", "true");
+  }
+
+  function closeResults() {
+    resultsEl.hidden = true;
+    input.setAttribute("aria-expanded", "false");
+    resultsEl.innerHTML = "";
+    clearActive();
+  }
+
+  function renderResults(q, results) {
+    if (!results.length) {
+      resultsEl.innerHTML = `
+        <div class="nav-search-result nav-search-result--empty" role="option" aria-disabled="true" tabindex="-1">
+          <div class="nav-search-result-title">No results</div>
+          <div class="nav-search-result-desc">Try a different keyword.</div>
+        </div>
+      `;
+      openResults();
       return;
     }
 
-    const scored = index
-      .map((item) => ({ item, score: scoreItem(item, q) }))
-      .filter((x) => x.score > 0)
-      .sort((a, b) => b.score - a.score)
-      .slice(0, MAX_RESULTS)
-      .map((x) => x.item);
+    resultsEl.innerHTML = results
+      .map((r, i) => {
+        const title = r.title || "Untitled";
+        const desc = r.description || "";
+        const url = r.url || "#";
 
-    renderResults(resultsEl, raw, scored);
-    openResults(input, resultsEl);
-  };
+        return `
+          <a class="nav-search-result" role="option" tabindex="-1" data-idx="${i}" href="${escapeHtml(url)}">
+            <div class="nav-search-result-title">${highlight(title, q)}</div>
+            ${desc ? `<div class="nav-search-result-desc">${highlight(desc, q)}</div>` : ""}
+          </a>
+        `;
+      })
+      .join("");
 
-  // Input typing
-  input.addEventListener("input", (e) => runSearch(e.target.value));
+    openResults();
+  }
 
-  // Click outside closes
-  document.addEventListener("click", (e) => {
-    if (e.target.closest("#siteSearchForm")) return;
-    closeResults(input, resultsEl);
+  /* -------------------------
+     Keyboard navigation
+  ------------------------- */
+  function getItems() {
+    return Array.from(resultsEl.querySelectorAll(".nav-search-result[role='option']"));
+  }
+
+  function clearActive() {
+    getItems().forEach((el) => el.classList.remove("is-active"));
+  }
+
+  function setActive(index) {
+    const items = getItems();
+    if (!items.length) return;
+
+    clearActive();
+    const clamped = Math.max(0, Math.min(index, items.length - 1));
+    items[clamped].classList.add("is-active");
+    items[clamped].scrollIntoView({ block: "nearest" });
+  }
+
+  function getActiveIndex() {
+    const items = getItems();
+    return items.findIndex((el) => el.classList.contains("is-active"));
+  }
+
+  /* -------------------------
+     Events
+  ------------------------- */
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    // If a result is active, go there
+    const items = getItems();
+    const active = items.find((el) => el.classList.contains("is-active"));
+    if (active && active.href) window.location.href = active.href;
   });
 
-  // Keyboard behavior
+  input.addEventListener("input", () => {
+    const q = input.value;
+    const results = search(q);
+
+    // Close if cleared or too short
+    if (!normalize(q) || normalize(q).length < 2) {
+      closeResults();
+      return;
+    }
+
+    renderResults(q, results);
+  });
+
+  input.addEventListener("focus", () => {
+    const q = input.value;
+    if (normalize(q).length >= 2) {
+      renderResults(q, search(q));
+    }
+  });
+
   input.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      closeResults(input, resultsEl);
-      input.blur();
-      return;
-    }
+    if (resultsEl.hidden) return;
 
-    if (e.key === "ArrowDown") {
-      if (resultsEl.hidden) runSearch(input.value);
-      e.preventDefault();
-      moveFocus(resultsEl, +1);
-    }
-  });
-
-  resultsEl.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      closeResults(input, resultsEl);
-      input.focus();
+    const items = getItems();
+    if (!items.length) {
+      if (e.key === "Escape") closeResults();
       return;
     }
 
     if (e.key === "ArrowDown") {
       e.preventDefault();
-      moveFocus(resultsEl, +1);
+      const idx = getActiveIndex();
+      setActive(idx < 0 ? 0 : idx + 1);
     }
 
     if (e.key === "ArrowUp") {
       e.preventDefault();
-      moveFocus(resultsEl, -1);
+      const idx = getActiveIndex();
+      setActive(idx <= 0 ? 0 : idx - 1);
+    }
+
+    if (e.key === "Enter") {
+      const idx = getActiveIndex();
+      if (idx >= 0) {
+        e.preventDefault();
+        const el = items[idx];
+        if (el && el.href) window.location.href = el.href;
+      }
+    }
+
+    if (e.key === "Escape") {
+      e.preventDefault();
+      closeResults();
     }
   });
 
-  // Optional: open results on focus if query already present
-  input.addEventListener("focus", () => {
-    if (normalize(input.value).length >= MIN_QUERY_LEN) runSearch(input.value);
+  // Click inside results should not close before navigation happens
+  resultsEl.addEventListener("click", (e) => {
+    const link = e.target.closest("a.nav-search-result");
+    if (!link) return;
+    // allow navigation, but close visually
+    closeResults();
+  });
+
+  // Click outside closes ONLY search results
+  document.addEventListener("click", (e) => {
+    if (e.target.closest("#siteSearchForm")) return;
+    if (e.target.closest("#siteSearchResults")) return;
+    closeResults();
+  });
+
+  // ESC closes search results even if focus is elsewhere
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape") return;
+    closeResults();
   });
 });

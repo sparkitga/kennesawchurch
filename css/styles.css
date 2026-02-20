@@ -1324,3 +1324,80 @@ a {
   .page-hero-tab{ font-size: 13px; padding: 7px 8px; }
 }
 
+/* ==============================
+   MOBILE BOOST: larger text + thicker borders
+   (drop at VERY bottom of styles.css)
+   ============================== */
+
+@media (max-width: 640px) {
+  /* Global readability */
+  body { font-size: 16.5px; }
+  p { font-size: 16px; line-height: 1.75; }
+
+  /* Thicker borders across key UI */
+  .navbar { border-bottom-width: 2px; }
+  .nav-toggle { border-width: 2px; }
+  .nav-social { border-width: 2px; }
+  .nav-panel { border-width: 2px; }
+  .nav-search-input { border-width: 2px; }
+  .watch-btn { border-width: 2px; }
+  .join-btn { border-width: 2px; }
+  .resource-card,
+  .resource-card.promo { border-width: 2px; }
+
+  /* NAV: bigger search + bigger menu text */
+  .nav-search-input {
+    height: 50px;
+    font-size: 16px;
+    padding: 0 18px;
+  }
+
+  /* Mobile menu links (panel) */
+  .nav-links-mobile a {
+    font-size: 16px;
+    padding: 12px 14px; /* larger tap target */
+  }
+
+  /* Buttons: bigger + easier taps */
+  .watch-btn,
+  .join-btn,
+  .hero-cta,
+  .page-hero-btn {
+    height: 46px;
+    font-size: 15.5px;
+    padding: 0 18px;
+  }
+
+  /* Social icons: slightly larger touch area */
+  .nav-social {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Resources: bigger type + more breathing room */
+  .resource-card,
+  .resource-card.promo {
+    padding: 16px 16px 15px;
+    border-radius: 16px;
+  }
+
+  .resource-title { font-size: 16px; }
+  .resource-text { font-size: 15px; line-height: 1.55; }
+  .resource-cta  { font-size: 14.5px; }
+
+  /* Sermon headings: slightly larger on mobile */
+  .sermon-heading { font-size: 24px; }
+
+  /* Join section text */
+  .join-subtitle { font-size: 17px; }
+
+  /* Footer links: easier to read/tap */
+  .footer-link { font-size: 15px; padding: 9px 0; }
+  .footer-meta { font-size: 15px; }
+}
+
+/* Extra-small phones (optional) */
+@media (max-width: 390px) {
+  .nav-search-input { height: 48px; }
+  .join-title { font-size: 40px; }
+}

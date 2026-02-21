@@ -1,4 +1,15 @@
-<!-- FILE: index.html -->
+<!-- FILE: index.html
+  NOTE: This is a FULL HTML page with the corrected navbar structure:
+  - Logo left
+  - Search centered
+  - Worship Online + Social icons on the right
+  - Desktop nav links sit UNDER the search bar (center column)
+  - Minimal dropdowns for Ministries + Worship
+  - Includes working mobile panel + accordions
+  - Includes site search hooks: #siteSearchForm, #siteSearchInput, #siteSearchResults
+  - IMPORTANT: body has class="home-page" so the "shrink all images except hero" CSS applies
+-->
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -14,7 +25,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Church: 9A & 11A</title>
+    <title>Church: 9A &amp; 11A</title>
 
     <meta
       name="description"
@@ -72,28 +83,21 @@
     </script>
   </head>
 
-  <!-- NOTE: home-page class enables "shrink all images except hero" CSS -->
   <body class="home-page">
     <!-- NAVBAR -->
     <header class="navbar">
       <div class="container nav-wrap">
-        <!-- Left: Logo -->
+        <!-- LEFT: Logo -->
         <div class="nav-logo">
           <a href="index.html" aria-label="Kennesaw Church Home">
             <img src="assets/logos/FullHori_GreenBlack_TranspBG.svg" alt="Kennesaw Church" />
           </a>
         </div>
 
-        <!-- Center: Search (row 1) + Nav links (row 2) -->
+        <!-- CENTER: Search (row 1) + Desktop Links (row 2) -->
         <div class="nav-center">
-          <form
-            class="nav-search"
-            role="search"
-            aria-label="Site search"
-            action="#"
-            method="GET"
-            id="siteSearchForm"
-          >
+          <!-- Search -->
+          <form class="nav-search" role="search" aria-label="Site search" action="#" method="GET" id="siteSearchForm">
             <input
               class="nav-search-input"
               type="search"
@@ -116,7 +120,7 @@
             ></div>
           </form>
 
-          <!-- Desktop nav links UNDER search -->
+          <!-- Desktop nav links (UNDER search) -->
           <nav class="nav-links nav-links-desktop" aria-label="Primary navigation">
             <a href="index.html">Home</a>
 
@@ -157,7 +161,7 @@
           </nav>
         </div>
 
-        <!-- Right: Worship Online + Socials + Hamburger -->
+        <!-- RIGHT: Worship Online + Social + Hamburger -->
         <div class="nav-right">
           <a class="watch-btn nav-right-desktop" href="#">Worship Online</a>
 
@@ -597,8 +601,123 @@
       </div>
     </footer>
 
-    <!-- Scripts (ONLY once each — prevents glitchy behavior) -->
-    <script src="js/nav.js" defer></script>
+    <!-- NAVBAR JS (dropdowns + mobile) -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        /* =========================
+           Desktop dropdowns (click)
+           ========================= */
+        const dropdowns = document.querySelectorAll(".nav-dropdown");
+
+        dropdowns.forEach((dd) => {
+          const btn = dd.querySelector(".nav-dropdown-toggle");
+          if (!btn) return;
+
+          btn.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            const isOpen = dd.classList.contains("is-open");
+
+            // close all
+            dropdowns.forEach((x) => {
+              x.classList.remove("is-open");
+              const b = x.querySelector(".nav-dropdown-toggle");
+              if (b) b.setAttribute("aria-expanded", "false");
+            });
+
+            // open current if it was closed
+            if (!isOpen) {
+              dd.classList.add("is-open");
+              btn.setAttribute("aria-expanded", "true");
+            }
+          });
+        });
+
+        // click outside closes desktop dropdowns
+        document.addEventListener("click", (e) => {
+          if (e.target.closest(".nav-dropdown")) return;
+          dropdowns.forEach((dd) => {
+            dd.classList.remove("is-open");
+            const btn = dd.querySelector(".nav-dropdown-toggle");
+            if (btn) btn.setAttribute("aria-expanded", "false");
+          });
+        });
+
+        // escape closes desktop dropdowns
+        document.addEventListener("keydown", (e) => {
+          if (e.key !== "Escape") return;
+          dropdowns.forEach((dd) => {
+            dd.classList.remove("is-open");
+            const btn = dd.querySelector(".nav-dropdown-toggle");
+            if (btn) btn.setAttribute("aria-expanded", "false");
+          });
+        });
+
+        /* =========================
+           Mobile hamburger panel
+           ========================= */
+        const toggle = document.querySelector(".nav-toggle");
+        const panel = document.getElementById("mobileMenu");
+
+        if (toggle && panel) {
+          toggle.addEventListener("click", () => {
+            const isOpen = toggle.getAttribute("aria-expanded") === "true";
+
+            // Toggle panel visibility
+            toggle.setAttribute("aria-expanded", String(!isOpen));
+            panel.hidden = isOpen;
+
+            // When opening, collapse ALL mobile accordions by default
+            if (!isOpen) {
+              const mobAccordions = document.querySelectorAll(".nav-mobile-accordion");
+              mobAccordions.forEach((btn) => {
+                const id = btn.getAttribute("aria-controls");
+                const menu = id ? document.getElementById(id) : null;
+                btn.setAttribute("aria-expanded", "false");
+                if (menu) menu.hidden = true;
+              });
+            }
+          });
+
+          // Close panel when clicking a normal link (not the accordion)
+          panel.addEventListener("click", (e) => {
+            if (e.target.closest(".nav-mobile-accordion")) return;
+
+            const link = e.target.closest("a");
+            if (!link) return;
+
+            toggle.setAttribute("aria-expanded", "false");
+            panel.hidden = true;
+          });
+
+          // Escape closes mobile panel too
+          document.addEventListener("keydown", (e) => {
+            if (e.key !== "Escape") return;
+            toggle.setAttribute("aria-expanded", "false");
+            panel.hidden = true;
+          });
+        }
+
+        /* =========================
+           Mobile accordions
+           ========================= */
+        const accordions = document.querySelectorAll(".nav-mobile-accordion");
+
+        accordions.forEach((btn) => {
+          const id = btn.getAttribute("aria-controls");
+          const menu = id ? document.getElementById(id) : null;
+          if (!menu) return;
+
+          btn.addEventListener("click", () => {
+            const isOpen = btn.getAttribute("aria-expanded") === "true";
+            btn.setAttribute("aria-expanded", String(!isOpen));
+            menu.hidden = isOpen;
+          });
+        });
+      });
+    </script>
+
+    <!-- Site search (your existing file) -->
     <script src="js/site-search.js" defer></script>
   </body>
 </html>

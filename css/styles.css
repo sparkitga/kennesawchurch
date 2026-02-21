@@ -1086,40 +1086,40 @@ body.home-page {
 
 /* Core pages */
 body.about-page {
-  --page-hero: url("../assets/images/about-hero.jpg");
+  --page-hero: url("../assets/hero-images/about-hero.jpg");
 }
 
 body.vision-page {
-  --page-hero: url("../assets/images/vision-hero.jpg");
+  --page-hero: url("../assets/hero-images/vision-hero.jpg");
 }
 
 body.statement-page {
-  --page-hero: url("../assets/images/statement-hero.jpg");
+  --page-hero: url("../assets/hero-images/statement-hero.jpg");
 }
 
 body.staff-page {
-  --page-hero: url("../assets/images/staff-hero.jpg");
+  --page-hero: url("../assets/hero-images/staff-hero.jpg");
 }
 
 /* Ministries + Content Pages */
 body.ministries-page {
-  --page-hero: url("../assets/images/ministries-hero.jpg");
+  --page-hero: url("../assets/hero-images/care-team-hero.jpg");
 }
 
 body.worship-page {
-  --page-hero: url("../assets/images/worship-hero.jpg");
+  --page-hero: url("../assets/hero-images/live-worship-hero.jpg");
 }
 
 body.worship-online-page {
-  --page-hero: url("../assets/images/worship-online-hero.jpg");
+  --page-hero: url("../assets/hero-images/med-cab-hero.jpg");
 }
 
 body.worship-in-person-page {
-  --page-hero: url("../assets/images/worship-in-person-hero.jpg");
+  --page-hero: url("../assets/hero-images/care-team-hero.jpg");
 }
 
 body.preschool-page {
-  --page-hero: url("../assets/images/preschool-hero.jpg");
+  --page-hero: url("../assets/hero-images/nursery-hero.jpg");
 }
 
 body.events-page {

@@ -15,34 +15,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Staff | Kennesaw Church</title>
-
   <meta name="description" content="Meet the pastors and staff of Kennesaw Church in Kennesaw, GA." />
-  <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#0b2a4a" />
 
-  <!-- ✅ Canonical for staff page -->
-  <link rel="canonical" href="https://kennesawchurch.netlify.app/staff/" />
+  <link rel="canonical" href="https://kennesawmc.org/staff/" />
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Kennesaw Church" />
-  <meta property="og:title" content="Staff | Kennesaw Church" />
-  <meta property="og:description" content="Meet the pastors and staff of Kennesaw Church." />
-  <meta property="og:url" content="https://kennesawchurch.netlify.app/staff/" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Staff | Kennesaw Church" />
-  <meta name="twitter:description" content="Meet the pastors and staff of Kennesaw Church." />
-
-  <!-- Inter Font -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 
-  <!-- Favicons -->
-  <link rel="icon" type="image/svg+xml" href="../assets/icons/Favicon_GreenWhite_DarkBlueBG.svg" />
-  <link rel="icon" type="image/png" href="../assets/icons/Favicon_GreenWhite_DarkBlueBG.png" />
+  <!-- Favicon -->
+  <link rel="icon" href="../assets/icons/Favicon_GreenWhite_DarkBlueBG.png" />
 
-  <!-- ✅ Main Stylesheet (corrected path) -->
+  <!-- Main CSS -->
   <link rel="stylesheet" href="../css/styles.css" />
 
 </head>
@@ -53,17 +37,14 @@
 <header class="navbar">
   <div class="container nav-wrap">
 
-    <!-- Logo -->
     <div class="nav-logo">
       <a href="../index.html">
         <img src="../assets/logos/FullHori_GreenBlack_TranspBG.svg" alt="Kennesaw Church">
       </a>
     </div>
 
-    <!-- Search + Links -->
     <div class="nav-center">
 
-      <!-- Search -->
       <form class="nav-search" role="search">
         <input class="nav-search-input"
                type="search"
@@ -73,80 +54,68 @@
         <div class="nav-search-results" id="siteSearchResults" hidden></div>
       </form>
 
-      <!-- Desktop Nav -->
       <nav class="nav-links nav-links-desktop">
-
-        <div class="nav-item nav-dropdown">
-          <button class="nav-dropdown-toggle" type="button">
-            I'm New <span class="nav-caret">▾</span>
-          </button>
-          <div class="nav-dropdown-menu">
-            <a href="../staff/">Staff</a>
-            <a href="#">Monthly Newsletter</a>
-            <a href="#">Vision</a>
-            <a href="#">Statement of Faith</a>
-          </div>
-        </div>
-
+        <a href="#">I’m New</a>
+        <a href="#">About</a>
+        <a href="#">Vision</a>
         <a href="#">Ministries</a>
         <a href="#">Worship</a>
         <a href="#">Serve</a>
+        <a href="#">Connections</a>
+        <a href="#">Events</a>
         <a href="#">Preschool</a>
-        <a href="#">Contact</a>
         <a href="#">Give</a>
-
       </nav>
-    </div>
-
-    <!-- Right Side -->
-    <div class="nav-right">
-      <a class="watch-btn" href="#">Worship Online</a>
-      <button class="nav-toggle" type="button">
-        <span class="nav-toggle-lines"></span>
-      </button>
     </div>
 
   </div>
 </header>
 
-<!-- ================= STAFF HERO ================= -->
+<!-- ================= HERO ================= -->
 <section class="hero-visual"
-         style="background: url('../assets/hero-images/staff-hero.jpg') center/cover no-repeat;">
+         style="background: url('../assets/hero-images/staff-hero.jpg') center/cover no-repeat; min-height: 420px;">
+
   <div class="hero-visual-inner">
-    <h1 class="hero-page-title">Our Staff</h1>
+    <h1 class="hero-page-title">Meet Our Staff</h1>
     <p class="hero-copy hero-copy-primary">
-      Meet the team serving our church family.
+      Click on the staff member’s picture to email them.
     </p>
   </div>
+
 </section>
 
-<!-- ================= STAFF GRID ================= -->
+<!-- ================= STAFF DIRECTORY ================= -->
 <section class="staff-section">
   <div class="container">
+
     <div class="staff-grid">
 
       <div class="staff-card">
-        <img src="../assets/images/staff-placeholder.jpg" alt="Senior Pastor">
-        <h3>Senior Pastor Name</h3>
+        <a href="mailto:alex@kennesawmc.org">
+          <img src="../assets/images/staff-alex.jpg" alt="Rev. Alex Stroud">
+        </a>
+        <h3>REV. ALEX STROUD</h3>
         <p class="staff-role">Senior Pastor</p>
-        <p class="staff-bio">Short bio about leadership, vision, and calling.</p>
       </div>
 
       <div class="staff-card">
-        <img src="../assets/images/staff-placeholder.jpg" alt="Associate Pastor">
-        <h3>Associate Pastor Name</h3>
-        <p class="staff-role">Associate Pastor</p>
-        <p class="staff-bio">Short bio about ministry focus and heart for people.</p>
+        <a href="mailto:brent@kennesawmc.org">
+          <img src="../assets/images/staff-brent.jpg" alt="Rev. Brent Vicars">
+        </a>
+        <h3>REV. BRENT VICARS</h3>
+        <p class="staff-role">NextGen Pastor, Director of Modern Worship</p>
       </div>
 
       <div class="staff-card">
-        <img src="../assets/images/staff-placeholder.jpg" alt="Worship Leader">
-        <h3>Worship Leader Name</h3>
-        <p class="staff-role">Worship Leader</p>
-        <p class="staff-bio">Short bio about worship and creative leadership.</p>
+        <a href="mailto:laurie@kennesawmc.org">
+          <img src="../assets/images/staff-laurie.jpg" alt="Rev. Laurie Klingenberg">
+        </a>
+        <h3>REV. LAURIE KLINGENBERG</h3>
+        <p class="staff-role">Pastoral Care Pastor</p>
       </div>
 
     </div>
+
   </div>
 </section>
 
@@ -159,8 +128,7 @@
   </div>
 </footer>
 
-<!-- ================= JS ================= -->
-<script src="../js/nav.js" defer></script>
+<!-- JS -->
 <script src="../js/site-search.js" defer></script>
 
 </body>

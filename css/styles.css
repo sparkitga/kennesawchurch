@@ -1,14 +1,13 @@
 /* FILE: css/styles.css
-   UPDATE: logo sits LEFT of search bar and is aligned with Worship Online + social buttons.
-   - Desktop: top row is Logo | Search | Right actions (all vertically centered)
-   - Desktop: nav links row sits UNDER the search bar (not under logo)
-   - Includes "less glitchy dropdown" fixes (bigger hover bridge + no flicker)
-   - Includes "shrink all images except hero" on index.html via body.home-page
+   Whole-site stylesheet (updated)
+   - Stable navbar grid + dropdown fixes
+   - Site sections (hero, join, sermon/resources, mission, ministries, page hero, footer)
+   - Staff directory layout (matches screenshot, tighter padding)
+   - Safe asset paths using ../assets/... so subfolder pages work
 */
 
 /* ==============================
    Kennesaw Church Design System
-   Modern, Minimal, Inter Font
    ============================== */
 
 :root {
@@ -93,26 +92,26 @@ a { color: inherit; text-decoration: none; }
   grid-template-rows: auto auto; /* row 1: top, row 2: nav links */
   column-gap: 28px;
   row-gap: 14px;
-  align-items: center; /* aligns logo/search/right on same baseline */
+  align-items: center;
 }
 
 /* Explicit placement to prevent "jumping" */
 .nav-logo   { grid-column: 1; grid-row: 1; }
-.nav-center { grid-column: 2; grid-row: 1 / span 2; } /* spans both rows */
+.nav-center { grid-column: 2; grid-row: 1 / span 2; }
 .nav-right  { grid-column: 3; grid-row: 1; }
 
 /* If mobile menu opens, it spans full width */
 .nav-panel { grid-column: 1 / -1; grid-row: 3; }
 
-/* Logo (left of search) */
+/* Logo */
 .nav-logo {
   display: flex;
-  align-items: center;           /* vertical align with search + right */
+  align-items: center;
   justify-content: flex-start;
   min-width: 0;
 }
 .nav-logo img {
-  height: 38px;                  /* matches your screenshot */
+  height: 38px;
   width: auto;
 }
 
@@ -122,7 +121,7 @@ a { color: inherit; text-decoration: none; }
   grid-template-rows: auto auto;
   align-items: center;
   gap: 14px;
-  min-width: 0;                  /* prevents overflow weirdness */
+  min-width: 0;
 }
 
 /* Search */
@@ -130,13 +129,13 @@ a { color: inherit; text-decoration: none; }
   position: relative;
   width: 100%;
   display: flex;
-  justify-content: flex-start;   /* search starts near logo like screenshot */
+  justify-content: flex-start;
   min-width: 0;
 }
 
 .nav-search-input {
   width: 100%;
-  max-width: 520px;              /* desktop proportions */
+  max-width: 520px;
   height: 44px;
   border-radius: 999px;
   border: 1px solid var(--border);
@@ -151,7 +150,7 @@ a { color: inherit; text-decoration: none; }
   box-shadow: 0 0 0 3px rgba(11, 42, 74, 0.08);
 }
 
-/* Search results dropdown (minimal, matches styling) */
+/* Search results dropdown */
 .nav-search-results {
   position: absolute;
   top: calc(100% + 10px);
@@ -192,7 +191,7 @@ a { color: inherit; text-decoration: none; }
   line-height: 1.35;
 }
 
-/* Desktop nav links row (under search) */
+/* Desktop nav links */
 .nav-links {
   display: flex;
   gap: 22px;
@@ -201,7 +200,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .nav-links-desktop {
-  justify-content: flex-start;   /* under search, left-aligned like screenshot */
+  justify-content: flex-start;
 }
 
 .nav-links a {
@@ -216,16 +215,15 @@ a { color: inherit; text-decoration: none; }
   color: rgba(11, 42, 74, 0.92);
 }
 
-/* Right side (aligned with logo & search) */
+/* Right side */
 .nav-right {
   display: flex;
-  align-items: center;           /* critical for alignment request */
+  align-items: center;
   justify-content: flex-end;
   gap: 12px;
   min-width: 0;
 }
 
-/* Live button */
 .watch-btn {
   display: inline-flex;
   align-items: center;
@@ -251,7 +249,7 @@ a { color: inherit; text-decoration: none; }
 .nav-socials {
   display: flex;
   gap: 10px;
-  align-items: center;           /* aligns circles with button */
+  align-items: center;
 }
 .nav-social {
   display: inline-flex;
@@ -277,7 +275,7 @@ a { color: inherit; text-decoration: none; }
   fill: currentColor;
 }
 
-/* Hamburger button (hidden on desktop) */
+/* Hamburger button */
 .nav-toggle {
   display: none;
   width: 44px;
@@ -310,12 +308,6 @@ a { color: inherit; text-decoration: none; }
 
 /* ==============================
    Desktop dropdowns (less glitchy)
-   Why dropdowns feel "too fast":
-   - small hover gap between trigger + menu
-   Fix:
-   - add a transparent "hover bridge" via ::after on the menu container
-   - keep menu open on hover/focus-within and when .is-open (click)
-   - prevent accidental closure by allowing pointer events + stable z-index
    ============================== */
 .nav-item { position: relative; }
 
@@ -359,11 +351,11 @@ a { color: inherit; text-decoration: none; }
   z-index: 220;
 }
 
-/* Hover bridge: prevents cursor leaving toggle -> menu from closing */
+/* Hover bridge */
 .nav-dropdown-menu::before {
   content: "";
   position: absolute;
-  top: -12px;         /* bridge height */
+  top: -12px;
   left: 0;
   right: 0;
   height: 12px;
@@ -394,11 +386,8 @@ a { color: inherit; text-decoration: none; }
   display: block;
 }
 
-/* Optional hover on desktop (stable) */
 @media (min-width: 1001px) {
-  .nav-dropdown:hover .nav-dropdown-menu {
-    display: block;
-  }
+  .nav-dropdown:hover .nav-dropdown-menu { display: block; }
 }
 
 /* ==============================
@@ -424,9 +413,7 @@ a { color: inherit; text-decoration: none; }
   font-weight: 600;
   color: rgba(17, 17, 17, 0.85);
 }
-.nav-links-mobile a:hover {
-  background: rgba(17, 17, 17, 0.06);
-}
+.nav-links-mobile a:hover { background: rgba(17, 17, 17, 0.06); }
 
 .nav-panel-actions {
   margin-top: 14px;
@@ -461,15 +448,9 @@ a { color: inherit; text-decoration: none; }
   color: rgba(17, 17, 17, 0.9);
   cursor: pointer;
 }
-.nav-mobile-accordion:hover {
-  background: rgba(17, 17, 17, 0.05);
-}
-.nav-mobile-accordion .nav-caret {
-  transition: transform 0.18s ease;
-}
-.nav-mobile-accordion[aria-expanded="true"] .nav-caret {
-  transform: rotate(180deg);
-}
+.nav-mobile-accordion:hover { background: rgba(17, 17, 17, 0.05); }
+.nav-mobile-accordion .nav-caret { transition: transform 0.18s ease; }
+.nav-mobile-accordion[aria-expanded="true"] .nav-caret { transform: rotate(180deg); }
 
 .nav-mobile-submenu {
   display: flex;
@@ -499,9 +480,7 @@ a { color: inherit; text-decoration: none; }
     display: none !important;
   }
 
-  .nav-toggle {
-    display: inline-flex;
-  }
+  .nav-toggle { display: inline-flex; }
 
   .nav-wrap {
     grid-template-columns: auto 1fr auto;
@@ -513,7 +492,6 @@ a { color: inherit; text-decoration: none; }
   .nav-logo { grid-column: 1; grid-row: 1; }
   .nav-right { grid-column: 3; grid-row: 1; }
 
-  /* Put search + links full width for mobile */
   .nav-center {
     grid-column: 1 / -1;
     grid-row: 2;
@@ -586,10 +564,7 @@ a { color: inherit; text-decoration: none; }
     border-width: 2px;
   }
 
-  .nav-social-icon {
-    width: 20px;
-    height: 20px;
-  }
+  .nav-social-icon { width: 20px; height: 20px; }
 }
 
 @media (max-width: 390px) {
@@ -597,7 +572,8 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ==============================
-   HERO VISUAL
+   HERO VISUAL (Home + Optional reuse)
+   Asset path is relative to /css/styles.css
    ============================== */
 .hero-visual {
   position: relative;
@@ -614,7 +590,7 @@ a { color: inherit; text-decoration: none; }
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("/assets/images/hero-church.jpg");
+  background-image: url("../assets/images/hero-church.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -633,31 +609,34 @@ a { color: inherit; text-decoration: none; }
   );
 }
 .hero-visual::before,
-.hero-visual::after {
-  pointer-events: none;
-}
+.hero-visual::after { pointer-events: none; }
+
 .hero-visual-inner {
   position: relative;
   z-index: 2;
   width: min(920px, 100%);
   padding: 0 20px 60px;
 }
+
 .hero-logo {
   width: min(280px, 60vw);
   margin: 0 auto 14px;
   opacity: 0.92;
   filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.55));
 }
+
 .hero-copy {
   font-size: clamp(15px, 2vw, 17px);
   color: rgba(255, 255, 255, 0.82);
   margin-bottom: 18px;
 }
+
 .hero-copy-primary {
   font-size: clamp(18px, 2.4vw, 22px);
   font-weight: 600;
   opacity: 0.9;
 }
+
 .hero-cta {
   display: inline-flex;
   align-items: center;
@@ -670,14 +649,22 @@ a { color: inherit; text-decoration: none; }
   color: #111;
   border-radius: 999px;
 }
+
 @media (max-width: 900px) {
   .hero-visual { min-height: 560px; }
   .hero-visual-inner { padding-bottom: 54px; }
 }
 
+/* Optional page hero title used on interior hero overlays */
+.hero-page-title {
+  font-size: clamp(34px, 5vw, 54px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0 0 10px;
+}
+
 /* ==============================
    JOIN US IN PERSON
-   (Image slightly smaller vs prior)
    ============================== */
 .join-section {
   background: #fff;
@@ -706,7 +693,7 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 26px;
 }
 .join-image {
-  width: min(460px, 82vw); /* smaller */
+  width: min(460px, 82vw);
   height: auto;
   border-radius: 28px;
   display: block;
@@ -742,9 +729,7 @@ a { color: inherit; text-decoration: none; }
   border-color: var(--covenant-blue);
   color: #fff;
 }
-.join-btn.primary:hover {
-  background: rgba(11, 42, 74, 0.92);
-}
+.join-btn.primary:hover { background: rgba(11, 42, 74, 0.92); }
 @media (max-width: 560px) {
   .join-subtitle { font-size: 16px; }
 }
@@ -787,10 +772,7 @@ a { color: inherit; text-decoration: none; }
   top: 18px;
 }
 @media (max-width: 900px) {
-  .sermon-side {
-    margin-top: 0;
-    position: static;
-  }
+  .sermon-side { margin-top: 0; position: static; }
 }
 
 /* Resources (minimal) */
@@ -865,7 +847,6 @@ a { color: inherit; text-decoration: none; }
 
 /* ==============================
    MISSION COLLAGE + QUOTE
-   (slightly smaller collage tiles)
    ============================== */
 .mission-split {
   padding: 70px 0;
@@ -922,10 +903,7 @@ a { color: inherit; text-decoration: none; }
   color: rgba(17, 17, 17, 0.85);
 }
 @media (max-width: 980px) {
-  .mission-inner {
-    grid-template-columns: 1fr;
-    gap: 34px;
-  }
+  .mission-inner { grid-template-columns: 1fr; gap: 34px; }
   .mission-collage { max-width: none; }
 }
 @media (max-width: 560px) {
@@ -935,7 +913,6 @@ a { color: inherit; text-decoration: none; }
 
 /* ==============================
    MINISTRIES SHOWCASE
-   (cards + logos smaller)
    ============================== */
 .ministries-showcase {
   padding: 80px 0;
@@ -957,7 +934,7 @@ a { color: inherit; text-decoration: none; }
 .ministry-card {
   background: #fff;
   border-radius: 20px;
-  padding: 26px 18px; /* smaller */
+  padding: 26px 18px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -965,8 +942,8 @@ a { color: inherit; text-decoration: none; }
   transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 .ministry-card img {
-  max-width: 160px; /* smaller */
-  max-height: 86px; /* smaller */
+  max-width: 160px;
+  max-height: 86px;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -982,10 +959,7 @@ a { color: inherit; text-decoration: none; }
   font-size: 14px;
   transition: background 0.15s ease, color 0.15s ease;
 }
-.ministries-btn:hover {
-  background: var(--covenant-blue);
-  color: #fff;
-}
+.ministries-btn:hover { background: var(--covenant-blue); color: #fff; }
 @media (max-width: 900px) {
   .ministries-grid { grid-template-columns: repeat(2, 1fr); }
 }
@@ -1074,18 +1048,12 @@ a { color: inherit; text-decoration: none; }
 .page-hero-btn.primary:hover { background: rgba(11, 42, 74, 0.92); }
 
 @media (max-width: 640px) {
-  .page-hero-tabs {
-    gap: 10px;
-    padding: 12px 14px;
-  }
-  .page-hero-tab {
-    font-size: 13px;
-    padding: 7px 8px;
-  }
+  .page-hero-tabs { gap: 10px; padding: 12px 14px; }
+  .page-hero-tab { font-size: 13px; padding: 7px 8px; }
 }
 
 /* ==============================
-   FOOTER (Village Church style)
+   FOOTER
    ============================== */
 .site-footer {
   background: #000;
@@ -1171,36 +1139,21 @@ a { color: inherit; text-decoration: none; }
   opacity: 0.95;
 }
 @media (max-width: 980px) {
-  .footer-inner {
-    grid-template-columns: 1fr 1fr;
-    gap: 34px;
-  }
-  .footer-bottom {
-    grid-template-columns: 1fr;
-    text-align: left;
-    align-items: start;
-  }
+  .footer-inner { grid-template-columns: 1fr 1fr; gap: 34px; }
+  .footer-bottom { grid-template-columns: 1fr; text-align: left; align-items: start; }
   .footer-copy { text-align: left; }
   .footer-brand { justify-content: flex-start; }
 }
 @media (max-width: 560px) {
   .site-footer { padding: 54px 0 34px; }
   .footer-inner { grid-template-columns: 1fr; }
-  .footer-subscribe {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+  .footer-subscribe { flex-direction: column; align-items: flex-start; }
 }
 
 /* ==============================
-   HOME PAGE: make all images except hero smaller
-   (You added <body class="home-page"> in index.html)
+   HOME PAGE: image tweaks
    ============================== */
-.home-page img:not(.hero-logo) {
-  max-width: 100%;
-}
-
-/* Specifically keep the hero logo size as designed, shrink other common images a touch */
+.home-page img:not(.hero-logo) { max-width: 100%; }
 .home-page .join-image { width: min(460px, 82vw); }
 .home-page .mc-img { border-radius: 16px; }
 .home-page .ministry-card img { max-width: 160px; max-height: 86px; }
@@ -1210,13 +1163,10 @@ a { color: inherit; text-decoration: none; }
    ============================== */
 @media (max-width: 640px) {
   body { font-size: 16.5px; }
-  p {
-    font-size: 16px;
-    line-height: 1.75;
-  }
+  p { font-size: 16px; line-height: 1.75; }
 
-  /* Thicker borders across key UI */
   .navbar { border-bottom-width: 2px; }
+
   .nav-toggle,
   .nav-social,
   .nav-panel,
@@ -1231,6 +1181,7 @@ a { color: inherit; text-decoration: none; }
   }
 
   .sermon-heading { font-size: 24px; }
+
   .footer-link {
     font-size: 15px;
     padding: 9px 0;
@@ -1239,53 +1190,96 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ================================
-   STAFF GRID
+   STAFF PAGE (Directory Style)
+   Matches screenshot look + tighter padding
 ================================ */
 
-.staff-section {
-  padding: 80px 0;
-  background: #f7f9fb;
+/* Staff hero: use your inline background image on the section.
+   This overlay ensures readable text on photo. */
+body.staff-page .hero-visual {
+  min-height: 420px;
+  align-items: center;
+}
+body.staff-page .hero-visual::before {
+  /* Staff page sets background inline, so we don’t force a background here */
+  background-image: none;
+}
+body.staff-page .hero-visual::after {
+  background: rgba(0, 0, 0, 0.35);
+}
+body.staff-page .hero-visual-inner {
+  padding: 0 20px;
 }
 
-.staff-grid {
+/* Staff directory section */
+body.staff-page .staff-section {
+  padding: 60px 0 70px; /* tighter than prior */
+  background: #f2f2f2;  /* subtle gray like screenshot */
+  text-align: center;
+}
+
+body.staff-page .staff-grid {
   display: grid;
-  gap: 40px;
+  grid-template-columns: 1fr;
+  gap: 56px 48px; /* tighter vertical rhythm */
+  margin-top: 40px;
 }
 
 @media (min-width: 768px) {
-  .staff-grid {
+  body.staff-page .staff-grid {
     grid-template-columns: repeat(3, 1fr);
+    gap: 64px 58px;
+    margin-top: 48px;
   }
 }
 
-.staff-card {
-  background: #ffffff;
-  padding: 30px;
-  text-align: center;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+body.staff-page .staff-card {
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
 }
 
-.staff-card img {
-  width: 140px;
-  height: 140px;
-  object-fit: cover;
+body.staff-page .staff-card a {
+  display: inline-block;
+  border-radius: 999px;
+}
+
+body.staff-page .staff-card img {
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
-  margin-bottom: 20px;
+  object-fit: cover;
+  margin: 0 auto 18px;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.10);
+  transition: transform 0.22s ease;
 }
 
-.staff-card h3 {
-  margin-bottom: 6px;
+body.staff-page .staff-card img:hover {
+  transform: scale(1.03);
 }
 
-.staff-role {
-  font-weight: 600;
-  color: #0b2a4a;
-  margin-bottom: 12px;
+body.staff-page .staff-card h3 {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  color: rgba(17, 17, 17, 0.92);
 }
 
-.staff-bio {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: #555;
+body.staff-page .staff-role {
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(17, 17, 17, 0.60);
+  margin: 0;
+  line-height: 1.45;
+}
+
+/* Hide staff bios for directory style */
+body.staff-page .staff-bio { display: none; }
+
+@media (max-width: 640px) {
+  body.staff-page .staff-section { padding: 46px 0 54px; }
+  body.staff-page .staff-card img { width: 160px; height: 160px; }
+  body.staff-page .staff-grid { gap: 44px; margin-top: 34px; }
 }

@@ -1060,6 +1060,46 @@ body.staff-page h3 {
     grid-template-columns: 1fr;
     gap: 26px;
   }
+  
+}
+
+/* =========================================
+   PRESCHOOL ONLY — 3 image rectangles under header
+   ========================================= */
+body.preschool-page .preschool-image-strip {
+  margin: 18px 0 26px;
+}
+
+body.preschool-page .preschool-image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+body.preschool-page .preschool-image-tile {
+  margin: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #f2f2f2;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+body.preschool-page .preschool-image-tile img {
+  width: 100%;
+  height: 190px;       /* adjust if you want taller */
+  object-fit: cover;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  body.preschool-page .preschool-image-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.preschool-page .preschool-image-tile img {
+    height: 220px;
+  }
 }
 
 /* ==================================================
@@ -1190,3 +1230,4 @@ body.privacy-policy-page {
 .hero-visual::before {
   background-color: var(--covenant-blue);
 }
+

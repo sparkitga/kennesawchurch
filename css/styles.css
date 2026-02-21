@@ -1293,6 +1293,324 @@ body.nursery-page main {
   padding: 38px 20px 80px;
 }
 
+/* =========================================
+   FAQ (Accordion) — On-brand, minimal, no JS
+   ========================================= */
+
+.faq-section {
+  background: #fff;
+  padding: 54px 0 70px;
+}
+
+.faq-inner {
+  max-width: 980px;
+}
+
+.faq-title {
+  margin: 0 0 10px;
+  font-size: clamp(40px, 5.2vw, 64px);
+  font-weight: 950;
+  letter-spacing: -0.03em;
+  color: rgba(17, 17, 17, 0.94);
+}
+
+.faq-subtitle {
+  margin: 0 0 26px;
+  max-width: 70ch;
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(17, 17, 17, 0.62);
+}
+
+/* Divider line above list */
+.faq-group {
+  border-top: 1px solid rgba(17, 17, 17, 0.18);
+}
+
+/* Each item */
+.faq-item {
+  border-bottom: 1px solid rgba(17, 17, 17, 0.18);
+}
+
+/* Remove default disclosure marker */
+.faq-item > summary {
+  list-style: none;
+}
+.faq-item > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Question row */
+.faq-q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  width: 100%;
+  cursor: pointer;
+  padding: 18px 4px;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  font-size: 18px;
+  color: rgba(17, 17, 17, 0.92);
+}
+
+/* Right-side plus icon */
+.faq-icon {
+  width: 18px;
+  height: 18px;
+  position: relative;
+  flex: 0 0 18px;
+  opacity: 0.85;
+}
+
+.faq-icon::before,
+.faq-icon::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  background: rgba(11, 42, 74, 0.75); /* KC dark blue */
+  border-radius: 2px;
+}
+
+.faq-icon::before {
+  width: 18px;
+  height: 2px;
+}
+
+.faq-icon::after {
+  width: 2px;
+  height: 18px;
+}
+
+/* Answer */
+.faq-a {
+  padding: 0 4px 18px;
+  color: rgba(17, 17, 17, 0.68);
+  line-height: 1.7;
+  font-size: 16.5px;
+  max-width: 80ch;
+}
+
+.faq-a p {
+  margin: 0;
+}
+
+/* Open state: turn plus into minus + subtle highlight */
+.faq-item[open] .faq-icon::after {
+  transform: scaleY(0);
+}
+
+.faq-item[open] .faq-q {
+  color: rgba(17, 17, 17, 0.96);
+}
+
+.faq-item[open] .faq-q .faq-icon::before,
+.faq-item[open] .faq-q .faq-icon::after {
+  background: rgba(58, 124, 63, 0.70); /* KC green accent */
+}
+
+/* Focus (keyboard accessibility) */
+.faq-q:focus-visible {
+  outline: 3px solid rgba(58, 124, 63, 0.26);
+  outline-offset: 4px;
+  border-radius: 10px;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .faq-section {
+    padding: 44px 0 58px;
+  }
+  .faq-q {
+    font-size: 16.5px;
+    padding: 16px 2px;
+  }
+  .faq-subtitle {
+    font-size: 16.5px;
+  }
+}
+
+/* =========================================
+   CONTACT — Resources tiles (reuse preschool cards)
+   ========================================= */
+
+.resources--contact {
+  background: #fff;
+  padding: 18px 0 44px;
+}
+
+/* Ensure the tiles behave like tiles on Contact too */
+.resources--contact .preschool-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+/* Make linked tiles look identical to div tiles */
+.resources--contact .preschool-card {
+  display: block;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #f3f4f6;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
+  transform: translateY(0);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.resources--contact .preschool-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Hover + focus */
+.resources--contact .preschool-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.12);
+}
+
+.resources--contact .preschool-card:focus-visible {
+  outline: 3px solid rgba(58, 124, 63, 0.28);
+  outline-offset: 4px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .resources--contact .preschool-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .resources--contact .preschool-card img {
+    height: 240px;
+  }
+}
+
+/* =========================================
+   CONTACT — Top Tabs (Email / Phone / Form) + Directions
+   ========================================= */
+
+.contact-tabs {
+  background: #fff;
+  padding: 26px 0 18px;
+}
+
+.contact-tabs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.contact-tab {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 16px;
+  border-radius: 16px;
+  text-decoration: none;
+  border: 1px solid rgba(17, 17, 17, 0.10);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+  transition: transform 0.14s ease, box-shadow 0.14s ease, border-color 0.14s ease;
+}
+
+.contact-tab:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.08);
+  border-color: rgba(11, 42, 74, 0.18);
+}
+
+.contact-tab:focus-visible {
+  outline: 3px solid rgba(58, 124, 63, 0.28);
+  outline-offset: 4px;
+}
+
+.contact-tab-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: rgba(11, 42, 74, 0.06);
+}
+
+.contact-tab-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: rgba(11, 42, 74, 0.86);
+}
+
+.contact-tab-title {
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: rgba(17, 17, 17, 0.92);
+  line-height: 1.15;
+}
+
+.contact-tab-sub {
+  margin-top: 3px;
+  color: rgba(17, 17, 17, 0.62);
+  font-size: 14.5px;
+  line-height: 1.25;
+}
+
+.contact-directions {
+  margin-top: 14px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(17, 17, 17, 0.10);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.contact-directions-text {
+  color: rgba(17, 17, 17, 0.72);
+  font-size: 14.5px;
+}
+
+.contact-directions-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  color: #fff;
+  background: #0b2a4a;
+  transition: transform 0.14s ease, box-shadow 0.14s ease, background 0.14s ease;
+}
+
+.contact-directions-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.12);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .contact-tabs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-directions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-directions-btn {
+    width: 100%;
+  }
+}
+
 /* ==================================================
    (Optional) Vision / Statement / Kids scopes can live here
    Keep them page-scoped so they never break home/nav.

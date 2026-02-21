@@ -1,8 +1,10 @@
-<!-- FILE: index.html
-  NOTE: FULL HTML with updates:
-  - "I'm New" dropdown added (desktop + mobile accordion)
-  - "Serve" dropdown added (desktop + mobile accordion)
-  - Keeps your existing structure, search hooks, and JS behavior
+<!-- FILE: index.html  (STAFF PAGE)
+  Updates:
+  - Page renamed to Staff (title/meta/OG/Twitter)
+  - Hero uses background image: assets/hero-images/staff-hero.jpg
+  - Replaced homepage sections with a Staff Grid section
+  - Navbar "Staff" links point to index.html (since this page is index internally)
+  - Keeps your existing navbar structure + JS + site-search hook
 -->
 
 <!doctype html>
@@ -20,29 +22,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Church: 9A &amp; 11A</title>
+    <!-- ✅ Staff page title -->
+    <title>Staff | Kennesaw Church</title>
 
+    <!-- ✅ Staff page description -->
     <meta
       name="description"
-      content="Welcome to Kennesaw Church in Kennesaw, GA. Join us Sundays at 9:00 AM and 11:00 AM. Visit us at 1801 Ben King Rd, Kennesaw, GA 30144 or call +1 (770) 428-1543."
+      content="Meet the pastors and staff of Kennesaw Church in Kennesaw, GA."
     />
     <meta name="robots" content="index,follow" />
     <meta name="theme-color" content="#0b2a4a" />
+
+    <!-- ✅ Canonical (index.html internally; live URL may be /staff or /staff/ depending on routing) -->
     <link rel="canonical" href="https://kennesawchurch.netlify.app/" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Kennesaw Church" />
-    <meta property="og:title" content="Kennesaw Church" />
-    <meta property="og:description" content="Join us Online or Sundays at 9:00 AM and 11:00 AM." />
+    <meta property="og:title" content="Staff | Kennesaw Church" />
+    <meta property="og:description" content="Meet the pastors and staff of Kennesaw Church." />
     <meta property="og:url" content="https://kennesawchurch.netlify.app/" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Kennesaw Church | Sundays 9:00 AM + 11:00 AM" />
+    <meta name="twitter:title" content="Staff | Kennesaw Church" />
     <meta
       name="twitter:description"
-      content="Welcome to Kennesaw Church in Kennesaw, GA. Join us Sundays at 9:00 AM and 11:00 AM."
+      content="Meet the pastors and staff of Kennesaw Church."
     />
 
     <!-- Inter Font -->
@@ -78,7 +84,8 @@
     </script>
   </head>
 
-  <body class="home-page">
+  <!-- ✅ class updated -->
+  <body class="staff-page">
     <!-- NAVBAR -->
     <header class="navbar">
       <div class="container nav-wrap">
@@ -124,7 +131,8 @@
               </button>
 
               <div class="nav-dropdown-menu" role="menu" aria-label="I'm New submenu">
-                <a role="menuitem" href="#">Staff</a>
+                <!-- ✅ points to index.html (this staff page) -->
+                <a role="menuitem" href="index.html">Staff</a>
                 <a role="menuitem" href="#">Monthly Newsletter</a>
                 <a role="menuitem" href="#">Vision</a>
                 <a role="menuitem" href="#">Statement of Faith</a>
@@ -269,7 +277,8 @@
               </button>
 
               <div class="nav-mobile-submenu" id="mobileImNew" hidden>
-                <a href="#">Staff</a>
+                <!-- ✅ points to index.html (this staff page) -->
+                <a href="index.html">Staff</a>
                 <a href="#">Monthly Newsletter</a>
                 <a href="#">Vision</a>
                 <a href="#">Statement of Faith</a>
@@ -402,162 +411,44 @@
       </div>
     </header>
 
-    <!-- HERO IMAGE SECTION -->
-    <section class="hero-visual" aria-label="Welcome hero">
+    <!-- ✅ STAFF HERO (uses background image via minimal inline style so it works immediately) -->
+    <section
+      class="hero-visual staff-hero"
+      aria-label="Staff hero"
+      style="background: url('assets/hero-images/staff-hero.jpg') center/cover no-repeat;"
+    >
       <div class="hero-visual-inner">
-        <a href="index.html" aria-label="Kennesaw Church Home">
-          <img
-            class="hero-logo"
-            src="assets/logos/FullHori_GreenWhite_TranspBG.svg"
-            alt="Kennesaw Church"
-          />
-        </a>
-
+        <h1 class="hero-page-title">Our Staff</h1>
         <p class="hero-copy hero-copy-primary">
-          Small Enough to Know You. Big Enough to Serve You.
+          Meet the team serving our church family.
         </p>
-
-        <a class="hero-cta" href="#">Watch Online</a>
       </div>
     </section>
 
-    <!-- JOIN US IN PERSON -->
-    <section class="join-section" aria-label="Join us in person">
-      <div class="container join-inner">
-        <h2 class="join-title">JOIN US IN PERSON</h2>
-        <p class="join-subtitle">
-          Sunday mornings at 9:00 AM and 11:00 AM. We welcome all to our traditional or modern services.
-          Childrens' church, worship, and preaching are available at both services.
-        </p>
-
-        <div class="join-visual">
-          <img class="join-image" src="assets/images/your-image.jpg" alt="Kennesaw Church exterior" />
-        </div>
-
-        <div class="join-actions">
-          <a class="join-btn primary" href="#">Kennesaw Kids &amp; Children's Church</a>
-          <a
-            class="join-btn"
-            href="https://maps.google.com/?q=1801+Ben+King+Rd,+Kennesaw,+GA+30144"
-            target="_blank"
-            rel="noopener"
-          >
-            Directions to the Building
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- LATEST SERMON + RESOURCES -->
-    <section class="sermon-section">
-      <div class="container sermon-grid">
-        <div class="sermon-main">
-          <h2 class="sermon-heading">Streams, Sermons, and Church Messages</h2>
-
-          <div class="sermon-video">
-            <iframe
-              src="https://www.youtube.com/embed/F0np1brtlZ4"
-              title="Latest Sermon"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            ></iframe>
-          </div>
-        </div>
-
-        <aside class="sermon-side" aria-label="Resources">
-          <div class="sermon-side-head">
-            <h2 class="sermon-heading">Resources</h2>
+    <!-- ✅ STAFF GRID -->
+    <section class="staff-section" aria-label="Staff members">
+      <div class="container staff-inner">
+        <div class="staff-grid">
+          <div class="staff-card">
+            <img src="assets/images/staff-placeholder.jpg" alt="Senior Pastor headshot" />
+            <h3>Senior Pastor Name</h3>
+            <p class="staff-role">Senior Pastor</p>
+            <p class="staff-bio">Short bio about leadership, vision, and calling.</p>
           </div>
 
-          <div class="resource-grid">
-            <a class="resource-card promo promo-kids" href="#">
-              <div class="resource-badge">Families</div>
-              <div class="resource-content">
-                <div class="resource-title">Kids &amp; Preschool</div>
-                <div class="resource-text">Sundays, midweek, and support for parents.</div>
-                <div class="resource-cta">Learn more →</div>
-              </div>
-            </a>
-
-            <a class="resource-card promo promo-events" href="#">
-              <div class="resource-badge">This Week</div>
-              <div class="resource-content">
-                <div class="resource-title">Events</div>
-                <div class="resource-text">See what’s coming up in the life of our church.</div>
-                <div class="resource-cta">Learn more →</div>
-              </div>
-            </a>
-
-            <a class="resource-card promo promo-serve" href="#">
-              <div class="resource-badge">Get Involved</div>
-              <div class="resource-content">
-                <div class="resource-title">Ministries &amp; Serving</div>
-                <div class="resource-text">Find your place to serve locally and globally.</div>
-                <div class="resource-cta">Learn more →</div>
-              </div>
-            </a>
+          <div class="staff-card">
+            <img src="assets/images/staff-placeholder.jpg" alt="Associate Pastor headshot" />
+            <h3>Associate Pastor Name</h3>
+            <p class="staff-role">Associate Pastor</p>
+            <p class="staff-bio">Short bio about ministry focus and heart for people.</p>
           </div>
-        </aside>
-      </div>
-    </section>
 
-    <!-- IMAGE + QUOTE SECTION -->
-    <section class="mission-split" aria-label="Mission scripture">
-      <div class="container mission-inner">
-        <div class="mission-collage" aria-hidden="true">
-          <img class="mc-img mc-1" src="assets/images/collage-1.jpg" alt="" />
-          <img class="mc-img mc-2" src="assets/images/collage-2.jpg" alt="" />
-          <img class="mc-img mc-3" src="assets/images/collage-3.jpg" alt="" />
-          <img class="mc-img mc-4" src="assets/images/collage-4.jpg" alt="" />
-        </div>
-
-        <div class="mission-quote">
-          <div class="mq-icon" aria-hidden="true">“</div>
-
-          <blockquote class="mq-text">
-            Go, therefore, and make disciples of all nations, baptizing them in the name of the Father and of the
-            Son and of the Holy Spirit, teaching them to observe everything I have commanded you.
-          </blockquote>
-
-          <div class="mq-ref">Matthew 28:19-20</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- MINISTRIES GRID -->
-    <section class="ministries-showcase" aria-label="Largest ministries">
-      <div class="container ministries-inner">
-        <h2 class="ministries-heading">Explore Our Ministries</h2>
-
-        <div class="ministries-grid">
-          <a href="#" class="ministry-card">
-            <img src="assets/logos/preschool.svg" alt="Preschool" />
-          </a>
-
-          <a href="#" class="ministry-card">
-            <img src="assets/logos/young-adults.svg" alt="Young Adults" />
-          </a>
-
-          <a href="#" class="ministry-card">
-            <img src="assets/logos/youth.svg" alt="Youth Ministry" />
-          </a>
-
-          <a href="#" class="ministry-card">
-            <img src="assets/logos/small groups.svg" alt="Small Groups" />
-          </a>
-
-          <a href="#" class="ministry-card">
-            <img src="assets/logos/weekend-blessings-logo.svg" alt="Weekend Blessings" />
-          </a>
-
-          <a href="#" class="ministry-card">
-            <img src="assets/logos/serve.svg" alt="Ministries" />
-          </a>
-        </div>
-
-        <div class="ministries-cta">
-          <a href="#" class="ministries-btn">View All Ministries</a>
+          <div class="staff-card">
+            <img src="assets/images/staff-placeholder.jpg" alt="Worship Leader headshot" />
+            <h3>Worship Leader Name</h3>
+            <p class="staff-role">Worship Leader</p>
+            <p class="staff-bio">Short bio about worship and creative leadership.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -581,7 +472,7 @@
           <a class="footer-link" href="#">What to Expect on Sunday</a>
           <a class="footer-link" href="#">Mission &amp; Vision</a>
           <a class="footer-link" href="#">About Us</a>
-          <a class="footer-link" href="#">Pastors &amp; Staff</a>
+          <a class="footer-link" href="index.html">Pastors &amp; Staff</a>
         </div>
 
         <div class="footer-col">
@@ -785,5 +676,76 @@
 
     <!-- Site search (your existing file) -->
     <script src="js/site-search.js" defer></script>
+
+    <!-- Minimal page-specific styles (kept inline so this works immediately) -->
+    <style>
+      /* Staff hero overlay + title */
+      .staff-hero {
+        min-height: 420px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+      }
+      .staff-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.45);
+      }
+      .staff-hero .hero-visual-inner {
+        position: relative;
+        z-index: 2;
+        color: #fff;
+      }
+      .hero-page-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin: 0 0 12px;
+      }
+      @media (min-width: 768px) {
+        .hero-page-title { font-size: 3.5rem; }
+      }
+
+      /* Staff grid */
+      .staff-section {
+        padding: 80px 0;
+        background: #f7f9fb;
+      }
+      .staff-grid {
+        display: grid;
+        gap: 40px;
+      }
+      @media (min-width: 768px) {
+        .staff-grid { grid-template-columns: repeat(3, 1fr); }
+      }
+      .staff-card {
+        background: #fff;
+        padding: 30px;
+        text-align: center;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      }
+      .staff-card img {
+        width: 140px;
+        height: 140px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-bottom: 20px;
+      }
+      .staff-card h3 { margin: 0 0 6px; }
+      .staff-role {
+        font-weight: 600;
+        color: #0b2a4a;
+        margin: 0 0 12px;
+      }
+      .staff-bio {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        color: #555;
+        margin: 0;
+      }
+    </style>
   </body>
 </html>

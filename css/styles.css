@@ -1140,6 +1140,122 @@ body.preschool-page .page-head--preschool .page-subtitle {
   }
 }
 
+/* =========================================
+   PRESCHOOL ONLY — "Disney Sparkle" polish
+   ========================================= */
+
+/* 1) Header sparkle background (subtle) */
+body.preschool-page .page-head--preschool {
+  position: relative;
+  overflow: hidden;
+}
+
+body.preschool-page .page-head--preschool::before {
+  content: "";
+  position: absolute;
+  inset: -40px -40px auto -40px;
+  height: 220px;
+  background:
+    radial-gradient(circle at 18% 40%, rgba(58,124,63,0.18) 0 2px, transparent 3px),
+    radial-gradient(circle at 32% 65%, rgba(11,42,74,0.16) 0 1.5px, transparent 3px),
+    radial-gradient(circle at 55% 30%, rgba(58,124,63,0.12) 0 2px, transparent 3px),
+    radial-gradient(circle at 72% 55%, rgba(11,42,74,0.14) 0 1.5px, transparent 3px),
+    radial-gradient(circle at 88% 35%, rgba(58,124,63,0.12) 0 2px, transparent 3px);
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+body.preschool-page .page-head--preschool::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(255,255,255,0.75) 0%, rgba(255,255,255,0) 60%);
+  pointer-events: none;
+}
+
+body.preschool-page .page-head--preschool .page-head-inner {
+  position: relative;
+  z-index: 1;
+}
+
+/* 2) The 3 curved rectangles */
+body.preschool-page .preschool-gallery {
+  background: #fff;
+  padding: 22px 0 44px;
+}
+
+body.preschool-page .preschool-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+body.preschool-page .preschool-card {
+  border-radius: 22px;
+  overflow: hidden;
+  background: #f3f4f6;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
+  transform: translateY(0);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  position: relative;
+}
+
+/* “Magic highlight ring” on hover */
+body.preschool-page .preschool-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+  box-shadow: 0 0 0 0 rgba(58,124,63,0.0);
+  transition: box-shadow 0.18s ease;
+  pointer-events: none;
+}
+
+body.preschool-page .preschool-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.01);
+  transition: transform 0.18s ease;
+}
+
+body.preschool-page .preschool-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.12);
+}
+
+body.preschool-page .preschool-card:hover::after {
+  box-shadow: 0 0 0 3px rgba(58,124,63,0.18);
+}
+
+body.preschool-page .preschool-card:hover img {
+  transform: scale(1.03);
+}
+
+/* 3) Subtle twinkle motion (respects reduced motion) */
+@media (prefers-reduced-motion: no-preference) {
+  body.preschool-page .page-head--preschool::before {
+    animation: preschoolTwinkle 6.5s ease-in-out infinite;
+  }
+
+  @keyframes preschoolTwinkle {
+    0%, 100% { opacity: 0.55; transform: translateY(0); }
+    50% { opacity: 0.85; transform: translateY(6px); }
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  body.preschool-page .preschool-cards {
+    grid-template-columns: 1fr;
+  }
+
+  body.preschool-page .preschool-card img {
+    height: 240px;
+  }
+}
+
 /* ==================================================
    (Optional) Vision / Statement / Kids scopes can live here
    Keep them page-scoped so they never break home/nav.

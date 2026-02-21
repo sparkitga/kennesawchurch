@@ -819,10 +819,22 @@ p { margin: 0 0 16px; color: var(--muted); }
 /* ==================================================
    STAFF (scoped only)
    ================================================== */
-body.staff-page .hero-visual { min-height: 420px; align-items: center; }
-body.staff-page .hero-visual::before { content: none; } /* allow inline background on staff hero */
-body.staff-page .hero-visual::after  { background: rgba(0, 0, 0, 0.35); }
-body.staff-page .hero-visual-inner { padding: 0 20px; }
+/* ==================================================
+   STAFF (scoped only) — FIXED so hero backgrounds work
+   ================================================== */
+body.staff-page .hero-visual {
+  min-height: 420px;
+  align-items: center;
+}
+
+/* DO NOT remove ::before — we want CSS hero images */
+body.staff-page .hero-visual::after {
+  background: rgba(0, 0, 0, 0.35);
+}
+
+body.staff-page .hero-visual-inner {
+  padding: 0 20px;
+}
 
 body.staff-page .staff-title-block { background: #fff; padding: 48px 0 16px; text-align: center; }
 body.staff-page .staff-page-title {
@@ -1062,6 +1074,117 @@ body.staff-page h3 {
    ========================================= */
 body.home-page      { --page-hero: var(--home-hero); }
 
-/* Change these URLs to your real image paths */
-body.vision-page    { --page-hero: url("../assets/images/vision-hero.jpg"); }
-body.statement-page { --page-hero: url("../assets/images/statement-hero.jpg"); }
+/* =========================================
+   Per-page hero image mapping
+   Each page must have matching body class
+   ========================================= */
+
+/* Home */
+body.home-page {
+  --page-hero: var(--home-hero);
+}
+
+/* Core pages */
+body.about-page {
+  --page-hero: url("../assets/images/about-hero.jpg");
+}
+
+body.vision-page {
+  --page-hero: url("../assets/images/vision-hero.jpg");
+}
+
+body.statement-page {
+  --page-hero: url("../assets/images/statement-hero.jpg");
+}
+
+body.staff-page {
+  --page-hero: url("../assets/images/staff-hero.jpg");
+}
+
+/* Ministries + Content Pages */
+body.ministries-page {
+  --page-hero: url("../assets/images/ministries-hero.jpg");
+}
+
+body.worship-page {
+  --page-hero: url("../assets/images/worship-hero.jpg");
+}
+
+body.worship-online-page {
+  --page-hero: url("../assets/images/worship-online-hero.jpg");
+}
+
+body.worship-in-person-page {
+  --page-hero: url("../assets/images/worship-in-person-hero.jpg");
+}
+
+body.preschool-page {
+  --page-hero: url("../assets/images/preschool-hero.jpg");
+}
+
+body.events-page {
+  --page-hero: url("../assets/images/events-hero.jpg");
+}
+
+body.contact-page {
+  --page-hero: url("../assets/images/contact-hero.jpg");
+}
+
+body.give-page {
+  --page-hero: url("../assets/images/give-hero.jpg");
+}
+
+/* Ministry Subfolders */
+body.nursery-page {
+  --page-hero: url("../assets/images/nursery-hero.jpg");
+}
+
+body.kennesaw-kids-page {
+  --page-hero: url("../assets/images/kids-hero.jpg");
+}
+
+body.youth-page {
+  --page-hero: url("../assets/images/youth-hero.jpg");
+}
+
+body.young-adults-page {
+  --page-hero: url("../assets/images/young-adults-hero.jpg");
+}
+
+body.adults-page {
+  --page-hero: url("../assets/images/adults-hero.jpg");
+}
+
+body.music-page {
+  --page-hero: url("../assets/images/music-hero.jpg");
+}
+
+body.foster-care-page {
+  --page-hero: url("../assets/images/foster-care-hero.jpg");
+}
+
+body.weekend-blessings-page {
+  --page-hero: url("../assets/images/weekend-blessings-hero.jpg");
+}
+
+body.med-cab-page {
+  --page-hero: url("../assets/images/med-cab-hero.jpg");
+}
+
+body.south-dakota-page {
+  --page-hero: url("../assets/images/south-dakota-hero.jpg");
+}
+
+body.stewardship-page {
+  --page-hero: url("../assets/images/stewardship-hero.jpg");
+}
+
+/* Small groups */
+body.small-groups-page {
+  --page-hero: url("../assets/images/small-groups-hero.jpg");
+}
+
+/* Privacy */
+body.privacy-policy-page {
+  --page-hero: url("../assets/images/privacy-hero.jpg");
+}

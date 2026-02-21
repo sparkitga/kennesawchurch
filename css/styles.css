@@ -1582,3 +1582,78 @@ body.statement-page .nyt-rule {
     font-size: 17px;
   }
 }
+
+/* ==============================
+   ABOUT: Impact strip (3 cards)
+   ============================== */
+
+.about-impact {
+  background: #fff;
+  padding: 46px 0 52px;
+}
+
+.about-impact-inner {
+  text-align: center;
+}
+
+.about-impact-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  align-items: stretch;
+}
+
+.about-impact-card {
+  background: #fff;
+  border: 1px solid rgba(17, 17, 17, 0.10);
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+  padding: 28px 18px 22px;
+}
+
+.about-impact-icon {
+  width: 74px;
+  height: 74px;
+  margin: 0 auto 14px;
+  object-fit: contain;
+}
+
+.about-impact-number {
+  font-size: clamp(40px, 4.4vw, 56px);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: rgba(17, 17, 17, 0.92);
+  margin-bottom: 8px;
+}
+
+.about-impact-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(17, 17, 17, 0.62);
+}
+
+.about-impact-copy {
+  max-width: 92ch;
+  margin: 28px auto 0;
+  font-size: 16px;
+  line-height: 1.75;
+  color: rgba(17, 17, 17, 0.70);
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .about-impact-cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .about-impact-card {
+    padding: 26px 18px 20px;
+  }
+
+  .about-impact-icon {
+    width: 66px;
+    height: 66px;
+  }
+}

@@ -1119,74 +1119,74 @@ body.worship-in-person-page {
 }
 
 body.preschool-page {
-  --page-hero: url("../assets/hero-images/nursery-hero.jpg");
+  --page-hero: url("../assets/hero-images/preschool-hero.jpg");
 }
 
 body.events-page {
-  --page-hero: url("../assets/images/events-hero.jpg");
+  --page-hero: url("../assets/hero-images/med-cab-hero.jpg");
 }
 
 body.contact-page {
-  --page-hero: url("../assets/images/contact-hero.jpg");
+  --page-hero: url("../assets/hero-images/contact-hero.jpg");
 }
 
 body.give-page {
-  --page-hero: url("../assets/images/give-hero.jpg");
+  --page-hero: url("../assets/hero-images/give-hero.jpg");
 }
 
 /* Ministry Subfolders */
 body.nursery-page {
-  --page-hero: url("../assets/images/nursery-hero.jpg");
+  --page-hero: url("../assets/hero-images/nursery-hero.jpg");
 }
 
 body.kennesaw-kids-page {
-  --page-hero: url("../assets/images/kids-hero.jpg");
+  --page-hero: url("../assets/hero-images/kids-hero.jpg");
 }
 
 body.youth-page {
-  --page-hero: url("../assets/images/youth-hero.jpg");
+  --page-hero: url("../assets/hero-images/youth-hero.jpg");
 }
 
 body.young-adults-page {
-  --page-hero: url("../assets/images/young-adults-hero.jpg");
+  --page-hero: url("../assets/hero-images/young-adult-hero.jpg");
 }
 
 body.adults-page {
-  --page-hero: url("../assets/images/adults-hero.jpg");
+  --page-hero: url("../assets/hero-images/adults-hero.jpg");
 }
 
 body.music-page {
-  --page-hero: url("../assets/images/music-hero.jpg");
+  --page-hero: url("../assets/hero-images/music-hero.jpg");
 }
 
 body.foster-care-page {
-  --page-hero: url("../assets/images/foster-care-hero.jpg");
+  --page-hero: url("../assets/hero-images/foster-care-hero.jpg");
 }
 
 body.weekend-blessings-page {
-  --page-hero: url("../assets/images/weekend-blessings-hero.jpg");
+  --page-hero: url("../assets/hero-images/weekend-blessings-hero.jpg");
 }
 
 body.med-cab-page {
-  --page-hero: url("../assets/images/med-cab-hero.jpg");
+  --page-hero: url("../assets/hero-images/med-cab-hero.jpg");
 }
 
 body.south-dakota-page {
-  --page-hero: url("../assets/images/south-dakota-hero.jpg");
+  --page-hero: url("../assets/hero-images/south-dakota-hero.jpg");
 }
 
 body.stewardship-page {
-  --page-hero: url("../assets/images/stewardship-hero.jpg");
+  --page-hero: url("../assets/hero-images/stewardship-hero.jpg");
 }
 
 /* Small groups */
 body.small-groups-page {
-  --page-hero: url("../assets/images/small-groups-hero.jpg");
+  --page-hero: url("../assets/hero-images/adults-hero.jpg");
 }
 
 /* Privacy */
 body.privacy-policy-page {
-  --page-hero: url("../assets/images/privacy-hero.jpg");
+  --page-hero: url("../assets/hero-images/privacy-hero.jpg");
 }
 
 /* Debug safety: if an image path breaks, you still get a nice fallback */

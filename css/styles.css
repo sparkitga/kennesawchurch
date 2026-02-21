@@ -1188,3 +1188,8 @@ body.small-groups-page {
 body.privacy-policy-page {
   --page-hero: url("../assets/images/privacy-hero.jpg");
 }
+
+/* Debug safety: if an image path breaks, you still get a nice fallback */
+.hero-visual::before {
+  background-color: var(--covenant-blue);
+}

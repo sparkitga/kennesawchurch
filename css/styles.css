@@ -1102,6 +1102,44 @@ body.preschool-page .preschool-image-tile img {
   }
 }
 
+/* =========================================
+   PRESCHOOL ONLY — Move title/subtitle under hero
+   ========================================= */
+body.preschool-page .hero-visual-inner {
+  padding: 0; /* keep hero as image only */
+}
+
+body.preschool-page .page-head--preschool {
+  background: #fff;
+  padding: 46px 0 22px;
+}
+
+body.preschool-page .page-head--preschool .page-title {
+  margin: 0 0 10px;
+  font-size: clamp(42px, 5.6vw, 64px);
+  font-weight: 950;
+  letter-spacing: -0.03em;
+  color: rgba(17, 17, 17, 0.94);
+}
+
+body.preschool-page .page-head--preschool .page-subtitle {
+  margin: 0;
+  max-width: 70ch;
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(17, 17, 17, 0.62);
+}
+
+@media (max-width: 640px) {
+  body.preschool-page .page-head--preschool {
+    padding: 34px 0 18px;
+  }
+
+  body.preschool-page .page-head--preschool .page-subtitle {
+    font-size: 16.5px;
+  }
+}
+
 /* ==================================================
    (Optional) Vision / Statement / Kids scopes can live here
    Keep them page-scoped so they never break home/nav.

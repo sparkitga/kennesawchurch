@@ -927,11 +927,8 @@ body:not(.home-page) ol {
   margin: 18px 0 22px;
 }
 
-/* Links */
 body:not(.home-page) a {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-thickness: 1px;
+  text-decoration: none;
 }
 
 /* Responsive */

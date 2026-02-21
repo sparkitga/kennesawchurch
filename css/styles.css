@@ -1432,3 +1432,12 @@ body.vision-page .nyt-body strong {
     padding-top: 8px;
   }
 }
+
+/* VISION HERO */
+body.vision-page .hero-visual.hero-visual--vision::before {
+  background-image: url("../assets/hero-images/vision-hero.jpg");
+}
+
+body.vision-page .hero-visual.hero-visual--vision {
+  min-height: 420px;
+}

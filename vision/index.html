@@ -1,89 +1,743 @@
-<!DOCTYPE html>
+<!-- FILE: staff/index.html
+  Uses HOME PAGE header + footer + brand standard.
+  Staff-only changes:
+  - Paths updated for /staff/ folder (../css, ../assets, ../js)
+  - Staff hero uses ../assets/hero-images/staff-hero.jpg
+  - Title + note moved BELOW hero
+-->
+
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vision | Kennesaw Church</title>
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N794D9J3RW"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-N794D9J3RW');
+    </script>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&family=Red+Hat+Text:wght@400;500;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
-  <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+    <title>10 Year Vision | Kennesaw Church</title>
 
-  <!-- Main stylesheet -->
-  <link rel="stylesheet" href="css/styles.css" />
-</head>
-<body>
+    <meta
+      name="description"
+      content="Meet the pastors and staff of Kennesaw Church in Kennesaw, GA."
+    />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#0b2a4a" />
+    <link rel="canonical" href="https://kennesawchurch.netlify.app/staff/" />
 
-  <!-- NAVBAR -->
-  <header class="navbar">
-    <div class="container nav-inner">
-      <div class="logo">
-        <img src="assets/logos/logo-horizontal.svg" alt="Kennesaw Church" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Kennesaw Church" />
+    <meta property="og:title" content="Kennesaw Church Vision" />
+    <meta property="og:description" content="Meet the pastors and staff of Kennesaw Church." />
+    <meta property="og:url" content="https://kennesawchurch.netlify.app/staff/" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Kennesaw Church Vision" />
+    <meta
+      name="twitter:description"
+      content="Meet the pastors and staff of Kennesaw Church."
+    />
+
+    <!-- Inter Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Favicons (PATHS UPDATED) -->
+    <link rel="icon" type="image/svg+xml" href="../assets/icons/Favicon_GreenWhite_DarkBlueBG.svg" />
+    <link rel="icon" type="image/png" href="../assets/icons/Favicon_GreenWhite_DarkBlueBG.png" />
+
+    <!-- Main stylesheet (PATH UPDATED) -->
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+
+  <body class="staff-page">
+    <!-- NAVBAR (COPIED FROM HOME; PATHS UPDATED) -->
+    <header class="navbar">
+      <div class="container nav-wrap">
+        <!-- LEFT: Logo -->
+        <div class="nav-logo">
+          <a href="../index.html" aria-label="Kennesaw Church Home">
+            <img src="../assets/logos/FullHori_GreenBlack_TranspBG.svg" alt="Kennesaw Church" />
+          </a>
+        </div>
+
+        <!-- CENTER: Search (row 1) + Desktop Links (row 2) -->
+        <div class="nav-center">
+          <!-- Search -->
+          <form class="nav-search" role="search" aria-label="Site search" action="#" method="GET" id="siteSearchForm">
+            <input
+              class="nav-search-input"
+              type="search"
+              name="q"
+              id="siteSearchInput"
+              placeholder="Search…"
+              autocomplete="off"
+              aria-expanded="false"
+              aria-controls="siteSearchResults"
+              aria-autocomplete="list"
+            />
+
+            <!-- Results dropdown (minimal) -->
+            <div
+              class="nav-search-results"
+              id="siteSearchResults"
+              role="listbox"
+              aria-label="Search results"
+              hidden
+            ></div>
+          </form>
+
+          <!-- Desktop nav links (UNDER search) -->
+          <nav class="nav-links nav-links-desktop" aria-label="Primary navigation">
+            <!-- I'm New dropdown -->
+            <div class="nav-item nav-dropdown">
+              <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
+                I'm New <span class="nav-caret" aria-hidden="true">▾</span>
+              </button>
+
+              <div class="nav-dropdown-menu" role="menu" aria-label="I'm New submenu">
+                <a role="menuitem" href="/staff/">Staff</a>
+                <a role="menuitem" href="https://mailchi.mp/429478f6a7af/kumc-december-newsletter-10343934">Monthly Newsletter</a>
+                <a role="menuitem" href="/vision/">Vision</a>
+                <a role="menuitem" href="#">Statement of Faith</a>
+              </div>
+            </div>
+
+            <!-- Ministries -->
+            <div class="nav-item nav-dropdown">
+              <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
+                Ministries <span class="nav-caret" aria-hidden="true">▾</span>
+              </button>
+
+              <div class="nav-dropdown-menu" role="menu" aria-label="Ministries submenu">
+                <a role="menuitem" href="#">Nursery</a>
+                <a role="menuitem" href="#">Children</a>
+                <a role="menuitem" href="#">Youth</a>
+                <a role="menuitem" href="#">Young Adult</a>
+                <a role="menuitem" href="#">Adults</a>
+                <a role="menuitem" href="#">Adult Sunday School</a>
+                <a role="menuitem" href="#">Music</a>
+                <a role="menuitem" href="#">Foster Care</a>
+                <a role="menuitem" href="#">Weekend Blessings</a>
+              </div>
+            </div>
+
+            <!-- Worship -->
+            <div class="nav-item nav-dropdown">
+              <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
+                Worship <span class="nav-caret" aria-hidden="true">▾</span>
+              </button>
+
+              <div class="nav-dropdown-menu" role="menu" aria-label="Worship submenu">
+                <a role="menuitem" href="#">Online</a>
+                <a role="menuitem" href="#">In Person</a>
+                <a role="menuitem" href="#">Nursery</a>
+                <a role="menuitem" href="#">Kennesaw Kids</a>
+              </div>
+            </div>
+
+            <!-- Serve dropdown -->
+            <div class="nav-item nav-dropdown">
+              <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
+                Serve <span class="nav-caret" aria-hidden="true">▾</span>
+              </button>
+
+              <div class="nav-dropdown-menu" role="menu" aria-label="Serve submenu">
+                <a role="menuitem" href="#">Care Team</a>
+                <a role="menuitem" href="#">Foster Care</a>
+                <a role="menuitem" href="#">Med Cab</a>
+                <a role="menuitem" href="#">South Dakota Mission Trip</a>
+                <a role="menuitem" href="#">Stewardship</a>
+                <a role="menuitem" href="#">Weekend Blessings</a>
+              </div>
+            </div>
+
+            <a href="#">Preschool</a>
+            <a href="#">Contact</a>
+            <a href="#">Give</a>
+          </nav>
+        </div>
+
+        <!-- RIGHT: Worship Online + Social + Hamburger -->
+        <div class="nav-right">
+          <a class="watch-btn nav-right-desktop" href="#">Worship Online</a>
+
+          <div class="nav-socials nav-right-desktop" aria-label="Social links">
+            <!-- Facebook -->
+            <a
+              class="nav-social"
+              href="https://facebook.com/kennesawmc"
+              target="_blank"
+              rel="noopener"
+              aria-label="Facebook"
+            >
+              <svg class="nav-social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.6-1.6h1.7V4.8c-.3 0-1.4-.1-2.7-.1-2.7 0-4.5 1.6-4.5 4.6V11H7v3h2.6v8h3.9z"
+                />
+              </svg>
+            </a>
+
+            <!-- Instagram -->
+            <a
+              class="nav-social"
+              href="https://instagram.com/kennesawchurch"
+              target="_blank"
+              rel="noopener"
+              aria-label="Instagram"
+            >
+              <svg class="nav-social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3z"
+                />
+                <path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" />
+                <path d="M17.5 6.3a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z" />
+              </svg>
+            </a>
+
+            <!-- YouTube -->
+            <a
+              class="nav-social"
+              href="https://youtube.com/@KennesawChurch"
+              target="_blank"
+              rel="noopener"
+              aria-label="YouTube"
+            >
+              <svg class="nav-social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M23.5 6.2s-.2-1.7-.7-2.4c-.7-.9-1.5-.9-1.9-1C18.3 2.5 12 2.5 12 2.5h0s-6.3 0-8.9.3c-.4.1-1.2.1-1.9 1C.7 4.5.5 6.2.5 6.2S.2 8.2.2 10.2v1.6c0 2 .3 4 .3 4s.2 1.7.7 2.4c.7.9 1.7.9 2.1 1 1.5.1 6.7.3 8.7.3s6.3 0 8.9-.3c.4-.1 1.2-.1 1.9-1 .5-.7.7-2.4.7-2.4s.3-2 .3-4v-1.6c0-2-.3-4-.3-4zM9.8 14.8V7.9l6.2 3.5-6.2 3.4z"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Hamburger -->
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+          >
+            <span class="nav-toggle-lines" aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <!-- Mobile/Tablet panel -->
+        <div class="nav-panel" id="mobileMenu" hidden>
+          <nav class="nav-links nav-links-mobile" aria-label="Mobile navigation">
+            <a href="../index.html">Home</a>
+            <a href="#">Worship Online</a>
+
+            <!-- Mobile I'm New accordion -->
+            <div class="nav-mobile-item">
+              <button
+                class="nav-mobile-accordion"
+                type="button"
+                aria-expanded="false"
+                aria-controls="mobileImNew"
+              >
+                I'm New <span class="nav-caret" aria-hidden="true">▾</span>
+              </button>
+
+              <div class="nav-mobile-submenu" id="mobileImNew" hidden>
+                <a href="/staff/">Staff</a>
+                <a href="https://mailchi.mp/429478f6a7af/kumc-december-newsletter-10343934">Monthly Newsletter</a>
+                <a href="/vision/">Vision</a>
+                <a href="#">Statement of Faith</a>
+              </div>
+            </div>
+
+            <!-- Mobile Ministries accordion -->
+            <div class="nav-mobile-item">
+              <button
+                class="nav-mobile-accordion"
+                type="button"
+                aria-expanded="false"
+                aria-controls="mobileMinistries"
+              >
+                Ministries <span class="nav-caret" aria-hidden="true">▾</span>
+              </button>
+
+              <div class="nav-mobile-submenu" id="mobileMinistries" hidden>
+                <a href="#">Nursery</a>
+                <a href="#">Children</a>
+                <a href="#">Youth</a>
+                <a href="#">Young Adult</a>
+                <a href="#">Adults</a>
+                <a href="#">Adult Sunday School</a>
+                <a href="#">Music</a>
+                <a href="#">Foster Care</a>
+                <a href="#">Weekend Blessings</a>
+              </div>
+            </div>
+
+            <!-- Mobile Worship accordion -->
+            <div class="nav-mobile-item">
+              <button
+                class="nav-mobile-accordion"
+                type="button"
+                aria-expanded="false"
+                aria-controls="mobileWorship"
+              >
+                Worship <span class="nav-caret" aria-hidden="true">▾</span>
+              </button>
+
+              <div class="nav-mobile-submenu" id="mobileWorship" hidden>
+                <a href="#">Online</a>
+                <a href="#">In Person</a>
+                <a href="#">Kennesaw Kids</a>
+              </div>
+            </div>
+
+            <!-- Mobile Serve accordion -->
+            <div class="nav-mobile-item">
+              <button
+                class="nav-mobile-accordion"
+                type="button"
+                aria-expanded="false"
+                aria-controls="mobileServe"
+              >
+                Serve <span class="nav-caret" aria-hidden="true">▾</span>
+              </button>
+
+              <div class="nav-mobile-submenu" id="mobileServe" hidden>
+                <a href="#">Care Team</a>
+                <a href="#">Foster Care</a>
+                <a href="#">Med Cab</a>
+                <a href="#">South Dakota</a>
+                <a href="#">Stewardship</a>
+                <a href="#">Mission Trip</a>
+                <a href="#">Weekend Blessings</a>
+              </div>
+            </div>
+
+            <a href="#">Events</a>
+            <a href="#">Preschool</a>
+            <a href="#">Contact</a>
+            <a href="#">Give</a>
+          </nav>
+
+          <div class="nav-panel-actions">
+            <a class="watch-btn" href="#">Worship Online</a>
+
+            <div class="nav-socials" aria-label="Social links">
+              <!-- Facebook -->
+              <a
+                class="nav-social"
+                href="https://facebook.com/kennesawmc"
+                target="_blank"
+                rel="noopener"
+                aria-label="Facebook"
+              >
+                <svg class="nav-social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.6-1.6h1.7V4.8c-.3 0-1.4-.1-2.7-.1-2.7 0-4.5 1.6-4.5 4.6V11H7v3h2.6v8h3.9z"
+                  />
+                </svg>
+              </a>
+
+              <!-- Instagram -->
+              <a
+                class="nav-social"
+                href="https://instagram.com/kennesawchurch"
+                target="_blank"
+                rel="noopener"
+                aria-label="Instagram"
+              >
+                <svg class="nav-social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3z"
+                  />
+                  <path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" />
+                  <path d="M17.5 6.3a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z" />
+                </svg>
+              </a>
+
+              <!-- YouTube -->
+              <a
+                class="nav-social"
+                href="https://youtube.com/@KennesawChurch"
+                target="_blank"
+                rel="noopener"
+                aria-label="YouTube"
+              >
+                <svg class="nav-social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M23.5 6.2s-.2-1.7-.7-2.4c-.7-.9-1.5-.9-1.9-1C18.3 2.5 12 2.5 12 2.5h0s-6.3 0-8.9.3c-.4.1-1.2.1-1.9 1C.7 4.5.5 6.2.5 6.2S.2 8.2.2 10.2v1.6c0 2 .3 4 .3 4s.2 1.7.7 2.4c.7.9 1.7.9 2.1 1 1.5.1 6.7.3 8.7.3s6.3 0 8.9-.3c.4-.1 1.2-.1 1.9-1 .5-.7.7-2.4.7-2.4s.3-2 .3-4v-1.6c0-2-.3-4-.3-4zM9.8 14.8V7.9l6.2 3.5-6.2 3.4z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- STAFF HERO IMAGE (PAGE-SPECIFIC) -->
+    <section
+      class="hero-visual hero-visual--staff"
+      aria-label="Staff hero"
+      style="
+        background-image:
+          linear-gradient(to bottom, rgba(0,0,0,.10) 0%, rgba(0,0,0,.35) 55%, rgba(0,0,0,.70) 100%),
+          url('../assets/hero-images/staff-hero.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 420px;
+      "
+    >
+      <div class="hero-visual-inner">
+        <!-- Intentionally empty: title moves below hero -->
+      </div>
+    </section>
+
+    <!-- TITLE + NOTE BELOW HERO -->
+    <section class="staff-title-block" aria-label="Staff page heading">
+      <div class="container">
+        <h1 class="staff-page-title">10 Year Vision: 2022 - 2032</h1>
+        <p class="staff-page-note">Within the next ten years, the people of Kennesaw Methodist Church will be KNOWN by our community as DIFFERENCE MAKERS because we will AMBITIOUSLY MEET THE REAL, TANGIBLE NEEDS OF OTHERS and with compassion, form bonds that LEAD EACH CHILD AND ADULT INTO A DEEPER CONNECTION WITH CHRIST AND FOLLOWERS OF CHRIST.</p>
+      </div>
+    </section>
+
+    <!-- STAFF DIRECTORY -->
+    <section class="staff-section" aria-label="Staff directory">
+      <div class="container">
+        <div class="staff-grid">
+          <div class="staff-card">
+            <a href="mailto:alex@kennesawmc.org" aria-label="Email Rev. Alex Stroud">
+              <img src="../assets/staff-images/kc-alex.png" alt="Rev. Alex Stroud" />
+            </a>
+            <h3>REV. ALEX STROUD</h3>
+            <p class="staff-role">Senior Pastor</p>
+          </div>
+
+          <div class="staff-card">
+            <a href="mailto:brent@kennesawmc.org" aria-label="Email Rev. Brent Vicars">
+              <img src="../assets/staff-images/kc-brent.png" alt="Rev. Brent Vicars" />
+            </a>
+            <h3>REV. BRENT VICARS</h3>
+            <p class="staff-role">NextGen Pastor, Director of Modern Worship</p>
+          </div>
+
+                    <div class="staff-card">
+            <a href="mailto:brent@kennesawmc.org" aria-label="Email Rev. Laurie Klingenberg">
+              <img src="../assets/staff-images/kc-laurie.png" alt="Rev. Laurie Klingenberg" />
+            </a>
+            <h3>REV. Laurie Klingenberg</h3>
+            <p class="staff-role">Pastoral Care Pastor</p>
+          </div>
+
+          <div class="staff-card">
+            <a href="mailto:laurie@kennesawmc.org" aria-label="Email Marianne Harlan">
+              <img src="../assets/staff-images/kc-marianne.png" alt="Marianne Harlan" />
+            </a>
+            <h3>Marianne Harlan</h3>
+            <p class="staff-role">Business Administrator</p>
+          </div>
+
+                    <div class="staff-card">
+            <a href="mailto:laurie@kennesawmc.org" aria-label="Email Beth Serio">
+              <img src="../assets/staff-images/kc-beth.png" alt="Beth Serio" />
+            </a>
+            <h3>Beth Serio</h3>
+            <p class="staff-role">Executive Administrative Assistant</p>
+          </div>
+
+                    <div class="staff-card">
+            <a href="mailto:laurie@kennesawmc.org" aria-label="Email Jessica Falcone">
+              <img src="../assets/staff-images/kc-jessica.png" alt="Jessica Falcone" />
+            </a>
+            <h3>Jessica Falcone</h3>
+            <p class="staff-role">KMCA Director, Nursery Director</p>
+          </div>
+
+                    <div class="staff-card">
+            <a href="mailto:laurie@kennesawmc.org" aria-label="Email Sarah Navarro">
+              <img src="../assets/staff-images/kc-sarah.png" alt="Sarah Navarro" />
+            </a>
+            <h3>Sarah Navarro</h3>
+            <p class="staff-role">Director of Children's Ministry</p>
+          </div>
+
+                    <div class="staff-card">
+            <a href="mailto:laurie@kennesawmc.org" aria-label="Email Dr. Yumon Lee">
+              <img src="../assets/staff-images/kc-yumon.png" alt="Dr. Yumon Lee" />
+            </a>
+            <h3>Dr. Yumon Lee</h3>
+            <p class="staff-role">Director of Traditional Worship</p>
+          </div>
+
+                              <div class="staff-card">
+            <a href="mailto:laurie@kennesawmc.org" aria-label="Email Seth Wise">
+              <img src="../assets/staff-images/kc-seth.png  " alt="Seth Wise" />
+            </a>
+            <h3>Seth Wise</h3>
+            <p class="staff-role">AV Coordinator</p>
+          </div>
+
+                    <div class="staff-card">
+            <a href="mailto:laurie@kennesawmc.org" aria-label="Email Corey Miller">
+              <img src="../assets/staff-images/kc-corey.png" alt="Corey Miller" />
+            </a>
+            <h3>Corey Miller</h3>
+            <p class="staff-role">Maitenance Director</p>
+          </div>
+
+                    <div class="staff-card">
+            <a href="mailto:laurie@kennesawmc.org" aria-label="Email Kate Houston">
+              <img src="../assets/staff-images/kc-kate.png" alt="Kate Houston" />
+            </a>
+            <h3>Kate Houston</h3>
+            <p class="staff-role">Assistant to the NextGen Pastor and Director of Modern Worship</p>
+          </div>
+
+                    <div class="staff-card">
+            <a href="mailto:laurie@kennesawmc.org" aria-label="Email Rose Archer">
+              <img src="../assets/staff-images/kc-rose.png" alt="Rose Archer" />
+            </a>
+            <h3>Rose Archer</h3>
+            <p class="staff-role">Accompanist</p>
+          </div>
+
+          <!-- Add more staff cards here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER (COPIED FROM HOME; PATHS UPDATED) -->
+    <footer class="site-footer">
+      <div class="footer-inner container">
+        <div class="footer-col">
+          <h4 class="footer-title">Kennesaw Church</h4>
+          <a class="footer-link" href="#">Worship Online</a>
+          <a class="footer-link" href="#">Join Us In Person</a>
+          <a class="footer-link" href="#">Serve</a>
+          <a class="footer-link" href="#">Give</a>
+          <a class="footer-link" href="#">Events</a>
+          <a class="footer-link" href="#">Contact Us</a>
+          <a class="footer-link" href="#">Privacy Policy</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">New Here</h4>
+          <a class="footer-link" href="#">What to Expect on Sunday</a>
+          <a class="footer-link" href="/vision/">Mission &amp; Vision</a>
+          <a class="footer-link" href="#">About Us</a>
+          <a class="footer-link" href="/staff/">Pastors &amp; Staff</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Ministries</h4>
+          <a class="footer-link" href="#">Kennesaw Kids</a>
+          <a class="footer-link" href="#">Preschool</a>
+          <a class="footer-link" href="#">Youth Ministry</a>
+          <a class="footer-link" href="#">Young Adults</a>
+          <a class="footer-link" href="#">Weekend Blessings</a>
+          <a class="footer-link" href="#">Small Groups</a>
+          <a class="footer-link" href="#">Mission Trips</a>
+        </div>
+
+        <div class="footer-col footer-col-right">
+          <h4 class="footer-title">Join us</h4>
+          <a class="footer-link" href="#">Join Us In Person</a>
+          <a class="footer-link" href="#">Worship Online</a>
+
+          <div class="footer-socials">
+            <a
+              class="footer-social"
+              href="https://www.facebook.com/kennesawmc"
+              target="_blank"
+              rel="noopener"
+              aria-label="Facebook"
+            >
+              <svg class="footer-social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M13.5 9H16V6h-2.5C11.6 6 10 7.6 10 9.5V12H8v3h2v7h3v-7h2.3l.7-3H13v-2.2c0-.5.3-.8.8-.8z"/>
+              </svg>
+            </a>
+
+            <a
+              class="footer-social"
+              href="https://www.instagram.com/kennesawchurch/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Instagram"
+            >
+              <svg class="footer-social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3.2A4.8 4.8 0 1 0 12 17a4.8 4.8 0 0 0 0-9.6zm0 2A2.8 2.8 0 1 1 12 15a2.8 2.8 0 0 1 0-5.6zm4.5-2.9a1.1 1.1 0 1 0 0-2.2 1.1 1.1 0 0 0 0 2.2z"/>
+              </svg>
+            </a>
+
+            <a
+              class="footer-social"
+              href="https://www.youtube.com/@KennesawChurch"
+              target="_blank"
+              rel="noopener"
+              aria-label="YouTube"
+            >
+              <svg class="footer-social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M23.5 6.2s-.2-1.7-.7-2.4c-.7-.9-1.5-.9-1.9-1C18.3 2.5 12 2.5 12 2.5h0s-6.3 0-8.9.3c-.4.1-1.2.1-1.9 1C.7 4.5.5 6.2.5 6.2S.2 8.2.2 10.2v1.6c0 2 .3 4 .3 4s.2 1.7.7 2.4c.7.9 1.7.9 2.1 1 1.5.1 6.7.3 8.7.3s6.3 0 8.9-.3c.4-.1 1.2-.1 1.9-1 .5-.7.7-2.4.7-2.4s.3-2 .3-4v-1.6c0-2-.3-4-.3-4zM9.8 14.8V7.9l6.2 3.5-6.2 3.4z"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="footer-meta">
+            <div>1801 Ben King Rd</div>
+            <div>Kennesaw, GA 30144</div>
+            <div class="footer-meta-spacer"></div>
+            <div>Phone: (770) 428-1543</div>
+          </div>
+        </div>
       </div>
 
-      <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="livestream.html">Live Stream</a>
-        <a href="ministries.html">Ministries</a>
-        <a href="worship.html">Worship</a>
-        <a href="events.html">Events</a>
-        <a href="preschool.html">Preschool</a>
-        <a href="contact.html">Contact</a>
-        <a href="give.html">Give</a>
-      </nav>
+      <div class="footer-bottom container">
+        <div class="footer-subscribe">
+          <a class="footer-subscribe-link" href="https://mailchi.mp/429478f6a7af/kumc-december-newsletter-10343934">
+            Subscribe to<br />Our Email Newsletter
+          </a>
+        </div>
 
-      <a class="watch-btn" href="livestream.html">Watch Live</a>
-    </div>
-  </header>
+        <div class="footer-copy">
+          Copyright © 2026 Kennesaw Church.<br />
+          All Rights Reserved.
+        </div>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container">
-      <h1>Our Vision</h1>
-      <p>Where we're going and what we're called to do</p>
-    </div>
-  </section>
+        <div class="footer-brand">
+          <a href="../index.html" aria-label="Kennesaw Church Home">
+            <img src="../assets/logos/FullHori_GreenWhite_TranspBG.svg" alt="Kennesaw Church" />
+          </a>
+        </div>
+      </div>
+    </footer>
 
-  <!-- CONTENT -->
-  <section class="section section-light">
-    <div class="container">
-      <h2>Our Vision</h2>
-      <p>
-        We envision a church where every person experiences the transforming love of Jesus Christ, grows in faith and character, and becomes equipped to serve God and others with their unique gifts and calling.
-      </p>
-    </div>
-  </section>
+    <!-- NAVBAR JS (COPIED FROM HOME) -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        /* =========================
+           Desktop dropdowns (click)
+           ========================= */
+        const dropdowns = document.querySelectorAll(".nav-dropdown");
 
-  <section class="section section-gray">
-    <div class="container">
-      <h2>Our Mission</h2>
-      <p>
-        To make disciples of Jesus Christ who love God, love others, and make a difference in the world. We accomplish this through worship, teaching, fellowship, and service in our community and beyond.
-      </p>
-    </div>
-  </section>
+        dropdowns.forEach((dd) => {
+          const btn = dd.querySelector(".nav-dropdown-toggle");
+          if (!btn) return;
 
-  <section class="section section-light">
-    <div class="container">
-      <h2>Our Values</h2>
-      <p>
-        <strong>Faith:</strong> We believe in the power of God's Word and the work of the Holy Spirit.<br><br>
-        <strong>Community:</strong> We value authentic relationships and doing life together.<br><br>
-        <strong>Service:</strong> We're called to serve our neighbors and make a difference.<br><br>
-        <strong>Growth:</strong> We're committed to growing in faith, character, and love.
-      </p>
-    </div>
-  </section>
+          btn.addEventListener("click", (e) => {
+            e.preventDefault();
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <img src="assets/logos/logo-horizontal-white.svg" alt="Kennesaw Church">
-    <p>123 Main Street, Kennesaw, GA</p>
-    <p>© Kennesaw Church</p>
-  </footer>
+            const isOpen = dd.classList.contains("is-open");
 
-</body>
+            // close all
+            dropdowns.forEach((x) => {
+              x.classList.remove("is-open");
+              const b = x.querySelector(".nav-dropdown-toggle");
+              if (b) b.setAttribute("aria-expanded", "false");
+            });
+
+            // open current if it was closed
+            if (!isOpen) {
+              dd.classList.add("is-open");
+              btn.setAttribute("aria-expanded", "true");
+            }
+          });
+        });
+
+        // click outside closes desktop dropdowns
+        document.addEventListener("click", (e) => {
+          if (e.target.closest(".nav-dropdown")) return;
+          dropdowns.forEach((dd) => {
+            dd.classList.remove("is-open");
+            const btn = dd.querySelector(".nav-dropdown-toggle");
+            if (btn) btn.setAttribute("aria-expanded", "false");
+          });
+        });
+
+        // escape closes desktop dropdowns
+        document.addEventListener("keydown", (e) => {
+          if (e.key !== "Escape") return;
+          dropdowns.forEach((dd) => {
+            dd.classList.remove("is-open");
+            const btn = dd.querySelector(".nav-dropdown-toggle");
+            if (btn) btn.setAttribute("aria-expanded", "false");
+          });
+        });
+
+        /* =========================
+           Mobile hamburger panel
+           ========================= */
+        const toggle = document.querySelector(".nav-toggle");
+        const panel = document.getElementById("mobileMenu");
+
+        if (toggle && panel) {
+          toggle.addEventListener("click", () => {
+            const isOpen = toggle.getAttribute("aria-expanded") === "true";
+
+            // Toggle panel visibility
+            toggle.setAttribute("aria-expanded", String(!isOpen));
+            panel.hidden = isOpen;
+
+            // When opening, collapse ALL mobile accordions by default
+            if (!isOpen) {
+              const mobAccordions = document.querySelectorAll(".nav-mobile-accordion");
+              mobAccordions.forEach((btn) => {
+                const id = btn.getAttribute("aria-controls");
+                const menu = id ? document.getElementById(id) : null;
+                btn.setAttribute("aria-expanded", "false");
+                if (menu) menu.hidden = true;
+              });
+            }
+          });
+
+          // Close panel when clicking a normal link (not the accordion)
+          panel.addEventListener("click", (e) => {
+            if (e.target.closest(".nav-mobile-accordion")) return;
+
+            const link = e.target.closest("a");
+            if (!link) return;
+
+            toggle.setAttribute("aria-expanded", "false");
+            panel.hidden = true;
+          });
+
+          // Escape closes mobile panel too
+          document.addEventListener("keydown", (e) => {
+            if (e.key !== "Escape") return;
+            toggle.setAttribute("aria-expanded", "false");
+            panel.hidden = true;
+          });
+        }
+
+        /* =========================
+           Mobile accordions
+           ========================= */
+        const accordions = document.querySelectorAll(".nav-mobile-accordion");
+
+        accordions.forEach((btn) => {
+          const id = btn.getAttribute("aria-controls");
+          const menu = id ? document.getElementById(id) : null;
+          if (!menu) return;
+
+          btn.addEventListener("click", () => {
+            const isOpen = btn.getAttribute("aria-expanded") === "true";
+            btn.setAttribute("aria-expanded", String(!isOpen));
+            menu.hidden = isOpen;
+          });
+        });
+      });
+    </script>
+
+    <!-- Site search (PATH UPDATED) -->
+    <script src="../js/site-search.js" defer></script>
+  </body>
 </html>

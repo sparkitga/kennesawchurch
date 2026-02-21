@@ -1,13 +1,8 @@
 <!-- FILE: index.html
-  NOTE: This is a FULL HTML page with the corrected navbar structure:
-  - Logo left
-  - Search centered
-  - Worship Online + Social icons on the right
-  - Desktop nav links sit UNDER the search bar (center column)
-  - Minimal dropdowns for Ministries + Worship
-  - Includes working mobile panel + accordions
-  - Includes site search hooks: #siteSearchForm, #siteSearchInput, #siteSearchResults
-  - IMPORTANT: body has class="home-page" so the "shrink all images except hero" CSS applies
+  NOTE: FULL HTML with updates:
+  - "I'm New" dropdown added (desktop + mobile accordion)
+  - "Serve" dropdown added (desktop + mobile accordion)
+  - Keeps your existing structure, search hooks, and JS behavior
 -->
 
 <!doctype html>
@@ -122,8 +117,21 @@
 
           <!-- Desktop nav links (UNDER search) -->
           <nav class="nav-links nav-links-desktop" aria-label="Primary navigation">
-            <a href="index.html">Home</a>
+            <!-- I'm New (NEW dropdown) -->
+            <div class="nav-item nav-dropdown">
+              <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
+                I'm New <span class="nav-caret" aria-hidden="true">▾</span>
+              </button>
 
+              <div class="nav-dropdown-menu" role="menu" aria-label="I'm New submenu">
+                <a role="menuitem" href="#">Staff</a>
+                <a role="menuitem" href="#">Monthly Newsletter</a>
+                <a role="menuitem" href="#">Vision</a>
+                <a role="menuitem" href="#">Statement of Faith</a>
+              </div>
+            </div>
+
+            <!-- Ministries -->
             <div class="nav-item nav-dropdown">
               <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
                 Ministries <span class="nav-caret" aria-hidden="true">▾</span>
@@ -142,6 +150,7 @@
               </div>
             </div>
 
+            <!-- Worship -->
             <div class="nav-item nav-dropdown">
               <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
                 Worship <span class="nav-caret" aria-hidden="true">▾</span>
@@ -154,7 +163,23 @@
               </div>
             </div>
 
-            <a href="#">Events</a>
+            <!-- Serve (NEW dropdown) -->
+            <div class="nav-item nav-dropdown">
+              <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
+                Serve <span class="nav-caret" aria-hidden="true">▾</span>
+              </button>
+
+              <div class="nav-dropdown-menu" role="menu" aria-label="Serve submenu">
+                <a role="menuitem" href="#">Care Team</a>
+                <a role="menuitem" href="#">Foster Care</a>
+                <a role="menuitem" href="#">Med Cab</a>
+                <a role="menuitem" href="#">South Dakota</a>
+                <a role="menuitem" href="#">Stewardship</a>
+                <a role="menuitem" href="#">Mission Trip</a>
+                <a role="menuitem" href="#">Weekend Blessings</a>
+              </div>
+            </div>
+
             <a href="#">Preschool</a>
             <a href="#">Contact</a>
             <a href="#">Give</a>
@@ -232,6 +257,25 @@
             <a href="index.html">Home</a>
             <a href="#">Worship Online</a>
 
+            <!-- Mobile I'm New accordion (NEW) -->
+            <div class="nav-mobile-item">
+              <button
+                class="nav-mobile-accordion"
+                type="button"
+                aria-expanded="false"
+                aria-controls="mobileImNew"
+              >
+                I'm New <span class="nav-caret" aria-hidden="true">▾</span>
+              </button>
+
+              <div class="nav-mobile-submenu" id="mobileImNew" hidden>
+                <a href="#">Staff</a>
+                <a href="#">Monthly Newsletter</a>
+                <a href="#">Vision</a>
+                <a href="#">Statement of Faith</a>
+              </div>
+            </div>
+
             <!-- Mobile Ministries accordion -->
             <div class="nav-mobile-item">
               <button
@@ -271,6 +315,28 @@
                 <a href="#">Online</a>
                 <a href="#">In Person</a>
                 <a href="#">Kennesaw Kids</a>
+              </div>
+            </div>
+
+            <!-- Mobile Serve accordion (NEW) -->
+            <div class="nav-mobile-item">
+              <button
+                class="nav-mobile-accordion"
+                type="button"
+                aria-expanded="false"
+                aria-controls="mobileServe"
+              >
+                Serve <span class="nav-caret" aria-hidden="true">▾</span>
+              </button>
+
+              <div class="nav-mobile-submenu" id="mobileServe" hidden>
+                <a href="#">Care Team</a>
+                <a href="#">Foster Care</a>
+                <a href="#">Med Cab</a>
+                <a href="#">South Dakota</a>
+                <a href="#">Stewardship</a>
+                <a href="#">Mission Trip</a>
+                <a href="#">Weekend Blessings</a>
               </div>
             </div>
 

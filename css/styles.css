@@ -1441,3 +1441,12 @@ body.vision-page .hero-visual.hero-visual--vision::before {
 body.vision-page .hero-visual.hero-visual--vision {
   min-height: 420px;
 }
+
+/* STATEMENT HERO */
+body.statement-page .hero-visual.hero-visual--statement::before {
+  background-image: url("../assets/hero-images/statement-hero.jpg");
+}
+
+body.statement-page .hero-visual.hero-visual--statement {
+  min-height: 420px;
+}

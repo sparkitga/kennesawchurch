@@ -1,135 +1,76 @@
-<!doctype html>
-<html lang="en">
-<head>
+/* STAFF: title + note below hero */
+body.staff-page .staff-title-block{
+  background:#fff;
+  padding: 46px 0 10px;
+  text-align:center;
+}
+body.staff-page .staff-page-title{
+  font-size: clamp(42px, 5.6vw, 64px);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  margin: 0 0 10px;
+  color: rgba(17,17,17,0.92);
+}
+body.staff-page .staff-page-note{
+  margin: 0;
+  font-size: 16px;
+  color: rgba(17,17,17,0.60);
+}
 
-  <!-- Google tag -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N794D9J3RW"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-N794D9J3RW');
-  </script>
-
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>Staff | Kennesaw Church</title>
-  <meta name="description" content="Meet the pastors and staff of Kennesaw Church in Kennesaw, GA." />
-  <meta name="theme-color" content="#0b2a4a" />
-
-  <link rel="canonical" href="https://kennesawmc.org/staff/" />
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-
-  <!-- Favicon -->
-  <link rel="icon" href="../assets/icons/Favicon_GreenWhite_DarkBlueBG.png" />
-
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="../css/styles.css" />
-
-</head>
-
-<body class="staff-page">
-
-<!-- ================= NAVBAR ================= -->
-<header class="navbar">
-  <div class="container nav-wrap">
-
-    <div class="nav-logo">
-      <a href="../index.html">
-        <img src="../assets/logos/FullHori_GreenBlack_TranspBG.svg" alt="Kennesaw Church">
-      </a>
-    </div>
-
-    <div class="nav-center">
-
-      <form class="nav-search" role="search">
-        <input class="nav-search-input"
-               type="search"
-               id="siteSearchInput"
-               placeholder="Search…"
-               autocomplete="off" />
-        <div class="nav-search-results" id="siteSearchResults" hidden></div>
-      </form>
-
-      <nav class="nav-links nav-links-desktop">
-        <a href="#">I’m New</a>
-        <a href="#">About</a>
-        <a href="#">Vision</a>
-        <a href="#">Ministries</a>
-        <a href="#">Worship</a>
-        <a href="#">Serve</a>
-        <a href="#">Connections</a>
-        <a href="#">Events</a>
-        <a href="#">Preschool</a>
-        <a href="#">Give</a>
-      </nav>
-    </div>
-
-  </div>
-</header>
-
-<!-- ================= HERO ================= -->
-<section class="hero-visual"
-         style="background: url('../assets/hero-images/staff-hero.jpg') center/cover no-repeat; min-height: 420px;">
-
-  <div class="hero-visual-inner">
-    <h1 class="hero-page-title">Meet Our Staff</h1>
-    <p class="hero-copy hero-copy-primary">
-      Click on the staff member’s picture to email them.
-    </p>
-  </div>
-
-</section>
-
-<!-- ================= STAFF DIRECTORY ================= -->
-<section class="staff-section">
-  <div class="container">
-
-    <div class="staff-grid">
-
-      <div class="staff-card">
-        <a href="mailto:alex@kennesawmc.org">
-          <img src="../assets/images/staff-alex.jpg" alt="Rev. Alex Stroud">
-        </a>
-        <h3>REV. ALEX STROUD</h3>
-        <p class="staff-role">Senior Pastor</p>
-      </div>
-
-      <div class="staff-card">
-        <a href="mailto:brent@kennesawmc.org">
-          <img src="../assets/images/staff-brent.jpg" alt="Rev. Brent Vicars">
-        </a>
-        <h3>REV. BRENT VICARS</h3>
-        <p class="staff-role">NextGen Pastor, Director of Modern Worship</p>
-      </div>
-
-      <div class="staff-card">
-        <a href="mailto:laurie@kennesawmc.org">
-          <img src="../assets/images/staff-laurie.jpg" alt="Rev. Laurie Klingenberg">
-        </a>
-        <h3>REV. LAURIE KLINGENBERG</h3>
-        <p class="staff-role">Pastoral Care Pastor</p>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- ================= FOOTER ================= -->
-<footer class="site-footer">
-  <div class="container footer-bottom">
-    <div class="footer-copy">
-      Copyright © 2026 Kennesaw Church.
-    </div>
-  </div>
-</footer>
-
-<!-- JS -->
-<script src="../js/site-search.js" defer></script>
-
-</body>
-</html>
+/* STAFF: tighter directory spacing (keep your screenshot style) */
+body.staff-page .staff-section{
+  padding: 52px 0 64px;
+  background: #f2f2f2;
+  text-align:center;
+}
+body.staff-page .staff-grid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: 44px 40px;
+  margin-top: 24px;
+}
+@media (min-width: 768px){
+  body.staff-page .staff-grid{
+    grid-template-columns: repeat(3, 1fr);
+    gap: 56px 52px;
+    margin-top: 30px;
+  }
+}
+body.staff-page .staff-card{
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+}
+body.staff-page .staff-card a{
+  display:inline-block;
+  border-radius:999px;
+}
+body.staff-page .staff-card img{
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 18px;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.10);
+  transition: transform 0.22s ease;
+}
+body.staff-page .staff-card img:hover{ transform: scale(1.03); }
+body.staff-page .staff-card h3{
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  color: rgba(17,17,17,0.92);
+}
+body.staff-page .staff-role{
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(17,17,17,0.60);
+  margin: 0;
+  line-height: 1.45;
+}
+@media (max-width: 640px){
+  body.staff-page .staff-card img{ width: 160px; height: 160px; }
+  body.staff-page .staff-section{ padding: 44px 0 54px; }
+}

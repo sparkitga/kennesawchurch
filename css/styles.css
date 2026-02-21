@@ -1256,6 +1256,144 @@ body.preschool-page .preschool-card:hover img {
     height: 240px;
   }
 }
+/* =========================================
+   PRESCHOOL ONLY — Wider content + row headings + bigger linked tiles
+   ========================================= */
+
+/* Make preschool layout wider than the editorial subpage default */
+body.preschool-page main {
+  max-width: 1200px;
+  padding: 38px 20px 80px;
+}
+
+/* Each block (heading + grid) */
+body.preschool-page .preschool-block {
+  background: #fff;
+  padding: 26px 0 40px;
+}
+
+body.preschool-page .preschool-block-title {
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 950;
+  letter-spacing: -0.02em;
+  margin: 0 0 8px;
+  color: rgba(17, 17, 17, 0.92);
+}
+
+body.preschool-page .preschool-block-subtitle {
+  font-family: Georgia, "Times New Roman", serif;
+  margin: 0 0 18px;
+  color: rgba(17, 17, 17, 0.62);
+}
+
+/* Reuse your existing grid class but make tiles bigger */
+body.preschool-page .preschool-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+/* Turn tiles into accessible links */
+body.preschool-page a.preschool-card {
+  display: block;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #f3f4f6;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
+  transform: translateY(0);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  position: relative;
+}
+
+body.preschool-page a.preschool-card:focus-visible {
+  outline: 3px solid rgba(58, 124, 63, 0.32);
+  outline-offset: 3px;
+}
+
+body.preschool-page a.preschool-card img {
+  width: 100%;
+  height: 300px; /* bigger */
+  object-fit: cover;
+  display: block;
+  transform: scale(1.01);
+  transition: transform 0.18s ease;
+}
+
+/* Hover lift */
+body.preschool-page a.preschool-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.12);
+}
+body.preschool-page a.preschool-card:hover img {
+  transform: scale(1.03);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  body.preschool-page .preschool-cards {
+    grid-template-columns: 1fr;
+  }
+  body.preschool-page a.preschool-card img {
+    height: 260px;
+  }
+}
+
+/* =========================================
+   PRESCHOOL ONLY — Quick Links (4 cards w subtitles)
+   ========================================= */
+body.preschool-page .preschool-links {
+  background: #fff;
+  padding: 10px 0 70px;
+}
+
+body.preschool-page .preschool-link-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+body.preschool-page .preschool-link-card {
+  display: block;
+  padding: 18px 18px 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(17, 17, 17, 0.10);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+  transition: transform 0.14s ease, box-shadow 0.14s ease, border-color 0.14s ease;
+}
+
+body.preschool-page .preschool-link-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.08);
+  border-color: rgba(11, 42, 74, 0.18);
+}
+
+body.preschool-page .preschool-link-card:focus-visible {
+  outline: 3px solid rgba(11, 42, 74, 0.22);
+  outline-offset: 3px;
+}
+
+body.preschool-page .preschool-link-title {
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 950;
+  font-size: 16px;
+  color: rgba(17, 17, 17, 0.92);
+  margin: 0 0 6px;
+}
+
+body.preschool-page .preschool-link-subtitle {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  line-height: 1.55;
+  color: rgba(17, 17, 17, 0.62);
+}
+
+@media (max-width: 900px) {
+  body.preschool-page .preschool-link-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* ==================================================
    (Optional) Vision / Statement / Kids scopes can live here

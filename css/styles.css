@@ -1179,7 +1179,8 @@ body.preschool-page .page-head--preschool .page-head-inner {
 }
 
 /* 2) The 3 curved rectangles */
-body.preschool-page .preschool-gallery {
+body.preschool-page .preschool-gallery,
+body.nursery-page .preschool-gallery {
   background: #fff;
   padding: 22px 0 44px;
 }

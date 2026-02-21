@@ -1307,3 +1307,128 @@ body.staff-page .staff-role {
     padding: 44px 0 56px;
   }
 }
+
+/* ==============================
+   VISION PAGE — NYT-style article
+   (scoped; does not affect other pages)
+   ============================== */
+
+body.vision-page {
+  background: #ffffff;
+}
+
+/* Optional: add a subtle paper tone under the article only */
+body.vision-page .nyt-article {
+  background: #fff;
+}
+
+body.vision-page .nyt-article {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 54px 20px 80px;
+}
+
+/* Header */
+body.vision-page .nyt-head {
+  max-width: 760px;
+  margin: 0 auto 28px;
+  text-align: left;
+}
+
+body.vision-page .nyt-kicker {
+  margin: 0 0 10px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(17, 17, 17, 0.62);
+}
+
+body.vision-page .nyt-title {
+  margin: 0 0 12px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-size: clamp(38px, 4.4vw, 60px);
+  line-height: 1.05;
+  color: rgba(17, 17, 17, 0.92);
+}
+
+body.vision-page .nyt-dek {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.65;
+  color: rgba(17, 17, 17, 0.62);
+  max-width: 65ch;
+}
+
+/* Body column */
+body.vision-page .nyt-body {
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.85;
+  color: rgba(17, 17, 17, 0.86);
+}
+
+/* Make paragraphs feel like a newspaper column */
+body.vision-page .nyt-body p {
+  margin: 0 0 18px;
+  color: rgba(17, 17, 17, 0.78);
+  font-weight: 450;
+}
+
+/* “Lede” paragraph with drop cap */
+body.vision-page .nyt-lede {
+  font-size: 19px;
+  line-height: 1.85;
+  color: rgba(17, 17, 17, 0.86);
+}
+
+body.vision-page .nyt-lede::first-letter {
+  float: left;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 800;
+  font-size: 64px;
+  line-height: 0.9;
+  padding: 10px 10px 0 0;
+  color: rgba(17, 17, 17, 0.92);
+}
+
+/* Section headings: classic, confident, not “marketing” */
+body.vision-page .nyt-body h2 {
+  margin: 34px 0 12px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: rgba(17, 17, 17, 0.92);
+}
+
+/* Subtle divider like NYT rules */
+body.vision-page .nyt-rule {
+  border: 0;
+  height: 1px;
+  background: rgba(17, 17, 17, 0.12);
+  margin: 28px 0;
+}
+
+/* Strong emphasis should be strong, not neon */
+body.vision-page .nyt-body strong {
+  font-weight: 800;
+  color: rgba(17, 17, 17, 0.92);
+}
+
+/* Mobile reading comfort */
+@media (max-width: 640px) {
+  body.vision-page .nyt-article {
+    padding: 40px 18px 64px;
+  }
+  body.vision-page .nyt-body {
+    font-size: 17px;
+    line-height: 1.8;
+  }
+  body.vision-page .nyt-lede::first-letter {
+    font-size: 56px;
+    padding-top: 8px;
+  }
+}

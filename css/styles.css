@@ -1294,6 +1294,92 @@ body.nursery-page main {
 }
 
 /* =========================================
+   KENNESAW KIDS — Match Nursery/Preschool layout
+   ========================================= */
+
+/* Keep hero as image only */
+body.kennesaw-kids-page .hero-visual-inner {
+  padding: 0;
+}
+
+/* Page head under hero */
+body.kennesaw-kids-page .page-head--kennesaw-kids {
+  background: #fff;
+  padding: 46px 0 22px;
+  position: relative;
+  overflow: hidden;
+}
+
+body.kennesaw-kids-page .page-head--kennesaw-kids .page-title {
+  margin: 0 0 10px;
+  font-size: clamp(42px, 5.6vw, 64px);
+  font-weight: 950;
+  letter-spacing: -0.03em;
+  color: rgba(17, 17, 17, 0.94);
+}
+
+body.kennesaw-kids-page .page-head--kennesaw-kids .page-subtitle {
+  margin: 0;
+  max-width: 70ch;
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(17, 17, 17, 0.62);
+}
+
+/* Sparkle background (same feel as nursery/preschool) */
+body.kennesaw-kids-page .page-head--kennesaw-kids::before {
+  content: "";
+  position: absolute;
+  inset: -40px -40px auto -40px;
+  height: 220px;
+  background:
+    radial-gradient(circle at 18% 40%, rgba(58,124,63,0.18) 0 2px, transparent 3px),
+    radial-gradient(circle at 32% 65%, rgba(11,42,74,0.16) 0 1.5px, transparent 3px),
+    radial-gradient(circle at 55% 30%, rgba(58,124,63,0.12) 0 2px, transparent 3px),
+    radial-gradient(circle at 72% 55%, rgba(11,42,74,0.14) 0 1.5px, transparent 3px),
+    radial-gradient(circle at 88% 35%, rgba(58,124,63,0.12) 0 2px, transparent 3px);
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+body.kennesaw-kids-page .page-head--kennesaw-kids::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(255,255,255,0.75) 0%, rgba(255,255,255,0) 60%);
+  pointer-events: none;
+}
+
+body.kennesaw-kids-page .page-head--kennesaw-kids .page-head-inner {
+  position: relative;
+  z-index: 1;
+}
+
+/* Match the 3-card rows you already use */
+body.kennesaw-kids-page .preschool-gallery,
+body.kennesaw-kids-page .preschool-block {
+  background: #fff;
+  padding: 22px 0 44px;
+}
+
+/* Wider main like nursery/preschool */
+body.kennesaw-kids-page main {
+  max-width: 1200px;
+  padding: 38px 20px 80px;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  body.kennesaw-kids-page .page-head--kennesaw-kids {
+    padding: 34px 0 18px;
+  }
+
+  body.kennesaw-kids-page .page-head--kennesaw-kids .page-subtitle {
+    font-size: 16.5px;
+  }
+}
+
+/* =========================================
    FAQ (Accordion) — On-brand, minimal, no JS
    ========================================= */
 

@@ -2059,6 +2059,57 @@ body.youth-page .btn.btn-outline:hover {
 }
 
 /* =========================================
+   YOUTH — Additional Resources tiles (square logo cards)
+   Applies ONLY to the bottom “Additional Resources” row on Youth
+   ========================================= */
+body.youth-page .preschool-block .preschool-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 18px;
+}
+
+body.youth-page .preschool-block .preschool-card {
+  width: 100%;
+  aspect-ratio: 1 / 1;              /* makes them square like your screenshot */
+  border-radius: 22px;
+  border: 1px solid rgba(17, 17, 17, 0.10);
+  background: #fff;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
+
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+body.youth-page .preschool-block .preschool-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.12);
+  border-color: rgba(11, 42, 74, 0.16);
+}
+
+body.youth-page .preschool-block .preschool-card img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;              /* key: logo-style, not cropped */
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  body.youth-page .preschool-block .preschool-cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  body.youth-page .preschool-block .preschool-card {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+}
+
+/* =========================================
    BRAND-STYLE IMAGE GRID (Coca-Cola vibe)
    Reusable for Events + Ministries pages
    ========================================= */

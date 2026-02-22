@@ -1,11 +1,3 @@
-<!-- FILE: staff/index.html
-  Uses HOME PAGE header + footer + brand standard.
-  Staff-only changes:
-  - Paths updated for /staff/ folder (../css, ../assets, ../js)
-  - Staff hero uses ../assets/hero-images/staff-hero.jpg
-  - Title + note moved BELOW hero
--->
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -23,10 +15,7 @@
 
     <title>Kennesaw Kids | Kennesaw Church</title>
 
-    <meta
-      name="description"
-      content="Kennesaw Church's Kennesaw Kids"
-    />
+    <meta name="description" content="Kennesaw Church's Kennesaw Kids" />
     <meta name="robots" content="index,follow" />
     <meta name="theme-color" content="#0b2a4a" />
     <link rel="canonical" href="https://kennesawchurch.netlify.app/kennesaw-kids/" />
@@ -41,10 +30,7 @@
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Kennesaw Church Kennesaw Kids" />
-    <meta
-      name="twitter:description"
-      content="Kennesaw Church's Kennesaw Kids."
-    />
+    <meta name="twitter:description" content="Kennesaw Church's Kennesaw Kids." />
 
     <!-- Inter Font -->
     <link
@@ -52,28 +38,28 @@
       rel="stylesheet"
     />
 
-    <!-- Favicons (PATHS UPDATED) -->
+    <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="../assets/icons/Favicon_GreenWhite_DarkBlueBG.svg" />
     <link rel="icon" type="image/png" href="../assets/icons/Favicon_GreenWhite_DarkBlueBG.png" />
 
-    <!-- Main stylesheet (PATH UPDATED) -->
+    <!-- Main stylesheet -->
     <link rel="stylesheet" href="../css/styles.css" />
+
+    <!-- Kennesaw Kids page-only polish (SAFE) -->
+    <link rel="stylesheet" href="../css/kennesaw-kids.css" />
   </head>
 
   <body class="kennesaw-kids-page">
-    <!-- NAVBAR (COPIED FROM HOME; PATHS UPDATED) -->
+    <!-- NAVBAR (home standard; paths updated for folder) -->
     <header class="navbar">
       <div class="container nav-wrap">
-        <!-- LEFT: Logo -->
         <div class="nav-logo">
           <a href="../index.html" aria-label="Kennesaw Church Home">
             <img src="../assets/logos/FullHori_GreenBlack_TranspBG.svg" alt="Kennesaw Church" />
           </a>
         </div>
 
-        <!-- CENTER: Search (row 1) + Desktop Links (row 2) -->
         <div class="nav-center">
-          <!-- Search -->
           <form class="nav-search" role="search" aria-label="Site search" action="#" method="GET" id="siteSearchForm">
             <input
               class="nav-search-input"
@@ -86,8 +72,6 @@
               aria-controls="siteSearchResults"
               aria-autocomplete="list"
             />
-
-            <!-- Results dropdown (minimal) -->
             <div
               class="nav-search-results"
               id="siteSearchResults"
@@ -97,14 +81,11 @@
             ></div>
           </form>
 
-          <!-- Desktop nav links (UNDER search) -->
           <nav class="nav-links nav-links-desktop" aria-label="Primary navigation">
-            <!-- I'm New dropdown -->
             <div class="nav-item nav-dropdown">
               <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
                 I'm New <span class="nav-caret" aria-hidden="true">▾</span>
               </button>
-
               <div class="nav-dropdown-menu" role="menu" aria-label="I'm New submenu">
                 <a role="menuitem" href="/staff/">Staff</a>
                 <a role="menuitem" href="https://mailchi.mp/429478f6a7af/kumc-december-newsletter-10343934">Monthly Newsletter</a>
@@ -113,12 +94,10 @@
               </div>
             </div>
 
-            <!-- Ministries -->
             <div class="nav-item nav-dropdown">
               <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
                 Ministries <span class="nav-caret" aria-hidden="true">▾</span>
               </button>
-
               <div class="nav-dropdown-menu" role="menu" aria-label="Ministries submenu">
                 <a role="menuitem" href="/nursery/">Nursery</a>
                 <a role="menuitem" href="/kennesaw-kids/">Children</a>
@@ -132,12 +111,10 @@
               </div>
             </div>
 
-            <!-- Worship -->
             <div class="nav-item nav-dropdown">
               <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
                 Worship <span class="nav-caret" aria-hidden="true">▾</span>
               </button>
-
               <div class="nav-dropdown-menu" role="menu" aria-label="Worship submenu">
                 <a role="menuitem" href="/worship-online/">Online</a>
                 <a role="menuitem" href="/worship-in-person/">In Person</a>
@@ -146,12 +123,10 @@
               </div>
             </div>
 
-            <!-- Serve dropdown -->
             <div class="nav-item nav-dropdown">
               <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
                 Serve <span class="nav-caret" aria-hidden="true">▾</span>
               </button>
-
               <div class="nav-dropdown-menu" role="menu" aria-label="Serve submenu">
                 <a role="menuitem" href="/care-team/">Care Team</a>
                 <a role="menuitem" href="/foster-care/">Foster Care</a>
@@ -168,88 +143,45 @@
           </nav>
         </div>
 
-        <!-- RIGHT: Worship Online + Social + Hamburger -->
         <div class="nav-right">
           <a class="watch-btn nav-right-desktop" href="/worship-online/">Worship Online</a>
 
           <div class="nav-socials nav-right-desktop" aria-label="Social links">
-            <!-- Facebook -->
-            <a
-              class="nav-social"
-              href="https://facebook.com/kennesawmc"
-              target="_blank"
-              rel="noopener"
-              aria-label="Facebook"
-            >
+            <a class="nav-social" href="https://facebook.com/kennesawmc" target="_blank" rel="noopener" aria-label="Facebook">
               <svg class="nav-social-icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.6-1.6h1.7V4.8c-.3 0-1.4-.1-2.7-.1-2.7 0-4.5 1.6-4.5 4.6V11H7v3h2.6v8h3.9z"
-                />
+                <path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.6-1.6h1.7V4.8c-.3 0-1.4-.1-2.7-.1-2.7 0-4.5 1.6-4.5 4.6V11H7v3h2.6v8h3.9z" />
               </svg>
             </a>
 
-            <!-- Instagram -->
-            <a
-              class="nav-social"
-              href="https://instagram.com/kennesawchurch"
-              target="_blank"
-              rel="noopener"
-              aria-label="Instagram"
-            >
+            <a class="nav-social" href="https://instagram.com/kennesawchurch" target="_blank" rel="noopener" aria-label="Instagram">
               <svg class="nav-social-icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3z"
-                />
+                <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3z" />
                 <path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" />
                 <path d="M17.5 6.3a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z" />
               </svg>
             </a>
 
-            <!-- YouTube -->
-            <a
-              class="nav-social"
-              href="https://youtube.com/@KennesawChurch"
-              target="_blank"
-              rel="noopener"
-              aria-label="YouTube"
-            >
+            <a class="nav-social" href="https://youtube.com/@KennesawChurch" target="_blank" rel="noopener" aria-label="YouTube">
               <svg class="nav-social-icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M23.5 6.2s-.2-1.7-.7-2.4c-.7-.9-1.5-.9-1.9-1C18.3 2.5 12 2.5 12 2.5h0s-6.3 0-8.9.3c-.4.1-1.2.1-1.9 1C.7 4.5.5 6.2.5 6.2S.2 8.2.2 10.2v1.6c0 2 .3 4 .3 4s.2 1.7.7 2.4c.7.9 1.7.9 2.1 1 1.5.1 6.7.3 8.7.3s6.3 0 8.9-.3c.4-.1 1.2-.1 1.9-1 .5-.7.7-2.4.7-2.4s.3-2 .3-4v-1.6c0-2-.3-4-.3-4zM9.8 14.8V7.9l6.2 3.5-6.2 3.4z"
-                />
+                <path d="M23.5 6.2s-.2-1.7-.7-2.4c-.7-.9-1.5-.9-1.9-1C18.3 2.5 12 2.5 12 2.5h0s-6.3 0-8.9.3c-.4.1-1.2.1-1.9 1C.7 4.5.5 6.2.5 6.2S.2 8.2.2 10.2v1.6c0 2 .3 4 .3 4s.2 1.7.7 2.4c.7.9 1.7.9 2.1 1 1.5.1 6.7.3 8.7.3s6.3 0 8.9-.3c.4-.1 1.2-.1 1.9-1 .5-.7.7-2.4.7-2.4s.3-2 .3-4v-1.6c0-2-.3-4-.3-4zM9.8 14.8V7.9l6.2 3.5-6.2 3.4z" />
               </svg>
             </a>
           </div>
 
-          <!-- Hamburger -->
-          <button
-            class="nav-toggle"
-            type="button"
-            aria-label="Open menu"
-            aria-expanded="false"
-            aria-controls="mobileMenu"
-          >
+          <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
             <span class="nav-toggle-lines" aria-hidden="true"></span>
           </button>
         </div>
 
-        <!-- Mobile/Tablet panel -->
         <div class="nav-panel" id="mobileMenu" hidden>
           <nav class="nav-links nav-links-mobile" aria-label="Mobile navigation">
             <a href="../index.html">Home</a>
             <a href="/worship-online/">Worship Online</a>
 
-            <!-- Mobile I'm New accordion -->
             <div class="nav-mobile-item">
-              <button
-                class="nav-mobile-accordion"
-                type="button"
-                aria-expanded="false"
-                aria-controls="mobileImNew"
-              >
+              <button class="nav-mobile-accordion" type="button" aria-expanded="false" aria-controls="mobileImNew">
                 I'm New <span class="nav-caret" aria-hidden="true">▾</span>
               </button>
-
               <div class="nav-mobile-submenu" id="mobileImNew" hidden>
                 <a href="/staff/">Staff</a>
                 <a href="https://mailchi.mp/429478f6a7af/kumc-december-newsletter-10343934">Monthly Newsletter</a>
@@ -258,17 +190,10 @@
               </div>
             </div>
 
-            <!-- Mobile Ministries accordion -->
             <div class="nav-mobile-item">
-              <button
-                class="nav-mobile-accordion"
-                type="button"
-                aria-expanded="false"
-                aria-controls="mobileMinistries"
-              >
+              <button class="nav-mobile-accordion" type="button" aria-expanded="false" aria-controls="mobileMinistries">
                 Ministries <span class="nav-caret" aria-hidden="true">▾</span>
               </button>
-
               <div class="nav-mobile-submenu" id="mobileMinistries" hidden>
                 <a href="/nursery/">Nursery</a>
                 <a href="/kennesaw-kids/">Children</a>
@@ -282,17 +207,10 @@
               </div>
             </div>
 
-            <!-- Mobile Worship accordion -->
             <div class="nav-mobile-item">
-              <button
-                class="nav-mobile-accordion"
-                type="button"
-                aria-expanded="false"
-                aria-controls="mobileWorship"
-              >
+              <button class="nav-mobile-accordion" type="button" aria-expanded="false" aria-controls="mobileWorship">
                 Worship <span class="nav-caret" aria-hidden="true">▾</span>
               </button>
-
               <div class="nav-mobile-submenu" id="mobileWorship" hidden>
                 <a href="/worship-online/">Online</a>
                 <a href="/worship-in-person/">In Person</a>
@@ -300,17 +218,10 @@
               </div>
             </div>
 
-            <!-- Mobile Serve accordion -->
             <div class="nav-mobile-item">
-              <button
-                class="nav-mobile-accordion"
-                type="button"
-                aria-expanded="false"
-                aria-controls="mobileServe"
-              >
+              <button class="nav-mobile-accordion" type="button" aria-expanded="false" aria-controls="mobileServe">
                 Serve <span class="nav-caret" aria-hidden="true">▾</span>
               </button>
-
               <div class="nav-mobile-submenu" id="mobileServe" hidden>
                 <a href="/care-team/">Care Team</a>
                 <a href="/foster-care/">Foster Care</a>
@@ -329,52 +240,22 @@
 
           <div class="nav-panel-actions">
             <a class="watch-btn" href="/worship-online/">Worship Online</a>
-
             <div class="nav-socials" aria-label="Social links">
-              <!-- Facebook -->
-              <a
-                class="nav-social"
-                href="https://facebook.com/kennesawmc"
-                target="_blank"
-                rel="noopener"
-                aria-label="Facebook"
-              >
+              <a class="nav-social" href="https://facebook.com/kennesawmc" target="_blank" rel="noopener" aria-label="Facebook">
                 <svg class="nav-social-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path
-                    d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.6-1.6h1.7V4.8c-.3 0-1.4-.1-2.7-.1-2.7 0-4.5 1.6-4.5 4.6V11H7v3h2.6v8h3.9z"
-                  />
+                  <path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.6-1.6h1.7V4.8c-.3 0-1.4-.1-2.7-.1-2.7 0-4.5 1.6-4.5 4.6V11H7v3h2.6v8h3.9z" />
                 </svg>
               </a>
-
-              <!-- Instagram -->
-              <a
-                class="nav-social"
-                href="https://instagram.com/kennesawchurch"
-                target="_blank"
-                rel="noopener"
-                aria-label="Instagram"
-              >
+              <a class="nav-social" href="https://instagram.com/kennesawchurch" target="_blank" rel="noopener" aria-label="Instagram">
                 <svg class="nav-social-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path
-                    d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3z"
-                  />
+                  <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3z" />
                   <path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" />
                   <path d="M17.5 6.3a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z" />
                 </svg>
               </a>
-
-              <!-- YouTube -->
-              <a
-                class="nav-social"
-                href="https://youtube.com/@KennesawChurch"
-                target="_blank"
-                rel="noopener"
-                aria-label="YouTube"
-              >
+              <a class="nav-social" href="https://youtube.com/@KennesawChurch" target="_blank" rel="noopener" aria-label="YouTube">
                 <svg class="nav-social-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path
-                    d="M23.5 6.2s-.2-1.7-.7-2.4c-.7-.9-1.5-.9-1.9-1C18.3 2.5 12 2.5 12 2.5h0s-6.3 0-8.9.3c-.4.1-1.2.1-1.9 1C.7 4.5.5 6.2.5 6.2S.2 8.2.2 10.2v1.6c0 2 .3 4 .3 4s.2 1.7.7 2.4c.7.9 1.7.9 2.1 1 1.5.1 6.7.3 8.7.3s6.3 0 8.9-.3c.4-.1 1.2-.1 1.9-1 .5-.7.7-2.4.7-2.4s.3-2 .3-4v-1.6c0-2-.3-4-.3-4zM9.8 14.8V7.9l6.2 3.5-6.2 3.4z"
-                  />
+                  <path d="M23.5 6.2s-.2-1.7-.7-2.4c-.7-.9-1.5-.9-1.9-1C18.3 2.5 12 2.5 12 2.5h0s-6.3 0-8.9.3c-.4.1-1.2.1-1.9 1C.7 4.5.5 6.2.5 6.2S.2 8.2.2 10.2v1.6c0 2 .3 4 .3 4s.2 1.7.7 2.4c.7.9 1.7.9 2.1 1 1.5.1 6.7.3 8.7.3s6.3 0 8.9-.3c.4-.1 1.2-.1 1.9-1 .5-.7.7-2.4.7-2.4s.3-2 .3-4v-1.6c0-2-.3-4-.3-4zM9.8 14.8V7.9l6.2 3.5-6.2 3.4z" />
                 </svg>
               </a>
             </div>
@@ -383,11 +264,20 @@
       </div>
     </header>
 
+<<<<<<< HEAD
+    <!-- HERO (image only; CSS sets --page-hero via body class) -->
+    <section class="hero-visual hero-visual--kennesaw-kids" aria-label="Kennesaw Kids hero">
+      <div class="hero-visual-inner"></div>
+    </section>
+
+    <!-- PAGE HEADER (under hero, same pattern as Nursery/Preschool) -->
+=======
 <section class="hero-visual hero-visual--kennesaw-kids" aria-label="Kennesaw Kids hero">
   <div class="hero-visual-inner"></div>
 </section>
 
     <!-- PAGE HEADER (under hero, same as Nursery) -->
+>>>>>>> af4790763f8fcc5b4cd82d0825b7e0355b55a3dc
     <section class="page-head page-head--kennesaw-kids" aria-label="Kennesaw Kids page header">
       <div class="container page-head-inner">
         <h1 class="page-title">Kennesaw Kids</h1>
@@ -398,18 +288,15 @@
     </section>
 
     <main>
-      <!-- Row 1: 3 image tiles (same as Nursery) -->
       <section class="preschool-gallery" aria-label="Kennesaw Kids highlights">
-        <div class="container preschool-gallery-inner">
+        <div class="container">
           <div class="preschool-cards">
             <div class="preschool-card">
               <img src="../assets/images/kids-images/kids-1.png" alt="Kids ministry moment 1" />
             </div>
-
             <div class="preschool-card">
               <img src="../assets/images/kids-images/kids-2.png" alt="Kids ministry moment 2" />
             </div>
-
             <div class="preschool-card">
               <img src="../assets/images/kids-images/kids-3.png" alt="Kids ministry moment 3" />
             </div>
@@ -417,7 +304,6 @@
         </div>
       </section>
 
-      <!-- Row 2: Resources tiles (same pattern as Nursery) -->
       <section class="preschool-block" aria-label="Related church resources">
         <div class="container">
           <h2 class="preschool-block-title">Additional Resources</h2>
@@ -440,7 +326,7 @@
       </section>
     </main>
 
-    <!-- FOOTER (COPIED FROM HOME; PATHS UPDATED) -->
+    <!-- FOOTER (home standard; paths updated for folder) -->
     <footer class="site-footer">
       <div class="footer-inner container">
         <div class="footer-col">
@@ -479,37 +365,19 @@
           <a class="footer-link" href="/worship-online/">Worship Online</a>
 
           <div class="footer-socials">
-            <a
-              class="footer-social"
-              href="https://www.facebook.com/kennesawmc"
-              target="_blank"
-              rel="noopener"
-              aria-label="Facebook"
-            >
+            <a class="footer-social" href="https://www.facebook.com/kennesawmc" target="_blank" rel="noopener" aria-label="Facebook">
               <svg class="footer-social-icon" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M13.5 9H16V6h-2.5C11.6 6 10 7.6 10 9.5V12H8v3h2v7h3v-7h2.3l.7-3H13v-2.2c0-.5.3-.8.8-.8z"/>
               </svg>
             </a>
 
-            <a
-              class="footer-social"
-              href="https://www.instagram.com/kennesawchurch/"
-              target="_blank"
-              rel="noopener"
-              aria-label="Instagram"
-            >
+            <a class="footer-social" href="https://www.instagram.com/kennesawchurch/" target="_blank" rel="noopener" aria-label="Instagram">
               <svg class="footer-social-icon" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3.2A4.8 4.8 0 1 0 12 17a4.8 4.8 0 0 0 0-9.6zm0 2A2.8 2.8 0 1 1 12 15a2.8 2.8 0 0 1 0-5.6zm4.5-2.9a1.1 1.1 0 1 0 0-2.2 1.1 1.1 0 0 0 0 2.2z"/>
               </svg>
             </a>
 
-            <a
-              class="footer-social"
-              href="https://www.youtube.com/@KennesawChurch"
-              target="_blank"
-              rel="noopener"
-              aria-label="YouTube"
-            >
+            <a class="footer-social" href="https://www.youtube.com/@KennesawChurch" target="_blank" rel="noopener" aria-label="YouTube">
               <svg class="footer-social-icon" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M23.5 6.2s-.2-1.7-.7-2.4c-.7-.9-1.5-.9-1.9-1C18.3 2.5 12 2.5 12 2.5h0s-6.3 0-8.9.3c-.4.1-1.2.1-1.9 1C.7 4.5.5 6.2.5 6.2S.2 8.2.2 10.2v1.6c0 2 .3 4 .3 4s.2 1.7.7 2.4c.7.9 1.7.9 2.1 1 1.5.1 6.7.3 8.7.3s6.3 0 8.9-.3c.4-.1 1.2-.1 1.9-1 .5-.7.7-2.4.7-2.4s.3-2 .3-4v-1.6c0-2-.3-4-.3-4zM9.8 14.8V7.9l6.2 3.5-6.2 3.4z"/>
               </svg>
@@ -545,12 +413,9 @@
       </div>
     </footer>
 
-    <!-- NAVBAR JS (COPIED FROM HOME) -->
+    <!-- NAVBAR JS (home standard) -->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        /* =========================
-           Desktop dropdowns (click)
-           ========================= */
         const dropdowns = document.querySelectorAll(".nav-dropdown");
 
         dropdowns.forEach((dd) => {
@@ -559,17 +424,14 @@
 
           btn.addEventListener("click", (e) => {
             e.preventDefault();
-
             const isOpen = dd.classList.contains("is-open");
 
-            // close all
             dropdowns.forEach((x) => {
               x.classList.remove("is-open");
               const b = x.querySelector(".nav-dropdown-toggle");
               if (b) b.setAttribute("aria-expanded", "false");
             });
 
-            // open current if it was closed
             if (!isOpen) {
               dd.classList.add("is-open");
               btn.setAttribute("aria-expanded", "true");
@@ -577,7 +439,6 @@
           });
         });
 
-        // click outside closes desktop dropdowns
         document.addEventListener("click", (e) => {
           if (e.target.closest(".nav-dropdown")) return;
           dropdowns.forEach((dd) => {
@@ -587,7 +448,6 @@
           });
         });
 
-        // escape closes desktop dropdowns
         document.addEventListener("keydown", (e) => {
           if (e.key !== "Escape") return;
           dropdowns.forEach((dd) => {
@@ -597,24 +457,17 @@
           });
         });
 
-        /* =========================
-           Mobile hamburger panel
-           ========================= */
         const toggle = document.querySelector(".nav-toggle");
         const panel = document.getElementById("mobileMenu");
 
         if (toggle && panel) {
           toggle.addEventListener("click", () => {
             const isOpen = toggle.getAttribute("aria-expanded") === "true";
-
-            // Toggle panel visibility
             toggle.setAttribute("aria-expanded", String(!isOpen));
             panel.hidden = isOpen;
 
-            // When opening, collapse ALL mobile accordions by default
             if (!isOpen) {
-              const mobAccordions = document.querySelectorAll(".nav-mobile-accordion");
-              mobAccordions.forEach((btn) => {
+              document.querySelectorAll(".nav-mobile-accordion").forEach((btn) => {
                 const id = btn.getAttribute("aria-controls");
                 const menu = id ? document.getElementById(id) : null;
                 btn.setAttribute("aria-expanded", "false");
@@ -623,18 +476,14 @@
             }
           });
 
-          // Close panel when clicking a normal link (not the accordion)
           panel.addEventListener("click", (e) => {
             if (e.target.closest(".nav-mobile-accordion")) return;
-
             const link = e.target.closest("a");
             if (!link) return;
-
             toggle.setAttribute("aria-expanded", "false");
             panel.hidden = true;
           });
 
-          // Escape closes mobile panel too
           document.addEventListener("keydown", (e) => {
             if (e.key !== "Escape") return;
             toggle.setAttribute("aria-expanded", "false");
@@ -642,12 +491,7 @@
           });
         }
 
-        /* =========================
-           Mobile accordions
-           ========================= */
-        const accordions = document.querySelectorAll(".nav-mobile-accordion");
-
-        accordions.forEach((btn) => {
+        document.querySelectorAll(".nav-mobile-accordion").forEach((btn) => {
           const id = btn.getAttribute("aria-controls");
           const menu = id ? document.getElementById(id) : null;
           if (!menu) return;
@@ -661,7 +505,7 @@
       });
     </script>
 
-    <!-- Site search (PATH UPDATED) -->
+    <!-- Site search -->
     <script src="../js/site-search.js" defer></script>
   </body>
 </html>

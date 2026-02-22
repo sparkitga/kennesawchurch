@@ -1434,185 +1434,98 @@ body.nursery-page main {
 }
 
 /* =========================================
-   CONTACT — Resources tiles (reuse preschool cards)
-   ========================================= */
-
-.resources--contact {
-  background: #fff;
-  padding: 18px 0 44px;
-}
-
-/* Ensure the tiles behave like tiles on Contact too */
-.resources--contact .preschool-cards {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-}
-
-/* Make linked tiles look identical to div tiles */
-.resources--contact .preschool-card {
-  display: block;
-  border-radius: 22px;
-  overflow: hidden;
-  background: #f3f4f6;
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
-  transform: translateY(0);
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
-}
-
-.resources--contact .preschool-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  display: block;
-}
-
-/* Hover + focus */
-.resources--contact .preschool-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.12);
-}
-
-.resources--contact .preschool-card:focus-visible {
-  outline: 3px solid rgba(58, 124, 63, 0.28);
-  outline-offset: 4px;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .resources--contact .preschool-cards {
-    grid-template-columns: 1fr;
-  }
-
-  .resources--contact .preschool-card img {
-    height: 240px;
-  }
-}
-
-/* =========================================
-   CONTACT — Top Tabs (Email / Phone / Form) + Directions
+   CONTACT — Top Action Tiles (Email / Phone / Form / Directions)
+   Approachable, square-ish, tight, 4 across
    ========================================= */
 
 .contact-tabs {
   background: #fff;
-  padding: 26px 0 18px;
+  padding: 28px 0 22px;
 }
 
 .contact-tabs-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px; /* tight together */
 }
 
 .contact-tab {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 12px;
-  padding: 16px 16px;
-  border-radius: 16px;
+  justify-content: center;
+  text-align: center;
   text-decoration: none;
-  border: 1px solid rgba(17, 17, 17, 0.10);
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
-  transition: transform 0.14s ease, box-shadow 0.14s ease, border-color 0.14s ease;
+
+  padding: 22px 12px;
+  border-radius: 20px; /* square feel, rounded edges */
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  background: #f7f8f9; /* approachable */
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.05);
+
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, border-color 0.15s ease;
 }
 
 .contact-tab:hover {
   transform: translateY(-2px);
-  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.08);
-  border-color: rgba(11, 42, 74, 0.18);
+  background: #fff;
+  border-color: rgba(11, 42, 74, 0.14);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08);
 }
 
 .contact-tab:focus-visible {
-  outline: 3px solid rgba(58, 124, 63, 0.28);
+  outline: 3px solid rgba(58, 124, 63, 0.25);
   outline-offset: 4px;
 }
 
 .contact-tab-icon {
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: rgba(11, 42, 74, 0.08);
   display: grid;
   place-items: center;
-  background: rgba(11, 42, 74, 0.06);
+  margin-bottom: 10px;
 }
 
 .contact-tab-icon svg {
   width: 22px;
   height: 22px;
-  fill: rgba(11, 42, 74, 0.86);
+  fill: #0b2a4a;
 }
 
 .contact-tab-title {
   font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  font-weight: 800;
+  font-weight: 850;
+  font-size: 15px;
   letter-spacing: -0.01em;
   color: rgba(17, 17, 17, 0.92);
   line-height: 1.15;
 }
 
 .contact-tab-sub {
-  margin-top: 3px;
-  color: rgba(17, 17, 17, 0.62);
-  font-size: 14.5px;
+  margin-top: 5px;
+  font-size: 13.5px;
   line-height: 1.25;
-}
-
-.contact-directions {
-  margin-top: 14px;
-  padding: 14px 16px;
-  border-radius: 16px;
-  border: 1px solid rgba(17, 17, 17, 0.10);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  background: rgba(255, 255, 255, 0.95);
-}
-
-.contact-directions-text {
-  color: rgba(17, 17, 17, 0.72);
-  font-size: 14.5px;
-}
-
-.contact-directions-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 14px;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: 800;
-  font-size: 14px;
-  letter-spacing: -0.01em;
-  color: #fff;
-  background: #0b2a4a;
-  transition: transform 0.14s ease, box-shadow 0.14s ease, background 0.14s ease;
-}
-
-.contact-directions-btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 14px 28px rgba(0,0,0,0.12);
+  color: rgba(17, 17, 17, 0.62);
 }
 
 /* Responsive */
 @media (max-width: 900px) {
   .contact-tabs-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .contact-tabs-grid {
     grid-template-columns: 1fr;
-  }
-
-  .contact-directions {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .contact-directions-btn {
-    width: 100%;
   }
 }
 
 /* =========================================
    CONTACT — Additional Resources Section
+   (Your "Additional Resources" header + tile row)
    ========================================= */
 
 .contact-resources {
@@ -1638,14 +1551,54 @@ body.nursery-page main {
   line-height: 1.6;
 }
 
-/* Slightly larger tiles for Contact page */
-.contact-resources .preschool-card img {
-  height: 240px;
+/* =========================================
+   CONTACT — Resources tiles (reuse preschool cards)
+   ========================================= */
+
+.resources--contact {
+  background: #fff;
+  padding: 18px 0 44px;
 }
 
-/* Mobile */
+.resources--contact .preschool-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.resources--contact .preschool-card {
+  display: block;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #f3f4f6;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
+  transform: translateY(0);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.resources--contact .preschool-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+.resources--contact .preschool-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.12);
+}
+
+.resources--contact .preschool-card:focus-visible {
+  outline: 3px solid rgba(58, 124, 63, 0.28);
+  outline-offset: 4px;
+}
+
 @media (max-width: 900px) {
-  .contact-resources .preschool-card img {
+  .resources--contact .preschool-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .resources--contact .preschool-card img {
     height: 220px;
   }
 }

@@ -1664,7 +1664,7 @@ body.kennesaw-kids-page main {
 
 .resources--contact .preschool-card img {
   width: 100%;
-  height: 240px;
+  height: 300px;
   object-fit: cover;
   display: block;
 }
@@ -1687,6 +1687,11 @@ body.kennesaw-kids-page main {
   .resources--contact .preschool-card img {
     height: 220px;
   }
+}
+
+/* Contact Resources: keep it visually separated from FAQ and footer */
+.contact-resources {
+  margin-top: 8px;
 }
 
 /* ==================================================

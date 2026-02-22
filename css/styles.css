@@ -1379,6 +1379,12 @@ body.kennesaw-kids-page main {
   }
 }
 
+/* Match preschool hero height */
+body.kennesaw-kids-page .hero-visual-inner img {
+  height: 440px;
+  object-fit: cover;
+}
+
 /* =========================================
    FAQ (Accordion) — On-brand, minimal, no JS
    ========================================= */

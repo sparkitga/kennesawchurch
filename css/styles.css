@@ -1779,6 +1779,285 @@ body.kennesaw-kids-page .page-head--kennesaw-kids {
   margin-top: 8px;
 }
 
+/* =========================================
+   YOUTH — Scoped page layout + cards
+   Requires: <body class="youth-page">
+   ========================================= */
+
+/* Wider main like other ministry pages (overrides editorial subpage default) */
+body.youth-page main {
+  max-width: 1200px;
+  padding: 38px 20px 86px;
+}
+
+/* Keep Youth typography in Inter (override global serif subpage rule) */
+body.youth-page main p,
+body.youth-page main li,
+body.youth-page .youth-info-text,
+body.youth-page .youth-intro-text,
+body.youth-page .youth-section-subtitle {
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 16.5px;
+  line-height: 1.75;
+  color: rgba(17, 17, 17, 0.68);
+}
+
+/* Page head under hero (matches nursery/preschool pattern) */
+body.youth-page .hero-visual-inner { padding: 0; }
+
+body.youth-page .page-head--youth {
+  background: #fff;
+  padding: 46px 0 22px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 18px;
+}
+
+body.youth-page .page-head--youth .page-title {
+  margin: 0 0 10px;
+  font-size: clamp(42px, 5.6vw, 64px);
+  font-weight: 950;
+  letter-spacing: -0.03em;
+  color: rgba(17, 17, 17, 0.94);
+}
+
+body.youth-page .page-head--youth .page-subtitle {
+  margin: 0;
+  max-width: 72ch;
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(17, 17, 17, 0.62);
+}
+
+/* Subtle sparkle header polish (optional, matches your preschool feel) */
+body.youth-page .page-head--youth::before {
+  content: "";
+  position: absolute;
+  inset: -40px -40px auto -40px;
+  height: 220px;
+  background:
+    radial-gradient(circle at 18% 40%, rgba(58,124,63,0.14) 0 2px, transparent 3px),
+    radial-gradient(circle at 32% 65%, rgba(11,42,74,0.12) 0 1.5px, transparent 3px),
+    radial-gradient(circle at 55% 30%, rgba(58,124,63,0.10) 0 2px, transparent 3px),
+    radial-gradient(circle at 72% 55%, rgba(11,42,74,0.11) 0 1.5px, transparent 3px),
+    radial-gradient(circle at 88% 35%, rgba(58,124,63,0.10) 0 2px, transparent 3px);
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+body.youth-page .page-head--youth::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(255,255,255,0.78) 0%, rgba(255,255,255,0) 60%);
+  pointer-events: none;
+}
+
+body.youth-page .page-head--youth .page-head-inner {
+  position: relative;
+  z-index: 1;
+}
+
+/* Shared section headings */
+body.youth-page .youth-section-title {
+  margin: 0 0 14px;
+  font-size: clamp(28px, 3.4vw, 40px);
+  font-weight: 950;
+  letter-spacing: -0.02em;
+  color: rgba(17, 17, 17, 0.92);
+}
+
+body.youth-page .youth-section-subtitle {
+  margin: -2px 0 22px;
+  max-width: 80ch;
+  color: rgba(17, 17, 17, 0.62);
+}
+
+/* Section spacing */
+body.youth-page .youth-intro,
+body.youth-page .youth-staff,
+body.youth-page .youth-happenings,
+body.youth-page .youth-forms,
+body.youth-page .youth-events {
+  background: #fff;
+  padding: 22px 0 44px;
+}
+
+/* Intro card (gray box) */
+body.youth-page .youth-intro-card {
+  border-radius: 22px;
+  border: 1px solid rgba(17, 17, 17, 0.10);
+  background: #f5f6f7;
+  padding: 22px 20px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+}
+
+body.youth-page .youth-intro-text strong {
+  color: rgba(17, 17, 17, 0.90);
+  font-weight: 850;
+}
+
+/* Staff grid */
+body.youth-page .youth-staff-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 34px 26px;
+  margin-top: 18px;
+}
+
+body.youth-page .youth-staff-card {
+  margin: 0;
+  border-radius: 22px;
+  border: 1px solid rgba(17, 17, 17, 0.10);
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+  padding: 18px;
+  text-align: center;
+}
+
+body.youth-page .youth-staff-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 999px;
+  object-fit: cover;
+  margin: 6px auto 14px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+body.youth-page .youth-staff-name {
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 950;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-size: 16px;
+  color: rgba(17, 17, 17, 0.92);
+  margin-bottom: 6px;
+}
+
+body.youth-page .youth-staff-role {
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: rgba(17, 17, 17, 0.62);
+}
+
+/* Happenings: card grid */
+body.youth-page .youth-happenings-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+
+body.youth-page .youth-info-card {
+  border-radius: 20px;
+  border: 1px solid rgba(17, 17, 17, 0.10);
+  background: #fff;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.05);
+  padding: 18px 18px 16px;
+}
+
+body.youth-page .youth-info-title {
+  margin: 0 0 10px;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 950;
+  letter-spacing: -0.01em;
+  color: rgba(17, 17, 17, 0.92);
+}
+
+body.youth-page .youth-info-text {
+  margin: 0 0 10px;
+}
+
+body.youth-page .youth-info-link {
+  font-weight: 900;
+  color: rgba(11, 42, 74, 0.92);
+}
+body.youth-page .youth-info-link:hover { text-decoration: underline; }
+
+/* Forms: 2-up cards */
+body.youth-page .youth-forms-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+
+body.youth-page .youth-form-card {
+  border-radius: 20px;
+  border: 1px solid rgba(17, 17, 17, 0.10);
+  background: #fff;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.05);
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+body.youth-page .youth-form-title {
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 950;
+  font-size: 16px;
+  color: rgba(17, 17, 17, 0.92);
+}
+
+/* Minimal buttons (only used on Youth right now) */
+body.youth-page .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 1;
+  border: 1px solid rgba(17, 17, 17, 0.16);
+  background: #fff;
+  color: rgba(17, 17, 17, 0.88);
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+}
+
+body.youth-page .btn:hover {
+  transform: translateY(-1px);
+  background: rgba(17, 17, 17, 0.03);
+  border-color: rgba(11, 42, 74, 0.22);
+}
+
+body.youth-page .btn.btn-primary {
+  background: var(--covenant-blue);
+  border-color: var(--covenant-blue);
+  color: #fff;
+}
+body.youth-page .btn.btn-primary:hover { background: rgba(11, 42, 74, 0.92); }
+
+body.youth-page .btn.btn-outline {
+  background: #fff;
+  border: 2px solid rgba(11, 42, 74, 0.25);
+  color: rgba(11, 42, 74, 0.92);
+}
+body.youth-page .btn.btn-outline:hover {
+  background: rgba(11, 42, 74, 0.05);
+  border-color: rgba(11, 42, 74, 0.32);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  body.youth-page .youth-staff-grid { grid-template-columns: 1fr; }
+  body.youth-page .youth-happenings-grid { grid-template-columns: 1fr; }
+  body.youth-page .youth-forms-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  body.youth-page .page-head--youth { padding: 34px 0 18px; }
+  body.youth-page .page-head--youth .page-subtitle { font-size: 16.5px; }
+  body.youth-page .youth-intro-card { padding: 20px 16px; }
+}
+
 /* ==================================================
    (Optional) Vision / Statement / Kids scopes can live here
    Keep them page-scoped so they never break home/nav.

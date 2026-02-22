@@ -1294,6 +1294,80 @@ body.nursery-page main {
 }
 
 /* =========================================
+   PRESCHOOL — Quick Links as rectangle tiles
+   ========================================= */
+
+.preschool-links {
+  background: #fff;
+  padding: 22px 0 44px;
+}
+
+/* grid of tiles */
+.preschool-link-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+
+/* tile */
+.preschool-link-card {
+  display: block;
+  padding: 16px 16px 15px;
+  border-radius: 18px;
+  border: 1px solid rgba(17, 17, 17, 0.10);
+  background: #fff;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.05);
+  transition: transform 0.14s ease, box-shadow 0.14s ease, border-color 0.14s ease, background 0.14s ease;
+  position: relative;
+}
+
+/* subtle “open” indicator */
+.preschool-link-card::after {
+  content: "↗";
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  font-size: 14px;
+  opacity: 0.55;
+}
+
+.preschool-link-card:hover {
+  transform: translateY(-1px);
+  background: rgba(11, 42, 74, 0.03);
+  border-color: rgba(11, 42, 74, 0.18);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.07);
+}
+
+.preschool-link-card:focus-visible {
+  outline: 3px solid rgba(58, 124, 63, 0.22);
+  outline-offset: 4px;
+}
+
+/* text inside */
+.preschool-link-title {
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 900;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+  color: rgba(17, 17, 17, 0.92);
+  margin: 0 0 6px;
+  padding-right: 22px; /* keeps title from colliding with ↗ */
+}
+
+.preschool-link-subtitle {
+  font-size: 14px;
+  line-height: 1.45;
+  color: rgba(17, 17, 17, 0.62);
+  margin: 0;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .preschool-link-grid { grid-template-columns: 1fr; }
+}
+
+/* =========================================
    KENNESAW KIDS — Match Nursery/Preschool layout
    ========================================= */
 

@@ -3031,6 +3031,42 @@ body.events-test-page .events-calendar-day {
   }
 
 }
+@media (max-width: 640px) {
+
+  body.events-test-page .events-calendar {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  body.events-test-page .events-calendar-weekday {
+    display: none;
+  }
+
+  body.events-test-page .events-calendar-day {
+    min-height: 140px;
+    padding: 12px;
+  }
+
+  body.events-test-page .events-calendar-number {
+    font-size: 20px;
+  }
+
+  /* Remove green circles */
+  body.events-test-page .events-calendar-pill {
+    background: none;
+    border-radius: 0;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--renewal-green);
+  }
+
+  body.events-test-page .events-calendar-title {
+    font-size: 28px;
+  }
+
+}
+
 
 
 /* =========================================

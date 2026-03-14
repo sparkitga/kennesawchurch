@@ -3297,6 +3297,20 @@ body.events-test-page .events-calendar-day {
   }
 }
 
+/* =========================================
+   WORSHIP PAGE — space between hero and header
+   ========================================= */
+
+body.worship-page .page-head--kennesaw-kids {
+  margin-top: 48px;
+}
+
+.page-head {
+  margin-top: 48px;
+}
+
+
+
 /* ==================================================
    (Optional) Vision / Statement / Kids scopes can live here
    Keep them page-scoped so they never break home/nav.

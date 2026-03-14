@@ -3417,6 +3417,63 @@ body.events-page .brand-tile:focus-visible {
   }
 }
 
+/* MINISTRIES GRID */
+
+.ministries-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:32px;
+  margin-top:40px;
+}
+
+/* tile */
+.ministry-card{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:30px;
+  min-height:200px;
+  background:#ffffff;
+  border-radius:12px;
+  box-shadow:0 4px 18px rgba(0,0,0,.08);
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+
+/* larger ministry icons */
+.ministry-card img{
+  width:160px;   /* 4x larger feel */
+  height:auto;
+  max-width:100%;
+}
+
+/* hover */
+.ministry-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 8px 26px rgba(0,0,0,.12);
+}
+
+/* tablet */
+@media (max-width:900px){
+  .ministries-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+/* mobile */
+@media (max-width:600px){
+  .ministries-grid{
+    grid-template-columns:1fr;
+  }
+
+  .ministry-card{
+    min-height:170px;
+  }
+
+  .ministry-card img{
+    width:140px;
+  }
+}
+
 /* =========================================
    WORSHIP PAGE — space between hero and header
    ========================================= */

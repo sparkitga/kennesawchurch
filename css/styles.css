@@ -3431,8 +3431,8 @@ body.events-page .brand-tile:focus-visible {
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:30px;
-  min-height:200px;
+  padding:36px;
+  min-height:260px;
   background:#ffffff;
   border-radius:12px;
   box-shadow:0 4px 18px rgba(0,0,0,.08);

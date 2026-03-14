@@ -3532,7 +3532,201 @@ body.worship-page .page-head--kennesaw-kids {
   margin-top: 48px;
 }
 
+/* =========================================
+   KENNESAW KIDS — FBA-style info rows
+   Inserted under gallery and before resources
+   ========================================= */
 
+body.kennesaw-kids-page .kids-info-band {
+  background: #e9e4d8;
+  padding: 18px 0 58px;
+}
+
+body.kennesaw-kids-page .kids-info-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+  gap: 48px;
+  align-items: center;
+  padding: 42px 0;
+}
+
+body.kennesaw-kids-page .kids-info-row + .kids-info-row {
+  border-top: 1px solid rgba(17, 17, 17, 0.08);
+}
+
+body.kennesaw-kids-page .kids-info-row--reverse .kids-info-copy {
+  order: 2;
+}
+
+body.kennesaw-kids-page .kids-info-row--reverse .kids-info-media {
+  order: 1;
+}
+
+body.kennesaw-kids-page .kids-info-copy {
+  min-width: 0;
+}
+
+body.kennesaw-kids-page .kids-info-title {
+  margin: 0 0 24px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(38px, 5vw, 60px);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  color: rgba(17, 17, 17, 0.92);
+  text-transform: uppercase;
+}
+
+body.kennesaw-kids-page .kids-info-meta {
+  border-top: 1px solid rgba(17, 17, 17, 0.14);
+  margin-bottom: 24px;
+}
+
+body.kennesaw-kids-page .kids-info-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 78px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.14);
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 17px;
+  line-height: 1.45;
+  color: rgba(17, 17, 17, 0.84);
+}
+
+body.kennesaw-kids-page .kids-info-meta-row strong {
+  color: rgba(17, 17, 17, 0.96);
+}
+
+body.kennesaw-kids-page .kids-info-icon {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(11, 42, 74, 0.58);
+}
+
+body.kennesaw-kids-page .kids-info-icon svg {
+  width: 30px;
+  height: 30px;
+  fill: currentColor;
+}
+
+body.kennesaw-kids-page .kids-info-avatar {
+  overflow: hidden;
+  background: rgba(11, 42, 74, 0.06);
+}
+
+body.kennesaw-kids-page .kids-info-avatar img {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  border-radius: 999px;
+  display: block;
+}
+
+body.kennesaw-kids-page .kids-info-text {
+  margin: 0 0 28px;
+  max-width: 36ch;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 17px;
+  line-height: 1.8;
+  color: rgba(17, 17, 17, 0.70);
+}
+
+body.kennesaw-kids-page .kids-info-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 22px;
+  border-radius: 999px;
+  background: #9d4b2f;
+  color: #fff;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 10px 22px rgba(157, 75, 47, 0.18);
+}
+
+body.kennesaw-kids-page .kids-info-btn:hover {
+  transform: translateY(-1px);
+  opacity: 0.94;
+}
+
+body.kennesaw-kids-page .kids-info-media {
+  min-width: 0;
+}
+
+body.kennesaw-kids-page .kids-info-media img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
+}
+
+/* keep your resources section visually connected */
+body.kennesaw-kids-page .preschool-block {
+  background: #e9e4d8;
+  padding-top: 10px;
+}
+
+/* mobile */
+@media (max-width: 980px) {
+  body.kennesaw-kids-page .kids-info-row,
+  body.kennesaw-kids-page .kids-info-row--reverse {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  body.kennesaw-kids-page .kids-info-row--reverse .kids-info-copy,
+  body.kennesaw-kids-page .kids-info-row--reverse .kids-info-media {
+    order: initial;
+  }
+
+  body.kennesaw-kids-page .kids-info-title {
+    font-size: clamp(30px, 8vw, 46px);
+  }
+
+  body.kennesaw-kids-page .kids-info-media img {
+    height: 320px;
+  }
+
+  body.kennesaw-kids-page .kids-info-meta-row {
+    min-height: 66px;
+    font-size: 16px;
+  }
+
+  body.kennesaw-kids-page .kids-info-text {
+    max-width: none;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  body.kennesaw-kids-page .kids-info-band {
+    padding-bottom: 42px;
+  }
+
+  body.kennesaw-kids-page .kids-info-row {
+    padding: 28px 0;
+  }
+
+  body.kennesaw-kids-page .kids-info-media img {
+    height: 260px;
+  }
+
+  body.kennesaw-kids-page .kids-info-btn {
+    min-height: 48px;
+    padding: 0 20px;
+  }
+}
 
 /* ==================================================
    (Optional) Vision / Statement / Kids scopes can live here

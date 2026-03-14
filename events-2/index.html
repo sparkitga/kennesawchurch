@@ -1,372 +1,187 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Events | Kennesaw Church</title>
-
-<meta name="description" content="Explore upcoming events at Kennesaw Church including worship nights, family gatherings, ministry events, and community outreach opportunities.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="/css/styles.css">
-
-</head>
-
-<body class="events-page">
-
-<!-- NAVBAR -->
-<header class="navbar">
-<div class="container nav-wrap">
-
-<a class="nav-logo" href="/" aria-label="Kennesaw Church home">
-<img src="/assets/logo/logo-main.svg" alt="Kennesaw Church">
-</a>
-
-<div class="nav-center">
-
-<form class="nav-search" role="search">
-<input
-class="nav-search-input"
-type="search"
-placeholder="Search events, ministries, and resources"
-aria-label="Search"
->
-</form>
-
-<nav class="nav-links nav-links-desktop" aria-label="Primary navigation">
-<a href="/about/">About</a>
-<a href="/staff/">Staff</a>
-<a href="/ministries/">Ministries</a>
-<a href="/events/" aria-current="page">Events</a>
-<a href="/give/">Give</a>
-<a href="/contact/">Contact</a>
-</nav>
-
-</div>
-
-<div class="nav-right nav-right-desktop">
-
-<a class="watch-btn" href="#">Watch</a>
-
-<div class="nav-socials">
-
-<a class="nav-social" href="#" aria-label="Instagram">
-
-<svg class="nav-social-icon" viewBox="0 0 24 24">
-
-<path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5Zm0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5Zm4.75-3.35a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1Z"/>
-
-</svg>
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-</header>
-
-<!-- HERO -->
-
-<section class="hero-visual" aria-label="Events hero">
-
-<div class="hero-visual-inner">
-
-<p class="hero-copy hero-copy-primary">
-Join us in person. Grow in community. Serve with purpose.
-</p>
-
-<a class="hero-cta" href="#events-grid">
-Browse Events
-</a>
-
-</div>
-
-</section>
-
-<!-- PAGE INTRO -->
-
-<section class="events-head">
-
-<div class="container events-head-inner">
-
-<p class="events-eyebrow">
-Church Life
-</p>
-
-<h1 class="events-title">
-Events
-</h1>
-
-<p class="events-subtitle">
-Find gatherings, classes, ministry nights, and family moments designed to help you connect, grow, and take your next step.
-</p>
-
-</div>
-
-</section>
-
-<!-- EVENTS GRID -->
-
 <main>
-
-<section class="events-catalog" id="events-grid">
-
-<div class="container events-catalog-inner">
-
-<!-- Sidebar -->
-
-<aside class="events-sidebar" aria-label="Event categories">
-
-<a class="events-category is-active" href="#">
-<span class="events-category-icon">✦</span>
-<span>All Events</span>
-</a>
-
-<a class="events-category" href="#">
-<span class="events-category-icon">☀</span>
-<span>Sunday Gatherings</span>
-</a>
-
-<a class="events-category" href="#">
-<span class="events-category-icon">◎</span>
-<span>Kids & Families</span>
-</a>
-
-<a class="events-category" href="#">
-<span class="events-category-icon">▲</span>
-<span>Students</span>
-</a>
-
-<a class="events-category" href="#">
-<span class="events-category-icon">✚</span>
-<span>Classes</span>
-</a>
-
-<a class="events-category" href="#">
-<span class="events-category-icon">♥</span>
-<span>Serve Opportunities</span>
-</a>
-
-</aside>
-
-<!-- Content -->
-
-<div class="events-content">
-
-<div class="events-topbar">
-
-<div>
-
-<h2 class="events-section-title">
-Featured This Month
-</h2>
-
-<p class="events-section-copy">
-Updated weekly so your family can plan ahead and stay involved.
-</p>
-
-</div>
-
-<div class="events-controls">
-
-<label class="events-control-label" for="event-month">
-View
-</label>
-
-<select class="events-control-select" id="event-month">
-
-<option>This Month</option>
-<option>Next Month</option>
-<option>All Upcoming</option>
-
-</select>
-
-</div>
-
-</div>
-
-<div class="events-grid">
-
-<!-- Event Card -->
-
-<article class="event-card">
-
-<div class="event-card-media">
-
-<span class="event-badge">Featured</span>
-
-<img src="/assets/events/worship-night.jpg" alt="Worship night event">
-
-</div>
-
-<div class="event-card-body">
-
-<h3 class="event-card-title">
-Night of Worship
-</h3>
-
-<p class="event-card-copy">
-A churchwide evening to worship, pray, and make space for what God wants to do in our city.
-</p>
-
-<div class="event-card-meta">
-<span>Friday, April 12</span>
-<span>6:30 PM</span>
-<span>Main Auditorium</span>
-</div>
-
-<a class="event-card-btn" href="#">
-Learn More
-</a>
-
-</div>
-
-</article>
-
-<!-- Event -->
-
-<article class="event-card">
-
-<div class="event-card-media">
-
-<img src="/assets/events/kids-summer.jpg" alt="Kids summer event">
-
-</div>
-
-<div class="event-card-body">
-
-<h3 class="event-card-title">
-Kids Summer Kickoff
-</h3>
-
-<p class="event-card-copy">
-Families are invited for games, music, and a fun look at what summer ministry holds.
-</p>
-
-<div class="event-card-meta">
-<span>Sunday, May 5</span>
-<span>11:15 AM</span>
-<span>Kids Lobby</span>
-</div>
-
-<a class="event-card-btn" href="#">
-Learn More
-</a>
-
-</div>
-
-</article>
-
-<!-- Event -->
-
-<article class="event-card">
-
-<div class="event-card-media">
-
-<img src="/assets/events/students-night.jpg" alt="Students gathering">
-
-</div>
-
-<div class="event-card-body">
-
-<h3 class="event-card-title">
-Student Night
-</h3>
-
-<p class="event-card-copy">
-Middle and high school students gather for teaching, worship, and small groups.
-</p>
-
-<div class="event-card-meta">
-<span>Wednesday, April 17</span>
-<span>7:00 PM</span>
-<span>Student Building</span>
-</div>
-
-<a class="event-card-btn" href="#">
-Learn More
-</a>
-
-</div>
-
-</article>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
+  <section class="events-catalog" id="events-grid">
+    <div class="container events-catalog-inner">
+      <aside class="events-sidebar" aria-label="Event categories">
+        <a class="events-category is-active" href="#"><span class="events-category-icon">✦</span><span>All Events</span></a>
+        <a class="events-category" href="#"><span class="events-category-icon">☀</span><span>Sunday Gatherings</span></a>
+        <a class="events-category" href="#"><span class="events-category-icon">◎</span><span>Kids & Families</span></a>
+        <a class="events-category" href="#"><span class="events-category-icon">▲</span><span>Students</span></a>
+        <a class="events-category" href="#"><span class="events-category-icon">✚</span><span>Classes</span></a>
+        <a class="events-category" href="#"><span class="events-category-icon">♥</span><span>Serve Opportunities</span></a>
+      </aside>
+
+      <div class="events-content">
+        <div class="events-topbar">
+          <div>
+            <h2 class="events-section-title">Upcoming Events</h2>
+            <p class="events-section-copy">
+              Browse by list or calendar to find your next step.
+            </p>
+          </div>
+
+          <div class="events-controls">
+            <a class="events-view-toggle is-active" href="#events-list">List</a>
+            <a class="events-view-toggle" href="#events-calendar">Calendar</a>
+          </div>
+        </div>
+
+        <!-- LIST VIEW -->
+        <section class="events-list-section" id="events-list" aria-label="Events list">
+          <div class="events-list">
+            <article class="event-list-item">
+              <div class="event-list-date">
+                <span class="event-list-month">APR</span>
+                <span class="event-list-day">12</span>
+              </div>
+              <div class="event-list-main">
+                <p class="event-list-category">Worship</p>
+                <h3 class="event-list-title">Night of Worship</h3>
+                <p class="event-list-copy">A churchwide evening to worship, pray, and seek what God wants to do in our city.</p>
+              </div>
+              <div class="event-list-meta">
+                <span>6:30 PM</span>
+                <span>Main Auditorium</span>
+              </div>
+              <div class="event-list-action">
+                <a class="event-list-btn" href="#">Learn More</a>
+              </div>
+            </article>
+
+            <article class="event-list-item">
+              <div class="event-list-date">
+                <span class="event-list-month">APR</span>
+                <span class="event-list-day">17</span>
+              </div>
+              <div class="event-list-main">
+                <p class="event-list-category">Students</p>
+                <h3 class="event-list-title">Student Night</h3>
+                <p class="event-list-copy">Middle and high school students gather for worship, teaching, and small groups.</p>
+              </div>
+              <div class="event-list-meta">
+                <span>7:00 PM</span>
+                <span>Student Building</span>
+              </div>
+              <div class="event-list-action">
+                <a class="event-list-btn" href="#">Learn More</a>
+              </div>
+            </article>
+
+            <article class="event-list-item">
+              <div class="event-list-date">
+                <span class="event-list-month">APR</span>
+                <span class="event-list-day">20</span>
+              </div>
+              <div class="event-list-main">
+                <p class="event-list-category">Serve</p>
+                <h3 class="event-list-title">Serve Saturday</h3>
+                <p class="event-list-copy">Join us as we love our neighbors through practical service projects across the community.</p>
+              </div>
+              <div class="event-list-meta">
+                <span>9:00 AM</span>
+                <span>Off Campus</span>
+              </div>
+              <div class="event-list-action">
+                <a class="event-list-btn" href="#">Learn More</a>
+              </div>
+            </article>
+
+            <article class="event-list-item">
+              <div class="event-list-date">
+                <span class="event-list-month">APR</span>
+                <span class="event-list-day">21</span>
+              </div>
+              <div class="event-list-main">
+                <p class="event-list-category">New Here</p>
+                <h3 class="event-list-title">New Here Lunch</h3>
+                <p class="event-list-copy">Meet pastors, hear the heart of the church, and discover your next step.</p>
+              </div>
+              <div class="event-list-meta">
+                <span>12:30 PM</span>
+                <span>Community Room</span>
+              </div>
+              <div class="event-list-action">
+                <a class="event-list-btn" href="#">Learn More</a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- CALENDAR VIEW -->
+        <section class="events-calendar-section" id="events-calendar" aria-label="Events calendar">
+          <div class="events-calendar-head">
+            <h2 class="events-calendar-title">April 2026</h2>
+            <div class="events-calendar-nav">
+              <button type="button" class="events-calendar-arrow" aria-label="Previous month">←</button>
+              <button type="button" class="events-calendar-arrow" aria-label="Next month">→</button>
+            </div>
+          </div>
+
+          <div class="events-calendar">
+            <div class="events-calendar-weekday">Sun</div>
+            <div class="events-calendar-weekday">Mon</div>
+            <div class="events-calendar-weekday">Tue</div>
+            <div class="events-calendar-weekday">Wed</div>
+            <div class="events-calendar-weekday">Thu</div>
+            <div class="events-calendar-weekday">Fri</div>
+            <div class="events-calendar-weekday">Sat</div>
+
+            <div class="events-calendar-day is-muted"><span class="events-calendar-number">29</span></div>
+            <div class="events-calendar-day is-muted"><span class="events-calendar-number">30</span></div>
+            <div class="events-calendar-day"><span class="events-calendar-number">1</span></div>
+            <div class="events-calendar-day"><span class="events-calendar-number">2</span></div>
+            <div class="events-calendar-day"><span class="events-calendar-number">3</span></div>
+            <div class="events-calendar-day"><span class="events-calendar-number">4</span></div>
+            <div class="events-calendar-day"><span class="events-calendar-number">5</span></div>
+
+            <div class="events-calendar-day"><span class="events-calendar-number">6</span></div>
+            <div class="events-calendar-day"><span class="events-calendar-number">7</span></div>
+            <div class="events-calendar-day"><span class="events-calendar-number">8</span></div>
+            <div class="events-calendar-day"><span class="events-calendar-number">9</span></div>
+            <div class="events-calendar-day"><span class="events-calendar-number">10</span></div>
+            <div class="events-calendar-day"><span class="events-calendar-number">11</span></div>
+            <div class="events-calendar-day has-event">
+              <span class="events-calendar-number">12</span>
+              <span class="events-calendar-pill">Night of Worship</span>
+            </div>
+
+            <div class="events-calendar-day"><span class="events-calendar-number">13</span></div>
+            <div class="events-calendar-day"><span class="events-calendar-number">14</span></div>
+            <div class="events-calendar-day"><span class="events-calendar-number">15</span></div>
+            <div class="events-calendar-day"><span class="events-calendar-number">16</span></div>
+            <div class="events-calendar-day has-event">
+              <span class="events-calendar-number">17</span>
+              <span class="events-calendar-pill">Student Night</span>
+            </div>
+            <div class="events-calendar-day"><span class="events-calendar-number">18</span></div>
+            <div class="events-calendar-day"><span class="events-calendar-number">19</span></div>
+
+            <div class="events-calendar-day has-event">
+              <span class="events-calendar-number">20</span>
+              <span class="events-calendar-pill">Serve Saturday</span>
+            </div>
+            <div class="events-calendar-day has-event">
+              <span class="events-calendar-number">21</span>
+              <span class="events-calendar-pill">New Here Lunch</span>
+            </div>
+            <div class="events-calendar-day"><span class="events-calendar-number">22</span></div>
+            <div class="events-calendar-day"><span class="events-calendar-number">23</span></div>
+            <div class="events-calendar-day has-event">
+              <span class="events-calendar-number">24</span>
+              <span class="events-calendar-pill">Marriage Class</span>
+            </div>
+            <div class="events-calendar-day"><span class="events-calendar-number">25</span></div>
+            <div class="events-calendar-day"><span class="events-calendar-number">26</span></div>
+
+            <div class="events-calendar-day"><span class="events-calendar-number">27</span></div>
+            <div class="events-calendar-day"><span class="events-calendar-number">28</span></div>
+            <div class="events-calendar-day"><span class="events-calendar-number">29</span></div>
+            <div class="events-calendar-day"><span class="events-calendar-number">30</span></div>
+            <div class="events-calendar-day is-muted"><span class="events-calendar-number">1</span></div>
+            <div class="events-calendar-day is-muted"><span class="events-calendar-number">2</span></div>
+            <div class="events-calendar-day is-muted"><span class="events-calendar-number">3</span></div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
 </main>
-
-<!-- FOOTER -->
-
-<footer class="site-footer">
-
-<div class="container">
-
-<div class="footer-inner">
-
-<div>
-<div class="footer-title">About</div>
-<a class="footer-link" href="/about/">Our Church</a>
-<a class="footer-link" href="/vision/">Vision</a>
-<a class="footer-link" href="/staff/">Staff</a>
-</div>
-
-<div>
-<div class="footer-title">Next Steps</div>
-<a class="footer-link" href="/events/">Events</a>
-<a class="footer-link" href="/ministries/">Ministries</a>
-<a class="footer-link" href="/give/">Give</a>
-</div>
-
-<div>
-<div class="footer-title">Connect</div>
-<a class="footer-link" href="/contact/">Contact</a>
-<a class="footer-link" href="#">Prayer</a>
-<a class="footer-link" href="#">Serve</a>
-</div>
-
-<div>
-<div class="footer-title">Visit</div>
-<p class="footer-meta">
-1801 Ben King Rd<br>
-Kennesaw, GA 30144<br>
-Sundays at 9:00 AM and 11:00 AM
-</p>
-</div>
-
-</div>
-
-<div class="footer-bottom">
-
-<a class="footer-subscribe-link" href="#">
-Stay connected with weekly updates
-</a>
-
-<div class="footer-copy">
-© 2026 Kennesaw Church
-</div>
-
-<div class="footer-brand">
-<img src="/assets/logo/logo-mark.svg" alt="Kennesaw Church mark">
-</div>
-
-</div>
-
-</div>
-
-</footer>
-
-</body>
-</html>

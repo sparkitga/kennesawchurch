@@ -2869,7 +2869,7 @@ body.events-test-page .events-calendar {
 body.events-test-page .events-calendar-weekday {
   padding: 10px 6px;
   text-align: center;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 900;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -2952,6 +2952,29 @@ body.events-test-page .events-calendar-pill {
     grid-template-columns: 1fr;
   }
 }
+
+/* Make calendar section nearly full page width */
+body.events-test-page .events-calendar-section {
+  width: 100%;
+  max-width: 1400px;   /* increase as needed */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 24px;
+}
+
+/* Expand the calendar grid */
+body.events-test-page .events-calendar {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 14px;
+  width: 100%;
+}
+
+/* Make day boxes larger so calendar feels bigger */
+body.events-test-page .events-calendar-day {
+  min-height: 160px;
+}
+
 
 /* =========================================
    WORSHIP PAGE — series, videos, and visit info

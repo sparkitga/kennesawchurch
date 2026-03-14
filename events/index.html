@@ -1,11 +1,3 @@
-<!-- FILE: staff/index.html
-  Uses HOME PAGE header + footer + brand standard.
-  Staff-only changes:
-  - Paths updated for /staff/ folder (../css, ../assets, ../js)
-  - Staff hero uses ../assets/hero-images/staff-hero.jpg
-  - Title + note moved BELOW hero
--->
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -52,28 +44,25 @@
       rel="stylesheet"
     />
 
-    <!-- Favicons (PATHS UPDATED) -->
+    <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="../assets/icons/Favicon_GreenWhite_DarkBlueBG.svg" />
     <link rel="icon" type="image/png" href="../assets/icons/Favicon_GreenWhite_DarkBlueBG.png" />
 
-    <!-- Main stylesheet (PATH UPDATED) -->
+    <!-- Main stylesheet -->
     <link rel="stylesheet" href="../css/styles.css" />
   </head>
 
-  <body class="event-page">
-    <!-- NAVBAR (COPIED FROM HOME; PATHS UPDATED) -->
+  <body class="events-page">
+    <!-- NAVBAR -->
     <header class="navbar">
       <div class="container nav-wrap">
-        <!-- LEFT: Logo -->
         <div class="nav-logo">
           <a href="../index.html" aria-label="Kennesaw Church Home">
             <img src="../assets/logos/FullHori_GreenBlack_TranspBG.svg" alt="Kennesaw Church" />
           </a>
         </div>
 
-        <!-- CENTER: Search (row 1) + Desktop Links (row 2) -->
         <div class="nav-center">
-          <!-- Search -->
           <form class="nav-search" role="search" aria-label="Site search" action="#" method="GET" id="siteSearchForm">
             <input
               class="nav-search-input"
@@ -87,7 +76,6 @@
               aria-autocomplete="list"
             />
 
-            <!-- Results dropdown (minimal) -->
             <div
               class="nav-search-results"
               id="siteSearchResults"
@@ -97,9 +85,7 @@
             ></div>
           </form>
 
-          <!-- Desktop nav links (UNDER search) -->
           <nav class="nav-links nav-links-desktop" aria-label="Primary navigation">
-            <!-- I'm New dropdown -->
             <div class="nav-item nav-dropdown">
               <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
                 I'm New <span class="nav-caret" aria-hidden="true">▾</span>
@@ -113,7 +99,6 @@
               </div>
             </div>
 
-            <!-- Ministries -->
             <div class="nav-item nav-dropdown">
               <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
                 Ministries <span class="nav-caret" aria-hidden="true">▾</span>
@@ -132,7 +117,6 @@
               </div>
             </div>
 
-            <!-- Worship -->
             <div class="nav-item nav-dropdown">
               <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
                 Worship <span class="nav-caret" aria-hidden="true">▾</span>
@@ -146,7 +130,6 @@
               </div>
             </div>
 
-            <!-- Serve dropdown -->
             <div class="nav-item nav-dropdown">
               <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
                 Serve <span class="nav-caret" aria-hidden="true">▾</span>
@@ -168,12 +151,10 @@
           </nav>
         </div>
 
-        <!-- RIGHT: Worship Online + Social + Hamburger -->
         <div class="nav-right">
           <a class="watch-btn nav-right-desktop" href="/worship-online/">Worship Online</a>
 
           <div class="nav-socials nav-right-desktop" aria-label="Social links">
-            <!-- Facebook -->
             <a
               class="nav-social"
               href="https://facebook.com/kennesawmc"
@@ -182,13 +163,10 @@
               aria-label="Facebook"
             >
               <svg class="nav-social-icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.6-1.6h1.7V4.8c-.3 0-1.4-.1-2.7-.1-2.7 0-4.5 1.6-4.5 4.6V11H7v3h2.6v8h3.9z"
-                />
+                <path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.6-1.6h1.7V4.8c-.3 0-1.4-.1-2.7-.1-2.7 0-4.5 1.6-4.5 4.6V11H7v3h2.6v8h3.9z" />
               </svg>
             </a>
 
-            <!-- Instagram -->
             <a
               class="nav-social"
               href="https://instagram.com/kennesawchurch"
@@ -197,15 +175,12 @@
               aria-label="Instagram"
             >
               <svg class="nav-social-icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3z"
-                />
+                <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3z" />
                 <path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" />
                 <path d="M17.5 6.3a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z" />
               </svg>
             </a>
 
-            <!-- YouTube -->
             <a
               class="nav-social"
               href="https://youtube.com/@KennesawChurch"
@@ -214,14 +189,11 @@
               aria-label="YouTube"
             >
               <svg class="nav-social-icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M23.5 6.2s-.2-1.7-.7-2.4c-.7-.9-1.5-.9-1.9-1C18.3 2.5 12 2.5 12 2.5h0s-6.3 0-8.9.3c-.4.1-1.2.1-1.9 1C.7 4.5.5 6.2.5 6.2S.2 8.2.2 10.2v1.6c0 2 .3 4 .3 4s.2 1.7.7 2.4c.7.9 1.7.9 2.1 1 1.5.1 6.7.3 8.7.3s6.3 0 8.9-.3c.4-.1 1.2-.1 1.9-1 .5-.7.7-2.4.7-2.4s.3-2 .3-4v-1.6c0-2-.3-4-.3-4zM9.8 14.8V7.9l6.2 3.5-6.2 3.4z"
-                />
+                <path d="M23.5 6.2s-.2-1.7-.7-2.4c-.7-.9-1.5-.9-1.9-1C18.3 2.5 12 2.5 12 2.5h0s-6.3 0-8.9.3c-.4.1-1.2.1-1.9 1C.7 4.5.5 6.2.5 6.2S.2 8.2.2 10.2v1.6c0 2 .3 4 .3 4s.2 1.7.7 2.4c.7.9 1.7.9 2.1 1 1.5.1 6.7.3 8.7.3s6.3 0 8.9-.3c.4-.1 1.2-.1 1.9-1 .5-.7.7-2.4.7-2.4s.3-2 .3-4v-1.6c0-2-.3-4-.3-4zM9.8 14.8V7.9l6.2 3.5-6.2 3.4z" />
               </svg>
             </a>
           </div>
 
-          <!-- Hamburger -->
           <button
             class="nav-toggle"
             type="button"
@@ -233,13 +205,11 @@
           </button>
         </div>
 
-        <!-- Mobile/Tablet panel -->
         <div class="nav-panel" id="mobileMenu" hidden>
           <nav class="nav-links nav-links-mobile" aria-label="Mobile navigation">
             <a href="../index.html">Home</a>
             <a href="/worship-online/">Worship Online</a>
 
-            <!-- Mobile I'm New accordion -->
             <div class="nav-mobile-item">
               <button
                 class="nav-mobile-accordion"
@@ -258,7 +228,6 @@
               </div>
             </div>
 
-            <!-- Mobile Ministries accordion -->
             <div class="nav-mobile-item">
               <button
                 class="nav-mobile-accordion"
@@ -282,7 +251,6 @@
               </div>
             </div>
 
-            <!-- Mobile Worship accordion -->
             <div class="nav-mobile-item">
               <button
                 class="nav-mobile-accordion"
@@ -300,7 +268,6 @@
               </div>
             </div>
 
-            <!-- Mobile Serve accordion -->
             <div class="nav-mobile-item">
               <button
                 class="nav-mobile-accordion"
@@ -331,50 +298,23 @@
             <a class="watch-btn" href="/worship-online/">Worship Online</a>
 
             <div class="nav-socials" aria-label="Social links">
-              <!-- Facebook -->
-              <a
-                class="nav-social"
-                href="https://facebook.com/kennesawmc"
-                target="_blank"
-                rel="noopener"
-                aria-label="Facebook"
-              >
+              <a class="nav-social" href="https://facebook.com/kennesawmc" target="_blank" rel="noopener" aria-label="Facebook">
                 <svg class="nav-social-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path
-                    d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.6-1.6h1.7V4.8c-.3 0-1.4-.1-2.7-.1-2.7 0-4.5 1.6-4.5 4.6V11H7v3h2.6v8h3.9z"
-                  />
+                  <path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.6-1.6h1.7V4.8c-.3 0-1.4-.1-2.7-.1-2.7 0-4.5 1.6-4.5 4.6V11H7v3h2.6v8h3.9z" />
                 </svg>
               </a>
 
-              <!-- Instagram -->
-              <a
-                class="nav-social"
-                href="https://instagram.com/kennesawchurch"
-                target="_blank"
-                rel="noopener"
-                aria-label="Instagram"
-              >
+              <a class="nav-social" href="https://instagram.com/kennesawchurch" target="_blank" rel="noopener" aria-label="Instagram">
                 <svg class="nav-social-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path
-                    d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3z"
-                  />
+                  <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3z" />
                   <path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" />
                   <path d="M17.5 6.3a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z" />
                 </svg>
               </a>
 
-              <!-- YouTube -->
-              <a
-                class="nav-social"
-                href="https://youtube.com/@KennesawChurch"
-                target="_blank"
-                rel="noopener"
-                aria-label="YouTube"
-              >
+              <a class="nav-social" href="https://youtube.com/@KennesawChurch" target="_blank" rel="noopener" aria-label="YouTube">
                 <svg class="nav-social-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path
-                    d="M23.5 6.2s-.2-1.7-.7-2.4c-.7-.9-1.5-.9-1.9-1C18.3 2.5 12 2.5 12 2.5h0s-6.3 0-8.9.3c-.4.1-1.2.1-1.9 1C.7 4.5.5 6.2.5 6.2S.2 8.2.2 10.2v1.6c0 2 .3 4 .3 4s.2 1.7.7 2.4c.7.9 1.7.9 2.1 1 1.5.1 6.7.3 8.7.3s6.3 0 8.9-.3c.4-.1 1.2-.1 1.9-1 .5-.7.7-2.4.7-2.4s.3-2 .3-4v-1.6c0-2-.3-4-.3-4zM9.8 14.8V7.9l6.2 3.5-6.2 3.4z"
-                  />
+                  <path d="M23.5 6.2s-.2-1.7-.7-2.4c-.7-.9-1.5-.9-1.9-1C18.3 2.5 12 2.5 12 2.5h0s-6.3 0-8.9.3c-.4.1-1.2.1-1.9 1C.7 4.5.5 6.2.5 6.2S.2 8.2.2 10.2v1.6c0 2 .3 4 .3 4s.2 1.7.7 2.4c.7.9 1.7.9 2.1 1 1.5.1 6.7.3 8.7.3s6.3 0 8.9-.3c.4-.1 1.2-.1 1.9-1 .5-.7.7-2.4.7-2.4s.3-2 .3-4v-1.6c0-2-.3-4-.3-4zM9.8 14.8V7.9l6.2 3.5-6.2 3.4z" />
                 </svg>
               </a>
             </div>
@@ -383,65 +323,65 @@
       </div>
     </header>
 
-<section class="hero-visual hero-visual--events" aria-label="Events hero">
-  <div class="hero-visual-inner"></div>
-</section>
+    <section class="hero-visual hero-visual--events" aria-label="Events hero">
+      <div class="hero-visual-inner"></div>
+    </section>
 
-  <!-- =========================
-  IMAGE TILE GRID (Brands-style)
-  Add this to /events/ and /ministries/
-  ========================= -->
-<section class="brand-grid" aria-label="Browse tiles">
-  <div class="container brand-grid-inner">
-    <header class="brand-grid-head">
-      <h2 class="brand-grid-title">Explore Our Events</h2>
-      <p class="brand-grid-subtitle">Quick paths to what’s happening and how to get involved.</p>
+    <main>
+      <section class="brand-grid" aria-label="Browse tiles">
+        <div class="container brand-grid-inner">
+          <header class="brand-grid-head">
+            <h2 class="brand-grid-title">Explore Our Events</h2>
+            <p class="brand-grid-subtitle">Quick paths to what’s happening and how to get involved.</p>
 
-      <!-- Optional filter (works even without JS) -->
-      <div class="brand-grid-filter" aria-label="Filter tiles">
-        <label class="brand-grid-filter-label" for="tileFilter">Category</label>
-        <select class="brand-grid-select" id="tileFilter" name="tileFilter">
-          <option value="all">All</option>
-          <option value="events">Events</option>
-          <option value="ministries">Ministries</option>
-          <option value="kids">Kids</option>
-          <option value="serve">Serve</option>
-          <option value="worship">Worship</option>
-        </select>
-      </div>
-    </header>
+            <div class="brand-grid-filter" aria-label="Filter tiles">
+              <label class="brand-grid-filter-label" for="tileFilter">Category</label>
+              <select class="brand-grid-select" id="tileFilter" name="tileFilter">
+                <option value="all">All</option>
+                <option value="events">Events</option>
+                <option value="ministries">Ministries</option>
+                <option value="kids">Kids</option>
+                <option value="serve">Serve</option>
+                <option value="worship">Worship</option>
+              </select>
+            </div>
+          </header>
 
-    <div class="brand-grid-tiles" id="tileGrid">
-      <!-- Tile -->
-      <a class="brand-tile" href="/events/" data-cat="events" aria-label="Go to Events">
-        <img src="../assets/images/new-assets/events-logo.jpg" alt="Events" loading="lazy" />
-      </a>
+          <div class="brand-grid-tiles" id="tileGrid">
+            <a class="brand-tile" href="/youth/" data-cat="events" aria-label="Go to Youth">
+              <img src="../assets/kc-event/1.jpg" alt="Church event" loading="lazy" />
+              <span class="brand-tile-label">Youth</span>
+            </a>
 
-      <a class="brand-tile" href="/ministries/" data-cat="ministries" aria-label="Go to Ministries">
-        <img src="../assets/images/new-assets/ministries-logo-1.jpg" alt="Ministries" loading="lazy" />
-      </a>
+            <a class="brand-tile" href="/kennesaw-kids/" data-cat="kids" aria-label="Go to Kennesaw Kids">
+              <img src="../assets/kc-event/2.jpg" alt="Children's ministry event" loading="lazy" />
+              <span class="brand-tile-label">Kennesaw Kids</span>
+            </a>
 
-      <a class="brand-tile" href="/preschool/" data-cat="kids" aria-label="Go to Preschool">
-        <img src="../assets/images/new-assets/preschool-logo-2.jpg" alt="Preschool" loading="lazy" />
-      </a>
+            <a class="brand-tile" href="/care-team/" data-cat="serve" aria-label="Go to Care Team">
+              <img src="../assets/kc-event/3.jpg" alt="Serve event" loading="lazy" />
+              <span class="brand-tile-label">Care Team</span>
+            </a>
 
-      <a class="brand-tile" href="/kennesaw-kids/" data-cat="kids" aria-label="Go to Kennesaw Kids">
-        <img src="../assets/images/new-assets/kids-1.jpg" alt="Kennesaw Kids" loading="lazy" />
-      </a>
+            <a class="brand-tile" href="/music/" data-cat="worship" aria-label="Go to Music Ministry">
+              <img src="../assets/kc-event/4.jpg" alt="Music ministry event" loading="lazy" />
+              <span class="brand-tile-label">Music</span>
+            </a>
 
-      <a class="brand-tile" href="/worship-online/" data-cat="worship" aria-label="Go to Worship Online">
-        <img src="../assets/images/new-assets/kids-2.jpg" alt="Worship Online" loading="lazy" />
-      </a>
+            <a class="brand-tile" href="/adult-sunday-school/" data-cat="ministries" aria-label="Go to Adult Sunday School">
+              <img src="../assets/kc-event/5.jpg" alt="Adult ministry event" loading="lazy" />
+              <span class="brand-tile-label">Adult Sunday School</span>
+            </a>
 
-      <a class="brand-tile" href="/care-team/" data-cat="serve" aria-label="Go to Care Team">
-        <img src="../assets/images/new-assets/kids-3.jpg" alt="Care Team" loading="lazy" />
-      </a>
-    </div>
-  </div>
-</section>
-</main>
+            <a class="brand-tile" href="/foster-care/" data-cat="serve" aria-label="Go to Foster Care">
+              <img src="../assets/kc-event/6.jpg" alt="Foster care event" loading="lazy" />
+              <span class="brand-tile-label">Foster Care</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
 
-    <!-- FOOTER (COPIED FROM HOME; PATHS UPDATED) -->
     <footer class="site-footer">
       <div class="footer-inner container">
         <div class="footer-col">
@@ -480,37 +420,19 @@
           <a class="footer-link" href="/worship-online/">Worship Online</a>
 
           <div class="footer-socials">
-            <a
-              class="footer-social"
-              href="https://www.facebook.com/kennesawmc"
-              target="_blank"
-              rel="noopener"
-              aria-label="Facebook"
-            >
+            <a class="footer-social" href="https://www.facebook.com/kennesawmc" target="_blank" rel="noopener" aria-label="Facebook">
               <svg class="footer-social-icon" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M13.5 9H16V6h-2.5C11.6 6 10 7.6 10 9.5V12H8v3h2v7h3v-7h2.3l.7-3H13v-2.2c0-.5.3-.8.8-.8z"/>
               </svg>
             </a>
 
-            <a
-              class="footer-social"
-              href="https://www.instagram.com/kennesawchurch/"
-              target="_blank"
-              rel="noopener"
-              aria-label="Instagram"
-            >
+            <a class="footer-social" href="https://www.instagram.com/kennesawchurch/" target="_blank" rel="noopener" aria-label="Instagram">
               <svg class="footer-social-icon" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3.2A4.8 4.8 0 1 0 12 17a4.8 4.8 0 0 0 0-9.6zm0 2A2.8 2.8 0 1 1 12 15a2.8 2.8 0 0 1 0-5.6zm4.5-2.9a1.1 1.1 0 1 0 0-2.2 1.1 1.1 0 0 0 0 2.2z"/>
               </svg>
             </a>
 
-            <a
-              class="footer-social"
-              href="https://www.youtube.com/@KennesawChurch"
-              target="_blank"
-              rel="noopener"
-              aria-label="YouTube"
-            >
+            <a class="footer-social" href="https://www.youtube.com/@KennesawChurch" target="_blank" rel="noopener" aria-label="YouTube">
               <svg class="footer-social-icon" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M23.5 6.2s-.2-1.7-.7-2.4c-.7-.9-1.5-.9-1.9-1C18.3 2.5 12 2.5 12 2.5h0s-6.3 0-8.9.3c-.4.1-1.2.1-1.9 1C.7 4.5.5 6.2.5 6.2S.2 8.2.2 10.2v1.6c0 2 .3 4 .3 4s.2 1.7.7 2.4c.7.9 1.7.9 2.1 1 1.5.1 6.7.3 8.7.3s6.3 0 8.9-.3c.4-.1 1.2-.1 1.9-1 .5-.7.7-2.4.7-2.4s.3-2 .3-4v-1.6c0-2-.3-4-.3-4zM9.8 14.8V7.9l6.2 3.5-6.2 3.4z"/>
               </svg>
@@ -546,12 +468,8 @@
       </div>
     </footer>
 
-    <!-- NAVBAR JS (COPIED FROM HOME) -->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        /* =========================
-           Desktop dropdowns (click)
-           ========================= */
         const dropdowns = document.querySelectorAll(".nav-dropdown");
 
         dropdowns.forEach((dd) => {
@@ -563,14 +481,12 @@
 
             const isOpen = dd.classList.contains("is-open");
 
-            // close all
             dropdowns.forEach((x) => {
               x.classList.remove("is-open");
               const b = x.querySelector(".nav-dropdown-toggle");
               if (b) b.setAttribute("aria-expanded", "false");
             });
 
-            // open current if it was closed
             if (!isOpen) {
               dd.classList.add("is-open");
               btn.setAttribute("aria-expanded", "true");
@@ -578,7 +494,6 @@
           });
         });
 
-        // click outside closes desktop dropdowns
         document.addEventListener("click", (e) => {
           if (e.target.closest(".nav-dropdown")) return;
           dropdowns.forEach((dd) => {
@@ -588,7 +503,6 @@
           });
         });
 
-        // escape closes desktop dropdowns
         document.addEventListener("keydown", (e) => {
           if (e.key !== "Escape") return;
           dropdowns.forEach((dd) => {
@@ -598,21 +512,15 @@
           });
         });
 
-        /* =========================
-           Mobile hamburger panel
-           ========================= */
         const toggle = document.querySelector(".nav-toggle");
         const panel = document.getElementById("mobileMenu");
 
         if (toggle && panel) {
           toggle.addEventListener("click", () => {
             const isOpen = toggle.getAttribute("aria-expanded") === "true";
-
-            // Toggle panel visibility
             toggle.setAttribute("aria-expanded", String(!isOpen));
             panel.hidden = isOpen;
 
-            // When opening, collapse ALL mobile accordions by default
             if (!isOpen) {
               const mobAccordions = document.querySelectorAll(".nav-mobile-accordion");
               mobAccordions.forEach((btn) => {
@@ -624,7 +532,6 @@
             }
           });
 
-          // Close panel when clicking a normal link (not the accordion)
           panel.addEventListener("click", (e) => {
             if (e.target.closest(".nav-mobile-accordion")) return;
 
@@ -635,7 +542,6 @@
             panel.hidden = true;
           });
 
-          // Escape closes mobile panel too
           document.addEventListener("keydown", (e) => {
             if (e.key !== "Escape") return;
             toggle.setAttribute("aria-expanded", "false");
@@ -643,9 +549,6 @@
           });
         }
 
-        /* =========================
-           Mobile accordions
-           ========================= */
         const accordions = document.querySelectorAll(".nav-mobile-accordion");
 
         accordions.forEach((btn) => {
@@ -659,10 +562,23 @@
             menu.hidden = isOpen;
           });
         });
+
+        const tileFilter = document.getElementById("tileFilter");
+        const tiles = document.querySelectorAll("#tileGrid .brand-tile");
+
+        if (tileFilter && tiles.length) {
+          tileFilter.addEventListener("change", () => {
+            const value = tileFilter.value;
+
+            tiles.forEach((tile) => {
+              const cat = tile.getAttribute("data-cat");
+              tile.style.display = value === "all" || value === cat ? "" : "none";
+            });
+          });
+        }
       });
     </script>
 
-    <!-- Site search (PATH UPDATED) -->
     <script src="../js/site-search.js" defer></script>
   </body>
 </html>

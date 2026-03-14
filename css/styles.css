@@ -2975,6 +2975,65 @@ body.events-test-page .events-calendar-day {
   min-height: 160px;
 }
 
+/* ===============================
+   Larger calendar text + spacing
+   =============================== */
+
+body.events-test-page .events-calendar-title {
+  font-size: 36px;
+}
+
+body.events-test-page .events-calendar-weekday {
+  font-size: 16px;
+  font-weight: 900;
+}
+
+body.events-test-page .events-calendar-number {
+  font-size: 22px;
+  font-weight: 900;
+}
+
+body.events-test-page .events-calendar-pill {
+  font-size: 14px;
+  padding: 6px 10px;
+}
+
+/* Larger calendar boxes */
+body.events-test-page .events-calendar-day {
+  min-height: 180px;
+  padding: 14px;
+}
+
+@media (max-width: 640px) {
+
+  body.events-test-page .events-calendar {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  body.events-test-page .events-calendar-weekday {
+    display: none;
+  }
+
+  body.events-test-page .events-calendar-day {
+    min-height: 140px;
+    padding: 12px;
+  }
+
+  body.events-test-page .events-calendar-number {
+    font-size: 20px;
+  }
+
+  body.events-test-page .events-calendar-pill {
+    font-size: 13px;
+  }
+
+  body.events-test-page .events-calendar-title {
+    font-size: 28px;
+  }
+
+}
+
 
 /* =========================================
    WORSHIP PAGE — series, videos, and visit info

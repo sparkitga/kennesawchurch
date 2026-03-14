@@ -2953,6 +2953,235 @@ body.events-test-page .events-calendar-pill {
   }
 }
 
+/* =========================================
+   WORSHIP PAGE — series, videos, and visit info
+   ========================================= */
+
+.worship-series,
+.worship-videos,
+.visit-info {
+  background: #fff;
+}
+
+.worship-series {
+  padding: 54px 0 32px;
+}
+
+.worship-series-inner {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.worship-eyebrow {
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--renewal-green);
+}
+
+.worship-section-title {
+  margin: 0 0 10px;
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.02;
+  color: rgba(17, 17, 17, 0.94);
+}
+
+.worship-section-text {
+  margin: 0;
+  max-width: 56ch;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 16.5px;
+  line-height: 1.7;
+  color: rgba(17, 17, 17, 0.62);
+}
+
+.worship-series-graphic {
+  border-radius: 24px;
+  overflow: hidden;
+  background: #f4f5f6;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+}
+
+.worship-series-graphic img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.worship-videos {
+  padding: 20px 0 64px;
+}
+
+.worship-videos-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+
+.worship-video-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.worship-video-card {
+  display: block;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(17, 17, 17, 0.10);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.worship-video-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.10);
+  border-color: rgba(11, 42, 74, 0.16);
+}
+
+.worship-video-thumb {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: #eceef2;
+  overflow: hidden;
+}
+
+.worship-video-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.worship-video-thumb--more {
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, var(--covenant-blue), rgba(11, 42, 74, 0.82));
+}
+
+.worship-video-more-text {
+  font-size: 18px;
+  font-weight: 900;
+  color: #fff;
+}
+
+.worship-video-play {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.68);
+  color: #fff;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.worship-video-body {
+  padding: 14px 14px 16px;
+}
+
+.worship-video-title {
+  margin: 0 0 6px;
+  font-size: 18px;
+  line-height: 1.2;
+  color: rgba(17, 17, 17, 0.94);
+}
+
+.worship-video-meta {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 13.5px;
+  color: rgba(17, 17, 17, 0.58);
+}
+
+/* visit info */
+
+.visit-info {
+  padding: 18px 0 76px;
+}
+
+.visit-row {
+  display: grid;
+  grid-template-columns: 0.95fr 1.25fr;
+  gap: 32px;
+  padding: 24px 0 28px;
+  border-top: 1px solid rgba(17, 17, 17, 0.12);
+}
+
+.visit-label h2 {
+  margin: 0;
+  font-size: clamp(28px, 3.8vw, 42px);
+  line-height: 0.96;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: rgba(17, 17, 17, 0.95);
+}
+
+.visit-copy p {
+  margin: 0 0 14px;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 16.5px;
+  line-height: 1.72;
+  color: rgba(17, 17, 17, 0.7);
+}
+
+.visit-copy strong {
+  color: rgba(17, 17, 17, 0.94);
+}
+
+.visit-cta-wrap {
+  margin-top: 24px;
+}
+
+.visit-fine-print {
+  margin-top: 16px;
+  font-size: 13px !important;
+  font-style: italic;
+  color: rgba(17, 17, 17, 0.52) !important;
+}
+
+@media (max-width: 1000px) {
+  .worship-series-inner,
+  .visit-row {
+    grid-template-columns: 1fr;
+  }
+
+  .worship-video-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .worship-series {
+    padding-top: 40px;
+  }
+
+  .worship-video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .visit-row {
+    gap: 18px;
+    padding: 20px 0 24px;
+  }
+
+  .visit-label h2 {
+    font-size: clamp(22px, 8vw, 32px);
+  }
+}
+
 /* ==================================================
    (Optional) Vision / Statement / Kids scopes can live here
    Keep them page-scoped so they never break home/nav.

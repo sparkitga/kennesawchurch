@@ -2904,8 +2904,6 @@ body.events-test-page .events-calendar-pill {
   min-height: 26px;
   max-width: 100%;
   padding: 4px 8px;
-  border-radius: 999px;
-  background: rgba(58, 124, 63, 0.10);
   color: var(--renewal-green);
   font-size: 11px;
   font-weight: 900;

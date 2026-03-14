@@ -2250,6 +2250,82 @@ body.youth-page .preschool-block .preschool-card img {
   }
 }
 
+/* =========================================
+   WORSHIP IN PERSON — remove hero and use compact header
+   ========================================= */
+
+body.worship-in-person-page {
+  --page-hero: none;
+}
+
+/* kill hero on this page only */
+body.worship-in-person-page .hero-visual {
+  display: none;
+}
+
+/* wider main like your ministry pages */
+body.worship-in-person-page main {
+  max-width: 1200px;
+  padding: 0 20px 80px;
+}
+
+/* compact header under navbar */
+body.worship-in-person-page .simple-page-header {
+  background: #efefef;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
+  padding: 26px 0 24px;
+}
+
+body.worship-in-person-page .simple-page-header-inner {
+  max-width: 1200px;
+}
+
+body.worship-in-person-page .simple-page-header-title {
+  margin: 0 0 6px;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: clamp(32px, 4.5vw, 56px);
+  line-height: 0.98;
+  font-weight: 950;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #111;
+}
+
+body.worship-in-person-page .simple-page-header-subtitle {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: clamp(16px, 1.8vw, 20px);
+  line-height: 1.35;
+  font-weight: 700;
+  color: rgba(17, 17, 17, 0.58);
+}
+
+/* tighten first section after header */
+body.worship-in-person-page .preschool-gallery {
+  padding-top: 32px;
+}
+
+/* mobile */
+@media (max-width: 640px) {
+  body.worship-in-person-page .simple-page-header {
+    padding: 20px 0 18px;
+  }
+
+  body.worship-in-person-page .simple-page-header-title {
+    font-size: clamp(24px, 8vw, 34px);
+    line-height: 1.02;
+  }
+
+  body.worship-in-person-page .simple-page-header-subtitle {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  body.worship-in-person-page main {
+    padding: 0 16px 64px;
+  }
+}
+
 /* ==================================================
    (Optional) Vision / Statement / Kids scopes can live here
    Keep them page-scoped so they never break home/nav.

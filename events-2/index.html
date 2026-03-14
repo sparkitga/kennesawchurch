@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events | Kennesaw Church</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="events-page">
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-wrap">
+      <a class="nav-logo" href="index.html" aria-label="Kennesaw Church home">
+        <img src="assets/logo/logo-main.svg" alt="Kennesaw Church" />
+      </a>
+
+      <div class="nav-center">
+        <form class="nav-search" role="search">
+          <input
+            class="nav-search-input"
+            type="search"
+            placeholder="Search events, ministries, and resources"
+            aria-label="Search"
+          />
+        </form>
+
+        <nav class="nav-links nav-links-desktop" aria-label="Primary navigation">
+          <a href="about.html">About</a>
+          <a href="staff.html">Staff</a>
+          <a href="ministries.html">Ministries</a>
+          <a href="events.html" aria-current="page">Events</a>
+          <a href="give.html">Give</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+
+      <div class="nav-right nav-right-desktop">
+        <a class="watch-btn" href="#">Watch</a>
+        <div class="nav-socials">
+          <a class="nav-social" href="#" aria-label="Instagram">
+            <svg class="nav-social-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5Zm0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5Zm4.75-3.35a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1Z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-visual" aria-label="Events hero">
+    <div class="hero-visual-inner">
+      <p class="hero-copy hero-copy-primary">Join us in person. Grow in community. Serve with purpose.</p>
+      <a class="hero-cta" href="#events-grid">Browse Events</a>
+    </div>
+  </section>
+
+  <!-- PAGE HEAD -->
+  <section class="events-head">
+    <div class="container events-head-inner">
+      <p class="events-eyebrow">Church Life</p>
+      <h1 class="events-title">Events</h1>
+      <p class="events-subtitle">
+        Find gatherings, classes, ministry nights, and family moments designed to help you connect,
+        grow, and take your next step.
+      </p>
+    </div>
+  </section>
+
+  <!-- EVENTS LAYOUT -->
+  <main>
+    <section class="events-catalog" id="events-grid">
+      <div class="container events-catalog-inner">
+        <!-- Sidebar -->
+        <aside class="events-sidebar" aria-label="Event categories">
+          <a class="events-category is-active" href="#">
+            <span class="events-category-icon">✦</span>
+            <span>All Events</span>
+          </a>
+
+          <a class="events-category" href="#">
+            <span class="events-category-icon">☀</span>
+            <span>Sunday Gatherings</span>
+          </a>
+
+          <a class="events-category" href="#">
+            <span class="events-category-icon">◎</span>
+            <span>Kids & Families</span>
+          </a>
+
+          <a class="events-category" href="#">
+            <span class="events-category-icon">▲</span>
+            <span>Students</span>
+          </a>
+
+          <a class="events-category" href="#">
+            <span class="events-category-icon">✚</span>
+            <span>Classes</span>
+          </a>
+
+          <a class="events-category" href="#">
+            <span class="events-category-icon">♥</span>
+            <span>Serve Opportunities</span>
+          </a>
+        </aside>
+
+        <!-- Content -->
+        <div class="events-content">
+          <div class="events-topbar">
+            <div>
+              <h2 class="events-section-title">Featured This Month</h2>
+              <p class="events-section-copy">
+                Updated weekly so your family can plan ahead and stay involved.
+              </p>
+            </div>
+
+            <div class="events-controls">
+              <label class="events-control-label" for="event-month">View</label>
+              <select class="events-control-select" id="event-month" name="event-month">
+                <option>This Month</option>
+                <option>Next Month</option>
+                <option>All Upcoming</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="events-grid">
+            <article class="event-card">
+              <div class="event-card-media">
+                <span class="event-badge">Featured</span>
+                <img src="assets/events/worship-night.jpg" alt="Worship night stage with lights and people gathering" />
+              </div>
+              <div class="event-card-body">
+                <h3 class="event-card-title">Night of Worship</h3>
+                <p class="event-card-copy">
+                  A churchwide evening to worship, pray, and make space for what God wants to do in our city.
+                </p>
+                <div class="event-card-meta">
+                  <span>Friday, April 12</span>
+                  <span>6:30 PM</span>
+                  <span>Main Auditorium</span>
+                </div>
+                <a class="event-card-btn" href="#">Learn More</a>
+              </div>
+            </article>
+
+            <article class="event-card">
+              <div class="event-card-media">
+                <img src="assets/events/kids-summer.jpg" alt="Children smiling during a church family event" />
+              </div>
+              <div class="event-card-body">
+                <h3 class="event-card-title">Kids Summer Kickoff</h3>
+                <p class="event-card-copy">
+                  Families are invited for games, music, check-in help, and a fun look at what summer ministry holds.
+                </p>
+                <div class="event-card-meta">
+                  <span>Sunday, May 5</span>
+                  <span>11:15 AM</span>
+                  <span>Kids Lobby</span>
+                </div>
+                <a class="event-card-btn" href="#">Learn More</a>
+              </div>
+            </article>
+
+            <article class="event-card">
+              <div class="event-card-media">
+                <img src="assets/events/students-night.jpg" alt="Students gathered together at a church event" />
+              </div>
+              <div class="event-card-body">
+                <h3 class="event-card-title">Student Night</h3>
+                <p class="event-card-copy">
+                  Middle and high school students gather for teaching, worship, and small groups built for real connection.
+                </p>
+                <div class="event-card-meta">
+                  <span>Wednesday, April 17</span>
+                  <span>7:00 PM</span>
+                  <span>Student Building</span>
+                </div>
+                <a class="event-card-btn" href="#">Learn More</a>
+              </div>
+            </article>
+
+            <article class="event-card">
+              <div class="event-card-media">
+                <img src="assets/events/serve-day.jpg" alt="Church volunteers serving in the community" />
+              </div>
+              <div class="event-card-body">
+                <h3 class="event-card-title">Serve Saturday</h3>
+                <p class="event-card-copy">
+                  Join us as we love our neighbors through practical service projects across the community.
+                </p>
+                <div class="event-card-meta">
+                  <span>Saturday, April 20</span>
+                  <span>9:00 AM</span>
+                  <span>Off Campus</span>
+                </div>
+                <a class="event-card-btn" href="#">Learn More</a>
+              </div>
+            </article>
+
+            <article class="event-card">
+              <div class="event-card-media">
+                <img src="assets/events/new-here.jpg" alt="People talking in a church lobby" />
+              </div>
+              <div class="event-card-body">
+                <h3 class="event-card-title">New Here Lunch</h3>
+                <p class="event-card-copy">
+                  Meet pastors, hear the heart of the church, and discover your next step in a relaxed setting.
+                </p>
+                <div class="event-card-meta">
+                  <span>Sunday, April 21</span>
+                  <span>12:30 PM</span>
+                  <span>Community Room</span>
+                </div>
+                <a class="event-card-btn" href="#">Learn More</a>
+              </div>
+            </article>
+
+            <article class="event-card">
+              <div class="event-card-media">
+                <span class="event-badge event-badge--green">Register</span>
+                <img src="assets/events/marriage-class.jpg" alt="Couple attending a church class" />
+              </div>
+              <div class="event-card-body">
+                <h3 class="event-card-title">Marriage Class</h3>
+                <p class="event-card-copy">
+                  A practical class for engaged and married couples who want to build a healthy, Christ-centered foundation.
+                </p>
+                <div class="event-card-meta">
+                  <span>Starts April 24</span>
+                  <span>6 Weeks</span>
+                  <span>Room 204</span>
+                </div>
+                <a class="event-card-btn" href="#">Register Now</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-title">About</div>
+          <a class="footer-link" href="about.html">Our Church</a>
+          <a class="footer-link" href="vision.html">Vision</a>
+          <a class="footer-link" href="staff.html">Staff</a>
+        </div>
+
+        <div>
+          <div class="footer-title">Next Steps</div>
+          <a class="footer-link" href="events.html">Events</a>
+          <a class="footer-link" href="ministries.html">Ministries</a>
+          <a class="footer-link" href="give.html">Give</a>
+        </div>
+
+        <div>
+          <div class="footer-title">Connect</div>
+          <a class="footer-link" href="contact.html">Contact</a>
+          <a class="footer-link" href="#">Prayer</a>
+          <a class="footer-link" href="#">Serve</a>
+        </div>
+
+        <div>
+          <div class="footer-title">Visit</div>
+          <p class="footer-meta">
+            123 Church Street<br />
+            Kennesaw, GA 30144<br />
+            Sundays at 9:00 AM and 11:00 AM
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <a class="footer-subscribe-link" href="#">Stay connected with weekly updates</a>
+        <div class="footer-copy">© 2026 Kennesaw Church. All rights reserved.</div>
+        <div class="footer-brand">
+          <img src="assets/logo/logo-mark.svg" alt="Kennesaw Church mark" />
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

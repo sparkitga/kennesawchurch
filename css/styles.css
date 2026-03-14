@@ -2704,6 +2704,255 @@ body.give-page .give-contact-actions {
   }
 }
 
+/* =========================================
+   EVENTS TEST PAGE — list + calendar additions
+   ========================================= */
+
+body.events-test-page .events-view-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(17, 17, 17, 0.14);
+  background: #fff;
+  font-size: 14px;
+  font-weight: 800;
+  color: rgba(17, 17, 17, 0.78);
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+}
+
+body.events-test-page .events-view-toggle:hover {
+  transform: translateY(-1px);
+  background: rgba(17, 17, 17, 0.03);
+}
+
+body.events-test-page .events-view-toggle.is-active {
+  background: var(--covenant-blue);
+  border-color: var(--covenant-blue);
+  color: #fff;
+}
+
+body.events-test-page .events-list-section,
+body.events-test-page .events-calendar-section {
+  margin-top: 22px;
+}
+
+body.events-test-page .events-list {
+  display: grid;
+  gap: 14px;
+}
+
+body.events-test-page .event-list-item {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1.5fr) minmax(150px, .8fr) auto;
+  gap: 18px;
+  align-items: center;
+  padding: 18px;
+  border-radius: 22px;
+  border: 1px solid rgba(17, 17, 17, 0.10);
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+}
+
+body.events-test-page .event-list-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  background: #f5f6f7;
+  min-height: 92px;
+  padding: 10px;
+}
+
+body.events-test-page .event-list-month {
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--renewal-green);
+}
+
+body.events-test-page .event-list-day {
+  font-size: 34px;
+  line-height: 1;
+  font-weight: 900;
+  color: rgba(17, 17, 17, 0.94);
+}
+
+body.events-test-page .event-list-category {
+  margin: 0 0 6px;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(17, 17, 17, 0.55);
+}
+
+body.events-test-page .event-list-title {
+  margin: 0 0 6px;
+  font-size: 22px;
+  line-height: 1.12;
+  color: rgba(17, 17, 17, 0.94);
+}
+
+body.events-test-page .event-list-copy {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(17, 17, 17, 0.62);
+}
+
+body.events-test-page .event-list-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 800;
+  color: rgba(17, 17, 17, 0.62);
+}
+
+body.events-test-page .event-list-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1.5px solid rgba(58, 124, 63, 0.92);
+  background: #fff;
+  color: var(--renewal-green);
+  font-size: 14px;
+  font-weight: 900;
+}
+
+/* calendar */
+
+body.events-test-page .events-calendar-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+body.events-test-page .events-calendar-title {
+  margin: 0;
+  font-size: 28px;
+  color: rgba(17, 17, 17, 0.92);
+}
+
+body.events-test-page .events-calendar-nav {
+  display: flex;
+  gap: 8px;
+}
+
+body.events-test-page .events-calendar-arrow {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid rgba(17, 17, 17, 0.14);
+  background: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+body.events-test-page .events-calendar {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 10px;
+}
+
+body.events-test-page .events-calendar-weekday {
+  padding: 10px 6px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(17, 17, 17, 0.52);
+}
+
+body.events-test-page .events-calendar-day {
+  min-height: 120px;
+  padding: 10px;
+  border-radius: 18px;
+  border: 1px solid rgba(17, 17, 17, 0.10);
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+body.events-test-page .events-calendar-day.is-muted {
+  background: rgba(17, 17, 17, 0.03);
+}
+
+body.events-test-page .events-calendar-number {
+  font-size: 14px;
+  font-weight: 900;
+  color: rgba(17, 17, 17, 0.88);
+}
+
+body.events-test-page .events-calendar-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  max-width: 100%;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(58, 124, 63, 0.10);
+  color: var(--renewal-green);
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+@media (max-width: 1000px) {
+  body.events-test-page .event-list-item {
+    grid-template-columns: 92px 1fr;
+  }
+
+  body.events-test-page .event-list-meta,
+  body.events-test-page .event-list-action {
+    grid-column: 2;
+  }
+
+  body.events-test-page .events-calendar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body.events-test-page .events-calendar-weekday {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  body.events-test-page .event-list-item {
+    grid-template-columns: 1fr;
+  }
+
+  body.events-test-page .event-list-date {
+    min-height: auto;
+    flex-direction: row;
+    gap: 8px;
+    justify-content: flex-start;
+  }
+
+  body.events-test-page .event-list-meta,
+  body.events-test-page .event-list-action {
+    grid-column: auto;
+  }
+
+  body.events-test-page .events-calendar {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ==================================================
    (Optional) Vision / Statement / Kids scopes can live here
    Keep them page-scoped so they never break home/nav.

@@ -6021,7 +6021,1841 @@ body.care-team-page .care-team-link-card:hover {
   }
 }
 
+/* =========================================
+   MUSIC — full page styles
+   Modeled after KENNESAW KIDS section
+   Requires: <body class="music-page">
+   ========================================= */
 
+/* hero */
+body.music-page .hero-visual-inner {
+  padding: 0;
+}
+
+/* header under hero */
+body.music-page .page-head--music {
+  background: #fff;
+  padding: 38px 0 18px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 48px;
+}
+
+body.music-page .page-head--music::before,
+body.music-page .page-head--music::after {
+  display: none;
+}
+
+body.music-page .page-head--music .page-title {
+  margin: 0 0 10px;
+  font-size: clamp(42px, 5.6vw, 64px);
+  font-weight: 950;
+  letter-spacing: -0.03em;
+  color: rgba(17, 17, 17, 0.94);
+}
+
+body.music-page .page-head--music .page-subtitle {
+  margin: 0;
+  max-width: 70ch;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(17, 17, 17, 0.62);
+}
+
+/* wider main */
+body.music-page main {
+  max-width: 1200px;
+  padding: 38px 20px 80px;
+}
+
+/* =========================================
+   top 3 music tiles
+   ========================================= */
+
+body.music-page .music-prep-section {
+  background: #fff;
+  padding: 8px 0 48px;
+}
+
+body.music-page .music-prep-head {
+  margin-bottom: 22px;
+}
+
+body.music-page .music-prep-title {
+  margin: 0 0 8px;
+  font-size: clamp(30px, 4vw, 42px);
+  font-weight: 950;
+  letter-spacing: -0.02em;
+  color: rgba(17, 17, 17, 0.92);
+}
+
+body.music-page .music-prep-subtitle {
+  margin: 0;
+  max-width: 68ch;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: rgba(17, 17, 17, 0.62);
+}
+
+body.music-page .music-prep-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+body.music-page .music-prep-card {
+  border-radius: 22px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.06);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+body.music-page .music-prep-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.10);
+  border-color: rgba(11, 42, 74, 0.14);
+}
+
+body.music-page .music-prep-media img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+body.music-page .music-prep-body {
+  padding: 18px 18px 20px;
+}
+
+body.music-page .music-prep-card-title {
+  margin: 0 0 8px;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1.15;
+  color: rgba(17, 17, 17, 0.92);
+}
+
+body.music-page .music-prep-card-text {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: rgba(17, 17, 17, 0.64);
+}
+
+/* =========================================
+   music rows
+   image stays left of copy on desktop
+   ========================================= */
+
+body.music-page .music-info-band {
+  background: #fff;
+  padding: 18px 0 58px;
+}
+
+body.music-page .music-info-band .container {
+  max-width: 1200px;
+}
+
+body.music-page .music-info-row {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.95fr) minmax(0, 1.05fr);
+  gap: 48px;
+  align-items: start;
+  padding: 42px 0;
+}
+
+body.music-page .music-info-row + .music-info-row {
+  border-top: 1px solid rgba(17, 17, 17, 0.08);
+}
+
+/* keep image left on both rows */
+body.music-page .music-info-row--reverse .music-info-media {
+  order: 1;
+}
+
+body.music-page .music-info-row--reverse .music-info-copy {
+  order: 2;
+}
+
+body.music-page .music-info-media {
+  min-width: 0;
+}
+
+body.music-page .music-info-media img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+  border-radius: 18px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
+}
+
+body.music-page .music-info-copy {
+  min-width: 0;
+}
+
+/* brand font for section titles */
+body.music-page .music-info-title {
+  margin: 0 0 24px;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: clamp(40px, 4.8vw, 64px);
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+  font-weight: 900;
+  color: rgba(17, 17, 17, 0.94);
+  text-transform: uppercase;
+}
+
+body.music-page .music-info-meta {
+  border-top: 1px solid rgba(17, 17, 17, 0.14);
+  margin-bottom: 24px;
+}
+
+body.music-page .music-info-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 58px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.14);
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15.5px;
+  line-height: 1.45;
+  color: rgba(17, 17, 17, 0.78);
+}
+
+body.music-page .music-info-meta-row strong {
+  color: rgba(17, 17, 17, 0.94);
+}
+
+body.music-page .music-info-icon {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(11, 42, 74, 0.58);
+}
+
+body.music-page .music-info-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+body.music-page .music-info-text {
+  margin: 0;
+  max-width: 42ch;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(17, 17, 17, 0.70);
+}
+
+/* =========================================
+   bottom resources section
+   ========================================= */
+
+body.music-page .music-resources-block,
+body.music-page .music-links-block {
+  background: #fff;
+  padding: 12px 0 44px;
+}
+
+body.music-page .music-block-title {
+  margin: 0 0 8px;
+  font-size: clamp(30px, 4vw, 40px);
+  font-weight: 950;
+  letter-spacing: -0.02em;
+  color: rgba(17, 17, 17, 0.92);
+}
+
+body.music-page .music-block-subtitle {
+  margin: 0;
+  max-width: 65ch;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: rgba(17, 17, 17, 0.62);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+body.music-page .music-links-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+body.music-page .music-link-card {
+  display: block;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #f3f4f6;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+body.music-page .music-link-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+body.music-page .music-link-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================================
+   responsive
+   ========================================= */
+
+@media (max-width: 980px) {
+  body.music-page .music-prep-grid,
+  body.music-page .music-links-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.music-page .music-info-row,
+  body.music-page .music-info-row--reverse {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  body.music-page .music-info-row--reverse .music-info-media,
+  body.music-page .music-info-row--reverse .music-info-copy {
+    order: initial;
+  }
+
+  body.music-page .music-info-title {
+    font-size: clamp(30px, 8vw, 46px);
+  }
+
+  body.music-page .music-prep-media img {
+    height: 260px;
+  }
+
+  body.music-page .music-info-media img {
+    height: 320px;
+  }
+
+  body.music-page .music-info-meta-row {
+    min-height: 52px;
+    font-size: 14.5px;
+  }
+
+  body.music-page .music-info-text {
+    max-width: none;
+    font-size: 15.5px;
+  }
+
+  body.music-page .music-link-card img {
+    height: 240px;
+  }
+}
+
+@media (max-width: 640px) {
+  body.music-page .page-head--music {
+    padding: 34px 0 18px;
+  }
+
+  body.music-page .page-head--music .page-subtitle {
+    font-size: 16.5px;
+  }
+
+  body.music-page .music-prep-section {
+    padding-bottom: 36px;
+  }
+
+  body.music-page .music-info-band {
+    padding-bottom: 42px;
+  }
+
+  body.music-page .music-info-row {
+    padding: 28px 0;
+  }
+
+  body.music-page .music-info-media img {
+    height: 260px;
+  }
+}
+
+/* =========================================
+   FOSTER CARE — full page styles
+   Modeled after KENNESAW KIDS section
+   Requires: <body class="foster-care-page">
+   ========================================= */
+
+/* hero */
+body.foster-care-page .hero-visual-inner {
+  padding: 0;
+}
+
+/* header under hero */
+body.foster-care-page .page-head--foster-care {
+  background: #fff;
+  padding: 38px 0 18px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 48px;
+}
+
+body.foster-care-page .page-head--foster-care::before,
+body.foster-care-page .page-head--foster-care::after {
+  display: none;
+}
+
+body.foster-care-page .page-head--foster-care .page-title {
+  margin: 0 0 10px;
+  font-size: clamp(42px, 5.6vw, 64px);
+  font-weight: 950;
+  letter-spacing: -0.03em;
+  color: rgba(17, 17, 17, 0.94);
+}
+
+body.foster-care-page .page-head--foster-care .page-subtitle {
+  margin: 0;
+  max-width: 70ch;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(17, 17, 17, 0.62);
+}
+
+/* wider main */
+body.foster-care-page main {
+  max-width: 1200px;
+  padding: 38px 20px 80px;
+}
+
+/* =========================================
+   top 3 foster care tiles
+   ========================================= */
+
+body.foster-care-page .foster-care-prep-section {
+  background: #fff;
+  padding: 8px 0 48px;
+}
+
+body.foster-care-page .foster-care-prep-head {
+  margin-bottom: 22px;
+}
+
+body.foster-care-page .foster-care-prep-title {
+  margin: 0 0 8px;
+  font-size: clamp(30px, 4vw, 42px);
+  font-weight: 950;
+  letter-spacing: -0.02em;
+  color: rgba(17, 17, 17, 0.92);
+}
+
+body.foster-care-page .foster-care-prep-subtitle {
+  margin: 0;
+  max-width: 68ch;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: rgba(17, 17, 17, 0.62);
+}
+
+body.foster-care-page .foster-care-prep-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+body.foster-care-page .foster-care-prep-card {
+  border-radius: 22px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.06);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+body.foster-care-page .foster-care-prep-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.10);
+  border-color: rgba(11, 42, 74, 0.14);
+}
+
+body.foster-care-page .foster-care-prep-media img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+body.foster-care-page .foster-care-prep-body {
+  padding: 18px 18px 20px;
+}
+
+body.foster-care-page .foster-care-prep-card-title {
+  margin: 0 0 8px;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1.15;
+  color: rgba(17, 17, 17, 0.92);
+}
+
+body.foster-care-page .foster-care-prep-card-text {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: rgba(17, 17, 17, 0.64);
+}
+
+/* =========================================
+   foster care rows
+   image stays left of copy on desktop
+   ========================================= */
+
+body.foster-care-page .foster-care-info-band {
+  background: #fff;
+  padding: 18px 0 58px;
+}
+
+body.foster-care-page .foster-care-info-band .container {
+  max-width: 1200px;
+}
+
+body.foster-care-page .foster-care-info-row {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.95fr) minmax(0, 1.05fr);
+  gap: 48px;
+  align-items: start;
+  padding: 42px 0;
+}
+
+body.foster-care-page .foster-care-info-row + .foster-care-info-row {
+  border-top: 1px solid rgba(17, 17, 17, 0.08);
+}
+
+/* keep image left on both rows */
+body.foster-care-page .foster-care-info-row--reverse .foster-care-info-media {
+  order: 1;
+}
+
+body.foster-care-page .foster-care-info-row--reverse .foster-care-info-copy {
+  order: 2;
+}
+
+body.foster-care-page .foster-care-info-media {
+  min-width: 0;
+}
+
+body.foster-care-page .foster-care-info-media img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+  border-radius: 18px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
+}
+
+body.foster-care-page .foster-care-info-copy {
+  min-width: 0;
+}
+
+/* brand font for section titles */
+body.foster-care-page .foster-care-info-title {
+  margin: 0 0 24px;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: clamp(40px, 4.8vw, 64px);
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+  font-weight: 900;
+  color: rgba(17, 17, 17, 0.94);
+  text-transform: uppercase;
+}
+
+body.foster-care-page .foster-care-info-meta {
+  border-top: 1px solid rgba(17, 17, 17, 0.14);
+  margin-bottom: 24px;
+}
+
+body.foster-care-page .foster-care-info-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 58px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.14);
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15.5px;
+  line-height: 1.45;
+  color: rgba(17, 17, 17, 0.78);
+}
+
+body.foster-care-page .foster-care-info-meta-row strong {
+  color: rgba(17, 17, 17, 0.94);
+}
+
+body.foster-care-page .foster-care-info-icon {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(11, 42, 74, 0.58);
+}
+
+body.foster-care-page .foster-care-info-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+body.foster-care-page .foster-care-info-text {
+  margin: 0;
+  max-width: 42ch;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(17, 17, 17, 0.70);
+}
+
+/* =========================================
+   bottom resources section
+   ========================================= */
+
+body.foster-care-page .foster-care-resources-block,
+body.foster-care-page .foster-care-links-block {
+  background: #fff;
+  padding: 12px 0 44px;
+}
+
+body.foster-care-page .foster-care-block-title {
+  margin: 0 0 8px;
+  font-size: clamp(30px, 4vw, 40px);
+  font-weight: 950;
+  letter-spacing: -0.02em;
+  color: rgba(17, 17, 17, 0.92);
+}
+
+body.foster-care-page .foster-care-block-subtitle {
+  margin: 0;
+  max-width: 65ch;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: rgba(17, 17, 17, 0.62);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+body.foster-care-page .foster-care-links-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+body.foster-care-page .foster-care-link-card {
+  display: block;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #f3f4f6;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+body.foster-care-page .foster-care-link-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+body.foster-care-page .foster-care-link-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================================
+   responsive
+   ========================================= */
+
+@media (max-width: 980px) {
+  body.foster-care-page .foster-care-prep-grid,
+  body.foster-care-page .foster-care-links-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.foster-care-page .foster-care-info-row,
+  body.foster-care-page .foster-care-info-row--reverse {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  body.foster-care-page .foster-care-info-row--reverse .foster-care-info-media,
+  body.foster-care-page .foster-care-info-row--reverse .foster-care-info-copy {
+    order: initial;
+  }
+
+  body.foster-care-page .foster-care-info-title {
+    font-size: clamp(30px, 8vw, 46px);
+  }
+
+  body.foster-care-page .foster-care-prep-media img {
+    height: 260px;
+  }
+
+  body.foster-care-page .foster-care-info-media img {
+    height: 320px;
+  }
+
+  body.foster-care-page .foster-care-info-meta-row {
+    min-height: 52px;
+    font-size: 14.5px;
+  }
+
+  body.foster-care-page .foster-care-info-text {
+    max-width: none;
+    font-size: 15.5px;
+  }
+
+  body.foster-care-page .foster-care-link-card img {
+    height: 240px;
+  }
+}
+
+@media (max-width: 640px) {
+  body.foster-care-page .page-head--foster-care {
+    padding: 34px 0 18px;
+  }
+
+  body.foster-care-page .page-head--foster-care .page-subtitle {
+    font-size: 16.5px;
+  }
+
+  body.foster-care-page .foster-care-prep-section {
+    padding-bottom: 36px;
+  }
+
+  body.foster-care-page .foster-care-info-band {
+    padding-bottom: 42px;
+  }
+
+  body.foster-care-page .foster-care-info-row {
+    padding: 28px 0;
+  }
+
+  body.foster-care-page .foster-care-info-media img {
+    height: 260px;
+  }
+}
+
+/* =========================================
+   WEEKEND BLESSINGS — full page styles
+   Modeled after KENNESAW KIDS section
+   Requires: <body class="weekend-blessings-page">
+   ========================================= */
+
+/* hero */
+body.weekend-blessings-page .hero-visual-inner {
+  padding: 0;
+}
+
+/* header under hero */
+body.weekend-blessings-page .page-head--weekend-blessings {
+  background: #fff;
+  padding: 38px 0 18px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 48px;
+}
+
+body.weekend-blessings-page .page-head--weekend-blessings::before,
+body.weekend-blessings-page .page-head--weekend-blessings::after {
+  display: none;
+}
+
+body.weekend-blessings-page .page-head--weekend-blessings .page-title {
+  margin: 0 0 10px;
+  font-size: clamp(42px, 5.6vw, 64px);
+  font-weight: 950;
+  letter-spacing: -0.03em;
+  color: rgba(17, 17, 17, 0.94);
+}
+
+body.weekend-blessings-page .page-head--weekend-blessings .page-subtitle {
+  margin: 0;
+  max-width: 70ch;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(17, 17, 17, 0.62);
+}
+
+/* wider main */
+body.weekend-blessings-page main {
+  max-width: 1200px;
+  padding: 38px 20px 80px;
+}
+
+/* =========================================
+   top 3 overview tiles
+   ========================================= */
+
+body.weekend-blessings-page .weekend-blessings-prep-section {
+  background: #fff;
+  padding: 8px 0 48px;
+}
+
+body.weekend-blessings-page .weekend-blessings-prep-head {
+  margin-bottom: 22px;
+}
+
+body.weekend-blessings-page .weekend-blessings-prep-title {
+  margin: 0 0 8px;
+  font-size: clamp(30px, 4vw, 42px);
+  font-weight: 950;
+  letter-spacing: -0.02em;
+  color: rgba(17, 17, 17, 0.92);
+}
+
+body.weekend-blessings-page .weekend-blessings-prep-subtitle {
+  margin: 0;
+  max-width: 68ch;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: rgba(17, 17, 17, 0.62);
+}
+
+body.weekend-blessings-page .weekend-blessings-prep-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+body.weekend-blessings-page .weekend-blessings-prep-card {
+  border-radius: 22px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.06);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+body.weekend-blessings-page .weekend-blessings-prep-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.10);
+  border-color: rgba(11, 42, 74, 0.14);
+}
+
+body.weekend-blessings-page .weekend-blessings-prep-media img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+body.weekend-blessings-page .weekend-blessings-prep-body {
+  padding: 18px 18px 20px;
+}
+
+body.weekend-blessings-page .weekend-blessings-prep-card-title {
+  margin: 0 0 8px;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1.15;
+  color: rgba(17, 17, 17, 0.92);
+}
+
+body.weekend-blessings-page .weekend-blessings-prep-card-text {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: rgba(17, 17, 17, 0.64);
+}
+
+/* =========================================
+   main info rows
+   image stays left of copy on desktop
+   ========================================= */
+
+body.weekend-blessings-page .weekend-blessings-info-band {
+  background: #fff;
+  padding: 18px 0 58px;
+}
+
+body.weekend-blessings-page .weekend-blessings-info-band .container {
+  max-width: 1200px;
+}
+
+body.weekend-blessings-page .weekend-blessings-info-row {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.95fr) minmax(0, 1.05fr);
+  gap: 48px;
+  align-items: start;
+  padding: 42px 0;
+}
+
+body.weekend-blessings-page .weekend-blessings-info-row + .weekend-blessings-info-row {
+  border-top: 1px solid rgba(17, 17, 17, 0.08);
+}
+
+/* keep image left on both rows */
+body.weekend-blessings-page .weekend-blessings-info-row--reverse .weekend-blessings-info-media {
+  order: 1;
+}
+
+body.weekend-blessings-page .weekend-blessings-info-row--reverse .weekend-blessings-info-copy {
+  order: 2;
+}
+
+body.weekend-blessings-page .weekend-blessings-info-media {
+  min-width: 0;
+}
+
+body.weekend-blessings-page .weekend-blessings-info-media img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+  border-radius: 18px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
+}
+
+body.weekend-blessings-page .weekend-blessings-info-copy {
+  min-width: 0;
+}
+
+/* section title */
+body.weekend-blessings-page .weekend-blessings-info-title {
+  margin: 0 0 24px;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: clamp(40px, 4.8vw, 64px);
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+  font-weight: 900;
+  color: rgba(17, 17, 17, 0.94);
+  text-transform: uppercase;
+}
+
+body.weekend-blessings-page .weekend-blessings-info-meta {
+  border-top: 1px solid rgba(17, 17, 17, 0.14);
+  margin-bottom: 24px;
+}
+
+body.weekend-blessings-page .weekend-blessings-info-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 58px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.14);
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15.5px;
+  line-height: 1.45;
+  color: rgba(17, 17, 17, 0.78);
+}
+
+body.weekend-blessings-page .weekend-blessings-info-meta-row strong {
+  color: rgba(17, 17, 17, 0.94);
+}
+
+body.weekend-blessings-page .weekend-blessings-info-icon {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(11, 42, 74, 0.58);
+}
+
+body.weekend-blessings-page .weekend-blessings-info-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+body.weekend-blessings-page .weekend-blessings-info-text {
+  margin: 0;
+  max-width: 42ch;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(17, 17, 17, 0.70);
+}
+
+/* =========================================
+   bottom resources section
+   ========================================= */
+
+body.weekend-blessings-page .weekend-blessings-resources-block,
+body.weekend-blessings-page .weekend-blessings-links-block {
+  background: #fff;
+  padding: 12px 0 44px;
+}
+
+body.weekend-blessings-page .weekend-blessings-block-title {
+  margin: 0 0 8px;
+  font-size: clamp(30px, 4vw, 40px);
+  font-weight: 950;
+  letter-spacing: -0.02em;
+  color: rgba(17, 17, 17, 0.92);
+}
+
+body.weekend-blessings-page .weekend-blessings-block-subtitle {
+  margin: 0;
+  max-width: 65ch;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: rgba(17, 17, 17, 0.62);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+body.weekend-blessings-page .weekend-blessings-links-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+body.weekend-blessings-page .weekend-blessings-link-card {
+  display: block;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #f3f4f6;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+body.weekend-blessings-page .weekend-blessings-link-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+body.weekend-blessings-page .weekend-blessings-link-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================================
+   responsive
+   ========================================= */
+
+@media (max-width: 980px) {
+  body.weekend-blessings-page .weekend-blessings-prep-grid,
+  body.weekend-blessings-page .weekend-blessings-links-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.weekend-blessings-page .weekend-blessings-info-row,
+  body.weekend-blessings-page .weekend-blessings-info-row--reverse {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  body.weekend-blessings-page .weekend-blessings-info-row--reverse .weekend-blessings-info-media,
+  body.weekend-blessings-page .weekend-blessings-info-row--reverse .weekend-blessings-info-copy {
+    order: initial;
+  }
+
+  body.weekend-blessings-page .weekend-blessings-info-title {
+    font-size: clamp(30px, 8vw, 46px);
+  }
+
+  body.weekend-blessings-page .weekend-blessings-prep-media img {
+    height: 260px;
+  }
+
+  body.weekend-blessings-page .weekend-blessings-info-media img {
+    height: 320px;
+  }
+
+  body.weekend-blessings-page .weekend-blessings-info-meta-row {
+    min-height: 52px;
+    font-size: 14.5px;
+  }
+
+  body.weekend-blessings-page .weekend-blessings-info-text {
+    max-width: none;
+    font-size: 15.5px;
+  }
+
+  body.weekend-blessings-page .weekend-blessings-link-card img {
+    height: 240px;
+  }
+}
+
+@media (max-width: 640px) {
+  body.weekend-blessings-page .page-head--weekend-blessings {
+    padding: 34px 0 18px;
+  }
+
+  body.weekend-blessings-page .page-head--weekend-blessings .page-subtitle {
+    font-size: 16.5px;
+  }
+
+  body.weekend-blessings-page .weekend-blessings-prep-section {
+    padding-bottom: 36px;
+  }
+
+  body.weekend-blessings-page .weekend-blessings-info-band {
+    padding-bottom: 42px;
+  }
+
+  body.weekend-blessings-page .weekend-blessings-info-row {
+    padding: 28px 0;
+  }
+
+  body.weekend-blessings-page .weekend-blessings-info-media img {
+    height: 260px;
+  }
+}
+
+/* =========================================
+   MED CAB — full page styles
+   Modeled after KENNESAW KIDS section
+   Requires: <body class="med-cab-page">
+   ========================================= */
+
+/* hero */
+body.med-cab-page .hero-visual-inner {
+  padding: 0;
+}
+
+/* header under hero */
+body.med-cab-page .page-head--med-cab {
+  background: #fff;
+  padding: 38px 0 18px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 48px;
+}
+
+body.med-cab-page .page-head--med-cab::before,
+body.med-cab-page .page-head--med-cab::after {
+  display: none;
+}
+
+body.med-cab-page .page-head--med-cab .page-title {
+  margin: 0 0 10px;
+  font-size: clamp(42px, 5.6vw, 64px);
+  font-weight: 950;
+  letter-spacing: -0.03em;
+  color: rgba(17, 17, 17, 0.94);
+}
+
+body.med-cab-page .page-head--med-cab .page-subtitle {
+  margin: 0;
+  max-width: 70ch;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(17, 17, 17, 0.62);
+}
+
+/* wider main */
+body.med-cab-page main {
+  max-width: 1200px;
+  padding: 38px 20px 80px;
+}
+
+/* =========================================
+   top 3 overview tiles
+   ========================================= */
+
+body.med-cab-page .med-cab-prep-section {
+  background: #fff;
+  padding: 8px 0 48px;
+}
+
+body.med-cab-page .med-cab-prep-head {
+  margin-bottom: 22px;
+}
+
+body.med-cab-page .med-cab-prep-title {
+  margin: 0 0 8px;
+  font-size: clamp(30px, 4vw, 42px);
+  font-weight: 950;
+  letter-spacing: -0.02em;
+  color: rgba(17, 17, 17, 0.92);
+}
+
+body.med-cab-page .med-cab-prep-subtitle {
+  margin: 0;
+  max-width: 68ch;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: rgba(17, 17, 17, 0.62);
+}
+
+body.med-cab-page .med-cab-prep-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+body.med-cab-page .med-cab-prep-card {
+  border-radius: 22px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.06);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+body.med-cab-page .med-cab-prep-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.10);
+  border-color: rgba(11, 42, 74, 0.14);
+}
+
+body.med-cab-page .med-cab-prep-media img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+body.med-cab-page .med-cab-prep-body {
+  padding: 18px 18px 20px;
+}
+
+body.med-cab-page .med-cab-prep-card-title {
+  margin: 0 0 8px;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1.15;
+  color: rgba(17, 17, 17, 0.92);
+}
+
+body.med-cab-page .med-cab-prep-card-text {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: rgba(17, 17, 17, 0.64);
+}
+
+/* =========================================
+   main info rows
+   image stays left of copy on desktop
+   ========================================= */
+
+body.med-cab-page .med-cab-info-band {
+  background: #fff;
+  padding: 18px 0 58px;
+}
+
+body.med-cab-page .med-cab-info-band .container {
+  max-width: 1200px;
+}
+
+body.med-cab-page .med-cab-info-row {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.95fr) minmax(0, 1.05fr);
+  gap: 48px;
+  align-items: start;
+  padding: 42px 0;
+}
+
+body.med-cab-page .med-cab-info-row + .med-cab-info-row {
+  border-top: 1px solid rgba(17, 17, 17, 0.08);
+}
+
+/* keep image left on both rows */
+body.med-cab-page .med-cab-info-row--reverse .med-cab-info-media {
+  order: 1;
+}
+
+body.med-cab-page .med-cab-info-row--reverse .med-cab-info-copy {
+  order: 2;
+}
+
+body.med-cab-page .med-cab-info-media {
+  min-width: 0;
+}
+
+body.med-cab-page .med-cab-info-media img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+  border-radius: 18px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
+}
+
+body.med-cab-page .med-cab-info-copy {
+  min-width: 0;
+}
+
+/* section title */
+body.med-cab-page .med-cab-info-title {
+  margin: 0 0 24px;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: clamp(40px, 4.8vw, 64px);
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+  font-weight: 900;
+  color: rgba(17, 17, 17, 0.94);
+  text-transform: uppercase;
+}
+
+body.med-cab-page .med-cab-info-meta {
+  border-top: 1px solid rgba(17, 17, 17, 0.14);
+  margin-bottom: 24px;
+}
+
+body.med-cab-page .med-cab-info-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 58px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.14);
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15.5px;
+  line-height: 1.45;
+  color: rgba(17, 17, 17, 0.78);
+}
+
+body.med-cab-page .med-cab-info-meta-row strong {
+  color: rgba(17, 17, 17, 0.94);
+}
+
+body.med-cab-page .med-cab-info-icon {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(11, 42, 74, 0.58);
+}
+
+body.med-cab-page .med-cab-info-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+body.med-cab-page .med-cab-info-text {
+  margin: 0;
+  max-width: 42ch;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(17, 17, 17, 0.70);
+}
+
+/* =========================================
+   bottom resources section
+   ========================================= */
+
+body.med-cab-page .med-cab-resources-block,
+body.med-cab-page .med-cab-links-block {
+  background: #fff;
+  padding: 12px 0 44px;
+}
+
+body.med-cab-page .med-cab-block-title {
+  margin: 0 0 8px;
+  font-size: clamp(30px, 4vw, 40px);
+  font-weight: 950;
+  letter-spacing: -0.02em;
+  color: rgba(17, 17, 17, 0.92);
+}
+
+body.med-cab-page .med-cab-block-subtitle {
+  margin: 0;
+  max-width: 65ch;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: rgba(17, 17, 17, 0.62);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+body.med-cab-page .med-cab-links-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+body.med-cab-page .med-cab-link-card {
+  display: block;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #f3f4f6;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+body.med-cab-page .med-cab-link-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+body.med-cab-page .med-cab-link-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================================
+   responsive
+   ========================================= */
+
+@media (max-width: 980px) {
+  body.med-cab-page .med-cab-prep-grid,
+  body.med-cab-page .med-cab-links-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.med-cab-page .med-cab-info-row,
+  body.med-cab-page .med-cab-info-row--reverse {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  body.med-cab-page .med-cab-info-row--reverse .med-cab-info-media,
+  body.med-cab-page .med-cab-info-row--reverse .med-cab-info-copy {
+    order: initial;
+  }
+
+  body.med-cab-page .med-cab-info-title {
+    font-size: clamp(30px, 8vw, 46px);
+  }
+
+  body.med-cab-page .med-cab-prep-media img {
+    height: 260px;
+  }
+
+  body.med-cab-page .med-cab-info-media img {
+    height: 320px;
+  }
+
+  body.med-cab-page .med-cab-info-meta-row {
+    min-height: 52px;
+    font-size: 14.5px;
+  }
+
+  body.med-cab-page .med-cab-info-text {
+    max-width: none;
+    font-size: 15.5px;
+  }
+
+  body.med-cab-page .med-cab-link-card img {
+    height: 240px;
+  }
+}
+
+@media (max-width: 640px) {
+  body.med-cab-page .page-head--med-cab {
+    padding: 34px 0 18px;
+  }
+
+  body.med-cab-page .page-head--med-cab .page-subtitle {
+    font-size: 16.5px;
+  }
+
+  body.med-cab-page .med-cab-prep-section {
+    padding-bottom: 36px;
+  }
+
+  body.med-cab-page .med-cab-info-band {
+    padding-bottom: 42px;
+  }
+
+  body.med-cab-page .med-cab-info-row {
+    padding: 28px 0;
+  }
+
+  body.med-cab-page .med-cab-info-media img {
+    height: 260px;
+  }
+}
+
+```css
+/* =========================================
+   MISSIONS — full page styles
+   Modeled after KENNESAW KIDS section
+   Requires: <body class="missions-page">
+   ========================================= */
+
+/* hero */
+body.missions-page .hero-visual-inner {
+  padding: 0;
+}
+
+/* header under hero */
+body.missions-page .page-head--missions {
+  background: #fff;
+  padding: 38px 0 18px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 48px;
+}
+
+body.missions-page .page-head--missions::before,
+body.missions-page .page-head--missions::after {
+  display: none;
+}
+
+body.missions-page .page-head--missions .page-title {
+  margin: 0 0 10px;
+  font-size: clamp(42px, 5.6vw, 64px);
+  font-weight: 950;
+  letter-spacing: -0.03em;
+  color: rgba(17, 17, 17, 0.94);
+}
+
+body.missions-page .page-head--missions .page-subtitle {
+  margin: 0;
+  max-width: 70ch;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(17, 17, 17, 0.62);
+}
+
+/* wider main */
+body.missions-page main {
+  max-width: 1200px;
+  padding: 38px 20px 80px;
+}
+
+/* =========================================
+   top 3 missions overview tiles
+   ========================================= */
+
+body.missions-page .missions-prep-section {
+  background: #fff;
+  padding: 8px 0 48px;
+}
+
+body.missions-page .missions-prep-head {
+  margin-bottom: 22px;
+}
+
+body.missions-page .missions-prep-title {
+  margin: 0 0 8px;
+  font-size: clamp(30px, 4vw, 42px);
+  font-weight: 950;
+  letter-spacing: -0.02em;
+  color: rgba(17, 17, 17, 0.92);
+}
+
+body.missions-page .missions-prep-subtitle {
+  margin: 0;
+  max-width: 68ch;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: rgba(17, 17, 17, 0.62);
+}
+
+body.missions-page .missions-prep-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+body.missions-page .missions-prep-card {
+  border-radius: 22px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.06);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+body.missions-page .missions-prep-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.10);
+  border-color: rgba(11, 42, 74, 0.14);
+}
+
+body.missions-page .missions-prep-media img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+body.missions-page .missions-prep-body {
+  padding: 18px 18px 20px;
+}
+
+body.missions-page .missions-prep-card-title {
+  margin: 0 0 8px;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1.15;
+  color: rgba(17, 17, 17, 0.92);
+}
+
+body.missions-page .missions-prep-card-text {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: rgba(17, 17, 17, 0.64);
+}
+
+/* =========================================
+   mission rows
+   image stays left of copy on desktop
+   ========================================= */
+
+body.missions-page .missions-info-band {
+  background: #fff;
+  padding: 18px 0 58px;
+}
+
+body.missions-page .missions-info-band .container {
+  max-width: 1200px;
+}
+
+body.missions-page .missions-info-row {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.95fr) minmax(0, 1.05fr);
+  gap: 48px;
+  align-items: start;
+  padding: 42px 0;
+}
+
+body.missions-page .missions-info-row + .missions-info-row {
+  border-top: 1px solid rgba(17, 17, 17, 0.08);
+}
+
+/* keep image left on both rows */
+body.missions-page .missions-info-row--reverse .missions-info-media {
+  order: 1;
+}
+
+body.missions-page .missions-info-row--reverse .missions-info-copy {
+  order: 2;
+}
+
+body.missions-page .missions-info-media {
+  min-width: 0;
+}
+
+body.missions-page .missions-info-media img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+  border-radius: 18px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
+}
+
+body.missions-page .missions-info-copy {
+  min-width: 0;
+}
+
+/* section title */
+body.missions-page .missions-info-title {
+  margin: 0 0 24px;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: clamp(40px, 4.8vw, 64px);
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+  font-weight: 900;
+  color: rgba(17, 17, 17, 0.94);
+  text-transform: uppercase;
+}
+
+body.missions-page .missions-info-meta {
+  border-top: 1px solid rgba(17, 17, 17, 0.14);
+  margin-bottom: 24px;
+}
+
+body.missions-page .missions-info-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 58px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.14);
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15.5px;
+  line-height: 1.45;
+  color: rgba(17, 17, 17, 0.78);
+}
+
+body.missions-page .missions-info-meta-row strong {
+  color: rgba(17, 17, 17, 0.94);
+}
+
+body.missions-page .missions-info-icon {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(11, 42, 74, 0.58);
+}
+
+body.missions-page .missions-info-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+body.missions-page .missions-info-text {
+  margin: 0;
+  max-width: 42ch;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(17, 17, 17, 0.70);
+}
+
+/* =========================================
+   bottom resources section
+   ========================================= */
+
+body.missions-page .missions-resources-block,
+body.missions-page .missions-links-block {
+  background: #fff;
+  padding: 12px 0 44px;
+}
+
+body.missions-page .missions-block-title {
+  margin: 0 0 8px;
+  font-size: clamp(30px, 4vw, 40px);
+  font-weight: 950;
+  letter-spacing: -0.02em;
+  color: rgba(17, 17, 17, 0.92);
+}
+
+body.missions-page .missions-block-subtitle {
+  margin: 0;
+  max-width: 65ch;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: rgba(17, 17, 17, 0.62);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+body.missions-page .missions-links-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+body.missions-page .missions-link-card {
+  display: block;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #f3f4f6;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+body.missions-page .missions-link-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+body.missions-page .missions-link-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================================
+   responsive
+   ========================================= */
+
+@media (max-width: 980px) {
+  body.missions-page .missions-prep-grid,
+  body.missions-page .missions-links-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.missions-page .missions-info-row,
+  body.missions-page .missions-info-row--reverse {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  body.missions-page .missions-info-row--reverse .missions-info-media,
+  body.missions-page .missions-info-row--reverse .missions-info-copy {
+    order: initial;
+  }
+
+  body.missions-page .missions-info-title {
+    font-size: clamp(30px, 8vw, 46px);
+  }
+
+  body.missions-page .missions-prep-media img {
+    height: 260px;
+  }
+
+  body.missions-page .missions-info-media img {
+    height: 320px;
+  }
+
+  body.missions-page .missions-info-meta-row {
+    min-height: 52px;
+    font-size: 14.5px;
+  }
+
+  body.missions-page .missions-info-text {
+    max-width: none;
+    font-size: 15.5px;
+  }
+
+  body.missions-page .missions-link-card img {
+    height: 240px;
+  }
+}
+
+@media (max-width: 640px) {
+  body.missions-page .page-head--missions {
+    padding: 34px 0 18px;
+  }
+
+  body.missions-page .page-head--missions .page-subtitle {
+    font-size: 16.5px;
+  }
+
+  body.missions-page .missions-prep-section {
+    padding-bottom: 36px;
+  }
+
+  body.missions-page .missions-info-band {
+    padding-bottom: 42px;
+  }
+
+  body.missions-page .missions-info-row {
+    padding: 28px 0;
+  }
+
+  body.missions-page .missions-info-media img {
+    height: 260px;
+  }
+}
 
 /* ==================================================
    (Optional) Vision / Statement / Kids scopes can live here

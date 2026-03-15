@@ -394,56 +394,76 @@
 
   </header>
 
-<!-- =========================
-  IMAGE TILE GRID (Brands-style)
-  Add this to /events/ and /ministries/
-  ========================= -->
-<section class="brand-grid" aria-label="Browse tiles">
-  <div class="container brand-grid-inner">
-    <header class="brand-grid-head">
-      <h2 class="brand-grid-title">Explore</h2>
-      <p class="brand-grid-subtitle">Quick paths to what’s happening and how to get involved.</p>
+<section class="ministry-directory" aria-label="Ministry Directory">
+  <div class="container ministry-directory-inner">
 
-      <!-- Optional filter (works even without JS) -->
-      <div class="brand-grid-filter" aria-label="Filter tiles">
-        <label class="brand-grid-filter-label" for="tileFilter">Category</label>
-        <select class="brand-grid-select" id="tileFilter" name="tileFilter">
-          <option value="all">All</option>
-          <option value="events">Events</option>
-          <option value="ministries">Ministries</option>
-          <option value="kids">Kids</option>
-          <option value="serve">Serve</option>
-          <option value="worship">Worship</option>
-        </select>
-      </div>
+    <header class="ministry-directory-head">
+      <h2 class="ministry-title">Ministry Directory</h2>
+      <p class="ministry-subtitle">
+        Explore the ministries of Kennesaw Church and find where you can connect, serve, and grow.
+      </p>
     </header>
 
-    <div class="brand-grid-tiles" id="tileGrid">
-      <!-- Tile -->
-      <a class="brand-tile" href="/events/" data-cat="events" aria-label="Go to Events">
-        <img src="../assets/images/new-assets/events-logo.jpg" alt="Events" loading="lazy" />
-      </a>
+    <ul class="ministry-list">
 
-      <a class="brand-tile" href="/ministries/" data-cat="ministries" aria-label="Go to Ministries">
-        <img src="../assets/images/new-assets/ministries-logo-1.jpg" alt="Ministries" loading="lazy" />
-      </a>
+      <li>
+        <a href="/events/">
+          Events
+          <span class="ministry-desc">Upcoming church gatherings and community events</span>
+        </a>
+      </li>
 
-      <a class="brand-tile" href="/preschool/" data-cat="kids" aria-label="Go to Preschool">
-        <img src="../assets/images/new-assets/preschool-logo-2.jpg" alt="Preschool" loading="lazy" />
-      </a>
+      <li>
+        <a href="/kennesaw-kids/">
+          Kennesaw Kids
+          <span class="ministry-desc">Sunday environments designed for children</span>
+        </a>
+      </li>
 
-      <a class="brand-tile" href="/kennesaw-kids/" data-cat="kids" aria-label="Go to Kennesaw Kids">
-        <img src="../assets/images/new-assets/kids-1.jpg" alt="Kennesaw Kids" loading="lazy" />
-      </a>
+      <li>
+        <a href="/preschool/">
+          Preschool
+          <span class="ministry-desc">Faith foundations for our youngest families</span>
+        </a>
+      </li>
 
-      <a class="brand-tile" href="/worship-online/" data-cat="worship" aria-label="Go to Worship Online">
-        <img src="../assets/images/new-assets/kids-2.jpg" alt="Worship Online" loading="lazy" />
-      </a>
+      <li>
+        <a href="/worship-online/">
+          Worship
+          <span class="ministry-desc">Join worship in person or online</span>
+        </a>
+      </li>
 
-      <a class="brand-tile" href="/care-team/" data-cat="serve" aria-label="Go to Care Team">
-        <img src="../assets/images/new-assets/kids-3.jpg" alt="Care Team" loading="lazy" />
-      </a>
-    </div>
+      <li>
+        <a href="/care-team/">
+          Care Team
+          <span class="ministry-desc">Support and encouragement through life seasons</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="/serve/">
+          Serve
+          <span class="ministry-desc">Volunteer opportunities to help others</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="/groups/">
+          Small Groups
+          <span class="ministry-desc">Build friendships and grow spiritually</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="/missions/">
+          Missions
+          <span class="ministry-desc">Local and global outreach opportunities</span>
+        </a>
+      </li>
+
+    </ul>
+
   </div>
 </section>
 </main>

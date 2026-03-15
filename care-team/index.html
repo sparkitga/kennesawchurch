@@ -1,9 +1,8 @@
-<!-- FILE: staff/index.html
+<!-- FILE: care-team/index.html
   Uses HOME PAGE header + footer + brand standard.
-  Staff-only changes:
-  - Paths updated for /staff/ folder (../css, ../assets, ../js)
-  - Staff hero uses ../assets/hero-images/staff-hero.jpg
-  - Title + note moved BELOW hero
+  Page-specific changes:
+  - Paths updated for subfolder usage (../css, ../assets, ../js)
+  - Uses care-team page classes
 -->
 
 <!doctype html>
@@ -14,8 +13,8 @@
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-N794D9J3RW');
+      gtag("js", new Date());
+      gtag("config", "G-N794D9J3RW");
     </script>
 
     <meta charset="UTF-8" />
@@ -25,25 +24,25 @@
 
     <meta
       name="description"
-      content="Kennesaw Church's Statement of Faith"
+      content="Kennesaw Church's Care Team ministry."
     />
     <meta name="robots" content="index,follow" />
     <meta name="theme-color" content="#0b2a4a" />
-    <link rel="canonical" href="https://kennesawchurch.netlify.app/statement/" />
+    <link rel="canonical" href="https://kennesawchurch.netlify.app/care-team/" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Kennesaw Church" />
-    <meta property="og:title" content="Kennesaw Church Statement of Faith" />
-    <meta property="og:description" content="Our church's statement of faith." />
-    <meta property="og:url" content="https://kennesawchurch.netlify.app/statement/" />
+    <meta property="og:title" content="Kennesaw Church Care Team" />
+    <meta property="og:description" content="Our church's Care Team ministry." />
+    <meta property="og:url" content="https://kennesawchurch.netlify.app/care-team/" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Kennesaw Church Statement of Faith" />
+    <meta name="twitter:title" content="Kennesaw Church Care Team" />
     <meta
       name="twitter:description"
-      content="Kennesaw Church's Statement of Faith."
+      content="Kennesaw Church's Care Team ministry."
     />
 
     <!-- Inter Font -->
@@ -52,28 +51,25 @@
       rel="stylesheet"
     />
 
-    <!-- Favicons (PATHS UPDATED) -->
+    <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="../assets/icons/Favicon_GreenWhite_DarkBlueBG.svg" />
     <link rel="icon" type="image/png" href="../assets/icons/Favicon_GreenWhite_DarkBlueBG.png" />
 
-    <!-- Main stylesheet (PATH UPDATED) -->
+    <!-- Main stylesheet -->
     <link rel="stylesheet" href="../css/styles.css" />
   </head>
 
-  <body class="statement-page">
-    <!-- NAVBAR (COPIED FROM HOME; PATHS UPDATED) -->
+  <body class="care-team-page">
+    <!-- NAVBAR -->
     <header class="navbar">
       <div class="container nav-wrap">
-        <!-- LEFT: Logo -->
         <div class="nav-logo">
           <a href="../index.html" aria-label="Kennesaw Church Home">
             <img src="../assets/logos/FullHori_GreenBlack_TranspBG.svg" alt="Kennesaw Church" />
           </a>
         </div>
 
-        <!-- CENTER: Search (row 1) + Desktop Links (row 2) -->
         <div class="nav-center">
-          <!-- Search -->
           <form class="nav-search" role="search" aria-label="Site search" action="#" method="GET" id="siteSearchForm">
             <input
               class="nav-search-input"
@@ -87,7 +83,6 @@
               aria-autocomplete="list"
             />
 
-            <!-- Results dropdown (minimal) -->
             <div
               class="nav-search-results"
               id="siteSearchResults"
@@ -97,9 +92,7 @@
             ></div>
           </form>
 
-          <!-- Desktop nav links (UNDER search) -->
           <nav class="nav-links nav-links-desktop" aria-label="Primary navigation">
-            <!-- I'm New dropdown -->
             <div class="nav-item nav-dropdown">
               <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
                 I'm New <span class="nav-caret" aria-hidden="true">▾</span>
@@ -113,7 +106,6 @@
               </div>
             </div>
 
-            <!-- Ministries -->
             <div class="nav-item nav-dropdown">
               <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
                 Ministries <span class="nav-caret" aria-hidden="true">▾</span>
@@ -132,7 +124,6 @@
               </div>
             </div>
 
-            <!-- Worship -->
             <div class="nav-item nav-dropdown">
               <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
                 Worship <span class="nav-caret" aria-hidden="true">▾</span>
@@ -146,7 +137,6 @@
               </div>
             </div>
 
-            <!-- Serve dropdown -->
             <div class="nav-item nav-dropdown">
               <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
                 Serve <span class="nav-caret" aria-hidden="true">▾</span>
@@ -168,12 +158,10 @@
           </nav>
         </div>
 
-        <!-- RIGHT: Worship Online + Social + Hamburger -->
         <div class="nav-right">
           <a class="watch-btn nav-right-desktop" href="/worship-online/">Worship Online</a>
 
           <div class="nav-socials nav-right-desktop" aria-label="Social links">
-            <!-- Facebook -->
             <a
               class="nav-social"
               href="https://facebook.com/kennesawmc"
@@ -182,13 +170,10 @@
               aria-label="Facebook"
             >
               <svg class="nav-social-icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.6-1.6h1.7V4.8c-.3 0-1.4-.1-2.7-.1-2.7 0-4.5 1.6-4.5 4.6V11H7v3h2.6v8h3.9z"
-                />
+                <path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.6-1.6h1.7V4.8c-.3 0-1.4-.1-2.7-.1-2.7 0-4.5 1.6-4.5 4.6V11H7v3h2.6v8h3.9z" />
               </svg>
             </a>
 
-            <!-- Instagram -->
             <a
               class="nav-social"
               href="https://instagram.com/kennesawchurch"
@@ -197,15 +182,12 @@
               aria-label="Instagram"
             >
               <svg class="nav-social-icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3z"
-                />
+                <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3z" />
                 <path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" />
                 <path d="M17.5 6.3a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z" />
               </svg>
             </a>
 
-            <!-- YouTube -->
             <a
               class="nav-social"
               href="https://youtube.com/@KennesawChurch"
@@ -214,14 +196,11 @@
               aria-label="YouTube"
             >
               <svg class="nav-social-icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M23.5 6.2s-.2-1.7-.7-2.4c-.7-.9-1.5-.9-1.9-1C18.3 2.5 12 2.5 12 2.5h0s-6.3 0-8.9.3c-.4.1-1.2.1-1.9 1C.7 4.5.5 6.2.5 6.2S.2 8.2.2 10.2v1.6c0 2 .3 4 .3 4s.2 1.7.7 2.4c.7.9 1.7.9 2.1 1 1.5.1 6.7.3 8.7.3s6.3 0 8.9-.3c.4-.1 1.2-.1 1.9-1 .5-.7.7-2.4.7-2.4s.3-2 .3-4v-1.6c0-2-.3-4-.3-4zM9.8 14.8V7.9l6.2 3.5-6.2 3.4z"
-                />
+                <path d="M23.5 6.2s-.2-1.7-.7-2.4c-.7-.9-1.5-.9-1.9-1C18.3 2.5 12 2.5 12 2.5h0s-6.3 0-8.9.3c-.4.1-1.2.1-1.9 1C.7 4.5.5 6.2.5 6.2S.2 8.2.2 10.2v1.6c0 2 .3 4 .3 4s.2 1.7.7 2.4c.7.9 1.7.9 2.1 1 1.5.1 6.7.3 8.7.3s6.3 0 8.9-.3c.4-.1 1.2-.1 1.9-1 .5-.7.7-2.4.7-2.4s.3-2 .3-4v-1.6c0-2-.3-4-.3-4zM9.8 14.8V7.9l6.2 3.5-6.2 3.4z" />
               </svg>
             </a>
           </div>
 
-          <!-- Hamburger -->
           <button
             class="nav-toggle"
             type="button"
@@ -233,13 +212,11 @@
           </button>
         </div>
 
-        <!-- Mobile/Tablet panel -->
         <div class="nav-panel" id="mobileMenu" hidden>
           <nav class="nav-links nav-links-mobile" aria-label="Mobile navigation">
             <a href="../index.html">Home</a>
             <a href="/worship-online/">Worship Online</a>
 
-            <!-- Mobile I'm New accordion -->
             <div class="nav-mobile-item">
               <button
                 class="nav-mobile-accordion"
@@ -258,7 +235,6 @@
               </div>
             </div>
 
-            <!-- Mobile Ministries accordion -->
             <div class="nav-mobile-item">
               <button
                 class="nav-mobile-accordion"
@@ -282,7 +258,6 @@
               </div>
             </div>
 
-            <!-- Mobile Worship accordion -->
             <div class="nav-mobile-item">
               <button
                 class="nav-mobile-accordion"
@@ -300,7 +275,6 @@
               </div>
             </div>
 
-            <!-- Mobile Serve accordion -->
             <div class="nav-mobile-item">
               <button
                 class="nav-mobile-accordion"
@@ -331,7 +305,6 @@
             <a class="watch-btn" href="/worship-online/">Worship Online</a>
 
             <div class="nav-socials" aria-label="Social links">
-              <!-- Facebook -->
               <a
                 class="nav-social"
                 href="https://facebook.com/kennesawmc"
@@ -340,13 +313,10 @@
                 aria-label="Facebook"
               >
                 <svg class="nav-social-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path
-                    d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.6-1.6h1.7V4.8c-.3 0-1.4-.1-2.7-.1-2.7 0-4.5 1.6-4.5 4.6V11H7v3h2.6v8h3.9z"
-                  />
+                  <path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.6-1.6h1.7V4.8c-.3 0-1.4-.1-2.7-.1-2.7 0-4.5 1.6-4.5 4.6V11H7v3h2.6v8h3.9z" />
                 </svg>
               </a>
 
-              <!-- Instagram -->
               <a
                 class="nav-social"
                 href="https://instagram.com/kennesawchurch"
@@ -355,15 +325,12 @@
                 aria-label="Instagram"
               >
                 <svg class="nav-social-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path
-                    d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3z"
-                  />
+                  <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3z" />
                   <path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" />
                   <path d="M17.5 6.3a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z" />
                 </svg>
               </a>
 
-              <!-- YouTube -->
               <a
                 class="nav-social"
                 href="https://youtube.com/@KennesawChurch"
@@ -372,9 +339,7 @@
                 aria-label="YouTube"
               >
                 <svg class="nav-social-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path
-                    d="M23.5 6.2s-.2-1.7-.7-2.4c-.7-.9-1.5-.9-1.9-1C18.3 2.5 12 2.5 12 2.5h0s-6.3 0-8.9.3c-.4.1-1.2.1-1.9 1C.7 4.5.5 6.2.5 6.2S.2 8.2.2 10.2v1.6c0 2 .3 4 .3 4s.2 1.7.7 2.4c.7.9 1.7.9 2.1 1 1.5.1 6.7.3 8.7.3s6.3 0 8.9-.3c.4-.1 1.2-.1 1.9-1 .5-.7.7-2.4.7-2.4s.3-2 .3-4v-1.6c0-2-.3-4-.3-4zM9.8 14.8V7.9l6.2 3.5-6.2 3.4z"
-                  />
+                  <path d="M23.5 6.2s-.2-1.7-.7-2.4c-.7-.9-1.5-.9-1.9-1C18.3 2.5 12 2.5 12 2.5h0s-6.3 0-8.9.3c-.4.1-1.2.1-1.9 1C.7 4.5.5 6.2.5 6.2S.2 8.2.2 10.2v1.6c0 2 .3 4 .3 4s.2 1.7.7 2.4c.7.9 1.7.9 2.1 1 1.5.1 6.7.3 8.7.3s6.3 0 8.9-.3c.4-.1 1.2-.1 1.9-1 .5-.7.7-2.4.7-2.4s.3-2 .3-4v-1.6c0-2-.3-4-.3-4zM9.8 14.8V7.9l6.2 3.5-6.2 3.4z" />
                 </svg>
               </a>
             </div>
@@ -383,57 +348,164 @@
       </div>
     </header>
 
-<section class="hero-visual hero-visual--care-team" aria-label="Care Team hero">
-  <div class="hero-visual-inner"></div>
-</section>
+    <section class="hero-visual hero-visual--care-team" aria-label="Care Team hero">
+      <div class="hero-visual-inner"></div>
+    </section>
 
-<main>
-
-<section class="preschool-gallery" aria-label="Preschool photo highlights">
-  <div class="container preschool-gallery-inner">
-    <div class="preschool-cards">
-      <div class="preschool-card">
-        <img src="../assets/images/new-assets/p1.jpg" alt="Preschool moment 1" />
+    <section class="page-head page-head--care-team" aria-label="Care Team page header">
+      <div class="container page-head-inner">
+        <h1 class="page-title">Care Team</h1>
+        <p class="page-subtitle">
+          The Care Team helps our church care for people well through prayer, encouragement, support, practical help, and a steady ministry presence in seasons when people need it most.
+        </p>
       </div>
+    </section>
 
-      <div class="preschool-card">
-        <img src="../assets/images/new-assets/p2.jpg" alt="Preschool moment 2" />
-      </div>
+    <main>
+      <section class="care-team-prep-section" aria-label="What to expect from Care Team">
+        <div class="container">
+          <div class="care-team-prep-head">
+            <h2 class="care-team-prep-title">What to Expect</h2>
+            <p class="care-team-prep-subtitle">
+              Three simple things you can expect as you connect with the Care Team at Kennesaw Church.
+            </p>
+          </div>
 
-      <div class="preschool-card">
-        <img src="../assets/images/new-assets/p3.jpg" alt="Preschool moment 3" />
-      </div>
-    </div>
-  </div>
-</section>
+          <div class="care-team-prep-grid">
+            <article class="care-team-prep-card">
+              <div class="care-team-prep-media">
+                <img src="../assets/images/care-team-images/care-team-1.jpg" alt="Church members offering prayer and encouragement" />
+              </div>
+              <div class="care-team-prep-body">
+                <h3 class="care-team-prep-card-title">Prayerful Support</h3>
+                <p class="care-team-prep-card-text">
+                  Care Team begins with compassionate presence and consistent prayer so people know they are seen, supported, and not walking alone.
+                </p>
+              </div>
+            </article>
 
+            <article class="care-team-prep-card">
+              <div class="care-team-prep-media">
+                <img src="../assets/images/care-team-images/care-team-2.jpg" alt="Volunteers serving and caring for others" />
+              </div>
+              <div class="care-team-prep-body">
+                <h3 class="care-team-prep-card-title">Practical Help</h3>
+                <p class="care-team-prep-card-text">
+                  The ministry looks for meaningful ways to serve through meals, visits, follow-up, and support during difficult or transitional moments.
+                </p>
+              </div>
+            </article>
 
-<!-- Row 2: Related links (3 images) -->
-<section class="preschool-block" aria-label="Related church resources">
-  <div class="container">
-    <h2 class="preschool-block-title">Additional Resources</h2>
-    <p class="preschool-block-subtitle">Quick paths to ministries, events, and kids resources.</p>
+            <article class="care-team-prep-card">
+              <div class="care-team-prep-media">
+                <img src="../assets/images/care-team-images/care-team-3.jpg" alt="People connecting in a caring church environment" />
+              </div>
+              <div class="care-team-prep-body">
+                <h3 class="care-team-prep-card-title">A Ministry of Presence</h3>
+                <p class="care-team-prep-card-text">
+                  Care Team is about showing up with kindness, wisdom, and steadiness so the love of Christ is felt in real and personal ways.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
 
-    <div class="preschool-cards">
-      <a class="preschool-card" href="/ministries/" aria-label="Go to Ministries">
-        <img src="../assets/images/new-assets/ministries-logo-1.jpg" alt="Ministries" />
-      </a>
+      <section class="care-team-info-band" aria-label="Care Team ministry opportunities">
+        <div class="container">
+          <article class="care-team-info-row">
+            <div class="care-team-info-media">
+              <img src="../assets/images/care-team-images/care-team-4.jpg" alt="Volunteer offering support and encouragement to another person" />
+            </div>
 
-      <a class="preschool-card" href="/events/" aria-label="Go to Events">
-        <img src="../assets/images/new-assets/events-logo.jpg" alt="Events" />
-      </a>
+            <div class="care-team-info-copy">
+              <h2 class="care-team-info-title">Support &amp; Encouragement</h2>
 
-      <a class="preschool-card" href="/preschool/" aria-label="Go to Preschool">
-        <img src="../assets/images/new-assets/preschool-logo-2.jpg" alt="Preschool" />
-      </a>
-    </div>
-  </div>
-</section>
+              <div class="care-team-info-meta">
+                <div class="care-team-info-meta-row">
+                  <span class="care-team-info-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" role="presentation">
+                      <path d="M7.5 11.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Zm9 5a3 3 0 1 1 0-6 3 3 0 0 1 0 6ZM2.5 19c0-3.1 2.6-5.5 5.8-5.5 1.5 0 2.9.5 4 1.5-.9.9-1.5 2.1-1.5 3.5 0 .2 0 .3 0 .5H2.5Zm9.5 0c0-2.4 2-4.3 4.5-4.3S21 16.6 21 19h-9Z"/>
+                    </svg>
+                  </span>
+                  <span>Prayer, connection, and compassionate care</span>
+                </div>
 
-  </div>
-</main>
+                <div class="care-team-info-meta-row">
+                  <span class="care-team-info-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" role="presentation">
+                      <path d="M12 2.5A9.5 9.5 0 1 0 21.5 12 9.51 9.51 0 0 0 12 2.5Zm0 17.3A7.8 7.8 0 1 1 19.8 12 7.81 7.81 0 0 1 12 19.8Zm.8-12.1h-1.7v5.1l4.1 3 .9-1.4-3.3-2.4Z"/>
+                    </svg>
+                  </span>
+                  <span><strong>Ongoing opportunities</strong> to serve and follow up</span>
+                </div>
+              </div>
 
-    <!-- FOOTER (COPIED FROM HOME; PATHS UPDATED) -->
+              <p class="care-team-info-text">
+                This part of Care Team focuses on helping people feel supported through prayer, listening, and intentional follow-up. It is a ministry built on compassion, wisdom, and a willingness to walk with others through both joyful and difficult seasons.
+              </p>
+            </div>
+          </article>
+
+          <article class="care-team-info-row care-team-info-row--reverse">
+            <div class="care-team-info-media">
+              <img src="../assets/images/care-team-images/care-team-5.jpg" alt="Church volunteers providing practical care to others" />
+            </div>
+
+            <div class="care-team-info-copy">
+              <h2 class="care-team-info-title">Practical Care</h2>
+
+              <div class="care-team-info-meta">
+                <div class="care-team-info-meta-row">
+                  <span class="care-team-info-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" role="presentation">
+                      <path d="M7.5 11.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Zm9 5a3 3 0 1 1 0-6 3 3 0 0 1 0 6ZM2.5 19c0-3.1 2.6-5.5 5.8-5.5 1.5 0 2.9.5 4 1.5-.9.9-1.5 2.1-1.5 3.5 0 .2 0 .3 0 .5H2.5Zm9.5 0c0-2.4 2-4.3 4.5-4.3S21 16.6 21 19h-9Z"/>
+                    </svg>
+                  </span>
+                  <span>Meals, visits, encouragement, and service</span>
+                </div>
+
+                <div class="care-team-info-meta-row">
+                  <span class="care-team-info-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" role="presentation">
+                      <path d="M12 2.5A9.5 9.5 0 1 0 21.5 12 9.51 9.51 0 0 0 12 2.5Zm0 17.3A7.8 7.8 0 1 1 19.8 12 7.81 7.81 0 0 1 12 19.8Zm.8-12.1h-1.7v5.1l4.1 3 .9-1.4-3.3-2.4Z"/>
+                    </svg>
+                  </span>
+                  <span><strong>Flexible service opportunities</strong> as needs arise</span>
+                </div>
+              </div>
+
+              <p class="care-team-info-text">
+                Practical Care focuses on meeting real needs in thoughtful, meaningful ways. Whether through meals, personal notes, visits, or support during illness or crisis, this ministry helps our church respond with tangible expressions of Christ’s love.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="care-team-links-block" aria-label="Related church resources">
+        <div class="container">
+          <h2 class="care-team-block-title">Additional Resources</h2>
+          <p class="care-team-block-subtitle">Quick paths to serving, ministries, and support resources.</p>
+
+          <div class="care-team-links-grid">
+            <a class="care-team-link-card" href="/foster-care/" aria-label="Go to Foster Care">
+              <img src="../assets/images/new-assets/ministries-logo-1.jpg" alt="Foster Care" />
+            </a>
+
+            <a class="care-team-link-card" href="/weekend-blessings/" aria-label="Go to Weekend Blessings">
+              <img src="../assets/images/new-assets/events-logo.jpg" alt="Weekend Blessings" />
+            </a>
+
+            <a class="care-team-link-card" href="/contact/" aria-label="Go to Contact">
+              <img src="../assets/images/new-assets/preschool-logo-2.jpg" alt="Contact" />
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
     <footer class="site-footer">
       <div class="footer-inner container">
         <div class="footer-col">
@@ -538,12 +610,9 @@
       </div>
     </footer>
 
-    <!-- NAVBAR JS (COPIED FROM HOME) -->
+    <!-- NAVBAR JS -->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        /* =========================
-           Desktop dropdowns (click)
-           ========================= */
         const dropdowns = document.querySelectorAll(".nav-dropdown");
 
         dropdowns.forEach((dd) => {
@@ -555,14 +624,12 @@
 
             const isOpen = dd.classList.contains("is-open");
 
-            // close all
             dropdowns.forEach((x) => {
               x.classList.remove("is-open");
               const b = x.querySelector(".nav-dropdown-toggle");
               if (b) b.setAttribute("aria-expanded", "false");
             });
 
-            // open current if it was closed
             if (!isOpen) {
               dd.classList.add("is-open");
               btn.setAttribute("aria-expanded", "true");
@@ -570,7 +637,6 @@
           });
         });
 
-        // click outside closes desktop dropdowns
         document.addEventListener("click", (e) => {
           if (e.target.closest(".nav-dropdown")) return;
           dropdowns.forEach((dd) => {
@@ -580,7 +646,6 @@
           });
         });
 
-        // escape closes desktop dropdowns
         document.addEventListener("keydown", (e) => {
           if (e.key !== "Escape") return;
           dropdowns.forEach((dd) => {
@@ -590,21 +655,15 @@
           });
         });
 
-        /* =========================
-           Mobile hamburger panel
-           ========================= */
         const toggle = document.querySelector(".nav-toggle");
         const panel = document.getElementById("mobileMenu");
 
         if (toggle && panel) {
           toggle.addEventListener("click", () => {
             const isOpen = toggle.getAttribute("aria-expanded") === "true";
-
-            // Toggle panel visibility
             toggle.setAttribute("aria-expanded", String(!isOpen));
             panel.hidden = isOpen;
 
-            // When opening, collapse ALL mobile accordions by default
             if (!isOpen) {
               const mobAccordions = document.querySelectorAll(".nav-mobile-accordion");
               mobAccordions.forEach((btn) => {
@@ -616,7 +675,6 @@
             }
           });
 
-          // Close panel when clicking a normal link (not the accordion)
           panel.addEventListener("click", (e) => {
             if (e.target.closest(".nav-mobile-accordion")) return;
 
@@ -627,7 +685,6 @@
             panel.hidden = true;
           });
 
-          // Escape closes mobile panel too
           document.addEventListener("keydown", (e) => {
             if (e.key !== "Escape") return;
             toggle.setAttribute("aria-expanded", "false");
@@ -635,9 +692,6 @@
           });
         }
 
-        /* =========================
-           Mobile accordions
-           ========================= */
         const accordions = document.querySelectorAll(".nav-mobile-accordion");
 
         accordions.forEach((btn) => {
@@ -654,7 +708,7 @@
       });
     </script>
 
-    <!-- Site search (PATH UPDATED) -->
+    <!-- Site search -->
     <script src="../js/site-search.js" defer></script>
   </body>
 </html>

@@ -4920,6 +4920,373 @@ body.young-adults-page .young-adults-link-card:hover {
   }
 }
 
+/* =========================================
+   ADULTS — full page styles
+   Modeled after KENNESAW KIDS section
+   Requires: <body class="adults-page">
+   ========================================= */
+
+/* hero */
+body.adults-page .hero-visual-inner {
+  padding: 0;
+}
+
+/* header under hero */
+body.adults-page .page-head--adults {
+  background: #fff;
+  padding: 38px 0 18px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 48px;
+}
+
+body.adults-page .page-head--adults::before,
+body.adults-page .page-head--adults::after {
+  display: none;
+}
+
+body.adults-page .page-head--adults .page-title {
+  margin: 0 0 10px;
+  font-size: clamp(42px, 5.6vw, 64px);
+  font-weight: 950;
+  letter-spacing: -0.03em;
+  color: rgba(17, 17, 17, 0.94);
+}
+
+body.adults-page .page-head--adults .page-subtitle {
+  margin: 0;
+  max-width: 70ch;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(17, 17, 17, 0.62);
+}
+
+/* wider main */
+body.adults-page main {
+  max-width: 1200px;
+  padding: 38px 20px 80px;
+}
+
+/* =========================================
+   top 3 adult connection tiles
+   ========================================= */
+
+body.adults-page .adults-prep-section {
+  background: #fff;
+  padding: 8px 0 48px;
+}
+
+body.adults-page .adults-prep-head {
+  margin-bottom: 22px;
+}
+
+body.adults-page .adults-prep-title {
+  margin: 0 0 8px;
+  font-size: clamp(30px, 4vw, 42px);
+  font-weight: 950;
+  letter-spacing: -0.02em;
+  color: rgba(17, 17, 17, 0.92);
+}
+
+body.adults-page .adults-prep-subtitle {
+  margin: 0;
+  max-width: 68ch;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: rgba(17, 17, 17, 0.62);
+}
+
+body.adults-page .adults-prep-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+body.adults-page .adults-prep-card {
+  border-radius: 22px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.06);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+body.adults-page .adults-prep-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.10);
+  border-color: rgba(11, 42, 74, 0.14);
+}
+
+body.adults-page .adults-prep-media img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+body.adults-page .adults-prep-body {
+  padding: 18px 18px 20px;
+}
+
+body.adults-page .adults-prep-card-title {
+  margin: 0 0 8px;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1.15;
+  color: rgba(17, 17, 17, 0.92);
+}
+
+body.adults-page .adults-prep-card-text {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: rgba(17, 17, 17, 0.64);
+}
+
+/* =========================================
+   adult ministry rows
+   image stays left of copy on desktop
+   ========================================= */
+
+body.adults-page .adults-info-band {
+  background: #fff;
+  padding: 18px 0 58px;
+}
+
+body.adults-page .adults-info-band .container {
+  max-width: 1200px;
+}
+
+body.adults-page .adults-info-row {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.95fr) minmax(0, 1.05fr);
+  gap: 48px;
+  align-items: start;
+  padding: 42px 0;
+}
+
+body.adults-page .adults-info-row + .adults-info-row {
+  border-top: 1px solid rgba(17, 17, 17, 0.08);
+}
+
+/* keep image left on both rows */
+body.adults-page .adults-info-row--reverse .adults-info-media {
+  order: 1;
+}
+
+body.adults-page .adults-info-row--reverse .adults-info-copy {
+  order: 2;
+}
+
+body.adults-page .adults-info-media {
+  min-width: 0;
+}
+
+body.adults-page .adults-info-media img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+  border-radius: 18px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
+}
+
+body.adults-page .adults-info-copy {
+  min-width: 0;
+}
+
+/* brand font for adult section titles */
+body.adults-page .adults-info-title {
+  margin: 0 0 24px;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: clamp(40px, 4.8vw, 64px);
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+  font-weight: 900;
+  color: rgba(17, 17, 17, 0.94);
+  text-transform: uppercase;
+}
+
+body.adults-page .adults-info-meta {
+  border-top: 1px solid rgba(17, 17, 17, 0.14);
+  margin-bottom: 24px;
+}
+
+body.adults-page .adults-info-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 58px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.14);
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15.5px;
+  line-height: 1.45;
+  color: rgba(17, 17, 17, 0.78);
+}
+
+body.adults-page .adults-info-meta-row strong {
+  color: rgba(17, 17, 17, 0.94);
+}
+
+body.adults-page .adults-info-icon {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(11, 42, 74, 0.58);
+}
+
+body.adults-page .adults-info-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+body.adults-page .adults-info-text {
+  margin: 0;
+  max-width: 42ch;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(17, 17, 17, 0.70);
+}
+
+/* =========================================
+   bottom resources section
+   ========================================= */
+
+body.adults-page .adults-resources-block,
+body.adults-page .adults-links-block {
+  background: #fff;
+  padding: 12px 0 44px;
+}
+
+body.adults-page .adults-block-title {
+  margin: 0 0 8px;
+  font-size: clamp(30px, 4vw, 40px);
+  font-weight: 950;
+  letter-spacing: -0.02em;
+  color: rgba(17, 17, 17, 0.92);
+}
+
+body.adults-page .adults-block-subtitle {
+  margin: 0;
+  max-width: 65ch;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: rgba(17, 17, 17, 0.62);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+body.adults-page .adults-links-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+body.adults-page .adults-link-card {
+  display: block;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #f3f4f6;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+body.adults-page .adults-link-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+body.adults-page .adults-link-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================================
+   responsive
+   ========================================= */
+
+@media (max-width: 980px) {
+  body.adults-page .adults-prep-grid,
+  body.adults-page .adults-links-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.adults-page .adults-info-row,
+  body.adults-page .adults-info-row--reverse {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  body.adults-page .adults-info-row--reverse .adults-info-media,
+  body.adults-page .adults-info-row--reverse .adults-info-copy {
+    order: initial;
+  }
+
+  body.adults-page .adults-info-title {
+    font-size: clamp(30px, 8vw, 46px);
+  }
+
+  body.adults-page .adults-prep-media img {
+    height: 260px;
+  }
+
+  body.adults-page .adults-info-media img {
+    height: 320px;
+  }
+
+  body.adults-page .adults-info-meta-row {
+    min-height: 52px;
+    font-size: 14.5px;
+  }
+
+  body.adults-page .adults-info-text {
+    max-width: none;
+    font-size: 15.5px;
+  }
+
+  body.adults-page .adults-link-card img {
+    height: 240px;
+  }
+}
+
+@media (max-width: 640px) {
+  body.adults-page .page-head--adults {
+    padding: 34px 0 18px;
+  }
+
+  body.adults-page .page-head--adults .page-subtitle {
+    font-size: 16.5px;
+  }
+
+  body.adults-page .adults-prep-section {
+    padding-bottom: 36px;
+  }
+
+  body.adults-page .adults-info-band {
+    padding-bottom: 42px;
+  }
+
+  body.adults-page .adults-info-row {
+    padding: 28px 0;
+  }
+
+  body.adults-page .adults-info-media img {
+    height: 260px;
+  }
+}
+
 /* ==================================================
    (Optional) Vision / Statement / Kids scopes can live here
    Keep them page-scoped so they never break home/nav.

@@ -4004,8 +4004,13 @@ body.kennesaw-kids-page .kids-info-band .container {
 
 /* =========================================
    MINISTRIES PAGE — directory layout
-   Requires:
-   <body class="ministries-page">
+   Matches:
+   - .hero-visual
+   - main.nyt-article
+   - .nyt-head / .nyt-title
+   - .ministry-directory
+   - .ministry-directory-head
+   - .ministry-directory-list
    ========================================= */
 
 body.ministries-page {
@@ -4014,7 +4019,7 @@ body.ministries-page {
 
 /* Hero */
 body.ministries-page .hero-visual {
-  min-height: 320px;
+  min-height: 300px;
   align-items: flex-end;
 }
 
@@ -4023,8 +4028,8 @@ body.ministries-page .hero-visual-inner {
   padding: 0;
 }
 
-/* Main layout */
-body.ministries-page main {
+/* Main wrapper */
+body.ministries-page main.nyt-article {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px 80px;
@@ -4034,13 +4039,13 @@ body.ministries-page main {
 body.ministries-page .nyt-head {
   max-width: 920px;
   margin: 0 auto;
-  padding: 48px 0 10px;
+  padding: 48px 0 8px;
 }
 
 body.ministries-page .nyt-title {
   margin: 0;
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: clamp(42px, 5.2vw, 64px);
+  font-size: clamp(42px, 5.4vw, 64px);
   line-height: 0.98;
   letter-spacing: -0.03em;
   font-weight: 950;
@@ -4049,7 +4054,7 @@ body.ministries-page .nyt-title {
 
 /* Directory section */
 body.ministries-page .ministry-directory {
-  padding: 8px 0 72px;
+  padding: 10px 0 72px;
 }
 
 body.ministries-page .ministry-directory-inner {
@@ -4059,14 +4064,14 @@ body.ministries-page .ministry-directory-inner {
 }
 
 body.ministries-page .ministry-directory-head {
-  margin-bottom: 28px;
+  margin-bottom: 30px;
 }
 
 body.ministries-page .ministry-title {
   margin: 0 0 10px;
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: clamp(30px, 4vw, 42px);
-  line-height: 1.05;
+  line-height: 1.06;
   letter-spacing: -0.02em;
   font-weight: 900;
   color: rgba(17, 17, 17, 0.94);
@@ -4081,7 +4086,7 @@ body.ministries-page .ministry-subtitle {
   color: rgba(17, 17, 17, 0.62);
 }
 
-/* Ministry list block */
+/* Directory list */
 body.ministries-page .ministry-directory-list {
   display: block;
 }
@@ -4098,7 +4103,7 @@ body.ministries-page .ministry-directory-list p:last-child {
   margin-bottom: 0;
 }
 
-/* Linked ministry names */
+/* Linked ministry name */
 body.ministries-page .ministry-directory-list a {
   color: rgba(17, 17, 17, 0.92);
   font-weight: 800;
@@ -4120,25 +4125,22 @@ body.ministries-page .ministry-directory-list strong {
   color: inherit;
 }
 
-/* Optional spacing polish if descriptions get long */
-body.ministries-page .ministry-directory-list p + p {
-  padding-top: 2px;
+/* Keep ministry page from inheriting serif article feel */
+body.ministries-page main p,
+body.ministries-page main li,
+body.ministries-page .ministry-subtitle,
+body.ministries-page .ministry-directory-list p {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-/* Better readable line length on very wide screens */
-body.ministries-page .ministry-directory,
-body.ministries-page .nyt-head {
-  width: 100%;
-}
-
-/* Tablet */
+/* Mobile */
 @media (max-width: 900px) {
   body.ministries-page .hero-visual {
-    min-height: 260px;
+    min-height: 250px;
   }
 
   body.ministries-page .nyt-head {
-    padding: 38px 0 10px;
+    padding: 38px 0 8px;
   }
 
   body.ministries-page .ministry-directory {
@@ -4152,18 +4154,17 @@ body.ministries-page .nyt-head {
   }
 }
 
-/* Mobile */
 @media (max-width: 640px) {
-  body.ministries-page main {
+  body.ministries-page main.nyt-article {
     padding: 0 16px 64px;
   }
 
   body.ministries-page .hero-visual {
-    min-height: 220px;
+    min-height: 210px;
   }
 
   body.ministries-page .nyt-head {
-    padding: 30px 0 8px;
+    padding: 30px 0 6px;
   }
 
   body.ministries-page .nyt-title {

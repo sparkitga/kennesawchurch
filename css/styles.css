@@ -3685,10 +3685,13 @@ body.kennesaw-kids-page .preschool-block {
     gap: 24px;
   }
 
-  body.kennesaw-kids-page .kids-info-row--reverse .kids-info-copy,
-  body.kennesaw-kids-page .kids-info-row--reverse .kids-info-media {
-    order: initial;
-  }
+body.kennesaw-kids-page .kids-info-row--reverse .kids-info-media {
+  order: 1;
+}
+
+body.kennesaw-kids-page .kids-info-row--reverse .kids-info-copy {
+  order: 2;
+}
 
   body.kennesaw-kids-page .kids-info-title {
     font-size: clamp(30px, 8vw, 46px);
@@ -3726,6 +3729,10 @@ body.kennesaw-kids-page .preschool-block {
     min-height: 48px;
     padding: 0 20px;
   }
+}
+
+body.kennesaw-kids-page .kids-info-band .container {
+  max-width: 1200px;
 }
 
 /* ==================================================

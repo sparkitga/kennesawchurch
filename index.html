@@ -51,6 +51,58 @@
     <!-- Main stylesheet -->
     <link rel="stylesheet" href="css/styles.css" />
 
+    <!-- Small nav patch for click-only Care Team -->
+    <style>
+      .nav-subgroup-toggle {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 10px 12px;
+        border: 0;
+        border-radius: 12px;
+        background: rgba(255,255,255,0.08);
+        color: rgba(255,255,255,0.92);
+        font-weight: 800;
+        cursor: pointer;
+      }
+
+      .nav-subgroup-toggle .nav-caret {
+        transition: transform 0.18s ease;
+      }
+
+      .nav-subgroup-toggle[aria-expanded="true"] .nav-caret {
+        transform: rotate(180deg);
+      }
+
+      .nav-subgroup-children {
+        display: none;
+        flex-direction: column;
+        gap: 6px;
+        margin-top: 8px;
+      }
+
+      .nav-subgroup-children.active {
+        display: flex;
+      }
+
+      .nav-mobile-item-nested {
+        gap: 8px;
+      }
+
+      .nav-mobile-accordion-nested {
+        font-size: 15px;
+        font-weight: 800;
+      }
+
+      .nav-mobile-submenu-nested {
+        margin-left: 12px;
+        padding-left: 10px;
+        border-left: 2px solid rgba(11, 42, 74, 0.14);
+      }
+    </style>
+
     <!-- Structured data -->
     <script type="application/ld+json">
       {
@@ -161,10 +213,20 @@
 
               <div class="nav-dropdown-menu nav-dropdown-menu-serve" role="menu" aria-label="Serve submenu">
                 <div class="nav-subgroup">
-                  <a class="nav-subgroup-title" role="menuitem" href="/care-team/">Care Team</a>
-                  <a role="menuitem" href="/s-church/">Serving the Church</a>
-                  <a role="menuitem" href="/s-community/">Serving the Community</a>
-                  <a role="menuitem" href="/s-abroad/">Serving Abroad</a>
+                  <button
+                    class="nav-subgroup-title nav-subgroup-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="desktopCareTeamSubmenu"
+                  >
+                    Care Team <span class="nav-caret" aria-hidden="true">▾</span>
+                  </button>
+
+                  <div class="nav-subgroup-children" id="desktopCareTeamSubmenu">
+                    <a role="menuitem" href="/s-church/">Serving the Church</a>
+                    <a role="menuitem" href="/s-community/">Serving the Community</a>
+                    <a role="menuitem" href="/s-abroad/">Serving Abroad</a>
+                  </div>
                 </div>
 
                 <div class="nav-subgroup">
@@ -319,10 +381,23 @@
               </button>
 
               <div class="nav-mobile-submenu" id="mobileServe" hidden>
-                <a href="/care-team/">Care Team</a>
-                <a class="nav-mobile-subitem" href="/s-church/">Serving the Church</a>
-                <a class="nav-mobile-subitem" href="/s-community/">Serving the Community</a>
-                <a class="nav-mobile-subitem" href="/s-abroad/">Serving Abroad</a>
+                <div class="nav-mobile-item nav-mobile-item-nested">
+                  <button
+                    class="nav-mobile-accordion nav-mobile-accordion-nested"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="mobileCareTeamSubmenu"
+                  >
+                    Care Team <span class="nav-caret" aria-hidden="true">▾</span>
+                  </button>
+
+                  <div class="nav-mobile-submenu nav-mobile-submenu-nested" id="mobileCareTeamSubmenu" hidden>
+                    <a class="nav-mobile-subitem" href="/s-church/">Serving the Church</a>
+                    <a class="nav-mobile-subitem" href="/s-community/">Serving the Community</a>
+                    <a class="nav-mobile-subitem" href="/s-abroad/">Serving Abroad</a>
+                  </div>
+                </div>
+
                 <a href="/foster-care/">Foster Care</a>
                 <a href="/med-cab/">Med Cab</a>
                 <a href="/south-dakota/">South Dakota Mission Trip</a>
@@ -661,6 +736,15 @@
         const toggle = document.querySelector(".nav-toggle");
         const panel = document.getElementById("mobileMenu");
         const accordions = document.querySelectorAll(".nav-mobile-accordion");
+        const desktopCareToggle = document.querySelector(".nav-subgroup-toggle");
+        const desktopCareSubmenu = document.getElementById("desktopCareTeamSubmenu");
+        const mobileCareToggle = document.querySelector(".nav-mobile-accordion-nested");
+        const mobileCareSubmenu = document.getElementById("mobileCareTeamSubmenu");
+
+        function closeDesktopCareTeam() {
+          if (desktopCareToggle) desktopCareToggle.setAttribute("aria-expanded", "false");
+          if (desktopCareSubmenu) desktopCareSubmenu.classList.remove("active");
+        }
 
         function closeDesktopDropdowns() {
           dropdowns.forEach((dd) => {
@@ -668,15 +752,23 @@
             const btn = dd.querySelector(".nav-dropdown-toggle");
             if (btn) btn.setAttribute("aria-expanded", "false");
           });
+          closeDesktopCareTeam();
+        }
+
+        function closeMobileNestedCareTeam() {
+          if (mobileCareToggle) mobileCareToggle.setAttribute("aria-expanded", "false");
+          if (mobileCareSubmenu) mobileCareSubmenu.hidden = true;
         }
 
         function closeMobileAccordions() {
           accordions.forEach((btn) => {
+            if (btn.classList.contains("nav-mobile-accordion-nested")) return;
             btn.setAttribute("aria-expanded", "false");
             const targetId = btn.getAttribute("aria-controls");
             const target = targetId ? document.getElementById(targetId) : null;
             if (target) target.hidden = true;
           });
+          closeMobileNestedCareTeam();
         }
 
         function closeMobilePanel() {
@@ -703,6 +795,21 @@
             }
           });
         });
+
+        if (desktopCareToggle && desktopCareSubmenu) {
+          desktopCareToggle.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const isOpen = desktopCareSubmenu.classList.contains("active");
+            closeDesktopCareTeam();
+
+            if (!isOpen) {
+              desktopCareSubmenu.classList.add("active");
+              desktopCareToggle.setAttribute("aria-expanded", "true");
+            }
+          });
+        }
 
         document.addEventListener("click", (e) => {
           if (!e.target.closest(".nav-dropdown")) {
@@ -744,6 +851,8 @@
         }
 
         accordions.forEach((btn) => {
+          if (btn.classList.contains("nav-mobile-accordion-nested")) return;
+
           const targetId = btn.getAttribute("aria-controls");
           const target = targetId ? document.getElementById(targetId) : null;
           if (!target) return;
@@ -752,16 +861,29 @@
             const isOpen = btn.getAttribute("aria-expanded") === "true";
 
             accordions.forEach((otherBtn) => {
+              if (otherBtn.classList.contains("nav-mobile-accordion-nested")) return;
               const otherId = otherBtn.getAttribute("aria-controls");
               const otherTarget = otherId ? document.getElementById(otherId) : null;
               otherBtn.setAttribute("aria-expanded", "false");
               if (otherTarget) otherTarget.hidden = true;
             });
 
+            closeMobileNestedCareTeam();
+
             btn.setAttribute("aria-expanded", String(!isOpen));
             target.hidden = isOpen;
           });
         });
+
+        if (mobileCareToggle && mobileCareSubmenu) {
+          mobileCareToggle.addEventListener("click", (e) => {
+            e.stopPropagation();
+
+            const isOpen = mobileCareToggle.getAttribute("aria-expanded") === "true";
+            mobileCareToggle.setAttribute("aria-expanded", String(!isOpen));
+            mobileCareSubmenu.hidden = isOpen;
+          });
+        }
 
         document.addEventListener("keydown", (e) => {
           if (e.key !== "Escape") return;

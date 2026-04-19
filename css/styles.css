@@ -418,6 +418,129 @@ p { margin: 0 0 16px; color: var(--muted); }
   opacity: 0.9;
 }
 
+/* =========================================
+   CARE TEAM — match rest of dropdown
+   ========================================= */
+
+.nav-dropdown-menu-serve {
+  min-width: 320px;
+}
+
+.nav-subgroup + .nav-subgroup {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.nav-subgroup-title.nav-subgroup-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 650;
+  font-size: 13.5px;
+  line-height: 1.15;
+  text-align: center;
+  cursor: pointer;
+}
+
+.nav-subgroup-title.nav-subgroup-toggle:hover,
+.nav-subgroup-title.nav-subgroup-toggle:focus-visible {
+  background: rgba(255, 255, 255, 0.10);
+  outline: none;
+}
+
+.nav-subgroup-title.nav-subgroup-toggle .nav-caret {
+  transition: transform 0.18s ease;
+}
+
+.nav-subgroup-title.nav-subgroup-toggle[aria-expanded="true"] .nav-caret {
+  transform: rotate(180deg);
+}
+
+.nav-subgroup-children {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.nav-subgroup-children.active {
+  display: flex;
+}
+
+.nav-subgroup-children a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-weight: 650;
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.15;
+  text-align: center;
+}
+
+.nav-subgroup-children a:hover,
+.nav-subgroup-children a:focus-visible {
+  background: rgba(255, 255, 255, 0.10);
+  outline: none;
+}
+
+/* =========================================
+   MOBILE nested Care Team
+   ========================================= */
+
+.nav-mobile-item-nested {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nav-mobile-accordion-nested {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(17, 17, 17, 0.02);
+  font-weight: 850;
+  font-size: 16px;
+  color: rgba(17, 17, 17, 0.9);
+  cursor: pointer;
+}
+
+.nav-mobile-accordion-nested .nav-caret {
+  transition: transform 0.18s ease;
+}
+
+.nav-mobile-accordion-nested[aria-expanded="true"] .nav-caret {
+  transform: rotate(180deg);
+}
+
+.nav-mobile-submenu-nested {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 8px 6px;
+  margin-left: 8px;
+  border-left: 2px solid rgba(11, 42, 74, 0.14);
+}
+
+.nav-mobile-submenu-nested .nav-mobile-subitem {
+  margin-left: 12px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
 @media (min-width: 1001px) {
   .nav-dropdown:hover .nav-dropdown-menu {
     display: block;

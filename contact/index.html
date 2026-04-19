@@ -61,20 +61,26 @@
   </head>
 
   <body class="statement-page">
-    <!-- NAVBAR (COPIED FROM HOME; PATHS UPDATED) -->
+     <!-- NAVBAR -->
     <header class="navbar">
       <div class="container nav-wrap">
         <!-- LEFT: Logo -->
         <div class="nav-logo">
-          <a href="../index.html" aria-label="Kennesaw Church Home">
-            <img src="../assets/logos/FullHori_GreenBlack_TranspBG.svg" alt="Kennesaw Church" />
+          <a href="/index.html" aria-label="Kennesaw Church Home">
+            <img src="assets/logos/FullHori_GreenBlack_TranspBG.svg" alt="Kennesaw Church" />
           </a>
         </div>
 
-        <!-- CENTER: Search (row 1) + Desktop Links (row 2) -->
+        <!-- CENTER: Search + Desktop Nav -->
         <div class="nav-center">
-          <!-- Search -->
-          <form class="nav-search" role="search" aria-label="Site search" action="#" method="GET" id="siteSearchForm">
+          <form
+            class="nav-search"
+            role="search"
+            aria-label="Site search"
+            action="#"
+            method="GET"
+            id="siteSearchForm"
+          >
             <input
               class="nav-search-input"
               type="search"
@@ -87,7 +93,6 @@
               aria-autocomplete="list"
             />
 
-            <!-- Results dropdown (minimal) -->
             <div
               class="nav-search-results"
               id="siteSearchResults"
@@ -97,9 +102,7 @@
             ></div>
           </form>
 
-          <!-- Desktop nav links (UNDER search) -->
           <nav class="nav-links nav-links-desktop" aria-label="Primary navigation">
-            <!-- I'm New dropdown -->
             <div class="nav-item nav-dropdown">
               <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
                 I'm New <span class="nav-caret" aria-hidden="true">▾</span>
@@ -113,7 +116,6 @@
               </div>
             </div>
 
-            <!-- Ministries -->
             <div class="nav-item nav-dropdown">
               <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
                 Ministries <span class="nav-caret" aria-hidden="true">▾</span>
@@ -123,16 +125,11 @@
                 <a role="menuitem" href="/nursery/">Nursery</a>
                 <a role="menuitem" href="/kennesaw-kids/">Children</a>
                 <a role="menuitem" href="/youth/">Youth</a>
-                <a role="menuitem" href="/young-adults/">Young Adult</a>
-                <a role="menuitem" href="/adults/">Adults</a>
-                <a role="menuitem" href="/adult-sunday-school/">Adult Sunday School</a>
                 <a role="menuitem" href="/music/">Music</a>
-                <a role="menuitem" href="/foster-care/">Foster Care</a>
-                <a role="menuitem" href="/weekend-blessings/">Weekend Blessings</a>
+                <a role="menuitem" href="/adults/">Adult Ministries</a>
               </div>
             </div>
 
-            <!-- Worship -->
             <div class="nav-item nav-dropdown">
               <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
                 Worship <span class="nav-caret" aria-hidden="true">▾</span>
@@ -146,34 +143,49 @@
               </div>
             </div>
 
-            <!-- Serve dropdown -->
             <div class="nav-item nav-dropdown">
               <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
                 Serve <span class="nav-caret" aria-hidden="true">▾</span>
               </button>
 
-              <div class="nav-dropdown-menu" role="menu" aria-label="Serve submenu">
-                <a role="menuitem" href="/care-team/">Care Team</a>
-                <a role="menuitem" href="/foster-care/">Foster Care</a>
-                <a role="menuitem" href="/med-cab/">Med Cab</a>
-                <a role="menuitem" href="/south-dakota/">South Dakota Mission Trip</a>
-                <a role="menuitem" href="/stewardship/">Stewardship</a>
-                <a role="menuitem" href="/weekend-blessings/">Weekend Blessings</a>
+              <div class="nav-dropdown-menu nav-dropdown-menu-serve" role="menu" aria-label="Serve submenu">
+                <div class="nav-subgroup">
+                  <button
+                    class="nav-subgroup-title nav-subgroup-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="desktopCareTeamSubmenu"
+                  >
+                    Care Team <span class="nav-caret" aria-hidden="true">▾</span>
+                  </button>
+
+                  <div class="nav-subgroup-children" id="desktopCareTeamSubmenu">
+                    <a role="menuitem" href="/s-church/">Serving the Church</a>
+                    <a role="menuitem" href="/s-community/">Serving the Community</a>
+                    <a role="menuitem" href="/s-abroad/">Serving Abroad</a>
+                  </div>
+                </div>
+
+                <div class="nav-subgroup">
+                  <a role="menuitem" href="/foster-care/">Foster Care</a>
+                  <a role="menuitem" href="/med-cab/">Med Cab</a>
+                  <a role="menuitem" href="/south-dakota/">South Dakota Mission Trip</a>
+                  <a role="menuitem" href="/stewardship/">Stewardship</a>
+                  <a role="menuitem" href="/weekend-blessings/">Weekend Blessings</a>
+                </div>
               </div>
             </div>
 
             <a href="/preschool/">Preschool</a>
             <a href="/contact/">Contact</a>
-            <a href="/give/">Give</a>
           </nav>
         </div>
 
-        <!-- RIGHT: Worship Online + Social + Hamburger -->
+        <!-- RIGHT -->
         <div class="nav-right">
-          <a class="watch-btn nav-right-desktop" href="/worship-online/">Worship Online</a>
+          <a class="watch-btn nav-right-desktop" href="/give/index.html">Give</a>
 
           <div class="nav-socials nav-right-desktop" aria-label="Social links">
-            <!-- Facebook -->
             <a
               class="nav-social"
               href="https://facebook.com/kennesawmc"
@@ -188,7 +200,6 @@
               </svg>
             </a>
 
-            <!-- Instagram -->
             <a
               class="nav-social"
               href="https://instagram.com/kennesawchurch"
@@ -201,11 +212,10 @@
                   d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3z"
                 />
                 <path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" />
-                <path d="M17.5 6.3a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z" />
+                <path d="M17.5 6.3a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z" />
               </svg>
             </a>
 
-            <!-- YouTube -->
             <a
               class="nav-social"
               href="https://youtube.com/@KennesawChurch"
@@ -221,7 +231,6 @@
             </a>
           </div>
 
-          <!-- Hamburger -->
           <button
             class="nav-toggle"
             type="button"
@@ -233,13 +242,13 @@
           </button>
         </div>
 
-        <!-- Mobile/Tablet panel -->
+        <!-- MOBILE / TABLET PANEL -->
         <div class="nav-panel" id="mobileMenu" hidden>
           <nav class="nav-links nav-links-mobile" aria-label="Mobile navigation">
-            <a href="../index.html">Home</a>
+            <a href="/index.html">Home</a>
             <a href="/worship-online/">Worship Online</a>
+            <a href="/give/index.html">Give</a>
 
-            <!-- Mobile I'm New accordion -->
             <div class="nav-mobile-item">
               <button
                 class="nav-mobile-accordion"
@@ -258,7 +267,6 @@
               </div>
             </div>
 
-            <!-- Mobile Ministries accordion -->
             <div class="nav-mobile-item">
               <button
                 class="nav-mobile-accordion"
@@ -282,7 +290,6 @@
               </div>
             </div>
 
-            <!-- Mobile Worship accordion -->
             <div class="nav-mobile-item">
               <button
                 class="nav-mobile-accordion"
@@ -300,7 +307,6 @@
               </div>
             </div>
 
-            <!-- Mobile Serve accordion -->
             <div class="nav-mobile-item">
               <button
                 class="nav-mobile-accordion"
@@ -312,10 +318,26 @@
               </button>
 
               <div class="nav-mobile-submenu" id="mobileServe" hidden>
-                <a href="/care-team/">Care Team</a>
+                <div class="nav-mobile-item nav-mobile-item-nested">
+                  <button
+                    class="nav-mobile-accordion nav-mobile-accordion-nested"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="mobileCareTeamSubmenu"
+                  >
+                    Care Team <span class="nav-caret" aria-hidden="true">▾</span>
+                  </button>
+
+                  <div class="nav-mobile-submenu nav-mobile-submenu-nested" id="mobileCareTeamSubmenu" hidden>
+                    <a class="nav-mobile-subitem" href="/s-church/">Serving the Church</a>
+                    <a class="nav-mobile-subitem" href="/s-community/">Serving the Community</a>
+                    <a class="nav-mobile-subitem" href="/s-abroad/">Serving Abroad</a>
+                  </div>
+                </div>
+
                 <a href="/foster-care/">Foster Care</a>
                 <a href="/med-cab/">Med Cab</a>
-                <a href="/south-dakota/">South Dakota</a>
+                <a href="/south-dakota/">South Dakota Mission Trip</a>
                 <a href="/stewardship/">Stewardship</a>
                 <a href="/weekend-blessings/">Weekend Blessings</a>
               </div>
@@ -324,14 +346,12 @@
             <a href="/events/">Events</a>
             <a href="/preschool/">Preschool</a>
             <a href="/contact/">Contact</a>
-            <a href="/give/">Give</a>
           </nav>
 
           <div class="nav-panel-actions">
             <a class="watch-btn" href="/worship-online/">Worship Online</a>
 
             <div class="nav-socials" aria-label="Social links">
-              <!-- Facebook -->
               <a
                 class="nav-social"
                 href="https://facebook.com/kennesawmc"
@@ -346,7 +366,6 @@
                 </svg>
               </a>
 
-              <!-- Instagram -->
               <a
                 class="nav-social"
                 href="https://instagram.com/kennesawchurch"
@@ -359,11 +378,10 @@
                     d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3z"
                   />
                   <path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" />
-                  <path d="M17.5 6.3a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z" />
+                  <path d="M17.5 6.3a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z" />
                 </svg>
               </a>
 
-              <!-- YouTube -->
               <a
                 class="nav-social"
                 href="https://youtube.com/@KennesawChurch"

@@ -455,6 +455,12 @@ p { margin: 0 0 16px; color: var(--muted); }
   outline: none;
 }
 
+.nav-subgroup {
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
 .nav-subgroup-title.nav-subgroup-toggle .nav-caret {
   transition: transform 0.18s ease;
 }

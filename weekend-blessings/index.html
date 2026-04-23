@@ -1,11 +1,3 @@
-<!-- FILE: staff/index.html
-  Uses HOME PAGE header + footer + brand standard.
-  Staff-only changes:
-  - Paths updated for /staff/ folder (../css, ../assets, ../js)
-  - Staff hero uses ../assets/hero-images/staff-hero.jpg
-  - Title + note moved BELOW hero
--->
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -14,257 +6,418 @@
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-N794D9J3RW');
+      gtag("js", new Date());
+      gtag("config", "G-N794D9J3RW");
     </script>
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Statement of Faith | Kennesaw Church</title>
+    <title>Weekend Blessings | Kennesaw Church</title>
 
     <meta
       name="description"
-      content="Kennesaw Church's Statement of Faith"
+      content="Weekend Blessings supports local students and families through food donations, volunteer opportunities, and practical care."
     />
     <meta name="robots" content="index,follow" />
     <meta name="theme-color" content="#0b2a4a" />
-    <link rel="canonical" href="https://kennesawchurch.netlify.app/statement/" />
+    <link rel="canonical" href="https://kennesawchurch.netlify.app/weekend-blessings/" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Kennesaw Church" />
-    <meta property="og:title" content="Kennesaw Church Statement of Faith" />
-    <meta property="og:description" content="Our church's statement of faith." />
-    <meta property="og:url" content="https://kennesawchurch.netlify.app/statement/" />
+    <meta property="og:title" content="Kennesaw Church Weekend Blessings" />
+    <meta
+      property="og:description"
+      content="Helping provide food, support, and care to students in our local community."
+    />
+    <meta property="og:url" content="https://kennesawchurch.netlify.app/weekend-blessings/" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Kennesaw Church Statement of Faith" />
+    <meta name="twitter:title" content="Kennesaw Church Weekend Blessings" />
     <meta
       name="twitter:description"
-      content="Kennesaw Church's Statement of Faith."
+      content="Helping provide food, support, and care to students in our local community."
     />
 
     <!-- Inter Font -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Favicons (PATHS UPDATED) -->
+    <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="../assets/icons/Favicon_GreenWhite_DarkBlueBG.svg" />
     <link rel="icon" type="image/png" href="../assets/icons/Favicon_GreenWhite_DarkBlueBG.png" />
 
-    <!-- Main stylesheet (PATH UPDATED) -->
+    <!-- Main stylesheet -->
     <link rel="stylesheet" href="../css/styles.css" />
   </head>
 
-  <body class="statement-page">
- <!-- NAVBAR SUBPAGE (FULL COPY) -->
-<header class="navbar">
-  <div class="container nav-wrap">
-    <div class="nav-logo">
-      <a href="/index.html" aria-label="Kennesaw Church Home">
-        <img src="../assets/logos/FullHori_GreenBlack_TranspBG.svg" alt="Kennesaw Church" />
-      </a>
-    </div>
+  <body class="weekend-blessings-page">
+    <!-- NAVBAR SUBPAGE -->
+    <header class="navbar">
+      <div class="container nav-wrap">
+        <div class="nav-logo">
+          <a href="/index.html" aria-label="Kennesaw Church Home">
+            <img src="../assets/logos/FullHori_GreenBlack_TranspBG.svg" alt="Kennesaw Church" />
+          </a>
+        </div>
 
-    <div class="nav-center">
-      <form
-        class="nav-search"
-        role="search"
-        aria-label="Site search"
-        action="#"
-        method="GET"
-        id="siteSearchForm"
-      >
-        <input
-          class="nav-search-input"
-          type="search"
-          name="q"
-          id="siteSearchInput"
-          placeholder="Search…"
-          autocomplete="off"
-          aria-expanded="false"
-          aria-controls="siteSearchResults"
-          aria-autocomplete="list"
-        />
-        <div
-          class="nav-search-results"
-          id="siteSearchResults"
-          role="listbox"
-          aria-label="Search results"
-          hidden
-        ></div>
-      </form>
+        <div class="nav-center">
+          <form
+            class="nav-search"
+            role="search"
+            aria-label="Site search"
+            action="#"
+            method="GET"
+            id="siteSearchForm"
+          >
+            <input
+              class="nav-search-input"
+              type="search"
+              name="q"
+              id="siteSearchInput"
+              placeholder="Search…"
+              autocomplete="off"
+              aria-expanded="false"
+              aria-controls="siteSearchResults"
+              aria-autocomplete="list"
+            />
+            <div
+              class="nav-search-results"
+              id="siteSearchResults"
+              role="listbox"
+              aria-label="Search results"
+              hidden
+            ></div>
+          </form>
 
-      <nav class="nav-links nav-links-desktop" aria-label="Primary navigation">
-        <div class="nav-item nav-dropdown">
-          <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
-            I'm New <span class="nav-caret" aria-hidden="true">▾</span>
+          <nav class="nav-links nav-links-desktop" aria-label="Primary navigation">
+            <div class="nav-item nav-dropdown">
+              <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
+                I'm New <span class="nav-caret" aria-hidden="true">▾</span>
+              </button>
+              <div class="nav-dropdown-menu" role="menu">
+                <a role="menuitem" href="/staff/">Staff</a>
+                <a role="menuitem" href="https://mailchi.mp/429478f6a7af/kumc-december-newsletter-10343934">Monthly Newsletter</a>
+                <a role="menuitem" href="/vision/">Vision</a>
+                <a role="menuitem" href="/statement/">Statement of Faith</a>
+              </div>
+            </div>
+
+            <div class="nav-item nav-dropdown">
+              <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
+                Ministries <span class="nav-caret" aria-hidden="true">▾</span>
+              </button>
+              <div class="nav-dropdown-menu" role="menu">
+                <a role="menuitem" href="/nursery/">Nursery</a>
+                <a role="menuitem" href="/kennesaw-kids/">Children</a>
+                <a role="menuitem" href="/youth/">Youth</a>
+                <a role="menuitem" href="/music/">Music</a>
+                <a role="menuitem" href="/adults/">Adult Ministry</a>
+                <a role="menuitem" href="/care-team/">Care Ministry</a>
+              </div>
+            </div>
+
+            <div class="nav-item nav-dropdown">
+              <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
+                Worship <span class="nav-caret" aria-hidden="true">▾</span>
+              </button>
+              <div class="nav-dropdown-menu" role="menu">
+                <a role="menuitem" href="/worship-online/">Online</a>
+                <a role="menuitem" href="/worship-in-person/">In Person</a>
+                <a role="menuitem" href="/nursery/">Nursery</a>
+                <a role="menuitem" href="/kennesaw-kids/">Kennesaw Kids</a>
+              </div>
+            </div>
+
+            <div class="nav-item nav-dropdown">
+              <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
+                Serve <span class="nav-caret" aria-hidden="true">▾</span>
+              </button>
+              <div class="nav-dropdown-menu nav-dropdown-menu-serve" role="menu">
+                <a role="menuitem" href="/foster-care/">Foster Care</a>
+                <a role="menuitem" href="/weekend-blessings/">Weekend Blessings</a>
+                <a role="menuitem" href="/s-church/">Serving the Church</a>
+                <a role="menuitem" href="/s-community/">Serving the Community</a>
+                <a role="menuitem" href="/s-abroad/">Serving Abroad</a>
+              </div>
+            </div>
+
+            <a href="/preschool/">Preschool</a>
+            <a href="/contact/">Contact</a>
+          </nav>
+        </div>
+
+        <div class="nav-right">
+          <a class="watch-btn nav-right-desktop" href="/give/index.html">Give</a>
+
+          <div class="nav-socials nav-right-desktop">
+            <a class="nav-social" href="https://facebook.com/kennesawmc" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg class="nav-social-icon" viewBox="0 0 24 24"><path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.6-1.6h1.7V4.8c-.3 0-1.4-.1-2.7-.1-2.7 0-4.5 1.6-4.5 4.6V11H7v3h2.6v8h3.9z"/></svg>
+            </a>
+            <a class="nav-social" href="https://instagram.com/kennesawchurch" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg class="nav-social-icon" viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3z"/></svg>
+            </a>
+            <a class="nav-social" href="https://youtube.com/@KennesawChurch" target="_blank" rel="noopener" aria-label="YouTube">
+              <svg class="nav-social-icon" viewBox="0 0 24 24"><path d="M23.5 6.2s-.2-1.7-.7-2.4c-.7-.9-1.5-.9-1.9-1C18.3 2.5 12 2.5 12 2.5h0s-6.3 0-8.9.3c-.4.1-1.2-.1-1.9 1C.7 4.5.5 6.2.5 6.2S.2 8.2.2 10.2v1.6c0 2 .3 4 .3 4s.2 1.7.7 2.4c.7.9 1.7.9 2.1 1 1.5.1 6.7.3 8.7.3s6.3 0 8.9-.3c.4-.1 1.2-.1 1.9-1 .5-.7.7-2.4.7-2.4s.3-2 .3-4v-1.6c0-2-.3-4-.3-4z"/></svg>
+            </a>
+          </div>
+
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobileMenu">
+            <span class="nav-toggle-lines"></span>
           </button>
-          <div class="nav-dropdown-menu" role="menu">
-            <a role="menuitem" href="/staff/">Staff</a>
-            <a role="menuitem" href="https://mailchi.mp/429478f6a7af/kumc-december-newsletter-10343934">Monthly Newsletter</a>
-            <a role="menuitem" href="/vision/">Vision</a>
-            <a role="menuitem" href="/statement/">Statement of Faith</a>
-          </div>
         </div>
 
-        <div class="nav-item nav-dropdown">
-          <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
-            Ministries <span class="nav-caret" aria-hidden="true">▾</span>
-          </button>
-          <div class="nav-dropdown-menu" role="menu">
-            <a role="menuitem" href="/nursery/">Nursery</a>
-            <a role="menuitem" href="/kennesaw-kids/">Children</a>
-            <a role="menuitem" href="/youth/">Youth</a>
-            <a role="menuitem" href="/music/">Music</a>
-            <a role="menuitem" href="/adults/">Adult Ministry</a>
-            <a role="menuitem" href="/care-team/">Care Ministry</a>
-          </div>
+        <div class="nav-panel" id="mobileMenu" hidden>
+          <nav class="nav-links nav-links-mobile">
+            <a href="/index.html">Home</a>
+            <a href="/worship-online/">Worship Online</a>
+            <a href="/give/index.html">Give</a>
+
+            <div class="nav-mobile-item">
+              <button class="nav-mobile-accordion" aria-controls="mobileMinistries">Ministries ▾</button>
+              <div id="mobileMinistries" hidden>
+                <a href="/nursery/">Nursery</a>
+                <a href="/kennesaw-kids/">Children</a>
+                <a href="/youth/">Youth</a>
+                <a href="/music/">Music</a>
+                <a href="/adults/">Adult Ministry</a>
+                <a href="/care-team/">Care Ministry</a>
+              </div>
+            </div>
+
+            <div class="nav-mobile-item">
+              <button class="nav-mobile-accordion" aria-controls="mobileServe">Serve ▾</button>
+              <div id="mobileServe" hidden>
+                <a href="/foster-care/">Foster Care</a>
+                <a href="/weekend-blessings/">Weekend Blessings</a>
+                <a href="/s-church/">Serving the Church</a>
+                <a href="/s-community/">Serving the Community</a>
+                <a href="/s-abroad/">Serving Abroad</a>
+              </div>
+            </div>
+
+            <a href="/preschool/">Preschool</a>
+            <a href="/contact/">Contact</a>
+          </nav>
         </div>
-
-        <div class="nav-item nav-dropdown">
-          <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
-            Worship <span class="nav-caret" aria-hidden="true">▾</span>
-          </button>
-          <div class="nav-dropdown-menu" role="menu">
-            <a role="menuitem" href="/worship-online/">Online</a>
-            <a role="menuitem" href="/worship-in-person/">In Person</a>
-            <a role="menuitem" href="/nursery/">Nursery</a>
-            <a role="menuitem" href="/kennesaw-kids/">Kennesaw Kids</a>
-          </div>
-        </div>
-
-        <div class="nav-item nav-dropdown">
-          <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
-            Serve <span class="nav-caret" aria-hidden="true">▾</span>
-          </button>
-          <div class="nav-dropdown-menu nav-dropdown-menu-serve" role="menu">
-            <a role="menuitem" href="/foster-care/">Foster Care</a>
-            <a role="menuitem" href="/weekend-blessings/">Weekend Blessings</a>
-            <a role="menuitem" href="/s-church/">Serving the Church</a>
-            <a role="menuitem" href="/s-community/">Serving the Community</a>
-            <a role="menuitem" href="/s-abroad/">Serving Abroad</a>
-          </div>
-        </div>
-
-        <a href="/preschool/">Preschool</a>
-        <a href="/contact/">Contact</a>
-      </nav>
-    </div>
-
-    <div class="nav-right">
-      <a class="watch-btn nav-right-desktop" href="/give/index.html">Give</a>
-
-      <div class="nav-socials nav-right-desktop">
-        <a class="nav-social" href="https://facebook.com/kennesawmc" target="_blank" rel="noopener">
-          <svg class="nav-social-icon" viewBox="0 0 24 24"><path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.6-1.6h1.7V4.8c-.3 0-1.4-.1-2.7-.1-2.7 0-4.5 1.6-4.5 4.6V11H7v3h2.6v8h3.9z"/></svg>
-        </a>
-
-        <a class="nav-social" href="https://instagram.com/kennesawchurch" target="_blank" rel="noopener">
-          <svg class="nav-social-icon" viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3z"/></svg>
-        </a>
-
-        <a class="nav-social" href="https://youtube.com/@KennesawChurch" target="_blank" rel="noopener">
-          <svg class="nav-social-icon" viewBox="0 0 24 24"><path d="M23.5 6.2s-.2-1.7-.7-2.4c-.7-.9-1.5-.9-1.9-1C18.3 2.5 12 2.5 12 2.5h0s-6.3 0-8.9.3c-.4.1-1.2-.1-1.9 1C.7 4.5.5 6.2.5 6.2S.2 8.2.2 10.2v1.6c0 2 .3 4 .3 4s.2 1.7.7 2.4c.7.9 1.7.9 2.1 1 1.5.1 6.7.3 8.7.3s6.3 0 8.9-.3c.4-.1 1.2-.1 1.9-1 .5-.7.7-2.4.7-2.4s.3-2 .3-4v-1.6c0-2-.3-4-.3-4z"/></svg>
-        </a>
       </div>
+    </header>
 
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobileMenu">
-        <span class="nav-toggle-lines"></span>
-      </button>
-    </div>
+    <section class="hero-visual hero-visual--weekend-blessings" aria-label="Weekend Blessings hero">
+      <div class="hero-visual-inner"></div>
+    </section>
 
-    <div class="nav-panel" id="mobileMenu" hidden>
-      <nav class="nav-links nav-links-mobile">
-        <a href="/index.html">Home</a>
-        <a href="/worship-online/">Worship Online</a>
-        <a href="/give/index.html">Give</a>
+    <section class="page-head page-head--weekend-blessings" aria-label="Weekend Blessings page header">
+      <div class="container page-head-inner">
+        <h1 class="page-title">Weekend Blessings</h1>
+        <p class="page-subtitle">
+          Weekend Blessings helps provide single packs of food to students in local schools so they have nourishment at home when they need it most.
+        </p>
+      </div>
+    </section>
 
-        <div class="nav-mobile-item">
-          <button class="nav-mobile-accordion" aria-controls="mobileMinistries">Ministries ▾</button>
-          <div id="mobileMinistries" hidden>
-            <a href="/nursery/">Nursery</a>
-            <a href="/kennesaw-kids/">Children</a>
-            <a href="/youth/">Youth</a>
-            <a href="/music/">Music</a>
-            <a href="/adults/">Adult Ministry</a>
-            <a href="/care-team/">Care Ministry</a>
+    <main>
+      <section class="weekend-blessings-prep-section" aria-label="Weekend Blessings overview">
+        <div class="container">
+          <div class="weekend-blessings-prep-head">
+            <h2 class="weekend-blessings-prep-title">What This Ministry Does</h2>
+            <p class="weekend-blessings-prep-subtitle">
+              This ministry supports close to 200 students across 6 local schools by helping provide practical food support for weekends and school breaks. :contentReference[oaicite:2]{index=2}
+            </p>
+          </div>
+
+          <div class="weekend-blessings-prep-grid">
+            <article class="weekend-blessings-prep-card">
+              <div class="weekend-blessings-prep-media">
+                <img src="../assets/images/weekend-blessings/weekend-blessings-1.jpg" alt="Food packs prepared for local students" />
+              </div>
+              <div class="weekend-blessings-prep-body">
+                <h3 class="weekend-blessings-prep-card-title">Support for Students</h3>
+                <p class="weekend-blessings-prep-card-text">
+                  The ministry donates and distributes single packs of food to students in local schools who need extra nourishment at home. :contentReference[oaicite:3]{index=3}
+                </p>
+              </div>
+            </article>
+
+            <article class="weekend-blessings-prep-card">
+              <div class="weekend-blessings-prep-media">
+                <img src="../assets/images/weekend-blessings/weekend-blessings-2.jpg" alt="Church volunteers serving the community" />
+              </div>
+              <div class="weekend-blessings-prep-body">
+                <h3 class="weekend-blessings-prep-card-title">Hands-On Service</h3>
+                <p class="weekend-blessings-prep-card-text">
+                  Volunteers can help by packing bags, shopping for needed items, delivering to schools, and supporting the ministry in practical ways. :contentReference[oaicite:4]{index=4}
+                </p>
+              </div>
+            </article>
+
+            <article class="weekend-blessings-prep-card">
+              <div class="weekend-blessings-prep-media">
+                <img src="../assets/images/weekend-blessings/weekend-blessings-3.jpg" alt="Donations being gathered for Weekend Blessings" />
+              </div>
+              <div class="weekend-blessings-prep-body">
+                <h3 class="weekend-blessings-prep-card-title">Community Giving</h3>
+                <p class="weekend-blessings-prep-card-text">
+                  Donations can be dropped off at the church in the Weekend Blessings box under the portico by entrance door H, in the Narthex, or in the CAC. :contentReference[oaicite:5]{index=5}
+                </p>
+              </div>
+            </article>
           </div>
         </div>
+      </section>
 
-        <div class="nav-mobile-item">
-          <button class="nav-mobile-accordion" aria-controls="mobileServe">Serve ▾</button>
-          <div id="mobileServe" hidden>
-            <a href="/foster-care/">Foster Care</a>
-            <a href="/weekend-blessings/">Weekend Blessings</a>
-            <a href="/s-church/">Serving the Church</a>
-            <a href="/s-community/">Serving the Community</a>
-            <a href="/s-abroad/">Serving Abroad</a>
+      <section class="weekend-blessings-info-band" aria-label="Weekend Blessings needs and support">
+        <div class="container">
+          <article class="weekend-blessings-info-row">
+            <div class="weekend-blessings-info-media">
+              <img src="../assets/images/weekend-blessings/weekend-blessings-4.jpg" alt="Food items prepared for regular weekly distribution" />
+            </div>
+
+            <div class="weekend-blessings-info-copy">
+              <h2 class="weekend-blessings-info-title">Items Needed for Regular Weeks</h2>
+
+              <div class="weekend-blessings-info-meta">
+                <div class="weekend-blessings-info-meta-row">
+                  <span class="weekend-blessings-info-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" role="presentation">
+                      <path d="M4 6.5h16v2H4zm0 4.5h16v2H4zm0 4.5h16v2H4z"></path>
+                    </svg>
+                  </span>
+                  <span>Single servings and individually wrapped portions</span>
+                </div>
+
+                <div class="weekend-blessings-info-meta-row">
+                  <span class="weekend-blessings-info-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" role="presentation">
+                      <path d="M12 2.5A9.5 9.5 0 1 0 21.5 12 9.51 9.51 0 0 0 12 2.5Zm.8 5.2h-1.7v5.1l4.1 3 .9-1.4-3.3-2.4Z"></path>
+                    </svg>
+                  </span>
+                  <span>Best for consistent weekly packing and distribution</span>
+                </div>
+              </div>
+
+              <p class="weekend-blessings-info-text">
+                During regular school weeks, Weekend Blessings focuses on foods that are easy to distribute, practical for students, and simple for families to use. The live ministry page notes that these weekly donations should use single servings or individually wrapped portions. :contentReference[oaicite:6]{index=6}
+              </p>
+            </div>
+          </article>
+
+          <article class="weekend-blessings-info-row weekend-blessings-info-row--reverse">
+            <div class="weekend-blessings-info-media">
+              <img src="../assets/images/weekend-blessings/weekend-blessings-5.jpg" alt="Extra food support prepared for school breaks" />
+            </div>
+
+            <div class="weekend-blessings-info-copy">
+              <h2 class="weekend-blessings-info-title">Items Needed for Break Weeks</h2>
+
+              <div class="weekend-blessings-info-meta">
+                <div class="weekend-blessings-info-meta-row">
+                  <span class="weekend-blessings-info-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" role="presentation">
+                      <path d="M7.5 11.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Zm9 5a3 3 0 1 1 0-6 3 3 0 0 1 0 6ZM2.5 19c0-3.1 2.6-5.5 5.8-5.5 1.5 0 2.9.5 4 1.5-.9.9-1.5 2.1-1.5 3.5 0 .2 0 .3 0 .5H2.5Zm9.5 0c0-2.4 2-4.3 4.5-4.3S21 16.6 21 19h-9Z"></path>
+                    </svg>
+                  </span>
+                  <span>Additional support for longer times away from school</span>
+                </div>
+
+                <div class="weekend-blessings-info-meta-row">
+                  <span class="weekend-blessings-info-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" role="presentation">
+                      <path d="M3 5.5h18V8H3zm2 4h14v9H5z"></path>
+                    </svg>
+                  </span>
+                  <span>Designed to help families through extended weekends and breaks</span>
+                </div>
+              </div>
+
+              <p class="weekend-blessings-info-text">
+                The ministry also highlights a separate set of needs for break weeks, recognizing that school breaks can create extra food pressure for families. This page should make that distinction clear and easy to act on. :contentReference[oaicite:7]{index=7}
+              </p>
+            </div>
+          </article>
+
+          <article class="weekend-blessings-info-row">
+            <div class="weekend-blessings-info-media">
+              <img src="../assets/images/weekend-blessings/weekend-blessings-6.jpg" alt="Giving and financial support for community ministry" />
+            </div>
+
+            <div class="weekend-blessings-info-copy">
+              <h2 class="weekend-blessings-info-title">Ways to Financially Support</h2>
+
+              <div class="weekend-blessings-info-meta">
+                <div class="weekend-blessings-info-meta-row">
+                  <span class="weekend-blessings-info-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" role="presentation">
+                      <path d="M12 3 4 7v10l8 4 8-4V7Zm0 2.2 5.7 2.8L12 10.8 6.3 8ZM6 9.6l5 2.5v6.7l-5-2.5Zm12 0v6.7l-5 2.5v-6.7Z"></path>
+                    </svg>
+                  </span>
+                  <span>Support the ministry through direct giving and donation-based help</span>
+                </div>
+
+                <div class="weekend-blessings-info-meta-row">
+                  <span class="weekend-blessings-info-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" role="presentation">
+                      <path d="M12 4a5 5 0 0 0-5 5c0 4.2 5 9.5 5 9.5S17 13.2 17 9a5 5 0 0 0-5-5Zm0 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4Z"></path>
+                    </svg>
+                  </span>
+                  <span>Local impact through school and community partnerships</span>
+                </div>
+              </div>
+
+              <p class="weekend-blessings-info-text">
+                The live Weekend Blessings page includes a dedicated section for financial support. This gives people another way to serve when they may not be able to donate food items or volunteer in person. :contentReference[oaicite:8]{index=8}
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="weekend-blessings-links-block" aria-label="Weekend Blessings action links">
+        <div class="container">
+          <h2 class="weekend-blessings-block-title">Get Involved</h2>
+          <p class="weekend-blessings-block-subtitle">
+            There are several ways to support this ministry, from volunteering to giving to dropping off needed items. The live page also invites volunteers to reach out by email. :contentReference[oaicite:9]{index=9}
+          </p>
+
+          <div class="weekend-blessings-link-grid">
+            <a class="weekend-blessings-link-card" href="/contact/" aria-label="Go to Contact page">
+              <div class="weekend-blessings-link-card-body">
+                <h3 class="weekend-blessings-link-title">Volunteer Interest</h3>
+                <p class="weekend-blessings-link-text">
+                  Learn how to help with packing, shopping, delivering, and supporting the ministry.
+                </p>
+                <span class="weekend-blessings-link-cta">Contact Us</span>
+              </div>
+            </a>
+
+            <a class="weekend-blessings-link-card" href="/give/" aria-label="Go to Give page">
+              <div class="weekend-blessings-link-card-body">
+                <h3 class="weekend-blessings-link-title">Give Financially</h3>
+                <p class="weekend-blessings-link-text">
+                  Support Weekend Blessings through giving and help extend the ministry’s impact.
+                </p>
+                <span class="weekend-blessings-link-cta">Give Online</span>
+              </div>
+            </a>
+
+            <a class="weekend-blessings-link-card" href="/events/" aria-label="Go to Events page">
+              <div class="weekend-blessings-link-card-body">
+                <h3 class="weekend-blessings-link-title">Stay Connected</h3>
+                <p class="weekend-blessings-link-text">
+                  Follow upcoming church opportunities and find more ways to serve the community.
+                </p>
+                <span class="weekend-blessings-link-cta">View Events</span>
+              </div>
+            </a>
           </div>
         </div>
+      </section>
+    </main>
 
-        <a href="/preschool/">Preschool</a>
-        <a href="/contact/">Contact</a>
-      </nav>
-    </div>
-  </div>
-</header>
-
-<section class="hero-visual hero-visual--weekend-blessings" aria-label="Weekend Blessings hero">
-  <div class="hero-visual-inner"></div>
-</section>
-
-<main>
-
-<section class="preschool-gallery" aria-label="Preschool photo highlights">
-  <div class="container preschool-gallery-inner">
-    <div class="preschool-cards">
-      <div class="preschool-card">
-        <img src="../assets/images/new-assets/p1.jpg" alt="Preschool moment 1" />
-      </div>
-
-      <div class="preschool-card">
-        <img src="../assets/images/new-assets/p2.jpg" alt="Preschool moment 2" />
-      </div>
-
-      <div class="preschool-card">
-        <img src="../assets/images/new-assets/p3.jpg" alt="Preschool moment 3" />
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- Row 2: Related links (3 images) -->
-<section class="preschool-block" aria-label="Related church resources">
-  <div class="container">
-    <h2 class="preschool-block-title">Additional Resources</h2>
-    <p class="preschool-block-subtitle">Quick paths to ministries, events, and kids resources.</p>
-
-    <div class="preschool-cards">
-      <a class="preschool-card" href="/ministries/" aria-label="Go to Ministries">
-        <img src="../assets/images/new-assets/ministries-logo-1.jpg" alt="Ministries" />
-      </a>
-
-      <a class="preschool-card" href="/events/" aria-label="Go to Events">
-        <img src="../assets/images/new-assets/events-logo.jpg" alt="Events" />
-      </a>
-
-      <a class="preschool-card" href="/preschool/" aria-label="Go to Preschool">
-        <img src="../assets/images/new-assets/preschool-logo-2.jpg" alt="Preschool" />
-      </a>
-    </div>
-  </div>
-</section>
-
-  </div>
-</main>
-
-    <!-- FOOTER (COPIED FROM HOME; PATHS UPDATED) -->
     <footer class="site-footer">
       <div class="footer-inner container">
         <div class="footer-col">
@@ -303,37 +456,19 @@
           <a class="footer-link" href="/worship-online/">Worship Online</a>
 
           <div class="footer-socials">
-            <a
-              class="footer-social"
-              href="https://www.facebook.com/kennesawmc"
-              target="_blank"
-              rel="noopener"
-              aria-label="Facebook"
-            >
+            <a class="footer-social" href="https://www.facebook.com/kennesawmc" target="_blank" rel="noopener" aria-label="Facebook">
               <svg class="footer-social-icon" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M13.5 9H16V6h-2.5C11.6 6 10 7.6 10 9.5V12H8v3h2v7h3v-7h2.3l.7-3H13v-2.2c0-.5.3-.8.8-.8z"/>
               </svg>
             </a>
 
-            <a
-              class="footer-social"
-              href="https://www.instagram.com/kennesawchurch/"
-              target="_blank"
-              rel="noopener"
-              aria-label="Instagram"
-            >
+            <a class="footer-social" href="https://www.instagram.com/kennesawchurch/" target="_blank" rel="noopener" aria-label="Instagram">
               <svg class="footer-social-icon" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3.2A4.8 4.8 0 1 0 12 17a4.8 4.8 0 0 0 0-9.6zm0 2A2.8 2.8 0 1 1 12 15a2.8 2.8 0 0 1 0-5.6zm4.5-2.9a1.1 1.1 0 1 0 0-2.2 1.1 1.1 0 0 0 0 2.2z"/>
               </svg>
             </a>
 
-            <a
-              class="footer-social"
-              href="https://www.youtube.com/@KennesawChurch"
-              target="_blank"
-              rel="noopener"
-              aria-label="YouTube"
-            >
+            <a class="footer-social" href="https://www.youtube.com/@KennesawChurch" target="_blank" rel="noopener" aria-label="YouTube">
               <svg class="footer-social-icon" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M23.5 6.2s-.2-1.7-.7-2.4c-.7-.9-1.5-.9-1.9-1C18.3 2.5 12 2.5 12 2.5h0s-6.3 0-8.9.3c-.4.1-1.2.1-1.9 1C.7 4.5.5 6.2.5 6.2S.2 8.2.2 10.2v1.6c0 2 .3 4 .3 4s.2 1.7.7 2.4c.7.9 1.7.9 2.1 1 1.5.1 6.7.3 8.7.3s6.3 0 8.9-.3c.4-.1 1.2-.1 1.9-1 .5-.7.7-2.4.7-2.4s.3-2 .3-4v-1.6c0-2-.3-4-.3-4zM9.8 14.8V7.9l6.2 3.5-6.2 3.4z"/>
               </svg>
@@ -369,12 +504,8 @@
       </div>
     </footer>
 
-    <!-- NAVBAR JS (COPIED FROM HOME) -->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        /* =========================
-           Desktop dropdowns (click)
-           ========================= */
         const dropdowns = document.querySelectorAll(".nav-dropdown");
 
         dropdowns.forEach((dd) => {
@@ -386,14 +517,12 @@
 
             const isOpen = dd.classList.contains("is-open");
 
-            // close all
             dropdowns.forEach((x) => {
               x.classList.remove("is-open");
               const b = x.querySelector(".nav-dropdown-toggle");
               if (b) b.setAttribute("aria-expanded", "false");
             });
 
-            // open current if it was closed
             if (!isOpen) {
               dd.classList.add("is-open");
               btn.setAttribute("aria-expanded", "true");
@@ -401,7 +530,6 @@
           });
         });
 
-        // click outside closes desktop dropdowns
         document.addEventListener("click", (e) => {
           if (e.target.closest(".nav-dropdown")) return;
           dropdowns.forEach((dd) => {
@@ -411,7 +539,6 @@
           });
         });
 
-        // escape closes desktop dropdowns
         document.addEventListener("keydown", (e) => {
           if (e.key !== "Escape") return;
           dropdowns.forEach((dd) => {
@@ -421,21 +548,15 @@
           });
         });
 
-        /* =========================
-           Mobile hamburger panel
-           ========================= */
         const toggle = document.querySelector(".nav-toggle");
         const panel = document.getElementById("mobileMenu");
 
         if (toggle && panel) {
           toggle.addEventListener("click", () => {
             const isOpen = toggle.getAttribute("aria-expanded") === "true";
-
-            // Toggle panel visibility
             toggle.setAttribute("aria-expanded", String(!isOpen));
             panel.hidden = isOpen;
 
-            // When opening, collapse ALL mobile accordions by default
             if (!isOpen) {
               const mobAccordions = document.querySelectorAll(".nav-mobile-accordion");
               mobAccordions.forEach((btn) => {
@@ -447,18 +568,14 @@
             }
           });
 
-          // Close panel when clicking a normal link (not the accordion)
           panel.addEventListener("click", (e) => {
             if (e.target.closest(".nav-mobile-accordion")) return;
-
             const link = e.target.closest("a");
             if (!link) return;
-
             toggle.setAttribute("aria-expanded", "false");
             panel.hidden = true;
           });
 
-          // Escape closes mobile panel too
           document.addEventListener("keydown", (e) => {
             if (e.key !== "Escape") return;
             toggle.setAttribute("aria-expanded", "false");
@@ -466,9 +583,6 @@
           });
         }
 
-        /* =========================
-           Mobile accordions
-           ========================= */
         const accordions = document.querySelectorAll(".nav-mobile-accordion");
 
         accordions.forEach((btn) => {
@@ -485,7 +599,6 @@
       });
     </script>
 
-    <!-- Site search (PATH UPDATED) -->
     <script src="../js/site-search.js" defer></script>
   </body>
 </html>

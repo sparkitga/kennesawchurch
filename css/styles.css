@@ -10349,6 +10349,616 @@ body.youth-page .preschool-block .preschool-card img {
 }
 
 /* =========================================
+   SERVE THE CHURCH — page styles
+   Based on Foster Care / Weekend Blessings
+   ========================================= */
+
+:root {
+  --serve-church-hero: url("../assets/images/serve-church/serve-church-hero.jpg");
+}
+
+body.serve-church-page .hero-visual--serve-church {
+  --page-hero: var(--serve-church-hero);
+}
+
+body.serve-church-page .hero-visual-inner {
+  padding: 0;
+}
+
+body.serve-church-page .page-head--serve-church {
+  background: #fff;
+  padding: 40px 0 22px;
+  position: relative;
+  overflow: hidden;
+}
+
+body.serve-church-page .page-head--serve-church .page-title {
+  margin: 0 0 10px;
+  font-size: clamp(42px, 5.6vw, 64px);
+  font-weight: 950;
+  letter-spacing: -0.03em;
+  color: rgba(17, 17, 17, 0.94);
+}
+
+body.serve-church-page .page-head--serve-church .page-subtitle {
+  margin: 0;
+  max-width: 70ch;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(17, 17, 17, 0.62);
+}
+
+body.serve-church-page main {
+  max-width: 1200px;
+  padding: 38px 20px 80px;
+}
+
+body.serve-church-page .serve-church-prep-section {
+  background: #fff;
+  padding: 8px 0 30px;
+}
+
+body.serve-church-page .serve-church-prep-head {
+  margin-bottom: 20px;
+}
+
+body.serve-church-page .serve-church-prep-title,
+body.serve-church-page .serve-church-block-title {
+  margin: 0 0 8px;
+  font-size: clamp(30px, 4vw, 42px);
+  font-weight: 950;
+  letter-spacing: -0.02em;
+  color: rgba(17, 17, 17, 0.92);
+}
+
+body.serve-church-page .serve-church-prep-subtitle,
+body.serve-church-page .serve-church-block-subtitle {
+  margin: 0;
+  max-width: 68ch;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: rgba(17, 17, 17, 0.62);
+}
+
+body.serve-church-page .serve-church-prep-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+body.serve-church-page .serve-church-prep-card {
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  background: linear-gradient(180deg, #ffffff 0%, #fbfbfb 100%);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.07);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+body.serve-church-page .serve-church-prep-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.10);
+}
+
+body.serve-church-page .serve-church-prep-media img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+body.serve-church-page .serve-church-prep-body {
+  padding: 18px 18px 20px;
+}
+
+body.serve-church-page .serve-church-prep-card-title {
+  margin: 0 0 8px;
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  color: rgba(17, 17, 17, 0.92);
+}
+
+body.serve-church-page .serve-church-prep-card-text,
+body.serve-church-page .serve-church-link-text {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(17, 17, 17, 0.68);
+}
+
+body.serve-church-page .serve-church-info-band {
+  background: #fff;
+  padding: 10px 0 52px;
+}
+
+body.serve-church-page .serve-church-info-row {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.95fr) minmax(0, 1.05fr);
+  gap: 48px;
+  align-items: start;
+  padding: 42px 0;
+}
+
+body.serve-church-page .serve-church-info-row + .serve-church-info-row {
+  border-top: 1px solid rgba(17, 17, 17, 0.08);
+}
+
+body.serve-church-page .serve-church-info-row--reverse .serve-church-info-media {
+  order: 1;
+}
+
+body.serve-church-page .serve-church-info-row--reverse .serve-church-info-copy {
+  order: 2;
+}
+
+body.serve-church-page .serve-church-info-media img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+  border-radius: 18px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
+}
+
+body.serve-church-page .serve-church-info-title {
+  margin: 0 0 24px;
+  font-size: clamp(38px, 4.8vw, 60px);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  font-weight: 900;
+  color: rgba(17, 17, 17, 0.94);
+  text-transform: uppercase;
+}
+
+body.serve-church-page .serve-church-info-meta {
+  border-top: 1px solid rgba(17, 17, 17, 0.14);
+  margin-bottom: 24px;
+}
+
+body.serve-church-page .serve-church-info-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 58px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.14);
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15.5px;
+  line-height: 1.45;
+  color: rgba(17, 17, 17, 0.78);
+}
+
+body.serve-church-page .serve-church-info-icon {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(11, 42, 74, 0.58);
+}
+
+body.serve-church-page .serve-church-info-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+body.serve-church-page .serve-church-info-text {
+  margin: 0;
+  max-width: 44ch;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(17, 17, 17, 0.70);
+}
+
+body.serve-church-page .serve-church-links-block {
+  background: #fff;
+  padding: 8px 0 44px;
+}
+
+body.serve-church-page .serve-church-link-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+body.serve-church-page .serve-church-link-card {
+  display: block;
+  border-radius: 24px;
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  background: linear-gradient(180deg, #ffffff 0%, #fbfbfb 100%);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.07);
+  padding: 22px 20px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+body.serve-church-page .serve-church-link-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.10);
+  border-color: rgba(11, 42, 74, 0.14);
+}
+
+body.serve-church-page .serve-church-link-title {
+  margin: 0 0 8px;
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  color: rgba(17, 17, 17, 0.92);
+}
+
+body.serve-church-page .serve-church-link-cta {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 14px;
+  font-weight: 900;
+  color: rgba(11, 42, 74, 0.92);
+}
+
+@media (max-width: 980px) {
+  body.serve-church-page .serve-church-prep-grid,
+  body.serve-church-page .serve-church-link-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.serve-church-page .serve-church-info-row,
+  body.serve-church-page .serve-church-info-row--reverse {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  body.serve-church-page .serve-church-info-row--reverse .serve-church-info-media,
+  body.serve-church-page .serve-church-info-row--reverse .serve-church-info-copy {
+    order: initial;
+  }
+
+  body.serve-church-page .serve-church-info-title {
+    font-size: clamp(30px, 8vw, 46px);
+  }
+
+  body.serve-church-page .serve-church-info-media img {
+    height: 320px;
+  }
+}
+
+@media (max-width: 640px) {
+  body.serve-church-page .page-head--serve-church {
+    padding: 34px 0 18px;
+  }
+
+  body.serve-church-page .page-head--serve-church .page-subtitle {
+    font-size: 16.5px;
+  }
+
+  body.serve-church-page main {
+    padding: 32px 16px 64px;
+  }
+
+  body.serve-church-page .serve-church-prep-media img {
+    height: 220px;
+  }
+
+  body.serve-church-page .serve-church-info-row {
+    padding: 28px 0;
+  }
+
+  body.serve-church-page .serve-church-info-media img {
+    height: 260px;
+  }
+}
+
+/* =========================================
+   SERVE THE COMMUNITY — page styles
+   Based on Foster Care / Weekend Blessings / Serve the Church
+   ========================================= */
+
+:root {
+  --serve-community-hero: url("../assets/images/serve-community/serve-community-hero.jpg");
+}
+
+body.serve-community-page .hero-visual--serve-community {
+  --page-hero: var(--serve-community-hero);
+}
+
+body.serve-community-page .hero-visual-inner {
+  padding: 0;
+}
+
+body.serve-community-page .page-head--serve-community {
+  background: #fff;
+  padding: 40px 0 22px;
+  position: relative;
+  overflow: hidden;
+}
+
+body.serve-community-page .page-head--serve-community .page-title {
+  margin: 0 0 10px;
+  font-size: clamp(42px, 5.6vw, 64px);
+  font-weight: 950;
+  letter-spacing: -0.03em;
+  color: rgba(17, 17, 17, 0.94);
+}
+
+body.serve-community-page .page-head--serve-community .page-subtitle {
+  margin: 0;
+  max-width: 70ch;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(17, 17, 17, 0.62);
+}
+
+body.serve-community-page main {
+  max-width: 1200px;
+  padding: 38px 20px 80px;
+}
+
+body.serve-community-page .serve-community-prep-section {
+  background: #fff;
+  padding: 8px 0 30px;
+}
+
+body.serve-community-page .serve-community-prep-head {
+  margin-bottom: 20px;
+}
+
+body.serve-community-page .serve-community-prep-title,
+body.serve-community-page .serve-community-block-title {
+  margin: 0 0 8px;
+  font-size: clamp(30px, 4vw, 42px);
+  font-weight: 950;
+  letter-spacing: -0.02em;
+  color: rgba(17, 17, 17, 0.92);
+}
+
+body.serve-community-page .serve-community-prep-subtitle,
+body.serve-community-page .serve-community-block-subtitle {
+  margin: 0;
+  max-width: 68ch;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: rgba(17, 17, 17, 0.62);
+}
+
+body.serve-community-page .serve-community-prep-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+body.serve-community-page .serve-community-prep-card {
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  background: linear-gradient(180deg, #ffffff 0%, #fbfbfb 100%);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.07);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+body.serve-community-page .serve-community-prep-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.10);
+}
+
+body.serve-community-page .serve-community-prep-media img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+body.serve-community-page .serve-community-prep-body {
+  padding: 18px 18px 20px;
+}
+
+body.serve-community-page .serve-community-prep-card-title {
+  margin: 0 0 8px;
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  color: rgba(17, 17, 17, 0.92);
+}
+
+body.serve-community-page .serve-community-prep-card-text,
+body.serve-community-page .serve-community-link-text {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(17, 17, 17, 0.68);
+}
+
+body.serve-community-page .serve-community-info-band {
+  background: #fff;
+  padding: 10px 0 52px;
+}
+
+body.serve-community-page .serve-community-info-row {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.95fr) minmax(0, 1.05fr);
+  gap: 48px;
+  align-items: start;
+  padding: 42px 0;
+}
+
+body.serve-community-page .serve-community-info-row + .serve-community-info-row {
+  border-top: 1px solid rgba(17, 17, 17, 0.08);
+}
+
+body.serve-community-page .serve-community-info-row--reverse .serve-community-info-media {
+  order: 1;
+}
+
+body.serve-community-page .serve-community-info-row--reverse .serve-community-info-copy {
+  order: 2;
+}
+
+body.serve-community-page .serve-community-info-media img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+  border-radius: 18px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
+}
+
+body.serve-community-page .serve-community-info-title {
+  margin: 0 0 24px;
+  font-size: clamp(38px, 4.8vw, 60px);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  font-weight: 900;
+  color: rgba(17, 17, 17, 0.94);
+  text-transform: uppercase;
+}
+
+body.serve-community-page .serve-community-info-meta {
+  border-top: 1px solid rgba(17, 17, 17, 0.14);
+  margin-bottom: 24px;
+}
+
+body.serve-community-page .serve-community-info-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 58px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.14);
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15.5px;
+  line-height: 1.45;
+  color: rgba(17, 17, 17, 0.78);
+}
+
+body.serve-community-page .serve-community-info-icon {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(11, 42, 74, 0.58);
+}
+
+body.serve-community-page .serve-community-info-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+body.serve-community-page .serve-community-info-text {
+  margin: 0;
+  max-width: 44ch;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(17, 17, 17, 0.70);
+}
+
+body.serve-community-page .serve-community-links-block {
+  background: #fff;
+  padding: 8px 0 44px;
+}
+
+body.serve-community-page .serve-community-link-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+body.serve-community-page .serve-community-link-card {
+  display: block;
+  border-radius: 24px;
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  background: linear-gradient(180deg, #ffffff 0%, #fbfbfb 100%);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.07);
+  padding: 22px 20px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+body.serve-community-page .serve-community-link-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.10);
+  border-color: rgba(11, 42, 74, 0.14);
+}
+
+body.serve-community-page .serve-community-link-title {
+  margin: 0 0 8px;
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  color: rgba(17, 17, 17, 0.92);
+}
+
+body.serve-community-page .serve-community-link-cta {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 14px;
+  font-weight: 900;
+  color: rgba(11, 42, 74, 0.92);
+}
+
+@media (max-width: 980px) {
+  body.serve-community-page .serve-community-prep-grid,
+  body.serve-community-page .serve-community-link-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.serve-community-page .serve-community-info-row,
+  body.serve-community-page .serve-community-info-row--reverse {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  body.serve-community-page .serve-community-info-row--reverse .serve-community-info-media,
+  body.serve-community-page .serve-community-info-row--reverse .serve-community-info-copy {
+    order: initial;
+  }
+
+  body.serve-community-page .serve-community-info-title {
+    font-size: clamp(30px, 8vw, 46px);
+  }
+
+  body.serve-community-page .serve-community-info-media img {
+    height: 320px;
+  }
+}
+
+@media (max-width: 640px) {
+  body.serve-community-page .page-head--serve-community {
+    padding: 34px 0 18px;
+  }
+
+  body.serve-community-page .page-head--serve-community .page-subtitle {
+    font-size: 16.5px;
+  }
+
+  body.serve-community-page main {
+    padding: 32px 16px 64px;
+  }
+
+  body.serve-community-page .serve-community-prep-media img {
+    height: 220px;
+  }
+
+  body.serve-community-page .serve-community-info-row {
+    padding: 28px 0;
+  }
+
+  body.serve-community-page .serve-community-info-media img {
+    height: 260px;
+  }
+}
+
+/* =========================================
    Per-page hero image mapping
    Each page must have matching body class
    ========================================= */

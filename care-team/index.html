@@ -1,14 +1,7 @@
-<!-- FILE: care-team/index.html
-  Uses HOME PAGE header + footer + brand standard.
-  Page-specific changes:
-  - Paths updated for subfolder usage (../css, ../assets, ../js)
-  - Uses care-team page classes
--->
-
+```html
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-N794D9J3RW"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -24,53 +17,46 @@
 
     <meta
       name="description"
-      content="Kennesaw Church's Care Ministry."
+      content="Care Ministry at Kennesaw Church offers prayer, practical support, encouragement, and care through a variety of ministries."
     />
     <meta name="robots" content="index,follow" />
     <meta name="theme-color" content="#0b2a4a" />
-    <link rel="canonical" href="https://kennesawchurch.netlify.app/care-team/" />
+    <link rel="canonical" href="https://kennesawchurch.netlify.app/care-ministry/" />
 
-    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Kennesaw Church" />
     <meta property="og:title" content="Kennesaw Church Care Ministry" />
-    <meta property="og:description" content="Our church's Care Ministry." />
-    <meta property="og:url" content="https://kennesawchurch.netlify.app/care-team/" />
+    <meta property="og:description" content="Prayer, support, visitation, and practical care ministries at Kennesaw Church." />
+    <meta property="og:url" content="https://kennesawchurch.netlify.app/care-ministry/" />
 
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Kennesaw Church Care Ministry" />
     <meta
       name="twitter:description"
-      content="Kennesaw Church's Care Ministry."
+      content="Prayer, support, visitation, and practical care ministries at Kennesaw Church."
     />
 
-    <!-- Inter Font -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="../assets/icons/Favicon_GreenWhite_DarkBlueBG.svg" />
     <link rel="icon" type="image/png" href="../assets/icons/Favicon_GreenWhite_DarkBlueBG.png" />
 
-    <!-- Main stylesheet -->
     <link rel="stylesheet" href="../css/styles.css" />
   </head>
 
-  <body class="care-team-page">
+  <body class="care-ministry-page">
     <!-- NAVBAR -->
     <header class="navbar">
       <div class="container nav-wrap">
-        <!-- LEFT: Logo -->
         <div class="nav-logo">
           <a href="/index.html" aria-label="Kennesaw Church Home">
-            <img src="assets/logos/FullHori_GreenBlack_TranspBG.svg" alt="Kennesaw Church" />
+            <img src="../assets/logos/FullHori_GreenBlack_TranspBG.svg" alt="Kennesaw Church" />
           </a>
         </div>
 
-        <!-- CENTER: Search + Desktop Nav -->
         <div class="nav-center">
           <form
             class="nav-search"
@@ -159,15 +145,19 @@
                   </button>
 
                   <div class="nav-subgroup-children" id="desktopCareTeamSubmenu">
-                    <a role="menuitem" href="/s-church/">Serving the Church</a>
-                    <a role="menuitem" href="/s-community/">Serving the Community</a>
-                    <a role="menuitem" href="/s-abroad/">Serving Abroad</a>
+                    <a role="menuitem" href="/care-ministry/">Care Ministry</a>
+                    <a role="menuitem" href="/med-cab/">Med Cab</a>
+                    <a role="menuitem" href="/celebrate-life/">Celebrate Life</a>
+                    <a role="menuitem" href="/griefshare/">GriefShare</a>
+                    <a role="menuitem" href="/prayer-ministry/">Prayer Ministry</a>
+                    <a role="menuitem" href="/compassionate-care-partner/">Compassionate Care Partner</a>
+                    <a role="menuitem" href="/monday-morning-ministers/">Monday Morning Ministers</a>
+                    <a role="menuitem" href="/visiting-team/">Visiting Team</a>
                   </div>
                 </div>
 
                 <div class="nav-subgroup">
                   <a role="menuitem" href="/foster-care/">Foster Care</a>
-                  <a role="menuitem" href="/med-cab/">Med Cab</a>
                   <a role="menuitem" href="/south-dakota/">South Dakota Mission Trip</a>
                   <a role="menuitem" href="/stewardship/">Stewardship</a>
                   <a role="menuitem" href="/weekend-blessings/">Weekend Blessings</a>
@@ -180,7 +170,6 @@
           </nav>
         </div>
 
-        <!-- RIGHT -->
         <div class="nav-right">
           <a class="watch-btn nav-right-desktop" href="/give/index.html">Give</a>
 
@@ -193,9 +182,7 @@
               aria-label="Facebook"
             >
               <svg class="nav-social-icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.6-1.6h1.7V4.8c-.3 0-1.4-.1-2.7-.1-2.7 0-4.5 1.6-4.5 4.6V11H7v3h2.6v8h3.9z"
-                />
+                <path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.6-1.6h1.7V4.8c-.3 0-1.4-.1-2.7-.1-2.7 0-4.5 1.6-4.5 4.6V11H7v3h2.6v8h3.9z" />
               </svg>
             </a>
 
@@ -207,9 +194,7 @@
               aria-label="Instagram"
             >
               <svg class="nav-social-icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3z"
-                />
+                <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3z" />
                 <path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" />
                 <path d="M17.5 6.3a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z" />
               </svg>
@@ -223,9 +208,7 @@
               aria-label="YouTube"
             >
               <svg class="nav-social-icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M23.5 6.2s-.2-1.7-.7-2.4c-.7-.9-1.5-.9-1.9-1C18.3 2.5 12 2.5 12 2.5h0s-6.3 0-8.9.3c-.4.1-1.2.1-1.9 1C.7 4.5.5 6.2.5 6.2S.2 8.2.2 10.2v1.6c0 2 .3 4 .3 4s.2 1.7.7 2.4c.7.9 1.7.9 2.1 1 1.5.1 6.7.3 8.7.3s6.3 0 8.9-.3c.4-.1 1.2-.1 1.9-1 .5-.7.7-2.4.7-2.4s.3-2 .3-4v-1.6c0-2-.3-4-.3-4zM9.8 14.8V7.9l6.2 3.5-6.2 3.4z"
-                />
+                <path d="M23.5 6.2s-.2-1.7-.7-2.4c-.7-.9-1.5-.9-1.9-1C18.3 2.5 12 2.5 12 2.5h0s-6.3 0-8.9.3c-.4.1-1.2.1-1.9 1C.7 4.5.5 6.2.5 6.2S.2 8.2.2 10.2v1.6c0 2 .3 4 .3 4s.2 1.7.7 2.4c.7.9 1.7.9 2.1 1 1.5.1 6.7.3 8.7.3s6.3 0 8.9-.3c.4-.1 1.2-.1 1.9-1 .5-.7.7-2.4.7-2.4s.3-2 .3-4v-1.6c0-2-.3-4-.3-4zM9.8 14.8V7.9l6.2 3.5-6.2 3.4z" />
               </svg>
             </a>
           </div>
@@ -241,7 +224,6 @@
           </button>
         </div>
 
-        <!-- MOBILE / TABLET PANEL -->
         <div class="nav-panel" id="mobileMenu" hidden>
           <nav class="nav-links nav-links-mobile" aria-label="Mobile navigation">
             <a href="/index.html">Home</a>
@@ -328,14 +310,18 @@
                   </button>
 
                   <div class="nav-mobile-submenu nav-mobile-submenu-nested" id="mobileCareTeamSubmenu" hidden>
-                    <a class="nav-mobile-subitem" href="/s-church/">Serving the Church</a>
-                    <a class="nav-mobile-subitem" href="/s-community/">Serving the Community</a>
-                    <a class="nav-mobile-subitem" href="/s-abroad/">Serving Abroad</a>
+                    <a class="nav-mobile-subitem" href="/care-ministry/">Care Ministry</a>
+                    <a class="nav-mobile-subitem" href="/med-cab/">Med Cab</a>
+                    <a class="nav-mobile-subitem" href="/celebrate-life/">Celebrate Life</a>
+                    <a class="nav-mobile-subitem" href="/griefshare/">GriefShare</a>
+                    <a class="nav-mobile-subitem" href="/prayer-ministry/">Prayer Ministry</a>
+                    <a class="nav-mobile-subitem" href="/compassionate-care-partner/">Compassionate Care Partner</a>
+                    <a class="nav-mobile-subitem" href="/monday-morning-ministers/">Monday Morning Ministers</a>
+                    <a class="nav-mobile-subitem" href="/visiting-team/">Visiting Team</a>
                   </div>
                 </div>
 
                 <a href="/foster-care/">Foster Care</a>
-                <a href="/med-cab/">Med Cab</a>
                 <a href="/south-dakota/">South Dakota Mission Trip</a>
                 <a href="/stewardship/">Stewardship</a>
                 <a href="/weekend-blessings/">Weekend Blessings</a>
@@ -359,9 +345,7 @@
                 aria-label="Facebook"
               >
                 <svg class="nav-social-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path
-                    d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.6-1.6h1.7V4.8c-.3 0-1.4-.1-2.7-.1-2.7 0-4.5 1.6-4.5 4.6V11H7v3h2.6v8h3.9z"
-                  />
+                  <path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.6-1.6h1.7V4.8c-.3 0-1.4-.1-2.7-.1-2.7 0-4.5 1.6-4.5 4.6V11H7v3h2.6v8h3.9z" />
                 </svg>
               </a>
 
@@ -373,9 +357,7 @@
                 aria-label="Instagram"
               >
                 <svg class="nav-social-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path
-                    d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3z"
-                  />
+                  <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3z" />
                   <path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" />
                   <path d="M17.5 6.3a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z" />
                 </svg>
@@ -389,9 +371,7 @@
                 aria-label="YouTube"
               >
                 <svg class="nav-social-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path
-                    d="M23.5 6.2s-.2-1.7-.7-2.4c-.7-.9-1.5-.9-1.9-1C18.3 2.5 12 2.5 12 2.5h0s-6.3 0-8.9.3c-.4.1-1.2.1-1.9 1C.7 4.5.5 6.2.5 6.2S.2 8.2.2 10.2v1.6c0 2 .3 4 .3 4s.2 1.7.7 2.4c.7.9 1.7.9 2.1 1 1.5.1 6.7.3 8.7.3s6.3 0 8.9-.3c.4-.1 1.2-.1 1.9-1 .5-.7.7-2.4.7-2.4s.3-2 .3-4v-1.6c0-2-.3-4-.3-4zM9.8 14.8V7.9l6.2 3.5-6.2 3.4z"
-                  />
+                  <path d="M23.5 6.2s-.2-1.7-.7-2.4c-.7-.9-1.5-.9-1.9-1C18.3 2.5 12 2.5 12 2.5h0s-6.3 0-8.9.3c-.4.1-1.2.1-1.9 1C.7 4.5.5 6.2.5 6.2S.2 8.2.2 10.2v1.6c0 2 .3 4 .3 4s.2 1.7.7 2.4c.7.9 1.7.9 2.1 1 1.5.1 6.7.3 8.7.3s6.3 0 8.9-.3c.4-.1 1.2-.1 1.9-1 .5-.7.7-2.4.7-2.4s.3-2 .3-4v-1.6c0-2-.3-4-.3-4zM9.8 14.8V7.9l6.2 3.5-6.2 3.4z" />
                 </svg>
               </a>
             </div>
@@ -400,156 +380,182 @@
       </div>
     </header>
 
-    <section class="hero-visual hero-visual--care-team" aria-label="Care Team hero">
+    <section class="hero-visual hero-visual--care-ministry" aria-label="Care Ministry hero">
       <div class="hero-visual-inner"></div>
     </section>
 
-    <section class="page-head page-head--care-team" aria-label="Care Team page header">
+    <section class="page-head page-head--care-ministry" aria-label="Care Ministry page header">
       <div class="container page-head-inner">
         <h1 class="page-title">Care Ministry</h1>
         <p class="page-subtitle">
-          The Care Ministry helps our church care for people well through prayer, encouragement, support, practical help, and a steady ministry presence in seasons when people need it most.
+          Care Ministry helps our church family serve one another through prayer, encouragement,
+          visitation, support, and practical care in every season of life.
         </p>
       </div>
     </section>
 
     <main>
-      <section class="care-team-prep-section" aria-label="What to expect from Care Team">
+      <section class="care-ministry-intro" aria-label="Care Ministry introduction">
         <div class="container">
-          <div class="care-team-prep-head">
-            <h2 class="care-team-prep-title">What to Expect</h2>
-            <p class="care-team-prep-subtitle">
-              Three simple things you can expect as you connect with the Care Ministry at Kennesaw Church.
+          <div class="young-adults-prep-head">
+            <h2 class="young-adults-prep-title">How We Care for One Another</h2>
+            <p class="young-adults-prep-subtitle">
+              These ministries provide meaningful ways to support church members through rides, prayer,
+              encouragement, grief support, visitation, and long-term care support.
             </p>
           </div>
-
-          <div class="care-team-prep-grid">
-            <article class="care-team-prep-card">
-              <div class="care-team-prep-media">
-                <img src="../assets/images/care-team-images/care-team-1.jpg" alt="Church members offering prayer and encouragement" />
-              </div>
-              <div class="care-team-prep-body">
-                <h3 class="care-team-prep-card-title">Prayerful Support</h3>
-                <p class="care-team-prep-card-text">
-                  Care Ministry begins with compassionate presence and consistent prayer so people know they are seen, supported, and not walking alone.
-                </p>
-              </div>
-            </article>
-
-            <article class="care-team-prep-card">
-              <div class="care-team-prep-media">
-                <img src="../assets/images/care-team-images/care-team-2.jpg" alt="Volunteers serving and caring for others" />
-              </div>
-              <div class="care-team-prep-body">
-                <h3 class="care-team-prep-card-title">Practical Help</h3>
-                <p class="care-team-prep-card-text">
-                  The ministry looks for meaningful ways to serve through meals, visits, follow-up, and support during difficult or transitional moments.
-                </p>
-              </div>
-            </article>
-
-            <article class="care-team-prep-card">
-              <div class="care-team-prep-media">
-                <img src="../assets/images/care-team-images/care-team-3.jpg" alt="People connecting in a caring church environment" />
-              </div>
-              <div class="care-team-prep-body">
-                <h3 class="care-team-prep-card-title">A Ministry of Presence</h3>
-                <p class="care-team-prep-card-text">
-                  Care Ministry is about showing up with kindness, wisdom, and steadiness so the love of Christ is felt in real and personal ways.
-                </p>
-              </div>
-            </article>
-          </div>
         </div>
       </section>
 
-      <section class="care-team-info-band" aria-label="Care Team ministry opportunities">
+      <section class="young-adults-info-band" aria-label="Care Ministry areas">
         <div class="container">
-          <article class="care-team-info-row">
-            <div class="care-team-info-media">
-              <img src="../assets/images/care-team-images/care-team-4.jpg" alt="Volunteer offering support and encouragement to another person" />
+          <article class="young-adults-info-row">
+            <div class="young-adults-info-media">
+              <img
+                src="https://images.unsplash.com/photo-1519643381401-22c77e60520e?auto=format&fit=crop&w=1200&q=80"
+                alt="A driver helping transport someone to an appointment"
+              />
             </div>
 
-            <div class="care-team-info-copy">
-              <h2 class="care-team-info-title">Support &amp; Encouragement</h2>
-
-              <div class="care-team-info-meta">
-                <div class="care-team-info-meta-row">
-                  <span class="care-team-info-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" role="presentation">
-                      <path d="M7.5 11.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Zm9 5a3 3 0 1 1 0-6 3 3 0 0 1 0 6ZM2.5 19c0-3.1 2.6-5.5 5.8-5.5 1.5 0 2.9.5 4 1.5-.9.9-1.5 2.1-1.5 3.5 0 .2 0 .3 0 .5H2.5Zm9.5 0c0-2.4 2-4.3 4.5-4.3S21 16.6 21 19h-9Z"/>
-                    </svg>
-                  </span>
-                  <span>Prayer, connection, and compassionate care</span>
-                </div>
-
-                <div class="care-team-info-meta-row">
-                  <span class="care-team-info-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" role="presentation">
-                      <path d="M12 2.5A9.5 9.5 0 1 0 21.5 12 9.51 9.51 0 0 0 12 2.5Zm0 17.3A7.8 7.8 0 1 1 19.8 12 7.81 7.81 0 0 1 12 19.8Zm.8-12.1h-1.7v5.1l4.1 3 .9-1.4-3.3-2.4Z"/>
-                    </svg>
-                  </span>
-                  <span><strong>Ongoing opportunities</strong> to serve and follow up</span>
-                </div>
-              </div>
-
-              <p class="care-team-info-text">
-                This part of Care Ministry focuses on helping people feel supported through prayer, listening, and intentional follow-up. It is a ministry built on compassion, wisdom, and a willingness to walk with others through both joyful and difficult seasons.
+            <div class="young-adults-info-copy">
+              <h2 class="young-adults-info-title">Med Cab</h2>
+              <p class="young-adults-info-text">
+                Med Cab provides transportation to church members in need of a ride to medical appointments.
               </p>
             </div>
           </article>
 
-          <article class="care-team-info-row care-team-info-row--reverse">
-            <div class="care-team-info-media">
-              <img src="../assets/images/care-team-images/care-team-5.jpg" alt="Church volunteers providing practical care to others" />
+          <article class="young-adults-info-row young-adults-info-row--reverse">
+            <div class="young-adults-info-media">
+              <img
+                src="https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?auto=format&fit=crop&w=1200&q=80"
+                alt="People gathered around a table sharing encouragement and support"
+              />
             </div>
 
-            <div class="care-team-info-copy">
-              <h2 class="care-team-info-title">Practical Care</h2>
+            <div class="young-adults-info-copy">
+              <h2 class="young-adults-info-title">Celebrating Life</h2>
+              <p class="young-adults-info-text">
+                Celebrating Life is a cancer survivor support group that meets once a month in a casual
+                setting to break bread and provide support and encouragement to one another.
+              </p>
+            </div>
+          </article>
 
-              <div class="care-team-info-meta">
-                <div class="care-team-info-meta-row">
-                  <span class="care-team-info-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" role="presentation">
-                      <path d="M7.5 11.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Zm9 5a3 3 0 1 1 0-6 3 3 0 0 1 0 6ZM2.5 19c0-3.1 2.6-5.5 5.8-5.5 1.5 0 2.9.5 4 1.5-.9.9-1.5 2.1-1.5 3.5 0 .2 0 .3 0 .5H2.5Zm9.5 0c0-2.4 2-4.3 4.5-4.3S21 16.6 21 19h-9Z"/>
-                    </svg>
-                  </span>
-                  <span>Meals, visits, encouragement, and service</span>
-                </div>
+          <article class="young-adults-info-row">
+            <div class="young-adults-info-media">
+              <img
+                src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1200&q=80"
+                alt="A quiet support conversation during a season of grief"
+              />
+            </div>
 
-                <div class="care-team-info-meta-row">
-                  <span class="care-team-info-icon" aria-hidden="true">
+            <div class="young-adults-info-copy">
+              <h2 class="young-adults-info-title">GriefShare</h2>
+              <p class="young-adults-info-text">
+                GriefShare is a support group to help you move through the grief process.
+              </p>
+            </div>
+          </article>
+
+          <article class="young-adults-info-row young-adults-info-row--reverse">
+            <div class="young-adults-info-media">
+              <img
+                src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=1200&q=80"
+                alt="A care partner offering support to a loved one"
+              />
+            </div>
+
+            <div class="young-adults-info-copy">
+              <h2 class="young-adults-info-title">Compassionate Care Partner</h2>
+
+              <div class="young-adults-info-meta">
+                <div class="young-adults-info-meta-row">
+                  <span class="young-adults-info-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24" role="presentation">
                       <path d="M12 2.5A9.5 9.5 0 1 0 21.5 12 9.51 9.51 0 0 0 12 2.5Zm0 17.3A7.8 7.8 0 1 1 19.8 12 7.81 7.81 0 0 1 12 19.8Zm.8-12.1h-1.7v5.1l4.1 3 .9-1.4-3.3-2.4Z"/>
                     </svg>
                   </span>
-                  <span><strong>Flexible service opportunities</strong> as needs arise</span>
+                  <span><strong>4th Thursday of the month</strong> at 7:00 p.m.</span>
                 </div>
               </div>
 
-              <p class="care-team-info-text">
-                Practical Care focuses on meeting real needs in thoughtful, meaningful ways. Whether through meals, personal notes, visits, or support during illness or crisis, this ministry helps our church respond with tangible expressions of Christ’s love.
+              <p class="young-adults-info-text">
+                Compassionate Care Partner is a support group for those who are care partners for loved ones
+                with dementia, Parkinson’s, or other health concerns that require long-term care. They meet
+                on the 4th Thursday of the month at 7:00 p.m. In November and December, the date shifts
+                depending on when the holidays fall.
+              </p>
+            </div>
+          </article>
+
+          <article class="young-adults-info-row">
+            <div class="young-adults-info-media">
+              <img
+                src="https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1200&q=80"
+                alt="Cards and notes prepared to encourage homebound church members"
+              />
+            </div>
+
+            <div class="young-adults-info-copy">
+              <h2 class="young-adults-info-title">Monday Morning Ministers</h2>
+              <p class="young-adults-info-text">
+                Monday Morning Ministers is a card ministry that sends words of encouragement to homebound members.
+              </p>
+            </div>
+          </article>
+
+          <article class="young-adults-info-row young-adults-info-row--reverse">
+            <div class="young-adults-info-media">
+              <img
+                src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80"
+                alt="Church members visiting and encouraging a homebound person"
+              />
+            </div>
+
+            <div class="young-adults-info-copy">
+              <h2 class="young-adults-info-title">The Visiting Team</h2>
+              <p class="young-adults-info-text">
+                The Visiting Team is a group that visits our homebound members.
+              </p>
+            </div>
+          </article>
+
+          <article class="young-adults-info-row">
+            <div class="young-adults-info-media">
+              <img
+                src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&w=1200&q=80"
+                alt="People praying together in a church setting"
+              />
+            </div>
+
+            <div class="young-adults-info-copy">
+              <h2 class="young-adults-info-title">The Prayer Ministry</h2>
+              <p class="young-adults-info-text">
+                The Prayer Ministry has two opportunities to minister through prayer. One is a prayer group
+                that gathers to pray for people, the church, the community, and the world. The other is a
+                prayer chain that can be used to send out prayer needs.
               </p>
             </div>
           </article>
         </div>
       </section>
 
-      <section class="care-team-links-block" aria-label="Related church resources">
+      <section class="young-adults-links-block" aria-label="Related church resources">
         <div class="container">
-          <h2 class="care-team-block-title">Additional Resources</h2>
-          <p class="care-team-block-subtitle">Quick paths to serving, ministries, and support resources.</p>
+          <h2 class="young-adults-block-title">Additional Resources</h2>
+          <p class="young-adults-block-subtitle">Quick paths to more ministries, events, and next steps.</p>
 
-          <div class="care-team-links-grid">
-            <a class="care-team-link-card" href="/foster-care/" aria-label="Go to Foster Care">
-              <img src="../assets/images/new-assets/ministries-logo-1.jpg" alt="Foster Care" />
+          <div class="young-adults-links-grid">
+            <a class="young-adults-link-card" href="/adults/" aria-label="Go to Adult Ministries">
+              <img src="../assets/images/new-assets/ministries-logo-1.jpg" alt="Adult Ministries" />
             </a>
 
-            <a class="care-team-link-card" href="/weekend-blessings/" aria-label="Go to Weekend Blessings">
-              <img src="../assets/images/new-assets/events-logo.jpg" alt="Weekend Blessings" />
+            <a class="young-adults-link-card" href="/events/" aria-label="Go to Events">
+              <img src="../assets/images/new-assets/events-logo.jpg" alt="Events" />
             </a>
 
-            <a class="care-team-link-card" href="/contact/" aria-label="Go to Contact">
+            <a class="young-adults-link-card" href="/contact/" aria-label="Go to Contact">
               <img src="../assets/images/new-assets/preschool-logo-2.jpg" alt="Contact" />
             </a>
           </div>
@@ -581,7 +587,7 @@
 
         <div class="footer-col">
           <h4 class="footer-title">Ministries</h4>
-          <a class="footer-link" href="/kennesaw-kids/">Kennesaw Kids</a>
+          <a class="footer-link" href="/care-ministry/">Care Ministry</a>
           <a class="footer-link" href="/preschool/">Preschool</a>
           <a class="footer-link" href="/youth/">Youth Ministry</a>
           <a class="footer-link" href="/young-adults/">Young Adults</a>
@@ -662,7 +668,6 @@
       </div>
     </footer>
 
-    <!-- NAVBAR JS -->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const dropdowns = document.querySelectorAll(".nav-dropdown");
@@ -760,7 +765,7 @@
       });
     </script>
 
-    <!-- Site search -->
     <script src="../js/site-search.js" defer></script>
   </body>
 </html>
+```

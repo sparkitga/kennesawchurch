@@ -270,7 +270,9 @@
   </div>
 </section>
 
-<!-- CONTACT FORM (Netlify) -->
+<!-- CONTACT FORM (WITH DROPDOWN) -->
+ <section id="contact" class="contact-form-section" aria-label="Contact form">
+  <div class="container">
 <form
   name="contact"
   method="POST"
@@ -278,10 +280,11 @@
   data-netlify-honeypot="bot-field"
   action="/thank-you/"
 >
-  <!-- Required hidden input for Netlify -->
+  <!-- Required for Netlify -->
   <input type="hidden" name="form-name" value="contact" />
+  <input type="hidden" name="subject" value="New Contact Submission" />
 
-  <!-- Honeypot (spam trap) -->
+  <!-- Honeypot (spam protection) -->
   <p style="display:none;">
     <label>Don’t fill this out: <input name="bot-field" /></label>
   </p>
@@ -302,12 +305,28 @@
   </div>
 
   <div class="form-row">
+    <label for="department">Who would you like to reach?</label>
+    <select id="department" name="department" required>
+      <option value="" disabled selected>Select one</option>
+      <option>General Info</option>
+      <option>Preschool</option>
+      <option>Children’s Ministries</option>
+      <option>Youth Ministries</option>
+      <option>Music Ministries</option>
+      <option>Care Ministries</option>
+      <option>Adult Ministries</option>
+    </select>
+  </div>
+
+  <div class="form-row">
     <label for="message">Message</label>
     <textarea id="message" name="message" rows="5" required></textarea>
   </div>
 
   <button type="submit">Send Message</button>
 </form>
+  </div>
+</section>
 
 <!-- FAQ (Contact Page) -->
 <section class="faq-section" aria-label="Frequently asked questions">

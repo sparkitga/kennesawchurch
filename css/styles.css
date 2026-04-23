@@ -9487,6 +9487,395 @@ body.care-ministry-page .young-adults-link-card:hover {
   }
 }
 
+/* =========================================
+   CONTACT PAGE — modern, approachable refresh
+   Works with your existing contact tabs, form, FAQ, and resources
+   ========================================= */
+
+/* page width override */
+body.contact-page main,
+body.statement-page main {
+  max-width: 1200px;
+  padding: 0 20px 84px;
+}
+
+/* hero spacing under image */
+body.contact-page .hero-visual-inner,
+body.statement-page .hero-visual-inner {
+  padding: 0;
+}
+
+/* =========================================
+   CONTACT TABS
+   ========================================= */
+.contact-tabs {
+  background: #fff;
+  padding: 42px 0 22px;
+}
+
+.contact-tabs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.contact-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 168px;
+  padding: 24px 18px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.contact-tab:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.10);
+  border-color: rgba(11, 42, 74, 0.14);
+}
+
+.contact-tab:focus-visible {
+  outline: 3px solid rgba(58, 124, 63, 0.22);
+  outline-offset: 4px;
+}
+
+.contact-tab-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(11, 42, 74, 0.06);
+  color: var(--covenant-blue);
+  margin-bottom: 14px;
+}
+
+.contact-tab-icon svg {
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
+}
+
+.contact-tab-title {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: rgba(17, 17, 17, 0.92);
+}
+
+/* =========================================
+   CONTACT FORM SECTION
+   ========================================= */
+.contact-form-section {
+  background: #fff;
+  padding: 16px 0 34px;
+}
+
+.contact-form-section .container {
+  max-width: 900px;
+}
+
+.contact-form-section form {
+  padding: 34px 30px 30px;
+  border-radius: 28px;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfbfb 100%);
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.07);
+}
+
+.contact-form-section form::before {
+  content: "Send us a message";
+  display: block;
+  margin: 0 0 8px;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: clamp(28px, 4vw, 38px);
+  font-weight: 950;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: rgba(17, 17, 17, 0.94);
+}
+
+.contact-form-section form::after {
+  content: "Choose the ministry area you’d like to reach, and we’ll help direct your message to the right team.";
+  display: block;
+  margin: 0 0 24px;
+  max-width: 58ch;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  color: rgba(17, 17, 17, 0.62);
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.form-row label {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: rgba(17, 17, 17, 0.86);
+  margin: 0;
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+  width: 100%;
+  border-radius: 18px;
+  border: 1px solid rgba(17, 17, 17, 0.12);
+  background: #fff;
+  padding: 15px 16px;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15px;
+  line-height: 1.4;
+  color: rgba(17, 17, 17, 0.92);
+  outline: none;
+  transition: border-color 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.form-row input::placeholder,
+.form-row textarea::placeholder {
+  color: rgba(17, 17, 17, 0.42);
+}
+
+.form-row input:hover,
+.form-row select:hover,
+.form-row textarea:hover {
+  border-color: rgba(17, 17, 17, 0.18);
+}
+
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus {
+  border-color: rgba(11, 42, 74, 0.28);
+  box-shadow: 0 0 0 4px rgba(11, 42, 74, 0.08);
+  background: #fff;
+}
+
+.form-row textarea {
+  min-height: 152px;
+  resize: vertical;
+}
+
+.contact-form-section button[type="submit"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 22px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--covenant-blue);
+  color: #fff;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(11, 42, 74, 0.20);
+  transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+}
+
+.contact-form-section button[type="submit"]:hover {
+  transform: translateY(-1px);
+  background: rgba(11, 42, 74, 0.94);
+  box-shadow: 0 14px 30px rgba(11, 42, 74, 0.24);
+}
+
+.contact-form-section button[type="submit"]:focus-visible {
+  outline: 3px solid rgba(58, 124, 63, 0.24);
+  outline-offset: 4px;
+}
+
+/* =========================================
+   FAQ polish
+   ========================================= */
+.faq-section {
+  background: #fff;
+  padding: 34px 0 52px;
+}
+
+.faq-inner {
+  max-width: 900px;
+}
+
+.faq-title {
+  margin: 0 0 8px;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: clamp(30px, 4vw, 40px);
+  font-weight: 950;
+  letter-spacing: -0.02em;
+  color: rgba(17, 17, 17, 0.92);
+}
+
+.faq-subtitle {
+  margin: 0 0 22px;
+  max-width: 62ch;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: rgba(17, 17, 17, 0.62);
+}
+
+.faq-group {
+  display: grid;
+  gap: 12px;
+}
+
+.faq-item {
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  border-radius: 20px;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfbfb 100%);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.faq-q {
+  list-style: none;
+  cursor: pointer;
+  padding: 20px 22px;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 17px;
+  line-height: 1.4;
+  font-weight: 850;
+  color: rgba(17, 17, 17, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.faq-q::-webkit-details-marker {
+  display: none;
+}
+
+.faq-icon::before {
+  content: "+";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: rgba(11, 42, 74, 0.07);
+  color: var(--covenant-blue);
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.faq-item[open] .faq-icon::before {
+  content: "–";
+}
+
+.faq-a {
+  padding: 0 22px 22px;
+}
+
+.faq-a p {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: rgba(17, 17, 17, 0.68);
+}
+
+/* =========================================
+   CONTACT resources spacing
+   ========================================= */
+.resources--contact {
+  padding-top: 10px;
+}
+
+/* =========================================
+   responsive
+   ========================================= */
+@media (max-width: 980px) {
+  .contact-tabs-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  body.contact-page main,
+  body.statement-page main {
+    padding: 0 16px 64px;
+  }
+
+  .contact-tabs {
+    padding: 28px 0 18px;
+  }
+
+  .contact-tabs-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .contact-tab {
+    min-height: 132px;
+    padding: 20px 16px;
+    border-radius: 20px;
+  }
+
+  .contact-tab-icon {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 12px;
+  }
+
+  .contact-tab-title {
+    font-size: 17px;
+  }
+
+  .contact-form-section form {
+    padding: 26px 18px 22px;
+    border-radius: 22px;
+  }
+
+  .contact-form-section form::before {
+    font-size: clamp(26px, 8vw, 34px);
+  }
+
+  .contact-form-section form::after {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+
+  .form-row {
+    margin-bottom: 16px;
+  }
+
+  .form-row input,
+  .form-row select,
+  .form-row textarea {
+    padding: 14px 14px;
+    border-radius: 16px;
+    font-size: 16px;
+  }
+
+  .faq-q {
+    padding: 18px 16px;
+    font-size: 16px;
+  }
+
+  .faq-a {
+    padding: 0 16px 18px;
+  }
+}
+
 
 /* ==================================================
    (Optional) Vision / Statement / Kids scopes can live here

@@ -246,7 +246,7 @@
       </a>
 
       <!-- Contact Form -->
-      <a class="contact-tab" href="#contactForm">
+      <a class="contact-tab" href="#contact">
         <div class="contact-tab-icon">
           <svg viewBox="0 0 24 24">
             <path d="M6 2h9l5 5v15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm8 1.5V8h4.5L14 3.5zM7 11h10v2H7v-2zm0 4h10v2H7v-2z"/>
@@ -271,6 +271,45 @@
     </div>
   </div>
 </section>
+
+<!-- CONTACT FORM (Netlify) -->
+<form
+  name="contact"
+  method="POST"
+  data-netlify="true"
+  data-netlify-honeypot="bot-field"
+  action="/thank-you/"
+>
+  <!-- Required hidden input for Netlify -->
+  <input type="hidden" name="form-name" value="contact" />
+
+  <!-- Honeypot (spam trap) -->
+  <p style="display:none;">
+    <label>Don’t fill this out: <input name="bot-field" /></label>
+  </p>
+
+  <div class="form-row">
+    <label for="name">First & Last Name</label>
+    <input id="name" name="name" type="text" required />
+  </div>
+
+  <div class="form-row">
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" required />
+  </div>
+
+  <div class="form-row">
+    <label for="phone">Phone Number</label>
+    <input id="phone" name="phone" type="tel" />
+  </div>
+
+  <div class="form-row">
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+  </div>
+
+  <button type="submit">Send Message</button>
+</form>
 
 <!-- FAQ (Contact Page) -->
 <section class="faq-section" aria-label="Frequently asked questions">

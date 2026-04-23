@@ -6,643 +6,595 @@
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-N794D9J3RW');
+      gtag("js", new Date());
+      gtag("config", "G-N794D9J3RW");
     </script>
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Serving the Community | Kennesaw Church</title>
+    <title>Serving Abroad | Kennesaw Church</title>
 
     <meta
       name="description"
-      content="Serving the Community at Kennesaw Church through local outreach, practical support, and meaningful ways to care for neighbors."
+      content="Serving Abroad helps Kennesaw Church support global missions through prayer, generosity, partnerships, and opportunities to serve internationally."
     />
     <meta name="robots" content="index,follow" />
     <meta name="theme-color" content="#0b2a4a" />
-    <link rel="canonical" href="https://kennesawchurch.netlify.app/s-community/" />
+    <link rel="canonical" href="https://kennesawchurch.netlify.app/s-abroad/" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Kennesaw Church" />
-    <meta property="og:title" content="Serving the Community | Kennesaw Church" />
+    <meta property="og:title" content="Serving Abroad | Kennesaw Church" />
     <meta
       property="og:description"
-      content="Local outreach, volunteer opportunities, and ways to care for the community through Kennesaw Church."
+      content="Support global missions through prayer, generosity, partnerships, and opportunities to serve internationally."
     />
-    <meta property="og:url" content="https://kennesawchurch.netlify.app/s-community/" />
+    <meta property="og:url" content="https://kennesawchurch.netlify.app/s-abroad/" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Serving the Community | Kennesaw Church" />
+    <meta name="twitter:title" content="Serving Abroad | Kennesaw Church" />
     <meta
       name="twitter:description"
-      content="Explore how Kennesaw Church serves neighbors through outreach, partnerships, and practical care."
+      content="Support global missions through prayer, generosity, partnerships, and opportunities to serve internationally."
     />
 
-    <!-- Inter Font -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="../assets/icons/Favicon_GreenWhite_DarkBlueBG.svg" />
     <link rel="icon" type="image/png" href="../assets/icons/Favicon_GreenWhite_DarkBlueBG.png" />
-
-    <!-- Main stylesheet -->
     <link rel="stylesheet" href="../css/styles.css" />
-
-    <style>
-      :root {
-        --page-hero: url("../assets/images/community-hero.jpg");
-      }
-
-      /* care team nested nav patch */
-      .nav-dropdown-menu-serve {
-        min-width: 320px;
-      }
-
-      .nav-subgroup-title.nav-subgroup-toggle {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 6px;
-        padding: 10px 12px;
-        border: 0;
-        border-radius: 12px;
-        background: transparent;
-        color: rgba(255, 255, 255, 0.92);
-        font-weight: 650;
-        font-size: 13.5px;
-        line-height: 1.15;
-        text-align: center;
-        cursor: pointer;
-      }
-
-      .nav-subgroup-title.nav-subgroup-toggle:hover,
-      .nav-subgroup-title.nav-subgroup-toggle:focus-visible {
-        background: rgba(255, 255, 255, 0.10);
-        outline: none;
-      }
-
-      .nav-subgroup-title.nav-subgroup-toggle .nav-caret {
-        transition: transform 0.18s ease;
-      }
-
-      .nav-subgroup-title.nav-subgroup-toggle[aria-expanded="true"] .nav-caret {
-        transform: rotate(180deg);
-      }
-
-      .nav-subgroup-children {
-        display: none;
-        flex-direction: column;
-        gap: 6px;
-        margin-top: 8px;
-      }
-
-      .nav-subgroup-children.active {
-        display: flex;
-      }
-
-      .nav-mobile-item-nested {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-      }
-
-      .nav-mobile-accordion-nested {
-        width: 100%;
-        display: inline-flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 10px;
-        padding: 14px;
-        border-radius: 14px;
-        border: 1px solid var(--border);
-        background: rgba(17, 17, 17, 0.02);
-        font-weight: 850;
-        font-size: 16px;
-        color: rgba(17, 17, 17, 0.9);
-        cursor: pointer;
-      }
-
-      .nav-mobile-accordion-nested .nav-caret {
-        transition: transform 0.18s ease;
-      }
-
-      .nav-mobile-accordion-nested[aria-expanded="true"] .nav-caret {
-        transform: rotate(180deg);
-      }
-
-      .nav-mobile-submenu-nested {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        padding: 10px 8px 6px;
-        margin-left: 8px;
-        border-left: 2px solid rgba(11, 42, 74, 0.14);
-      }
-
-      .nav-mobile-submenu-nested .nav-mobile-subitem {
-        margin-left: 12px;
-        font-size: 14px;
-        opacity: 0.9;
-      }
-
-      /* page hero + body style following kennesaw kids structure */
-      body.serving-community-page .hero-visual-inner {
-        padding: 0;
-      }
-
-      body.serving-community-page .page-head--serving-community {
-        background: #fff;
-        padding: 38px 0 18px;
-        position: relative;
-        overflow: hidden;
-        margin-top: 48px;
-      }
-
-      body.serving-community-page .page-head--serving-community::before,
-      body.serving-community-page .page-head--serving-community::after {
-        display: none;
-      }
-
-      body.serving-community-page .page-head--serving-community .page-title {
-        margin: 0 0 10px;
-        font-size: clamp(42px, 5.6vw, 64px);
-        font-weight: 950;
-        letter-spacing: -0.03em;
-        color: rgba(17, 17, 17, 0.94);
-      }
-
-      body.serving-community-page .page-head--serving-community .page-subtitle {
-        margin: 0;
-        max-width: 70ch;
-        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        font-size: 18px;
-        line-height: 1.6;
-        color: rgba(17, 17, 17, 0.62);
-      }
-
-      body.serving-community-page main {
-        max-width: 1200px;
-        padding: 38px 20px 80px;
-      }
-
-      body.serving-community-page .community-prep-section {
-        background: #fff;
-        padding: 8px 0 48px;
-      }
-
-      body.serving-community-page .community-prep-head {
-        margin-bottom: 22px;
-      }
-
-      body.serving-community-page .community-prep-title {
-        margin: 0 0 8px;
-        font-size: clamp(30px, 4vw, 42px);
-        font-weight: 950;
-        letter-spacing: -0.02em;
-        color: rgba(17, 17, 17, 0.92);
-      }
-
-      body.serving-community-page .community-prep-subtitle {
-        margin: 0;
-        max-width: 68ch;
-        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        font-size: 16.5px;
-        line-height: 1.65;
-        color: rgba(17, 17, 17, 0.62);
-      }
-
-      body.serving-community-page .community-prep-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 18px;
-      }
-
-      body.serving-community-page .community-prep-card {
-        border-radius: 22px;
-        overflow: hidden;
-        background: #fff;
-        border: 1px solid rgba(17, 17, 17, 0.08);
-        box-shadow: 0 14px 34px rgba(0, 0, 0, 0.06);
-        transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
-      }
-
-      body.serving-community-page .community-prep-card:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 18px 44px rgba(0, 0, 0, 0.10);
-        border-color: rgba(11, 42, 74, 0.14);
-      }
-
-      body.serving-community-page .community-prep-media img {
-        width: 100%;
-        height: 240px;
-        object-fit: cover;
-        display: block;
-      }
-
-      body.serving-community-page .community-prep-body {
-        padding: 18px 18px 20px;
-      }
-
-      body.serving-community-page .community-prep-card-title {
-        margin: 0 0 8px;
-        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        font-size: 20px;
-        font-weight: 900;
-        line-height: 1.15;
-        color: rgba(17, 17, 17, 0.92);
-      }
-
-      body.serving-community-page .community-prep-card-text {
-        margin: 0;
-        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        font-size: 15.5px;
-        line-height: 1.7;
-        color: rgba(17, 17, 17, 0.64);
-      }
-
-      body.serving-community-page .community-info-band {
-        background: #fff;
-        padding: 18px 0 58px;
-      }
-
-      body.serving-community-page .community-info-band .container {
-        max-width: 1200px;
-      }
-
-      body.serving-community-page .community-info-row {
-        display: grid;
-        grid-template-columns: minmax(320px, 0.95fr) minmax(0, 1.05fr);
-        gap: 48px;
-        align-items: start;
-        padding: 42px 0;
-      }
-
-      body.serving-community-page .community-info-row + .community-info-row {
-        border-top: 1px solid rgba(17, 17, 17, 0.08);
-      }
-
-      body.serving-community-page .community-info-row--reverse .community-info-media {
-        order: 1;
-      }
-
-      body.serving-community-page .community-info-row--reverse .community-info-copy {
-        order: 2;
-      }
-
-      body.serving-community-page .community-info-media {
-        min-width: 0;
-      }
-
-      body.serving-community-page .community-info-media img {
-        width: 100%;
-        height: 420px;
-        object-fit: cover;
-        display: block;
-        border-radius: 18px;
-        box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
-      }
-
-      body.serving-community-page .community-info-copy {
-        min-width: 0;
-      }
-
-      body.serving-community-page .community-info-title {
-        margin: 0 0 24px;
-        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        font-size: clamp(40px, 4.8vw, 64px);
-        line-height: 0.96;
-        letter-spacing: -0.04em;
-        font-weight: 900;
-        color: rgba(17, 17, 17, 0.94);
-        text-transform: uppercase;
-      }
-
-      body.serving-community-page .community-info-meta {
-        border-top: 1px solid rgba(17, 17, 17, 0.14);
-        margin-bottom: 24px;
-      }
-
-      body.serving-community-page .community-info-meta-row {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        min-height: 58px;
-        padding: 10px 0;
-        border-bottom: 1px solid rgba(17, 17, 17, 0.14);
-        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        font-size: 15.5px;
-        line-height: 1.45;
-        color: rgba(17, 17, 17, 0.78);
-      }
-
-      body.serving-community-page .community-info-meta-row strong {
-        color: rgba(17, 17, 17, 0.94);
-      }
-
-      body.serving-community-page .community-info-icon {
-        width: 22px;
-        height: 22px;
-        flex: 0 0 22px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        color: rgba(11, 42, 74, 0.58);
-      }
-
-      body.serving-community-page .community-info-icon svg {
-        width: 18px;
-        height: 18px;
-        fill: currentColor;
-      }
-
-      body.serving-community-page .community-info-text {
-        margin: 0;
-        max-width: 42ch;
-        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        font-size: 16px;
-        line-height: 1.8;
-        color: rgba(17, 17, 17, 0.70);
-      }
-
-      body.serving-community-page .community-resources-block {
-        background: #fff;
-        padding: 12px 0 44px;
-      }
-
-      body.serving-community-page .community-resources-title {
-        margin: 0 0 8px;
-        font-size: clamp(30px, 4vw, 40px);
-        font-weight: 950;
-        letter-spacing: -0.02em;
-        color: rgba(17, 17, 17, 0.92);
-      }
-
-      body.serving-community-page .community-resources-subtitle {
-        margin: 0;
-        max-width: 65ch;
-        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        color: rgba(17, 17, 17, 0.62);
-        font-size: 17px;
-        line-height: 1.6;
-      }
-
-      body.serving-community-page .community-resource-cards {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 18px;
-        margin-top: 18px;
-      }
-
-      body.serving-community-page .community-resource-card {
-        display: block;
-        border-radius: 22px;
-        overflow: hidden;
-        background: #f3f4f6;
-        box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
-        transition: transform 0.18s ease, box-shadow 0.18s ease;
-      }
-
-      body.serving-community-page .community-resource-card img {
-        width: 100%;
-        height: 300px;
-        object-fit: cover;
-        display: block;
-      }
-
-      body.serving-community-page .community-resource-card:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 18px 44px rgba(0, 0, 0, 0.12);
-      }
-
-      @media (max-width: 980px) {
-        body.serving-community-page .community-prep-grid,
-        body.serving-community-page .community-resource-cards {
-          grid-template-columns: 1fr;
-        }
-
-        body.serving-community-page .community-info-row,
-        body.serving-community-page .community-info-row--reverse {
-          grid-template-columns: 1fr;
-          gap: 24px;
-        }
-
-        body.serving-community-page .community-info-row--reverse .community-info-media,
-        body.serving-community-page .community-info-row--reverse .community-info-copy {
-          order: initial;
-        }
-
-        body.serving-community-page .community-info-title {
-          font-size: clamp(30px, 8vw, 46px);
-        }
-
-        body.serving-community-page .community-prep-media img {
-          height: 260px;
-        }
-
-        body.serving-community-page .community-info-media img {
-          height: 320px;
-        }
-
-        body.serving-community-page .community-info-meta-row {
-          min-height: 52px;
-          font-size: 14.5px;
-        }
-
-        body.serving-community-page .community-info-text {
-          max-width: none;
-          font-size: 15.5px;
-        }
-
-        body.serving-community-page .community-resource-card img {
-          height: 240px;
-        }
-      }
-
-      @media (max-width: 640px) {
-        body.serving-community-page .page-head--serving-community {
-          padding: 34px 0 18px;
-        }
-
-        body.serving-community-page .page-head--serving-community .page-subtitle {
-          font-size: 16.5px;
-        }
-
-        body.serving-community-page .community-prep-section {
-          padding-bottom: 36px;
-        }
-
-        body.serving-community-page .community-info-band {
-          padding-bottom: 42px;
-        }
-
-        body.serving-community-page .community-info-row {
-          padding: 28px 0;
-        }
-
-        body.serving-community-page .community-info-media img {
-          height: 260px;
-        }
-      }
-    </style>
   </head>
 
-  <body class="serving-community-page">
-    <!-- NAVBAR SUBPAGE (FULL COPY) -->
-<header class="navbar">
-  <div class="container nav-wrap">
-    <div class="nav-logo">
-      <a href="/index.html" aria-label="Kennesaw Church Home">
-        <img src="../assets/logos/FullHori_GreenBlack_TranspBG.svg" alt="Kennesaw Church" />
-      </a>
-    </div>
-
-    <div class="nav-center">
-      <form
-        class="nav-search"
-        role="search"
-        aria-label="Site search"
-        action="#"
-        method="GET"
-        id="siteSearchForm"
-      >
-        <input
-          class="nav-search-input"
-          type="search"
-          name="q"
-          id="siteSearchInput"
-          placeholder="Search…"
-          autocomplete="off"
-          aria-expanded="false"
-          aria-controls="siteSearchResults"
-          aria-autocomplete="list"
-        />
-        <div
-          class="nav-search-results"
-          id="siteSearchResults"
-          role="listbox"
-          aria-label="Search results"
-          hidden
-        ></div>
-      </form>
-
-      <nav class="nav-links nav-links-desktop" aria-label="Primary navigation">
-        <div class="nav-item nav-dropdown">
-          <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
-            I'm New <span class="nav-caret" aria-hidden="true">▾</span>
-          </button>
-          <div class="nav-dropdown-menu" role="menu">
-            <a role="menuitem" href="/staff/">Staff</a>
-            <a role="menuitem" href="https://mailchi.mp/429478f6a7af/kumc-december-newsletter-10343934">Monthly Newsletter</a>
-            <a role="menuitem" href="/vision/">Vision</a>
-            <a role="menuitem" href="/statement/">Statement of Faith</a>
-          </div>
+  <body class="serve-abroad-page">
+    <!-- NAVBAR SUBPAGE -->
+    <header class="navbar">
+      <div class="container nav-wrap">
+        <div class="nav-logo">
+          <a href="/index.html" aria-label="Kennesaw Church Home">
+            <img src="../assets/logos/FullHori_GreenBlack_TranspBG.svg" alt="Kennesaw Church" />
+          </a>
         </div>
 
-        <div class="nav-item nav-dropdown">
-          <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
-            Ministries <span class="nav-caret" aria-hidden="true">▾</span>
-          </button>
-          <div class="nav-dropdown-menu" role="menu">
-            <a role="menuitem" href="/nursery/">Nursery</a>
-            <a role="menuitem" href="/kennesaw-kids/">Children</a>
-            <a role="menuitem" href="/youth/">Youth</a>
-            <a role="menuitem" href="/music/">Music</a>
-            <a role="menuitem" href="/adults/">Adult Ministry</a>
-            <a role="menuitem" href="/care-team/">Care Ministry</a>
-          </div>
+        <div class="nav-center">
+          <form
+            class="nav-search"
+            role="search"
+            aria-label="Site search"
+            action="#"
+            method="GET"
+            id="siteSearchForm"
+          >
+            <input
+              class="nav-search-input"
+              type="search"
+              name="q"
+              id="siteSearchInput"
+              placeholder="Search…"
+              autocomplete="off"
+              aria-expanded="false"
+              aria-controls="siteSearchResults"
+              aria-autocomplete="list"
+            />
+            <div
+              class="nav-search-results"
+              id="siteSearchResults"
+              role="listbox"
+              aria-label="Search results"
+              hidden
+            ></div>
+          </form>
+
+          <nav class="nav-links nav-links-desktop" aria-label="Primary navigation">
+            <div class="nav-item nav-dropdown">
+              <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
+                I'm New <span class="nav-caret" aria-hidden="true">▾</span>
+              </button>
+              <div class="nav-dropdown-menu" role="menu">
+                <a role="menuitem" href="/staff/">Staff</a>
+                <a role="menuitem" href="https://mailchi.mp/429478f6a7af/kumc-december-newsletter-10343934">Monthly Newsletter</a>
+                <a role="menuitem" href="/vision/">Vision</a>
+                <a role="menuitem" href="/statement/">Statement of Faith</a>
+              </div>
+            </div>
+
+            <div class="nav-item nav-dropdown">
+              <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
+                Ministries <span class="nav-caret" aria-hidden="true">▾</span>
+              </button>
+              <div class="nav-dropdown-menu" role="menu">
+                <a role="menuitem" href="/nursery/">Nursery</a>
+                <a role="menuitem" href="/kennesaw-kids/">Children</a>
+                <a role="menuitem" href="/youth/">Youth</a>
+                <a role="menuitem" href="/music/">Music</a>
+                <a role="menuitem" href="/adults/">Adult Ministry</a>
+                <a role="menuitem" href="/care-team/">Care Ministry</a>
+              </div>
+            </div>
+
+            <div class="nav-item nav-dropdown">
+              <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
+                Worship <span class="nav-caret" aria-hidden="true">▾</span>
+              </button>
+              <div class="nav-dropdown-menu" role="menu">
+                <a role="menuitem" href="/worship-online/">Online</a>
+                <a role="menuitem" href="/worship-in-person/">In Person</a>
+                <a role="menuitem" href="/nursery/">Nursery</a>
+                <a role="menuitem" href="/kennesaw-kids/">Kennesaw Kids</a>
+              </div>
+            </div>
+
+            <div class="nav-item nav-dropdown">
+              <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
+                Serve <span class="nav-caret" aria-hidden="true">▾</span>
+              </button>
+              <div class="nav-dropdown-menu nav-dropdown-menu-serve" role="menu">
+                <a role="menuitem" href="/foster-care/">Foster Care</a>
+                <a role="menuitem" href="/weekend-blessings/">Weekend Blessings</a>
+                <a role="menuitem" href="/s-church/">Serving the Church</a>
+                <a role="menuitem" href="/s-community/">Serving the Community</a>
+                <a role="menuitem" href="/s-abroad/">Serving Abroad</a>
+              </div>
+            </div>
+
+            <a href="/preschool/">Preschool</a>
+            <a href="/contact/">Contact</a>
+          </nav>
         </div>
 
-        <div class="nav-item nav-dropdown">
-          <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
-            Worship <span class="nav-caret" aria-hidden="true">▾</span>
-          </button>
-          <div class="nav-dropdown-menu" role="menu">
-            <a role="menuitem" href="/worship-online/">Online</a>
-            <a role="menuitem" href="/worship-in-person/">In Person</a>
-            <a role="menuitem" href="/nursery/">Nursery</a>
-            <a role="menuitem" href="/kennesaw-kids/">Kennesaw Kids</a>
+        <div class="nav-right">
+          <a class="watch-btn nav-right-desktop" href="/give/index.html">Give</a>
+
+          <div class="nav-socials nav-right-desktop">
+            <a class="nav-social" href="https://facebook.com/kennesawmc" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg class="nav-social-icon" viewBox="0 0 24 24"><path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.6-1.6h1.7V4.8c-.3 0-1.4-.1-2.7-.1-2.7 0-4.5 1.6-4.5 4.6V11H7v3h2.6v8h3.9z"/></svg>
+            </a>
+            <a class="nav-social" href="https://instagram.com/kennesawchurch" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg class="nav-social-icon" viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3z"/></svg>
+            </a>
+            <a class="nav-social" href="https://youtube.com/@KennesawChurch" target="_blank" rel="noopener" aria-label="YouTube">
+              <svg class="nav-social-icon" viewBox="0 0 24 24"><path d="M23.5 6.2s-.2-1.7-.7-2.4c-.7-.9-1.5-.9-1.9-1C18.3 2.5 12 2.5 12 2.5h0s-6.3 0-8.9.3c-.4.1-1.2-.1-1.9 1C.7 4.5.5 6.2.5 6.2S.2 8.2.2 10.2v1.6c0 2 .3 4 .3 4s.2 1.7.7 2.4c.7.9 1.7.9 2.1 1 1.5.1 6.7.3 8.7.3s6.3 0 8.9-.3c.4-.1 1.2-.1 1.9-1 .5-.7.7-2.4.7-2.4s.3-2 .3-4v-1.6c0-2-.3-4-.3-4z"/></svg>
+            </a>
           </div>
+
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobileMenu">
+            <span class="nav-toggle-lines"></span>
+          </button>
         </div>
 
-        <div class="nav-item nav-dropdown">
-          <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">
-            Serve <span class="nav-caret" aria-hidden="true">▾</span>
-          </button>
-          <div class="nav-dropdown-menu nav-dropdown-menu-serve" role="menu">
-            <a role="menuitem" href="/foster-care/">Foster Care</a>
-            <a role="menuitem" href="/weekend-blessings/">Weekend Blessings</a>
-            <a role="menuitem" href="/s-church/">Serving the Church</a>
-            <a role="menuitem" href="/s-community/">Serving the Community</a>
-            <a role="menuitem" href="/s-abroad/">Serving Abroad</a>
+        <div class="nav-panel" id="mobileMenu" hidden>
+          <nav class="nav-links nav-links-mobile">
+            <a href="/index.html">Home</a>
+            <a href="/worship-online/">Worship Online</a>
+            <a href="/give/index.html">Give</a>
+
+            <div class="nav-mobile-item">
+              <button class="nav-mobile-accordion" aria-controls="mobileMinistries">Ministries ▾</button>
+              <div id="mobileMinistries" hidden>
+                <a href="/nursery/">Nursery</a>
+                <a href="/kennesaw-kids/">Children</a>
+                <a href="/youth/">Youth</a>
+                <a href="/music/">Music</a>
+                <a href="/adults/">Adult Ministry</a>
+                <a href="/care-team/">Care Ministry</a>
+              </div>
+            </div>
+
+            <div class="nav-mobile-item">
+              <button class="nav-mobile-accordion" aria-controls="mobileServe">Serve ▾</button>
+              <div id="mobileServe" hidden>
+                <a href="/foster-care/">Foster Care</a>
+                <a href="/weekend-blessings/">Weekend Blessings</a>
+                <a href="/s-church/">Serving the Church</a>
+                <a href="/s-community/">Serving the Community</a>
+                <a href="/s-abroad/">Serving Abroad</a>
+              </div>
+            </div>
+
+            <a href="/preschool/">Preschool</a>
+            <a href="/contact/">Contact</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero-visual hero-visual--serve-abroad" aria-label="Serving Abroad hero">
+      <div class="hero-visual-inner"></div>
+    </section>
+
+    <section class="page-head page-head--serve-abroad" aria-label="Serving Abroad page header">
+      <div class="container page-head-inner">
+        <h1 class="page-title">Serving Abroad</h1>
+        <p class="page-subtitle">
+          Serving Abroad helps Kennesaw Church support God’s work beyond our local community through prayer, generosity, partnerships, and opportunities to serve around the world.
+        </p>
+      </div>
+    </section>
+
+    <main>
+      <section class="serve-abroad-prep-section" aria-label="Serving Abroad overview">
+        <div class="container">
+          <div class="serve-abroad-prep-head">
+            <h2 class="serve-abroad-prep-title">How This Ministry Serves</h2>
+            <p class="serve-abroad-prep-subtitle">
+              This page creates a clear path for people to support global missions through sending, serving, giving, and staying connected to what God is doing abroad.
+            </p>
+          </div>
+
+          <div class="serve-abroad-prep-grid">
+            <article class="serve-abroad-prep-card">
+              <div class="serve-abroad-prep-media">
+                <img src="../assets/images/serve-abroad/serve-abroad-1.jpg" alt="Mission work and global service support" />
+              </div>
+              <div class="serve-abroad-prep-body">
+                <h3 class="serve-abroad-prep-card-title">Global Partnership</h3>
+                <p class="serve-abroad-prep-card-text">
+                  Serving Abroad helps the church engage mission opportunities beyond our immediate area through trusted relationships and a heart for long-term faithfulness.
+                </p>
+              </div>
+            </article>
+
+            <article class="serve-abroad-prep-card">
+              <div class="serve-abroad-prep-media">
+                <img src="../assets/images/serve-abroad/serve-abroad-2.jpg" alt="People serving internationally through mission opportunities" />
+              </div>
+              <div class="serve-abroad-prep-body">
+                <h3 class="serve-abroad-prep-card-title">Going and Sending</h3>
+                <p class="serve-abroad-prep-card-text">
+                  This ministry can support both those who go and those who send, creating meaningful ways for the whole church to participate in mission work abroad.
+                </p>
+              </div>
+            </article>
+
+            <article class="serve-abroad-prep-card">
+              <div class="serve-abroad-prep-media">
+                <img src="../assets/images/serve-abroad/serve-abroad-3.jpg" alt="Prayer and generosity supporting mission work" />
+              </div>
+              <div class="serve-abroad-prep-body">
+                <h3 class="serve-abroad-prep-card-title">Prayer and Generosity</h3>
+                <p class="serve-abroad-prep-card-text">
+                  Prayer, financial support, and practical encouragement all help strengthen mission efforts and keep the church engaged in global service.
+                </p>
+              </div>
+            </article>
           </div>
         </div>
+      </section>
 
-        <a href="/preschool/">Preschool</a>
-        <a href="/contact/">Contact</a>
-      </nav>
-    </div>
+      <section class="serve-abroad-info-band" aria-label="Serve Abroad areas">
+        <div class="container">
+          <article class="serve-abroad-info-row">
+            <div class="serve-abroad-info-media">
+              <img src="../assets/images/serve-abroad/serve-abroad-4.jpg" alt="International mission partnership and relationship building" />
+            </div>
 
-    <div class="nav-right">
-      <a class="watch-btn nav-right-desktop" href="/give/index.html">Give</a>
+            <div class="serve-abroad-info-copy">
+              <h2 class="serve-abroad-info-title">Mission Partnerships</h2>
 
-      <div class="nav-socials nav-right-desktop">
-        <a class="nav-social" href="https://facebook.com/kennesawmc" target="_blank" rel="noopener">
-          <svg class="nav-social-icon" viewBox="0 0 24 24"><path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.6-1.6h1.7V4.8c-.3 0-1.4-.1-2.7-.1-2.7 0-4.5 1.6-4.5 4.6V11H7v3h2.6v8h3.9z"/></svg>
-        </a>
+              <div class="serve-abroad-info-meta">
+                <div class="serve-abroad-info-meta-row">
+                  <span class="serve-abroad-info-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" role="presentation">
+                      <path d="M7.5 11.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Zm9 5a3 3 0 1 1 0-6 3 3 0 0 1 0 6ZM2.5 19c0-3.1 2.6-5.5 5.8-5.5 1.5 0 2.9.5 4 1.5-.9.9-1.5 2.1-1.5 3.5 0 .2 0 .3 0 .5H2.5Zm9.5 0c0-2.4 2-4.3 4.5-4.3S21 16.6 21 19h-9Z"></path>
+                    </svg>
+                  </span>
+                  <span>Support trusted ministries, missionaries, and global relationships</span>
+                </div>
 
-        <a class="nav-social" href="https://instagram.com/kennesawchurch" target="_blank" rel="noopener">
-          <svg class="nav-social-icon" viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3z"/></svg>
-        </a>
+                <div class="serve-abroad-info-meta-row">
+                  <span class="serve-abroad-info-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" role="presentation">
+                      <path d="M12 3 4 7v10l8 4 8-4V7Zm0 2.2 5.7 2.8L12 10.8 6.3 8ZM6 9.6l5 2.5v6.7l-5-2.5Zm12 0v6.7l-5 2.5v-6.7Z"></path>
+                    </svg>
+                  </span>
+                  <span>Build ongoing connection rather than one-time mission awareness</span>
+                </div>
+              </div>
 
-        <a class="nav-social" href="https://youtube.com/@KennesawChurch" target="_blank" rel="noopener">
-          <svg class="nav-social-icon" viewBox="0 0 24 24"><path d="M23.5 6.2s-.2-1.7-.7-2.4c-.7-.9-1.5-.9-1.9-1C18.3 2.5 12 2.5 12 2.5h0s-6.3 0-8.9.3c-.4.1-1.2-.1-1.9 1C.7 4.5.5 6.2.5 6.2S.2 8.2.2 10.2v1.6c0 2 .3 4 .3 4s.2 1.7.7 2.4c.7.9 1.7.9 2.1 1 1.5.1 6.7.3 8.7.3s6.3 0 8.9-.3c.4-.1 1.2-.1 1.9-1 .5-.7.7-2.4.7-2.4s.3-2 .3-4v-1.6c0-2-.3-4-.3-4z"/></svg>
-        </a>
+              <p class="serve-abroad-info-text">
+                Healthy mission work grows through trusted partnerships. This section can introduce the church to the people, ministries, and communities Kennesaw Church supports abroad.
+              </p>
+            </div>
+          </article>
+
+          <article class="serve-abroad-info-row serve-abroad-info-row--reverse">
+            <div class="serve-abroad-info-media">
+              <img src="../assets/images/serve-abroad/serve-abroad-5.jpg" alt="Mission trip team serving internationally" />
+            </div>
+
+            <div class="serve-abroad-info-copy">
+              <h2 class="serve-abroad-info-title">Trip Opportunities</h2>
+
+              <div class="serve-abroad-info-meta">
+                <div class="serve-abroad-info-meta-row">
+                  <span class="serve-abroad-info-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" role="presentation">
+                      <path d="M12 2.5A9.5 9.5 0 1 0 21.5 12 9.51 9.51 0 0 0 12 2.5Zm.8 5.2h-1.7v5.1l4.1 3 .9-1.4-3.3-2.4Z"></path>
+                    </svg>
+                  </span>
+                  <span>Highlight ways to prepare, participate, and serve on future mission trips</span>
+                </div>
+
+                <div class="serve-abroad-info-meta-row">
+                  <span class="serve-abroad-info-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" role="presentation">
+                      <path d="M3 5.5h18V8H3zm2 4h14v9H5z"></path>
+                    </svg>
+                  </span>
+                  <span>Create a clear next step for those called to go and serve</span>
+                </div>
+              </div>
+
+              <p class="serve-abroad-info-text">
+                Serving Abroad can also help people discover mission trip opportunities, understand what participation looks like, and find the right next step toward global service.
+              </p>
+            </div>
+          </article>
+
+          <article class="serve-abroad-info-row">
+            <div class="serve-abroad-info-media">
+              <img src="../assets/images/serve-abroad/serve-abroad-6.jpg" alt="Prayer and giving support for international missions" />
+            </div>
+
+            <div class="serve-abroad-info-copy">
+              <h2 class="serve-abroad-info-title">Support From Home</h2>
+
+              <div class="serve-abroad-info-meta">
+                <div class="serve-abroad-info-meta-row">
+                  <span class="serve-abroad-info-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" role="presentation">
+                      <path d="M12 21s-6.7-4.3-9.1-8.1C.6 9.6 2 5.8 5.7 4.6c2-.7 4.2-.1 5.6 1.5 1.4-1.6 3.6-2.2 5.6-1.5C20.6 5.8 22 9.6 21.1 12.9 18.7 16.7 12 21 12 21z"></path>
+                    </svg>
+                  </span>
+                  <span>Serve through prayer, giving, encouragement, and ongoing communication</span>
+                </div>
+
+                <div class="serve-abroad-info-meta-row">
+                  <span class="serve-abroad-info-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" role="presentation">
+                      <path d="M4 6.5h16v2H4zm0 4.5h16v2H4zm0 4.5h16v2H4z"></path>
+                    </svg>
+                  </span>
+                  <span>Help strengthen mission work even when you are not traveling</span>
+                </div>
+              </div>
+
+              <p class="serve-abroad-info-text">
+                Not everyone will travel, but everyone can participate. Prayer, financial support, and encouragement are essential ways the church can stand behind mission work across the world.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="serve-abroad-links-block" aria-label="Serve Abroad action links">
+        <div class="container">
+          <h2 class="serve-abroad-block-title">Explore Related Opportunities</h2>
+          <p class="serve-abroad-block-subtitle">
+            Start with a next step that helps you support global mission work through prayer, generosity, or future service opportunities.
+          </p>
+
+          <div class="serve-abroad-link-grid">
+            <a class="serve-abroad-link-card" href="/events/" aria-label="Go to Events page">
+              <div class="serve-abroad-link-card-body">
+                <h3 class="serve-abroad-link-title">Mission Events</h3>
+                <p class="serve-abroad-link-text">
+                  Stay aware of upcoming mission-related gatherings, interest meetings, and opportunities to connect.
+                </p>
+                <span class="serve-abroad-link-cta">View Events</span>
+              </div>
+            </a>
+
+            <a class="serve-abroad-link-card" href="/give/" aria-label="Go to Give page">
+              <div class="serve-abroad-link-card-body">
+                <h3 class="serve-abroad-link-title">Give to Support Missions</h3>
+                <p class="serve-abroad-link-text">
+                  Support global mission work through generosity and help strengthen the church’s ability to serve abroad.
+                </p>
+                <span class="serve-abroad-link-cta">Give Online</span>
+              </div>
+            </a>
+
+            <a class="serve-abroad-link-card" href="/contact/" aria-label="Go to Contact page">
+              <div class="serve-abroad-link-card-body">
+                <h3 class="serve-abroad-link-title">Ask About Serving Abroad</h3>
+                <p class="serve-abroad-link-text">
+                  Reach out to learn more about mission opportunities, partnerships, and how to support this ministry.
+                </p>
+                <span class="serve-abroad-link-cta">Contact Us</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner container">
+        <div class="footer-col">
+          <h4 class="footer-title">Kennesaw Church</h4>
+          <a class="footer-link" href="/worship-online/">Worship Online</a>
+          <a class="footer-link" href="/worship-in-person/">Join Us In Person</a>
+          <a class="footer-link" href="/ministries/">Serve</a>
+          <a class="footer-link" href="/give/">Give</a>
+          <a class="footer-link" href="/events/">Events</a>
+          <a class="footer-link" href="/contact/">Contact Us</a>
+          <a class="footer-link" href="/privacy-policy/">Privacy Policy</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">New Here</h4>
+          <a class="footer-link" href="/worship-in-person/">What to Expect on Sunday</a>
+          <a class="footer-link" href="/vision/">Mission &amp; Vision</a>
+          <a class="footer-link" href="/about/">About Us</a>
+          <a class="footer-link" href="/staff/">Pastors &amp; Staff</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Ministries</h4>
+          <a class="footer-link" href="/kennesaw-kids/">Kennesaw Kids</a>
+          <a class="footer-link" href="/preschool/">Preschool</a>
+          <a class="footer-link" href="/youth/">Youth Ministry</a>
+          <a class="footer-link" href="/young-adults/">Young Adults</a>
+          <a class="footer-link" href="/weekend-blessings/">Weekend Blessings</a>
+          <a class="footer-link" href="/small-groups/">Small Groups</a>
+          <a class="footer-link" href="/events/">Mission Trips</a>
+        </div>
+
+        <div class="footer-col footer-col-right">
+          <h4 class="footer-title">Join us</h4>
+          <a class="footer-link" href="/worship-in-person/">Join Us In Person</a>
+          <a class="footer-link" href="/worship-online/">Worship Online</a>
+
+          <div class="footer-socials">
+            <a class="footer-social" href="https://www.facebook.com/kennesawmc" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg class="footer-social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M13.5 9H16V6h-2.5C11.6 6 10 7.6 10 9.5V12H8v3h2v7h3v-7h2.3l.7-3H13v-2.2c0-.5.3-.8.8-.8z"/>
+              </svg>
+            </a>
+
+            <a class="footer-social" href="https://www.instagram.com/kennesawchurch/" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg class="footer-social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3.2A4.8 4.8 0 1 0 12 17a4.8 4.8 0 0 0 0-9.6zm0 2A2.8 2.8 0 1 1 12 15a2.8 2.8 0 0 1 0-5.6zm4.5-2.9a1.1 1.1 0 1 0 0-2.2 1.1 1.1 0 0 0 0 2.2z"/>
+              </svg>
+            </a>
+
+            <a class="footer-social" href="https://www.youtube.com/@KennesawChurch" target="_blank" rel="noopener" aria-label="YouTube">
+              <svg class="footer-social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M23.5 6.2s-.2-1.7-.7-2.4c-.7-.9-1.5-.9-1.9-1C18.3 2.5 12 2.5 12 2.5h0s-6.3 0-8.9.3c-.4.1-1.2.1-1.9 1C.7 4.5.5 6.2.5 6.2S.2 8.2.2 10.2v1.6c0 2 .3 4 .3 4s.2 1.7.7 2.4c.7.9 1.7.9 2.1 1 1.5.1 6.7.3 8.7.3s6.3 0 8.9-.3c.4-.1 1.2-.1 1.9-1 .5-.7.7-2.4.7-2.4s.3-2 .3-4v-1.6c0-2-.3-4-.3-4zM9.8 14.8V7.9l6.2 3.5-6.2 3.4z"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="footer-meta">
+            <div>1801 Ben King Rd</div>
+            <div>Kennesaw, GA 30144</div>
+            <div class="footer-meta-spacer"></div>
+            <div>Phone: (770) 428-1543</div>
+          </div>
+        </div>
       </div>
 
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobileMenu">
-        <span class="nav-toggle-lines"></span>
-      </button>
-    </div>
-
-    <div class="nav-panel" id="mobileMenu" hidden>
-      <nav class="nav-links nav-links-mobile">
-        <a href="/index.html">Home</a>
-        <a href="/worship-online/">Worship Online</a>
-        <a href="/give/index.html">Give</a>
-
-        <div class="nav-mobile-item">
-          <button class="nav-mobile-accordion" aria-controls="mobileMinistries">Ministries ▾</button>
-          <div id="mobileMinistries" hidden>
-            <a href="/nursery/">Nursery</a>
-            <a href="/kennesaw-kids/">Children</a>
-            <a href="/youth/">Youth</a>
-            <a href="/music/">Music</a>
-            <a href="/adults/">Adult Ministry</a>
-            <a href="/care-team/">Care Ministry</a>
-          </div>
+      <div class="footer-bottom container">
+        <div class="footer-subscribe">
+          <a class="footer-subscribe-link" href="https://mailchi.mp/429478f6a7af/kumc-december-newsletter-10343934">
+            Subscribe to<br />Our Email Newsletter
+          </a>
         </div>
 
-        <div class="nav-mobile-item">
-          <button class="nav-mobile-accordion" aria-controls="mobileServe">Serve ▾</button>
-          <div id="mobileServe" hidden>
-            <a href="/foster-care/">Foster Care</a>
-            <a href="/weekend-blessings/">Weekend Blessings</a>
-            <a href="/s-church/">Serving the Church</a>
-            <a href="/s-community/">Serving the Community</a>
-            <a href="/s-abroad/">Serving Abroad</a>
-          </div>
+        <div class="footer-copy">
+          Copyright © 2026 Kennesaw Church.<br />
+          All Rights Reserved.
         </div>
 
-        <a href="/preschool/">Preschool</a>
-        <a href="/contact/">Contact</a>
-      </nav>
-    </div>
-  </div>
-</header>
+        <div class="footer-brand">
+          <a href="../index.html" aria-label="Kennesaw Church Home">
+            <img src="../assets/logos/FullHori_GreenWhite_TranspBG.svg" alt="Kennesaw Church" />
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const dropdowns = document.querySelectorAll(".nav-dropdown");
+
+        dropdowns.forEach((dd) => {
+          const btn = dd.querySelector(".nav-dropdown-toggle");
+          if (!btn) return;
+
+          btn.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            const isOpen = dd.classList.contains("is-open");
+
+            dropdowns.forEach((x) => {
+              x.classList.remove("is-open");
+              const b = x.querySelector(".nav-dropdown-toggle");
+              if (b) b.setAttribute("aria-expanded", "false");
+            });
+
+            if (!isOpen) {
+              dd.classList.add("is-open");
+              btn.setAttribute("aria-expanded", "true");
+            }
+          });
+        });
+
+        document.addEventListener("click", (e) => {
+          if (e.target.closest(".nav-dropdown")) return;
+          dropdowns.forEach((dd) => {
+            dd.classList.remove("is-open");
+            const btn = dd.querySelector(".nav-dropdown-toggle");
+            if (btn) btn.setAttribute("aria-expanded", "false");
+          });
+        });
+
+        document.addEventListener("keydown", (e) => {
+          if (e.key !== "Escape") return;
+          dropdowns.forEach((dd) => {
+            dd.classList.remove("is-open");
+            const btn = dd.querySelector(".nav-dropdown-toggle");
+            if (btn) btn.setAttribute("aria-expanded", "false");
+          });
+        });
+
+        const toggle = document.querySelector(".nav-toggle");
+        const panel = document.getElementById("mobileMenu");
+
+        if (toggle && panel) {
+          toggle.addEventListener("click", () => {
+            const isOpen = toggle.getAttribute("aria-expanded") === "true";
+            toggle.setAttribute("aria-expanded", String(!isOpen));
+            panel.hidden = isOpen;
+
+            if (!isOpen) {
+              const mobAccordions = document.querySelectorAll(".nav-mobile-accordion");
+              mobAccordions.forEach((btn) => {
+                const id = btn.getAttribute("aria-controls");
+                const menu = id ? document.getElementById(id) : null;
+                btn.setAttribute("aria-expanded", "false");
+                if (menu) menu.hidden = true;
+              });
+            }
+          });
+
+          panel.addEventListener("click", (e) => {
+            if (e.target.closest(".nav-mobile-accordion")) return;
+            const link = e.target.closest("a");
+            if (!link) return;
+            toggle.setAttribute("aria-expanded", "false");
+            panel.hidden = true;
+          });
+
+          document.addEventListener("keydown", (e) => {
+            if (e.key !== "Escape") return;
+            toggle.setAttribute("aria-expanded", "false");
+            panel.hidden = true;
+          });
+        }
+
+        const accordions = document.querySelectorAll(".nav-mobile-accordion");
+
+        accordions.forEach((btn) => {
+          const id = btn.getAttribute("aria-controls");
+          const menu = id ? document.getElementById(id) : null;
+          if (!menu) return;
+
+          btn.addEventListener("click", () => {
+            const isOpen = btn.getAttribute("aria-expanded") === "true";
+            btn.setAttribute("aria-expanded", String(!isOpen));
+            menu.hidden = isOpen;
+          });
+        });
+      });
+    </script>
+
+    <script src="../js/site-search.js" defer></script>
+  </body>
+</html>

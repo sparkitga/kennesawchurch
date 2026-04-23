@@ -10959,6 +10959,311 @@ body.serve-community-page .serve-community-link-cta {
 }
 
 /* =========================================
+   SERVE ABROAD — page styles
+   Based on Foster Care / Weekend Blessings / Serve pages
+   ========================================= */
+
+:root {
+  --serve-abroad-hero: url("../assets/images/serve-abroad/serve-abroad-hero.jpg");
+}
+
+body.serve-abroad-page .hero-visual--serve-abroad {
+  --page-hero: var(--serve-abroad-hero);
+}
+
+body.serve-abroad-page .hero-visual-inner {
+  padding: 0;
+}
+
+body.serve-abroad-page .page-head--serve-abroad {
+  background: #fff;
+  padding: 40px 0 22px;
+  position: relative;
+  overflow: hidden;
+}
+
+body.serve-abroad-page .page-head--serve-abroad .page-title {
+  margin: 0 0 10px;
+  font-size: clamp(42px, 5.6vw, 64px);
+  font-weight: 950;
+  letter-spacing: -0.03em;
+  color: rgba(17, 17, 17, 0.94);
+}
+
+body.serve-abroad-page .page-head--serve-abroad .page-subtitle {
+  margin: 0;
+  max-width: 70ch;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(17, 17, 17, 0.62);
+}
+
+body.serve-abroad-page main {
+  max-width: 1200px;
+  padding: 38px 20px 80px;
+}
+
+body.serve-abroad-page .serve-abroad-prep-section {
+  background: #fff;
+  padding: 8px 0 30px;
+}
+
+body.serve-abroad-page .serve-abroad-prep-head {
+  margin-bottom: 20px;
+}
+
+body.serve-abroad-page .serve-abroad-prep-title,
+body.serve-abroad-page .serve-abroad-block-title {
+  margin: 0 0 8px;
+  font-size: clamp(30px, 4vw, 42px);
+  font-weight: 950;
+  letter-spacing: -0.02em;
+  color: rgba(17, 17, 17, 0.92);
+}
+
+body.serve-abroad-page .serve-abroad-prep-subtitle,
+body.serve-abroad-page .serve-abroad-block-subtitle {
+  margin: 0;
+  max-width: 68ch;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: rgba(17, 17, 17, 0.62);
+}
+
+body.serve-abroad-page .serve-abroad-prep-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+body.serve-abroad-page .serve-abroad-prep-card {
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  background: linear-gradient(180deg, #ffffff 0%, #fbfbfb 100%);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.07);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+body.serve-abroad-page .serve-abroad-prep-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.10);
+}
+
+body.serve-abroad-page .serve-abroad-prep-media img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+body.serve-abroad-page .serve-abroad-prep-body {
+  padding: 18px 18px 20px;
+}
+
+body.serve-abroad-page .serve-abroad-prep-card-title {
+  margin: 0 0 8px;
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  color: rgba(17, 17, 17, 0.92);
+}
+
+body.serve-abroad-page .serve-abroad-prep-card-text,
+body.serve-abroad-page .serve-abroad-link-text {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(17, 17, 17, 0.68);
+}
+
+body.serve-abroad-page .serve-abroad-info-band {
+  background: #fff;
+  padding: 10px 0 52px;
+}
+
+body.serve-abroad-page .serve-abroad-info-row {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.95fr) minmax(0, 1.05fr);
+  gap: 48px;
+  align-items: start;
+  padding: 42px 0;
+}
+
+body.serve-abroad-page .serve-abroad-info-row + .serve-abroad-info-row {
+  border-top: 1px solid rgba(17, 17, 17, 0.08);
+}
+
+body.serve-abroad-page .serve-abroad-info-row--reverse .serve-abroad-info-media {
+  order: 1;
+}
+
+body.serve-abroad-page .serve-abroad-info-row--reverse .serve-abroad-info-copy {
+  order: 2;
+}
+
+body.serve-abroad-page .serve-abroad-info-media img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+  border-radius: 18px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
+}
+
+body.serve-abroad-page .serve-abroad-info-title {
+  margin: 0 0 24px;
+  font-size: clamp(38px, 4.8vw, 60px);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  font-weight: 900;
+  color: rgba(17, 17, 17, 0.94);
+  text-transform: uppercase;
+}
+
+body.serve-abroad-page .serve-abroad-info-meta {
+  border-top: 1px solid rgba(17, 17, 17, 0.14);
+  margin-bottom: 24px;
+}
+
+body.serve-abroad-page .serve-abroad-info-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 58px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.14);
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15.5px;
+  line-height: 1.45;
+  color: rgba(17, 17, 17, 0.78);
+}
+
+body.serve-abroad-page .serve-abroad-info-icon {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(11, 42, 74, 0.58);
+}
+
+body.serve-abroad-page .serve-abroad-info-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+body.serve-abroad-page .serve-abroad-info-text {
+  margin: 0;
+  max-width: 44ch;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(17, 17, 17, 0.70);
+}
+
+body.serve-abroad-page .serve-abroad-links-block {
+  background: #fff;
+  padding: 8px 0 44px;
+}
+
+body.serve-abroad-page .serve-abroad-link-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+body.serve-abroad-page .serve-abroad-link-card {
+  display: block;
+  border-radius: 24px;
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  background: linear-gradient(180deg, #ffffff 0%, #fbfbfb 100%);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.07);
+  padding: 22px 20px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+body.serve-abroad-page .serve-abroad-link-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.10);
+  border-color: rgba(11, 42, 74, 0.14);
+}
+
+body.serve-abroad-page .serve-abroad-link-title {
+  margin: 0 0 8px;
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  color: rgba(17, 17, 17, 0.92);
+}
+
+body.serve-abroad-page .serve-abroad-link-cta {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 14px;
+  font-weight: 900;
+  color: rgba(11, 42, 74, 0.92);
+}
+
+@media (max-width: 980px) {
+  body.serve-abroad-page .serve-abroad-prep-grid,
+  body.serve-abroad-page .serve-abroad-link-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.serve-abroad-page .serve-abroad-info-row,
+  body.serve-abroad-page .serve-abroad-info-row--reverse {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  body.serve-abroad-page .serve-abroad-info-row--reverse .serve-abroad-info-media,
+  body.serve-abroad-page .serve-abroad-info-row--reverse .serve-abroad-info-copy {
+    order: initial;
+  }
+
+  body.serve-abroad-page .serve-abroad-info-title {
+    font-size: clamp(30px, 8vw, 46px);
+  }
+
+  body.serve-abroad-page .serve-abroad-info-media img {
+    height: 320px;
+  }
+}
+
+@media (max-width: 640px) {
+  body.serve-abroad-page .page-head--serve-abroad {
+    padding: 34px 0 18px;
+  }
+
+  body.serve-abroad-page .page-head--serve-abroad .page-subtitle {
+    font-size: 16.5px;
+  }
+
+  body.serve-abroad-page main {
+    padding: 32px 16px 64px;
+  }
+
+  body.serve-abroad-page .serve-abroad-prep-media img {
+    height: 220px;
+  }
+
+  body.serve-abroad-page .serve-abroad-info-row {
+    padding: 28px 0;
+  }
+
+  body.serve-abroad-page .serve-abroad-info-media img {
+    height: 260px;
+  }
+}
+
+/* =========================================
    Per-page hero image mapping
    Each page must have matching body class
    ========================================= */

@@ -2855,13 +2855,15 @@ body.worship-in-person-page .preschool-gallery {
 }
 
 /* =========================================
-   GIVE PAGE — updated simple giving layout
+   GIVE PAGE — final simple hard-line layout
+   Add this to the bottom of css/styles.css
    ========================================= */
 
 body.give-page {
   --page-hero: url("../assets/hero-images/give-hero.jpg");
 }
 
+/* Reset subpage editorial defaults for Give page */
 body.give-page main {
   max-width: none;
   margin: 0;
@@ -2874,17 +2876,22 @@ body.give-page .give-subtitle,
 body.give-page .give-panel-copy,
 body.give-page .give-card-text,
 body.give-page .give-card-note,
-body.give-page .give-contact-text,
-body.give-page .give-contact-eyebrow,
-body.give-page .give-section-eyebrow,
-body.give-page .give-eyebrow {
-  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+body.give-page .give-card-list,
+body.give-page .give-card-address {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
+/* Hero */
 body.give-page .hero-visual {
   min-height: 420px;
+  background-color: var(--covenant-blue);
 }
 
+body.give-page .hero-visual-inner {
+  padding: 0;
+}
+
+/* Intro */
 body.give-page .give-intro {
   background: #fff;
   padding: 58px 0 42px;
@@ -2895,21 +2902,9 @@ body.give-page .give-intro-inner {
   max-width: 920px;
 }
 
-body.give-page .give-eyebrow,
-body.give-page .give-section-eyebrow,
-body.give-page .give-contact-eyebrow {
-  margin: 0 0 10px;
-  font-size: 13px;
-  line-height: 1.2;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--renewal-green);
-}
-
 body.give-page .give-title {
-  margin: 0 0 14px;
-  font-size: clamp(42px, 6vw, 72px);
+  margin: 0 0 20px;
+  font-size: clamp(44px, 6vw, 76px);
   line-height: 0.98;
   font-weight: 950;
   letter-spacing: -0.04em;
@@ -2917,11 +2912,11 @@ body.give-page .give-title {
 }
 
 body.give-page .give-subtitle {
-  max-width: 760px;
-  margin: 0 auto 24px;
-  font-size: clamp(17px, 2vw, 21px);
-  line-height: 1.55;
-  color: rgba(17, 17, 17, 0.66);
+  max-width: 790px;
+  margin: 0 auto 16px;
+  font-size: clamp(17px, 2vw, 20px);
+  line-height: 1.65;
+  color: rgba(17, 17, 17, 0.68);
 }
 
 body.give-page .give-actions {
@@ -2929,44 +2924,10 @@ body.give-page .give-actions {
   justify-content: center;
   gap: 12px;
   flex-wrap: wrap;
+  margin-top: 24px;
 }
 
-/* Purpose block */
-
-body.give-page .give-purpose-section {
-  background: #f6f7f8;
-  padding: 34px 0;
-}
-
-body.give-page .give-purpose-card {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 24px;
-  align-items: center;
-  padding: 32px;
-  border-radius: 26px;
-  background: var(--covenant-blue);
-  color: #fff;
-  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.10);
-}
-
-body.give-page .give-purpose-card h2 {
-  margin: 0 0 8px;
-  font-size: clamp(26px, 3.2vw, 42px);
-  line-height: 1.05;
-  color: #fff;
-}
-
-body.give-page .give-purpose-card p {
-  max-width: 760px;
-  margin: 0;
-  font-size: 16.5px;
-  line-height: 1.65;
-  color: rgba(255, 255, 255, 0.82);
-}
-
-/* Methods */
-
+/* Methods section */
 body.give-page .give-methods {
   background: #fff;
   padding: 58px 0 64px;
@@ -2997,197 +2958,267 @@ body.give-page .give-panel-copy {
   color: rgba(17, 17, 17, 0.64);
 }
 
-body.give-page .give-grid {
+/* Four hard-line giving cards */
+body.give-page .give-grid--four {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  border-top: 2px solid rgba(17, 17, 17, 0.9);
+  border-left: 2px solid rgba(17, 17, 17, 0.9);
 }
 
-body.give-page .give-card {
-  padding: 24px;
-  border-radius: 24px;
-  border: 1px solid rgba(17, 17, 17, 0.08);
+body.give-page .give-grid--four .give-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 360px;
+  padding: 28px;
+  border-radius: 0;
+  border: 0;
+  border-right: 2px solid rgba(17, 17, 17, 0.9);
+  border-bottom: 2px solid rgba(17, 17, 17, 0.9);
   background: #fff;
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.06);
-  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  box-shadow: none;
+  transform: none;
+  transition: background 0.15s ease;
 }
 
-body.give-page .give-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.10);
-  border-color: rgba(11, 42, 74, 0.14);
-}
-
-body.give-page .give-card--featured {
-  background: linear-gradient(180deg, rgba(11, 42, 74, 0.98) 0%, rgba(11, 42, 74, 0.92) 100%);
-  color: #fff;
+body.give-page .give-grid--four .give-card:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: rgba(17, 17, 17, 0.9);
+  background: rgba(11, 42, 74, 0.03);
 }
 
 body.give-page .give-card-icon {
-  width: 44px;
-  height: 44px;
-  margin-bottom: 16px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 999px;
-  background: rgba(58, 124, 63, 0.12);
-  color: var(--renewal-green);
-  font-weight: 900;
-  font-size: 19px;
-}
-
-body.give-page .give-card--featured .give-card-icon {
-  background: rgba(255, 255, 255, 0.14);
-  color: #fff;
+  display: none;
 }
 
 body.give-page .give-card-title {
-  margin: 0 0 8px;
-  font-size: 22px;
-  line-height: 1.15;
-  font-weight: 900;
-  color: rgba(17, 17, 17, 0.92);
-}
-
-body.give-page .give-card--featured .give-card-title {
-  color: #fff;
+  margin: 0 0 14px;
+  font-size: clamp(25px, 2.6vw, 34px);
+  line-height: 1.02;
+  font-weight: 950;
+  letter-spacing: -0.03em;
+  color: rgba(17, 17, 17, 0.94);
 }
 
 body.give-page .give-card-text,
 body.give-page .give-card-note,
 body.give-page .give-card-list {
   font-size: 15.5px;
-  line-height: 1.62;
-  color: rgba(17, 17, 17, 0.64);
+  line-height: 1.68;
+  color: rgba(17, 17, 17, 0.66);
 }
 
-body.give-page .give-card--featured .give-card-text,
-body.give-page .give-card--featured .give-card-note {
-  color: rgba(255, 255, 255, 0.82);
+body.give-page .give-card-text {
+  margin: 0 0 14px;
 }
 
 body.give-page .give-card-note {
-  margin-top: 12px;
-  margin-bottom: 0;
-  font-size: 14.5px;
+  margin: 0;
 }
 
 body.give-page .give-card-list {
-  margin: 12px 0 0;
+  margin: 8px 0 0;
   padding-left: 20px;
 }
 
-body.give-page .give-card-address {
-  margin-top: 12px;
-  padding: 14px;
-  border-radius: 16px;
-  background: #f6f7f8;
-  font-weight: 800;
-  line-height: 1.55;
-  color: rgba(17, 17, 17, 0.82);
+body.give-page .give-card-list li {
+  margin-bottom: 8px;
 }
 
 body.give-page .give-card-actions {
-  margin-top: 18px;
+  margin-top: auto;
+  padding-top: 22px;
 }
 
 body.give-page .give-card-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 42px;
-  padding: 10px 18px;
-  border-radius: 999px;
-  background: #fff;
-  color: var(--covenant-blue);
+  min-height: 44px;
+  padding: 11px 18px;
+  border-radius: 0;
+  background: var(--covenant-blue);
+  color: #fff;
   font-size: 14px;
   font-weight: 900;
+  line-height: 1;
+  text-decoration: none;
 }
 
-/* Next links */
+body.give-page .give-card-btn:hover,
+body.give-page .give-card-btn:focus-visible {
+  background: rgba(11, 42, 74, 0.92);
+  outline: none;
+}
 
-body.give-page .give-next-section {
+body.give-page .give-card-address {
+  margin-top: 12px;
+  padding: 14px;
+  border-radius: 0;
+  border: 1px solid rgba(17, 17, 17, 0.18);
+  background: #f6f7f8;
+  font-size: 15.5px;
+  font-weight: 800;
+  line-height: 1.55;
+  color: rgba(17, 17, 17, 0.82);
+}
+
+/* Make a Difference section */
+body.give-page .give-purpose-section {
   background: #f6f7f8;
   padding: 54px 0;
 }
 
-body.give-page .give-next-grid {
+body.give-page .give-purpose-card {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-}
-
-body.give-page .give-next-card {
-  padding: 26px;
-  border-radius: 24px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 28px;
+  align-items: center;
+  padding: 36px;
+  border-radius: 0;
+  border: 2px solid rgba(17, 17, 17, 0.9);
   background: #fff;
-  border: 1px solid rgba(17, 17, 17, 0.08);
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.05);
+  box-shadow: none;
 }
 
-body.give-page .give-next-card h2 {
-  margin: 0 0 10px;
-  font-size: 24px;
-  line-height: 1.15;
+body.give-page .give-purpose-card h2 {
+  margin: 0 0 12px;
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1;
+  font-weight: 950;
+  letter-spacing: -0.04em;
+  color: rgba(17, 17, 17, 0.94);
 }
 
-body.give-page .give-next-card p {
-  margin: 0 0 18px;
-  font-size: 15.5px;
-  line-height: 1.62;
-  color: rgba(17, 17, 17, 0.64);
+body.give-page .give-purpose-card p {
+  max-width: 820px;
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16.5px;
+  line-height: 1.7;
+  color: rgba(17, 17, 17, 0.66);
 }
 
-body.give-page .give-disabled-btn {
-  display: inline-flex;
+body.give-page .give-purpose-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Bottom buttons */
+body.give-page .give-bottom-actions {
+  background: #fff;
+  padding: 44px 0 64px;
+}
+
+body.give-page .give-bottom-actions-inner {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 2px solid rgba(17, 17, 17, 0.9);
+  border-left: 2px solid rgba(17, 17, 17, 0.9);
+}
+
+body.give-page .give-bottom-btn {
+  display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 42px;
-  padding: 10px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(17, 17, 17, 0.14);
-  color: rgba(17, 17, 17, 0.54);
-  font-size: 14px;
-  font-weight: 900;
-}
-
-/* Contact */
-
-body.give-page .give-contact-strip {
+  min-height: 92px;
+  padding: 24px;
+  border-right: 2px solid rgba(17, 17, 17, 0.9);
+  border-bottom: 2px solid rgba(17, 17, 17, 0.9);
   background: #fff;
-  padding: 54px 0 70px;
+  color: rgba(17, 17, 17, 0.92);
+  font-size: clamp(20px, 2.6vw, 32px);
+  font-weight: 950;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
 }
 
-body.give-page .give-contact-card {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 24px;
-  align-items: center;
-  padding: 30px;
-  border-radius: 26px;
-  border: 1px solid rgba(17, 17, 17, 0.08);
+body.give-page .give-bottom-btn:hover,
+body.give-page .give-bottom-btn:focus-visible {
+  background: var(--covenant-blue);
+  color: #fff;
+  outline: none;
+}
+
+body.give-page .give-bottom-btn[aria-disabled="true"] {
+  cursor: not-allowed;
+  color: rgba(17, 17, 17, 0.48);
+}
+
+body.give-page .give-bottom-btn[aria-disabled="true"]:hover,
+body.give-page .give-bottom-btn[aria-disabled="true"]:focus-visible {
   background: #fff;
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.06);
+  color: rgba(17, 17, 17, 0.48);
 }
 
-body.give-page .give-contact-title {
-  margin: 0 0 8px;
-  font-size: clamp(26px, 3.2vw, 40px);
-  line-height: 1.05;
+/* Make existing pill buttons work inside the Give page */
+body.give-page .join-btn {
+  border-radius: 0;
 }
 
-body.give-page .give-contact-text {
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.62;
-  color: rgba(17, 17, 17, 0.64);
+/* Responsive */
+@media (max-width: 1100px) {
+  body.give-page .give-grid--four {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body.give-page .give-grid--four .give-card {
+    min-height: 300px;
+  }
 }
 
-body.give-page .give-contact-actions {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
+@media (max-width: 900px) {
+  body.give-page .give-purpose-card {
+    grid-template-columns: 1fr;
+  }
+
+  body.give-page .give-purpose-actions {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 700px) {
+  body.give-page .give-bottom-actions-inner {
+    grid-template-columns: 1fr;
+  }
+
+  body.give-page .give-bottom-btn {
+    min-height: 78px;
+  }
+}
+
+@media (max-width: 640px) {
+  body.give-page .hero-visual {
+    min-height: 300px;
+  }
+
+  body.give-page .give-intro {
+    padding: 42px 0 32px;
+  }
+
+  body.give-page .give-methods,
+  body.give-page .give-purpose-section,
+  body.give-page .give-bottom-actions {
+    padding: 42px 0;
+  }
+
+  body.give-page .give-grid--four {
+    grid-template-columns: 1fr;
+  }
+
+  body.give-page .give-grid--four .give-card {
+    min-height: auto;
+    padding: 22px;
+  }
+
+  body.give-page .give-purpose-card {
+    padding: 24px;
+  }
 }
 
 /* Responsive */
